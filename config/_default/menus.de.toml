@@ -1,0 +1,57 @@
+[[main]]
+none = "none"
+weight = 4
+
+[[main]]
+name = "Blog"
+pageRef = "blog"
+identifier = "HGcjCq2NZY"
+weight = 1
+
+[[main]]
+name = "Themen"
+pageRef = "themen"
+identifier = "6E0c2e8NJS"
+weight = 2
+
+[[main]]
+name = "Über Uns"
+pageRef = "ueber-uns"
+identifier = "eaPwNHMpa5"
+weight = 3
+
+[[main]]
+name = "Statuten"
+pageRef = "ueber-uns/statuten"
+parent = "eaPwNHMpa5"
+identifier = "Iu3gwMIPQO"
+weight = 3
+
+[[main]]
+name = ""
+pre = "mastodon"
+url = "https://eupolicy.social/@CommonsAndCode"
+identifier = "B379Ox9uVt"
+weight = 9_999
+
+[[main]]
+name = ""
+pre = "envelope"
+url = "mailto:contact@commons-and-code.eu"
+identifier = "C3QSTdUzYn"
+weight = 9_999
+
+[[footer]]
+none = "none"
+
+[[footer]]
+name = "Impressum"
+pageRef = "impressum"
+identifier = "7t63Gj9UqM"
+weight = 1
+
+[[footer]]
+name = "Datenschutz"
+pageRef = "datenschutzerklärung"
+identifier = "h4xxUgWSKP"
+weight = 2

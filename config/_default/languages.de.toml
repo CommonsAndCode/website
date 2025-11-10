@@ -1,0 +1,13 @@
+disabled = false
+languageCode = "de"
+languageName = "Deutsch"
+weight = 1
+title = "Commons & Code"
+contentDir = "content/de"
+
+[params]
+displayName = "DE"
+isoCode = "de"
+rtl = false
+dateFormat = "02. January 2006"
+description = "Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung"

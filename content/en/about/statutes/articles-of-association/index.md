@@ -9,18 +9,18 @@ authors:
 
 {{< lead >}}Please note this is an automated translation of the German original document via the EU’s eTranslation service.{{< /lead >}}
 
-## § 1 Name, registered office and financial year 
+# § 1 Name, registered office and financial year 
 1. The association is called Commons & Code. It shall be entered in the association register. After registration, it carries the legal form ‘e.V.’ in the name.
 1. The financial year shall be the calendar year.
 1. The association has its seat in Leipzig.
 
-## § 2 Purpose of the association, not-for-profit 
+# § 2 Purpose of the association, not-for-profit 
 1. The association shall act exclusively and directly for charitable purposes as set out in the section of the Tax Code devoted to “Tax benefit concessions”.
 1. The purpose of the association is to promote science and research and to promote education, people and vocational training.
 1. The purpose of the association is achieved in particular by promoting public dialogue on responsible, inclusive and democratic digitalisation. The association organises and organises informative and opinion-forming events to promote the debate on the social and democracy change effects of digitalisation. Among other things, the club collects and analyses international cases in the field of digital policy and develops scientific recommendations for policy, administration and civil society to make them available to the general public. To promote the European idea, the Association is building a Europe-wide network for digital co-creation. The association carries out public and educational activities to promote democratic governance. The Association aims to make essential publications and deliverables available in a multilingual manner, in particular in English, in order to promote international accessibility and participation.
 1. The Association shall be non-profit-making; it shall not primarily pursue its own commercial interests. The funds of the Association may be used only for the purposes set out in the Statutes. Members shall not receive any payments from the funds of the Association. No-one may benefit from expenditure that is not in keeping with the purpose of the association or from disproportionately high remuneration.
 
-## § 3 Membership and membership fees 
+# § 3 Membership and membership fees 
 1. Any natural person who has reached the age of 14 and any legal person who supports the objectives of the Association may become a member of the Association.
 1. The application for membership must be made in writing to the Governing Board, by e-mail or via the website. The Bureau shall decide on the admission at the discretion of the Board. The objection need not contain a statement of reasons. The candidate shall have no right of appeal against the rejection.
 1. Withdrawal is possible with a deadline of four weeks at the end of a quarter. The withdrawal shall be declared in writing or by e-mail to the Governing Board. There is no right to reimbursement of membership fees already paid.
@@ -32,17 +32,17 @@ authors:
    1. Members pay an annual contribution. The amount and due date of the contribution shall be decided by the Assembly of Members in a financial regulation.
 1. A member may be expelled from the Association by decision of the Board of Directors with immediate effect if an important reason makes the continuation of membership unreasonable for the Association or its members. Such an important reason exists, in particular, where, despite a reminder, the member is in arrears for more than six months in paying his contribution, has grossly infringed the interests of the association, has repeatedly or seriously infringed the statutes, or has, through his or her conduct, permanently disrupts the reputation of the association or the association’s peace. The Member shall be given the opportunity to be heard before being expelled. The Member may, within one month of receipt of the declaration of exclusion, refer the case to the next ordinary general assembly, which shall take a final decision. The exclusion on the grounds of non-payment of membership fees shall be governed by the Financial Regulation.
 
-## § 4 Rights and obligations of Members 
+# § 4 Rights and obligations of Members 
 1. When applying for membership, the members shall recognise the content of the statutes and the other rules of association adopted by the general meeting. Members are obliged to support the objectives and interests of the Association and to comply with the decisions and orders of the Association’s bodies.
 1. Members are required to notify the Board of Directors of a postal address and an e-mail address that can be sent and to inform the Board immediately of any change in their name and/or address details.
 
-## § 5 Organs 
+# § 5 Organs 
 
 The bodies of the Association shall be:
 1. the Assembly of Members;
 1. the Board of Directors.
 
-## § 6 Ordinary Assembly of Members 
+# § 6 Ordinary Assembly of Members 
 1. The Assembly of Members shall be held at least once a year.
 1. The Assembly of Members may take the form of a physical or virtual meeting. For the face-to-face meeting, all participants of the General Assembly meet in a common place. The virtual assembly is organised by the election of all participants in a video­or telephone conference. A combination of face-to-face meeting and virtual meeting of members is possible by giving members the possibility to participate in the physical meeting by video or teleconference. The Bureau shall decide on the form of the Assembly of Members and shall communicate it in the invitation to the Assembly of Members. If the Bureau invites to a virtual meeting of members, it shall communicate the election data for the video or telephone conference to the members by email at least one hour before the beginning of the Assembly of Members. The Assembly of Members shall adopt a Rules of Assembly for further details.
 1. The meeting of the Assembly of Members shall be convened in writing or by e-mail by the Governing Board, specifying the agenda, with two weeks’ notice. The period shall begin to run on the date of dispatch of the invitation. The invitation letter shall be deemed to have been received by the Member if it is addressed to the last postal or e-mail address communicated by the member to the Association.
@@ -59,12 +59,12 @@ The bodies of the Association shall be:
    1. the adoption of decisions on the financial rules and the rules of assembly, as well as on amendments to the statutes and the dissolution of the Association;
    1. any other duties assigned to it by law or by these statutes.
 
-## § 7 Extraordinary Assembly of Members 
+# § 7 Extraordinary Assembly of Members 
 1. An extraordinary general meeting shall be held if the interest of the Association so requires or if one-fifth of the members request it in writing to the Board of Directors, stating its reasons.
 1. The rules governing the ordinary general meeting shall apply mutatis mutandis to the Extraordinary Assembly of Members, subject to the proviso that only the items which required the convocation may be discussed and decided upon.
 1. The notice period may be reduced to one week in urgent cases if this is strictly necessary to safeguard the interests of the association.
 
-## § 8 Board 
+# § 8 Board 
 1. The Board shall consist of:
    1. two equal chairs of different genders;
    1. the Treasurer;
@@ -88,7 +88,7 @@ The bodies of the Association shall be:
 1. The Governing Board shall lay down rules of procedure for the organisation of meetings, decision-making procedures, distribution of business, tasks and portfolios, which must be made public to the members.
 1. Directors shall be liable to the Association only for intentional or grossly negligent conduct. Where members of the Board of Directors are used by third parties as a result of their board activities, the Association shall release the member of the Board concerned from these claims, unless the member of the Board acted intentionally or with serious negligence.
 
-## § 9 Dissolution of the Association 
+# § 9 Dissolution of the Association 
 
 If the association is dissolved or dissolved or if tax-favoured purposes
 cease to exist, its assets are transferred to the Gesellschaft für
@@ -100,7 +100,7 @@ designate another tax-favoured body which shall use the assets directly
 and exclusively for the promotion of science, research and civic
 engagement.
 
-## Download
+# Download
 
 {{< download href="/downloads/2025-10-13-Satzung_EN.pdf">}}
 Download as PDF

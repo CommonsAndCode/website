@@ -124,3 +124,11 @@ Our goal: to shape the digital world from the human perspective, to anchor it in
 **Together. Digitally. European.** 
 
 Commons & Code e.&nbsp;V. -- Association for digitalisation for the common good with municipal impact and a European perspective.
+
+## Download
+
+{{< download href="/downloads/2025-10-13-Gründungserklärung_EN.pdf">}}
+Download as PDF
+{{< /download >}}
+
+

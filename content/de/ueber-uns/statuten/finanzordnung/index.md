@@ -33,3 +33,10 @@ Gemäß § 3 Abs. 5 der Satzung beschließt die Mitgliederversammlung folgende F
 
 Diese Finanzordnung tritt am Tage ihrer Beschlussfassung in Kraft.
 
+## Download
+
+{{< download href="/downloads/2025-10-13-Finanzordnung.pdf">}}
+Als PDF Herunterladen
+{{< /download >}}
+
+

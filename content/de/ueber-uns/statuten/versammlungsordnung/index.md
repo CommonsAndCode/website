@@ -78,3 +78,9 @@ Diese Versammlungsordnung gilt für alle ordentlichen und außerordentlichen Mit
 ## § 8 Inkrafttreten
 
 Diese Versammlungsordnung tritt am Tage ihrer Beschlussfassung in Kraft.
+
+## Download
+
+{{< download href="/downloads/2025-10-13-Versammlungsordnung.pdf">}}
+Als PDF Herunterladen
+{{< /download >}}

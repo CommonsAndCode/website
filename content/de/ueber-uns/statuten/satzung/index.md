@@ -193,3 +193,10 @@ Werden Vorstandsmitglieder aufgrund ihrer Vorstandstätigkeit von Dritten in Ans
 
 Bei Auflösung oder Aufhebung des Vereins oder bei Wegfall steuerbegünstigter Zwecke fällt sein Vermögen an die Gesellschaft für Freiheitsrechte e.V., Berlin, zwecks Verwendung für die Förderung von Wissenschaft und Forschung und der Förderung des bürgerschaftlichen Engagements.
 Sollte die Gesellschaft für Freiheitsrechte e.V. zum Zeitpunkt der Auflösung nicht mehr existieren oder die Gemeinnützigkeit verloren haben, bestimmt die Mitgliederversammlung eine andere steuerbegünstigte Körperschaft, die das Vermögen unmittelbar und ausschließlich für die Förderung von Wissenschaft und Forschung und der Förderung des bürgerschaftlichen Engagements zu verwenden hat.
+
+## Download
+
+{{< download href="/downloads/2025-10-13-Satzung.pdf">}}
+Als PDF Herunterladen
+{{< /download >}}
+

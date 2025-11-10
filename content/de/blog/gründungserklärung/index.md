@@ -136,3 +136,10 @@ Unser Ziel: Die digitale Lebenswelt vom Menschen her zu gestalten, in den Kommun
 **Gemeinsam. Digital. Europäisch.**
 
 *Commons & Code e.V. – Verein für gemeinwohlorientierte Digitalisierung mit kommunaler Wirkung und europäischer Perspektive.*
+
+## Download
+
+{{< download href="/downloads/2025-10-13-Gründungserklärung.pdf">}}
+Als PDF Herunterladen
+{{< /download >}}
+

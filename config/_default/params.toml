@@ -21,6 +21,7 @@ rssnext = { }
 advertisement = { }
 smartTOC = true
 highlightCurrentMenuArea = false
+mainSections = ["blog"]
 
 [verification]
 fediverse = "@CommonsAndCode@eupolicy.social"
@@ -41,7 +42,7 @@ showRecent = true
 showRecentItems = "5"
 showMoreLink = false
 showMoreLinkDest = "/blog/"
-cardView = true
+cardView = false
 cardViewScreenWidth = false
 layoutBackgroundBlur = false
 disableHeroImageFilter = false

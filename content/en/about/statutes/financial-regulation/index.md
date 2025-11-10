@@ -2,7 +2,7 @@
 title: "Commons & Code e.&nbsp;V. Financial Regulation"
 date: 2025-10-13T11:51:00+02:00
 description: "Financial Regulation of Commons & Code e.&nbsp;V."
-translationKey: "satzung"
+translationKey: "finanzordnung"
 authors:
   - "foundingassembly"
 ---

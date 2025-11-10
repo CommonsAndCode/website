@@ -7,8 +7,6 @@ authors:
   - "gruendungsversammlung"
 ---
 
-# Versammlungsordnung Commons & Code e.&nbsp;V.
-
 Gemäß § 7 Abs. 8 der Satzung beschließt die Mitgliederversammlung folgende Versammlungsordnung:
 
 # § 1 Geltungsbereich

@@ -8,4 +8,5 @@ cascade:
   showAuthor: true
   showAuthorsBadges : false
   showAuthorBottom: true
+  showWordCount: false
 ---

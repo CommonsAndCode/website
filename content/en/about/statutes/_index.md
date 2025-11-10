@@ -11,6 +11,4 @@ cascade:
   showTableOfContents: true
 ---
 
-This section contains translations of all texts regulating our internal structure.
-
-Please note that only the German original texts are legally relevant.
+Please note that the following texts are translations and only the [German original texts](/de/ueber-uns/statuten/) are legally relevant.

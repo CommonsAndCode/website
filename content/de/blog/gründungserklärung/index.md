@@ -9,7 +9,7 @@ summary: "Die digitale und die physische Welt sind untrennbar miteinander verwob
 showAuthor: false
 ---
 
-Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung.
+{{< lead >}}Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung.{{< /lead >}}
 
 ## Wer wir sind
 

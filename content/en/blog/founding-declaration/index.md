@@ -9,7 +9,7 @@ summary: "The digital and physical worlds are inextricably intertwined. Policy f
 showAuthor: false
 ---
 
-European Think-and-Do-Tank for Digitalisation for the Common Good.
+{{< lead >}}European Think-and-Do-Tank for Digitalisation for the Common Good.{{< /lead >}}
 
 ## Who we are
 

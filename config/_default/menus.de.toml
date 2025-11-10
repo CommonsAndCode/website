@@ -41,6 +41,13 @@ weight = 3
 # identifier = "C3QSTdUzYn"
 # weight = 9_999
 
+[[main]]
+name = "Mitglied werden"
+pre = "wand-magic-sparkles"
+pageRef = "mitglied-werden"
+identifier = "ULBwdVXPAs"
+weight = 4
+
 [[footer]]
 none = "none"
 

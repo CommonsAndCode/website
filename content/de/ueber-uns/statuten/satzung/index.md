@@ -137,11 +137,9 @@ Hat im ersten Wahlgang kein\*e Kandidat\*in die Mehrheit der abgegebenen gültig
 ## § 8 Vorstand
 
 1. Der Vorstand besteht aus
-
-1. zwei gleichberechtigten Vorsitzenden unterschiedlichen Geschlechts;
-1. dem\*der Schatzmeister\*in;
-1. einer von der Mitgliederversammlung festzulegenden Anzahl an weiteren Vorstandsmitgliedern, mindestens jedoch zwei.
-
+   1. zwei gleichberechtigten Vorsitzenden unterschiedlichen Geschlechts;
+   1. dem\*der Schatzmeister\*in;
+   1. einer von der Mitgliederversammlung festzulegenden Anzahl an weiteren Vorstandsmitgliedern, mindestens jedoch zwei.
 1. Vertretungsberechtigt sind je zwei Vorstandsmitglieder aus dem Kreis der Vorsitzenden und des\*der Schatzmeister\*in gemeinsam.
 Durch Beschluss der Mitgliederversammlung können Vorstandsmitglieder von den Beschränkungen des § 181 BGB befreit werden.
 

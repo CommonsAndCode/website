@@ -2,6 +2,7 @@
 title: "Statutes"
 description: "Learn about about our internal regulations & statutes"
 translationKey: "statutes"
+cardView: true
 cascade:
   showReadingTime: false
   showAuthor: true

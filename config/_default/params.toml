@@ -1,7 +1,7 @@
 colorScheme = "38c0c0"
 defaultAppearance = "light"
 autoSwitchAppearance = true
-enableA11y = true
+enableA11y = false
 enableSearch = true
 enableCodeCopy = true
 replyByEmail = false
@@ -21,7 +21,8 @@ rssnext = { }
 advertisement = { }
 smartTOC = true
 highlightCurrentMenuArea = false
-mainSections = ["blog"]
+mainSections = [ "blog" ]
+smartTOCHideUnfocusedChildren = true
 
 [verification]
 fediverse = "@CommonsAndCode@eupolicy.social"

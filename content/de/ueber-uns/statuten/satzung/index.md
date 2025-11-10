@@ -7,7 +7,7 @@ authors:
   - "gruendungsversammlung"
 ---
 
-# § 1 Name, Sitz und Geschäftsjahr
+## § 1 Name, Sitz und Geschäftsjahr
 
 1. Der Verein trägt den Namen Commons & Code.
 Er soll in das Vereinsregister eingetragen werden.
@@ -17,7 +17,7 @@ Nach der Eintragung führt er den Rechtsformzusatz „e. V.“ im Namen.
 
 1. Der Verein hat seinen Sitz in Leipzig.
 
-# § 2 Zweck des Vereins, Gemeinnützigkeit
+## § 2 Zweck des Vereins, Gemeinnützigkeit
 
 1. Der Verein verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne des Abschnitts „Steuerbegünstigte Zwecke” der Abgabenordnung.
 
@@ -35,7 +35,7 @@ Mittel des Vereins dürfen nur für die satzungsmäßigen Zwecke verwendet werde
 Die Mitglieder erhalten keine Zuwendungen aus Mitteln des Vereins.
 Es darf keine Person durch Ausgaben, die dem Zweck des Vereins fremd sind, oder durch unverhältnismäßig hohe Vergütungen begünstigt werden.
 
-# § 3 Mitgliedschaft und Mitgliedsbeiträge
+## § 3 Mitgliedschaft und Mitgliedsbeiträge
 
 1. Mitglied des Vereins kann jede natürliche Person, die das 14\. Lebensjahr vollendet hat, sowie jede juristische Person, welche die Ziele des Vereins unterstützt, werden.
 
@@ -64,21 +64,21 @@ Dem Mitglied ist vor seinem Ausschluss Gelegenheit zur Anhörung zu geben.
 Das Mitglied kann gegen den Ausschluss innerhalb einer Frist von einem Monat nach dem Zugang der Ausschlusserklärung die nächste ordentliche Mitgliederversammlung anrufen, die dann abschließend entscheidet.
 Der Ausschluss aufgrund nicht geleisteter Mitgliedsbeiträge wird in der Finanzordnung geregelt.
 
-# § 4 Rechte und Pflichten der Mitglieder
+## § 4 Rechte und Pflichten der Mitglieder
 
 1. Mit dem Antrag auf Mitgliedschaft erkennen die Mitglieder den Inhalt der Satzung und die sonstigen von der Mitgliederversammlung beschlossenen Vereinsordnungen an.
 Die Mitglieder sind verpflichtet, die Ziele und Interessen des Vereins zu unterstützen sowie die Beschlüsse und Anordnungen der Vereinsorgane zu befolgen.
 
 1. Die Mitglieder sind verpflichtet, dem Vorstand eine ladungsfähige postalische Anschrift sowie eine E-Mail-Adresse mitzuteilen und den Vorstand über jede Änderung ihres Namens und/oder ihrer Adressdaten unverzüglich zu informieren.
 
-# § 5 Organe
+## § 5 Organe
 
 Die Organe des Vereins sind
 
 1. die Mitgliederversammlung;
 1. der Vorstand.
 
-# § 6 Ordentliche Mitgliederversammlung
+## § 6 Ordentliche Mitgliederversammlung
 
 1. Die Mitgliederversammlung findet mindestens einmal jährlich statt.
 
@@ -126,7 +126,7 @@ Hat im ersten Wahlgang kein\*e Kandidat\*in die Mehrheit der abgegebenen gültig
     1. die Beschlussfassung über Finanzordnung und Versammlungsordnung sowie über Satzungsänderungen und die Auflösung des Vereins;
     1. alle weiteren ihr durch Gesetz oder diese Satzung zugewiesenen Aufgaben.
 
-# § 7 Außerordentliche Mitgliederversammlung
+## § 7 Außerordentliche Mitgliederversammlung
 
 1. Eine außerordentliche Mitgliederversammlung findet statt, wenn das Interesse des Vereins es erfordert oder wenn ein Fünftel der Mitglieder es schriftlich unter Angabe der Gründe beim Vorstand beantragt.
 
@@ -134,7 +134,7 @@ Hat im ersten Wahlgang kein\*e Kandidat\*in die Mehrheit der abgegebenen gültig
 
 1. Die Einladungsfrist kann in dringenden Fällen auf eine Woche verkürzt werden, wenn dies zur Wahrung der Vereinsinteressen zwingend erforderlich ist.
 
-# § 8 Vorstand
+## § 8 Vorstand
 
 1. Der Vorstand besteht aus
 
@@ -189,7 +189,7 @@ Bei Stimmengleichheit ist ein Beschluss abgelehnt.
 1. Die Vorstandsmitglieder haften dem Verein gegenüber nur für vorsätzliches oder grob fahrlässiges Verhalten.
 Werden Vorstandsmitglieder aufgrund ihrer Vorstandstätigkeit von Dritten in Anspruch genommen, stellt der Verein das betroffene Mitglied des Vorstands von diesen Ansprüchen frei, sofern das Vorstandsmitglied nicht vorsätzlich oder grob fahrlässig handelte.
 
-# § 9 Auflösung des Vereins
+## § 9 Auflösung des Vereins
 
 Bei Auflösung oder Aufhebung des Vereins oder bei Wegfall steuerbegünstigter Zwecke fällt sein Vermögen an die Gesellschaft für Freiheitsrechte e.V., Berlin, zwecks Verwendung für die Förderung von Wissenschaft und Forschung und der Förderung des bürgerschaftlichen Engagements.
 Sollte die Gesellschaft für Freiheitsrechte e.V. zum Zeitpunkt der Auflösung nicht mehr existieren oder die Gemeinnützigkeit verloren haben, bestimmt die Mitgliederversammlung eine andere steuerbegünstigte Körperschaft, die das Vermögen unmittelbar und ausschließlich für die Förderung von Wissenschaft und Forschung und der Förderung des bürgerschaftlichen Engagements zu verwenden hat.

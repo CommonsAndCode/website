@@ -7,6 +7,8 @@ cascade:
   showAuthor: true
   showAuthorsBadges : false
   showAuthorBottom: true
+  showWordCount: false
+  showTableOfContents: true
 ---
 
 This section contains translations of all texts regulating our internal structure.

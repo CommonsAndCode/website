@@ -19,7 +19,7 @@ selineAnalytics = { }
 buymeacoffee = { }
 rssnext = { }
 advertisement = { }
-smartTOC = ""
+smartTOC = true
 highlightCurrentMenuArea = false
 
 [verification]

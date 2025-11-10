@@ -11,7 +11,7 @@ showAuthor: false
 
 European Think-and-Do-Tank for Digitalisation for the Common Good.
 
-# Who we are
+## Who we are
 
 The digital and physical worlds are inextricably intertwined. Policy for this new reality must be more than the mere digitalisation of outdated processes. It must actively shape the reality of people's lives—democratically, sustainably and in the European spirit.
 
@@ -21,7 +21,7 @@ We don't just develop concepts, we implement them—hence ‘think-and-do’. We
 
 **We think European, act local—and stand for a digital future that overcomes platform capitalism and realises digital sovereignty for all.**
 
-# Our Vision
+## Our Vision
 
 Digital policy is more than digitalisation—it is the conscious shaping of a reality in which analogue and digital worlds interact symbiotically. **We understand digital policy as a comprehensive transformation policy**: as democracy, human rights, security, climate, European and social policy at the same time.
 
@@ -39,7 +39,7 @@ Commons & Code stands for a digital transformation that:
 
 We are shaping a digital society that is open, free, fair, inclusive, sustainable and European sovereign.
 
-# The challenge: between big tech and government failure
+## The challenge: between big tech and government failure
 
 The digital transformation poses immense challenges for local authorities in particular—**while at the same time anti-democratic forces and platform capitalism are threatening our democracy**. We are observing critical system failures:
 
@@ -53,7 +53,7 @@ The digital transformation poses immense challenges for local authorities in par
 
 **Successful progressive approaches** from other European countries—from Estonia's cyber-resilient digital infrastructure to Barcelona's participatory budgeting and Amsterdam's algorithm register—remain unutilised, while authoritarian surveillance technologies are uncritically adopted.
 
-# Our Approach: Build bridges, implement locally
+## Our Approach: Build bridges, implement locally
 
 Commons & Code closes these gaps through well-founded translation and implementation work, which is divided into four fields of action: 
 
@@ -65,7 +65,7 @@ Commons & Code closes these gaps through well-founded translation and implementa
 
 4. **Realisation:** We support the practical implementation after the strategy has been developed. We develop concrete roadmaps, support the selection of open source solutions and work with local authorities to identify potential funding programmes (national and European) to facilitate financial implementation. We also empower local stakeholders to take the digital transformation into their own hands.
 
-# Our Principles: Commons & Code
+## Our Principles: Commons & Code
 
 Our name speaks for itself:
 
@@ -73,7 +73,7 @@ Our name speaks for itself:
 
 **Code**: We believe in the power of well-crafted code—be it software or legal code. We bring the technical expertise to create robust, secure and sustainable solutions that work in municipal practice. We bring technical expertise to create robust, secure, democratic and climate-friendly solutions.
 
-# Our fields of work
+## Our fields of work
 
 **Municipal digital strategies:** Development of **open-source-based models** for various municipal sizes and **liberation from vendor lock-in**.
 
@@ -87,7 +87,7 @@ Our name speaks for itself:
 
 **Anti-surveillance & fundamental rights: Active resistance against surveillance capitalism** and development of **privacy-by-design alternatives.**
 
-# Our Values
+## Our Values
 
 **Digital justice:** Digitalisation must reduce inequality, not increase it—and open up equal opportunities for everyone to participate.
 
@@ -101,7 +101,7 @@ Our name speaks for itself:
 
 **Transformative pragmatism:** We do not develop utopian concepts for the drawer, but radical but realisable strategies for systemic change.
 
-# Participate
+## Participate
 
 Commons & Code thrives on the commitment of its members and partners. We are looking for: 
 
@@ -115,7 +115,7 @@ European thinkers who want to act locally and take global responsibility.
 
 We invite everyone who not only wants to discuss pro-European, democratic and evidence-based digital policy, but also wants to shape it—locally, European and future-orientated. 
 
-# Closing remarks
+## Closing remarks
 
 We, the founding members of Commons & Code e. V., have joined forces to shape the digital future actively, responsibly and for the common good. 
 

@@ -1,5 +1,5 @@
 ---
-title: "Assembly Regulations Commons & Code e.&nbsp;V."
+title: "Commons & Code e.&nbsp;V. Assembly Regulations"
 date: 2025-10-13T12:58:00+02:00
 description: "Assembly Regulations of Commons & Code e.&nbsp;V."
 translationKey: "versammlungsordnung"

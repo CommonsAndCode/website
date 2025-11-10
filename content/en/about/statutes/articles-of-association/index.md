@@ -1,5 +1,5 @@
 ---
-title: "Articles of Association Commons & Code e.&nbsp;V."
+title: "Commons & Code e.&nbsp;V. Articles of Association"
 date: 2025-10-13T11:51:00+02:00
 description: "Articles of Association of Commons & Code e.&nbsp;V."
 translationKey: "satzung"

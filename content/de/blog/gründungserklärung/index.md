@@ -86,7 +86,7 @@ Unser Name ist unser Programm:
 
 **Anti-Surveillance & Grundrechte**: Aktiver Widerstand gegen Überwachungskapitalismus und Aufbau von privacy-by-design Alternativen.
 
-## Wie wir arbeiten:
+## Wie wir arbeiten
 
 **Open Source & Open Data First: Radikale Transparenz** und freie Nutzbarkeit aller Ergebnisse – als Gegenmodell zu proprietären Lösungen.
 

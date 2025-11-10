@@ -1,0 +1,4 @@
+Contact: mailto:contacts@commons-and-code.eu
+Expires: 2025-12-31T23:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://commons-and-code.eu/.well-known/security.txt

@@ -11,3 +11,11 @@ isoCode = "de"
 rtl = false
 dateFormat = "02. January 2006"
 description = "Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung"
+
+[params.author]
+name = "Commons & Code"
+headline = "Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung"
+links = [
+    { mastodon = "https://eupolicy.social/@CommonsAndCode" },
+    { envelope = "mailto:contact@commons-and-code.eu" },
+]

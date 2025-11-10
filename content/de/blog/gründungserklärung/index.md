@@ -6,6 +6,7 @@ description: "Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digital
 tags: ["example", "tag"]
 translationKey: "founding-declaration"
 summary: "Die digitale und die physische Welt sind untrennbar miteinander verwoben. Politik für diese neue Realität muss mehr sein als die bloße Digitalisierung veralteter Prozesse. Sie muss die Lebenswirklichkeit der Menschen aktiv gestalten – demokratisch, nachhaltig und im europäischen Geist."
+showAuthor: false
 ---
 
 Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung.
@@ -135,10 +136,3 @@ Unser Ziel: Die digitale Lebenswelt vom Menschen her zu gestalten, in den Kommun
 **Gemeinsam. Digital. Europäisch.**
 
 *Commons & Code e.V. – Verein für gemeinwohlorientierte Digitalisierung mit kommunaler Wirkung und europäischer Perspektive.*
-
-📧 contact@commons-and-code.eu 
-
-🌍 [www.commons-and-code.eu](https://www.commons-and-code.eu) 
-
-🐘 [@CommonsAndCode@eupolicy.social](https://eupolicy.social/@CommonsAndCode)
-

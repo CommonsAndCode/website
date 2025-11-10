@@ -6,6 +6,7 @@ description: "European Think-and-Do-Tank for Digitalisation for the Common Good"
 tags: ["example", "tag"]
 translationKey: "founding-declaration"
 summary: "The digital and physical worlds are inextricably intertwined. Policy for this new reality must be more than the mere digitalisation of outdated processes. It must actively shape the reality of people's lives—democratically, sustainably and in the European spirit."
+showAuthor: false
 ---
 
 European Think-and-Do-Tank for Digitalisation for the Common Good.
@@ -123,9 +124,3 @@ Our goal: to shape the digital world from the human perspective, to anchor it in
 **Together. Digitally. European.** 
 
 Commons & Code e.&nbsp;V. -- Association for digitalisation for the common good with municipal impact and a European perspective.
-
-📧 contact@commons-and-code.eu 
-
-🌍 [www.commons-and-code.eu](https://www.commons-and-code.eu) 
-
-🐘 [@CommonsAndCode@eupolicy.social](https://eupolicy.social/@CommonsAndCode)

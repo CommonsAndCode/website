@@ -1,5 +1,5 @@
 ---
-title: "Statutes"
+title: "Statutes & Resolutions"
 description: "Learn about about our internal regulations & statutes"
 translationKey: "statutes"
 cardView: true

@@ -8,7 +8,6 @@ cascade:
   showAuthorsBadges : false
   showAuthorBottom: true
   showWordCount: false
-  showTableOfContents: true
 ---
 
 Please note that the following texts are translations and only the [German original texts](/de/ueber-uns/statuten/) are legally relevant.

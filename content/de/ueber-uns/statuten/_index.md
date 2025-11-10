@@ -9,5 +9,4 @@ cascade:
   showAuthorsBadges : false
   showAuthorBottom: true
   showWordCount: false
-  showTableOfContents: true
 ---

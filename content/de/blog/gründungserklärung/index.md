@@ -10,7 +10,7 @@ summary: "Die digitale und die physische Welt sind untrennbar miteinander verwob
 
 Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung.
 
-# Wer wir sind
+## Wer wir sind
 
 Die digitale und die physische Welt sind untrennbar miteinander verwoben. Politik für diese neue Realität muss mehr sein als die bloße Digitalisierung veralteter Prozesse. Sie muss die Lebenswirklichkeit der Menschen aktiv gestalten – **demokratisch, nachhaltig und im europäischen Geist.**
 
@@ -20,7 +20,7 @@ Wir entwickeln nicht nur Konzepte, sondern setzen sie um – daher "Think-and-Do
 
 **Wir denken europäisch, handeln lokal – und stehen für eine digitale Zukunft, die Plattformkapitalismus überwindet und digitale Souveränität für alle verwirklicht.**
 
-# Unsere Vision
+## Unsere Vision
 
 Digitalpolitik ist mehr als Digitalisierung – sie ist die bewusste Gestaltung einer Lebensrealität, in der analoge und digitale Welten symbiotisch zusammenwirken. **Wir verstehen Digitalpolitik als umfassende Transformationspolitik:** als Demokratie-, Menschenrechts-, Sicherheits-, Klima-, Europa- und Sozialpolitik zugleich.
 
@@ -38,7 +38,7 @@ Commons & Code steht für eine digitale Transformation, die:
 
 Wir gestalten eine digitale Gesellschaft, die offen, frei, gerecht, nachhaltig und europäisch souverän ist.
 
-# Die Herausforderung: Zwischen Big Tech und Behördenversagen
+## Die Herausforderung: Zwischen Big Tech und Behördenversagen
 
 Die digitale Transformation stellt insbesondere Kommunen vor immense Herausforderungen – **während gleichzeitig antidemokratische Kräfte und Plattformkapitalismus unsere Demokratie bedrohen.** Wir beobachten kritische Systemfehler:
 
@@ -52,7 +52,7 @@ Die digitale Transformation stellt insbesondere Kommunen vor immense Herausforde
 
 **Erfolgreiche progressive Ansätze** aus anderen europäischen Ländern – von Estlands cyber-resilienter digitaler Infrastruktur über Barcelonas Participatory Budgeting bis zu Amsterdams Algorithm Register – **bleiben ungenutzt, während autoritäre Überwachungstechnologien unkritisch übernommen werden.**
 
-# Unser Ansatz: Brücken bauen, vor Ort umsetzen
+## Unser Ansatz: Brücken bauen, vor Ort umsetzen
 
 Commons & Code schließt diese Lücken durch fundierte Übersetzungs- und Umsetzungsarbeit, die sich in vier Handlungsfelder aufteilt: 
 
@@ -64,7 +64,7 @@ Commons & Code schließt diese Lücken durch fundierte Übersetzungs- und Umsetz
 
 4. **Umsetzen**: Wir begleiten die praktische Implementierung nach der Strategieentwicklung. Wir entwickeln konkrete Roadmaps, unterstützen bei der Auswahl von Open-Source-Lösungen und identifizieren gemeinsam mit den Kommunen potenzielle Förderprogramme (national und europäisch), um die finanzielle Umsetzung zu erleichtern. Zudem befähigen wir Akteure vor Ort, die digitale Transformation selbst in die Hand zu nehmen.
 
-# Unsere Prinzipien: Commons & Code
+## Unsere Prinzipien: Commons & Code
 
 Unser Name ist unser Programm:
 
@@ -72,7 +72,7 @@ Unser Name ist unser Programm:
 
 **Code**: Wir glauben an die Kraft von gut gemachtem Code – sei es Software-Code oder ein politischer Regelungsrahmen. Wir bringen die technische Expertise ein, um robuste, sichere und nachhaltige Lösungen zu schaffen, die in der kommunalen Praxis funktionieren. Wir bringen technische Expertise ein, um **robuste, sichere, demokratische und klimaschonende** Lösungen zu schaffen.
 
-# Unsere Arbeitsfelder 
+## Unsere Arbeitsfelder 
 
 **Kommunale Digitalstrategien**: Entwicklung Open-Source-basierter Modelle für verschiedene Kommunalgrößen und Befreiung von Vendor Lock-In.
 
@@ -86,7 +86,7 @@ Unser Name ist unser Programm:
 
 **Anti-Surveillance & Grundrechte**: Aktiver Widerstand gegen Überwachungskapitalismus und Aufbau von privacy-by-design Alternativen.
 
-# Wie wir arbeiten:
+## Wie wir arbeiten:
 
 **Open Source & Open Data First: Radikale Transparenz** und freie Nutzbarkeit aller Ergebnisse – als Gegenmodell zu proprietären Lösungen.
 
@@ -98,7 +98,7 @@ Unser Name ist unser Programm:
 
 **Evidenzbasiert & werteorientiert**: Jede Empfehlung basiert auf **nachprüfbaren progressiven Erfahrungen und wird partizipativ entwickelt.**
 
-# Unsere Werte 
+## Unsere Werte 
 
 **Digitale Gerechtigkeit**: Digitalisierung muss **Ungleichheit abbauen, nicht verstärken** – und allen Menschen gleiche Teilhabechancen eröffnen.
 
@@ -112,7 +112,7 @@ Unser Name ist unser Programm:
 
 **Transformativer Pragmatismus**: Wir entwickeln keine utopischen Konzepte für die Schublade, sondern **radikale, aber umsetzbare Strategien für systemischen Wandel.**
 
-# Mitmachen 
+## Mitmachen 
 
 Commons & Code lebt vom Engagement seiner Mitglieder und Partner:innen. Wir suchen: 
 
@@ -126,7 +126,7 @@ Commons & Code lebt vom Engagement seiner Mitglieder und Partner:innen. Wir such
 
 Wir laden alle ein, die proeuropäische, demokratische und evidenzbasierte Digitalpolitik nicht nur diskutieren, sondern gestalten wollen – lokal, europäisch und zukunftsorientiert.  
 
-# Schlusswort 
+## Schlusswort 
 
 Wir, die Gründungsmitglieder von Commons & Code e.V., haben uns zusammengeschlossen, um die digitale Zukunft aktiv, verantwortungsvoll und gemeinwohlorientiert zu gestalten. 
 

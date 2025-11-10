@@ -1,6 +1,6 @@
 ---
 title: "Versammlungsordnung Commons & Code e. V."
-date: 2025-10-13
+date: 2025-10-13T12:58:00+02:00
 description: "Versammlungsordnung des Commons & Code e. V."
 translationKey: "versammlungsordnung"
 authors:

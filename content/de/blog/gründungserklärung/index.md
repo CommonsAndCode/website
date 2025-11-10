@@ -1,6 +1,6 @@
 ---
 title: "Gründungserklärung"
-date: 2025-10-13
+date: 2025-10-13T12:26:00+02:00
 draft: false
 description: "Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung"
 tags: ["example", "tag"]

@@ -1,6 +1,6 @@
 ---
 title: "Finanzordnung Commons & Code e.&nbsp;V."
-date: 2025-10-13
+date: 2025-10-13T13:25:00+02:00
 description: "Finanzordnung des Commons & Code e.&nbsp;V."
 translationKey: "finanzordnung"
 authors:

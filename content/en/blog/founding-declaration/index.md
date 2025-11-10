@@ -1,6 +1,6 @@
 ---
 title: "Founding Declaration"
-date: 2025-10-13
+date: 2025-10-13T12:26:00+02:00
 draft: false
 description: "European Think-and-Do-Tank for Digitalisation for the Common Good"
 tags: ["example", "tag"]

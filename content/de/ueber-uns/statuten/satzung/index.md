@@ -1,6 +1,6 @@
 ---
 title: "Satzung Commons & Code e. V."
-date: 2025-10-13
+date: 2025-10-13T11:51:00+02:00
 description: "Satzung des Commons & Code e. V."
 translationKey: "satzung"
 authors:

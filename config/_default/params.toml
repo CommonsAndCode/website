@@ -28,7 +28,7 @@ smartTOCHideUnfocusedChildren = true
 fediverse = "@CommonsAndCode@eupolicy.social"
 
 [header]
-layout = "basic"
+layout = "fixed"
 
 [footer]
 showMenu = true

@@ -38,8 +38,8 @@ showAppearanceSwitcher = false
 showScrollToTop = true
 
 [homepage]
-layout = "hero"
-showRecent = true
+layout = "background"
+showRecent = false
 showRecentItems = "5"
 showMoreLink = false
 showMoreLinkDest = "/blog/"

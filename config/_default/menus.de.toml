@@ -27,6 +27,13 @@ parent = "eaPwNHMpa5"
 identifier = "Iu3gwMIPQO"
 weight = 3
 
+[[main]]
+name = "Gründungserklärung"
+pageRef = "ueber-uns/gruendungserklaerung"
+parent = "eaPwNHMpa5"
+identifier = "SkaG3Qatwr"
+weight = 3
+
 # [[main]]
 # name = ""
 # pre = "mastodon"

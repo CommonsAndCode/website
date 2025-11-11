@@ -16,15 +16,22 @@ weight = 2
 
 [[main]]
 name = "About Us"
-pageRef = "about"
+pageRef = "about-us"
 identifier = "eaPwNHMpa5"
 weight = 3
 
 [[main]]
 name = "Statutes"
-pageRef = "about/statutes"
+pageRef = "about-us/statutes"
 parent = "eaPwNHMpa5"
 identifier = "Iu3gwMIPQO"
+weight = 3
+
+[[main]]
+name = "Founding Declaration"
+pageRef = "about-us/founding-declaration"
+parent = "eaPwNHMpa5"
+identifier = "SkaG3Qatwr"
 weight = 3
 
 # [[main]]

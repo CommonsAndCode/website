@@ -7,4 +7,5 @@ cascade:
   showAuthor: false
   showAuthorsBadges : false
   showWordCount: false
+  showDate: false
 ---

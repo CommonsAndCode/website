@@ -1,0 +1,233 @@
+<form class="membership-form" action="/submit-membership" method="post" novalidate>
+    <fieldset>
+        <legend>Personal Data</legend>
+
+        <div>
+            <label for="titel">Title</label>
+            <input type="text" id="titel" name="titel">
+        </div>
+
+        <div>
+            <label for="familienname">Last Name</label>
+            <input type="text" id="familienname" name="familienname" required>
+        </div>
+
+        <div>
+            <label for="vorname">First Name(s)</label>
+            <input type="text" id="vorname" name="vorname" required>
+        </div>
+
+        <div>
+            <label for="strasse">Street & House Number</label>
+            <input type="text" id="strasse" name="strasse_hausnummer" required>
+        </div>
+
+        <div>
+            <label for="plz_ort">Postal Code & City</label>
+            <input type="text" id="plz_ort" name="plz_ort" required>
+        </div>
+
+        <div>
+            <label for="geburtsdatum">Date of Birth</label>
+            <input type="date" id="geburtsdatum" name="geburtsdatum" required>
+        </div>
+
+        <div>
+            <label for="land">Country</label>
+            <input type="text" id="land" name="land">
+        </div>
+
+        <div>
+            <label for="email">E-Mail Address</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="telefon">Phone Number (optional)</label>
+            <input type="tel" id="telefon" name="telefon">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Membership Fee</legend>
+        <p class="info-text">The first membership fee is due pro-rata for the current year. The current month will be
+            charged in full.</p>
+
+        <div class="radio-group">
+            <div>
+                <input type="radio" id="zahlung_lastschrift" name="zahlungsart" value="lastschrift" required>
+                <label for="zahlung_lastschrift">I grant the association a direct debit mandate (see below) and
+                    authorize the board to collect the membership fee regularly, in accordance with the statutes, rules
+                    of procedure, and resolutions of the general meeting.</label>
+            </div>
+            <div>
+                <input type="radio" id="zahlung_ueberweisung" name="zahlungsart" value="ueberweisung" required>
+                <label for="zahlung_ueberweisung">I would like to transfer my membership fee myself or use another
+                    payment method. The board will contact me about this.</label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Amount of Membership Fee</legend>
+        <div class="radio-group">
+            <div>
+                <input type="radio" id="beitrag_10" name="beitragshoehe" value="10" required>
+                <label for="beitrag_10">10€ / month (120 € annual fee)</label>
+            </div>
+
+            <div>
+                <input type="radio" id="beitrag_hoeher" name="beitragshoehe" value="hoeher" required>
+                <label for="beitrag_hoeher">higher monthly fee:</label>
+                <input type="number" id="beitrag_hoeher_betrag" name="beitrag_hoeher_betrag" min="10.01" step="0.01"
+                    placeholder="e.g. 15.00"> €
+            </div>
+
+            <div>
+                <input type="radio" id="beitrag_reduziert" name="beitragshoehe" value="reduziert" required>
+                <label for="beitrag_reduziert">I apply for a reduced membership fee according to § 1 para. 2 of the
+                    financial regulations</label>
+
+                <label for="beitrag_reduziert_betrag" style="font-weight: normal; margin-top: 5px;">in the amount
+                    of:</label>
+                <input type="number" id="beitrag_reduziert_betrag" name="beitrag_reduziert_betrag" min="2.50"
+                    step="0.01" placeholder="min. 2.50"> € (min. 2.50 € / month)
+
+                <label for="beitrag_reduziert_grund" style="font-weight: normal; margin-top: 5px;">for the following
+                    reason:</label>
+                <textarea id="beitrag_reduziert_grund" name="beitrag_reduziert_grund"></textarea>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Payment Method of Membership Fee</legend>
+        <div class="radio-group">
+            <div>
+                <input type="radio" id="zahlweise_jaehrlich" name="zahlweise" value="jaehrlich" required>
+                <label for="zahlweise_jaehrlich">annually on 1.1.</label>
+            </div>
+            <div>
+                <input type="radio" id="zahlweise_quartal" name="zahlweise" value="quartalsweise" required>
+                <label for="zahlweise_quartal">quarterly on 1.1., 1.4., 1.7. and 1.10.</label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>For minor members</legend>
+        <p class="info-text">We hereby approve, in accordance with § 108 para. 1 BGB, our child's joining the
+            association Commons & Code e. V.</p>
+
+        <div>
+            <label for="vertreter1_name">Legal Guardian 1 (First & Last Name)</label>
+            <input type="text" id="vertreter1_name" name="vertreter1_name">
+        </div>
+        <div>
+            <label for="vertreter1_unterschrift">Legal Guardian 1 (Signature)</label>
+            <input type="text" id="vertreter1_unterschrift" name="vertreter1_unterschrift"
+                placeholder="Please enter full name for confirmation">
+        </div>
+
+        <div style="margin-top: 20px;">
+            <label for="vertreter2_name">Legal Guardian 2 (First & Last Name)</label>
+            <input type="text" id="vertreter2_name" name="vertreter2_name">
+        </div>
+        <div>
+            <label for="vertreter2_unterschrift">Legal Guardian 2 (Signature)</label>
+            <input type="text" id="vertreter2_unterschrift" name="vertreter2_unterschrift"
+                placeholder="Please enter full name for confirmation">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Data Protection & Confirmation</legend>
+
+        <div class="checkbox-group">
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Data Protection</label>
+            <p class="info-text">We would like to point out that for the purpose of member administration and support,
+                the data from this application will be stored, processed, and used in automated files.</p>
+            <div>
+                <input type="checkbox" id="datenschutz" name="datenschutz_zusage" value="zugestimmt" required>
+                <label for="datenschutz">I have taken note of the data protection notice and agree to the processing of
+                    my data.</label>
+            </div>
+        </div>
+
+        <div class="checkbox-group" style="margin-top: 25px;">
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Statutes & Regulations</label>
+            <p class="info-text">
+                I hereby confirm that I have taken note of the statutes, the financial regulations, and the rules of
+                assembly of the association "Commons & Code e. V.". I fully accept them by submitting my application. I
+                am aware that the current versions of the documents can be viewed on the association's website or will
+                be made available upon request.
+            </p>
+            <div>
+                <input type="checkbox" id="satzung" name="satzung_zusage" value="zugestimmt" required>
+                <label for="satzung">I have read the statutes and regulations and agree to them.</label>
+            </div>
+        </div>
+        <div style="margin-top: 25px;">
+            <label for="ort_datum">Place & Date</label>
+            <input type="text" id="ort_datum" name="ort_datum" required>
+        </div>
+
+        <div>
+            <label for="unterschrift_antrag">Applicant's Signature</label>
+            <input type="text" id="unterschrift_antrag" name="unterschrift_antrag"
+                placeholder="Please enter full name for confirmation" required>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>SEPA Direct Debit Mandate</legend>
+
+        <div class="sepa-info">
+            <p><strong>Payee's Name:</strong> Commons & Code e. V.</p>
+            <p><strong>Payee's Address:</strong> Cäcilienstraße 6, 04317 Leipzig</p>
+            <p><strong>Creditor Identifier:</strong> <code>DE35ZZZ00002851042</code></p>
+            <p><strong>Mandate Reference:</strong> [To be filled in by the association]</p>
+        </div>
+
+        <div>
+            <label for="sepa_name">Account Holder's Name</label>
+            <input type="text" id="sepa_name" name="sepa_kontoinhaber">
+        </div>
+
+        <div>
+            <label for="sepa_iban">IBAN</label>
+            <input type="text" id="sepa_iban" name="sepa_iban">
+        </div>
+
+        <div>
+            <label for="sepa_bic">SWIFT / BIC (if abroad)</label>
+            <input type="text" id="sepa_bic" name="sepa_bic">
+        </div>
+
+        <p class="info-text" style="margin-top: 15px;">I authorize the association Commons & Code e. V. to collect
+            payments from my account by direct debit. At the same time, I instruct my bank to honor the direct debits
+            drawn by the association Commons & Code e. V. on my account.</p>
+        <p class="info-text"><strong>Note:</strong> I can demand a refund of the debited amount within eight weeks,
+            beginning with the debit date. The terms and conditions agreed with my bank apply.</p>
+
+        <div>
+            <label for="sepa_ort_datum">Place & Date</label>
+            <input type="text" id="sepa_ort_datum" name="sepa_ort_datum">
+        </div>
+
+        <div>
+            <label for="sepa_unterschrift">Account Holder's Signature</label>
+            <input type="text" id="sepa_unterschrift" name="sepa_unterschrift"
+                placeholder="Please enter full name for confirmation">
+        </div>
+    </fieldset>
+
+    <button id="submit" type="submit" class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700">Submit Membership Application</button>
+    <div id="success-message-container" class="success-message" style="display: none;">
+        Thank you for your application! Your membership has been accepted and will be processed as soon as possible. As
+        the association is still very young, we ask for your patience. The board will contact you soon.
+    </div>
+</form>
+
+<script src="/js/membership-form.js" defer></script>
+{{- /* Trim EOF */ -}}

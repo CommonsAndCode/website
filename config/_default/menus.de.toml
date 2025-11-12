@@ -41,20 +41,6 @@ parent = "eaPwNHMpa5"
 identifier = "Iu3gwMIPQO"
 weight = 33
 
-# [[main]]
-# name = ""
-# pre = "mastodon"
-# url = "https://eupolicy.social/@CommonsAndCode"
-# identifier = "B379Ox9uVt"
-# weight = 9_999
-
-# [[main]]
-# name = ""
-# pre = "envelope"
-# url = "mailto:contact@commons-and-code.eu"
-# identifier = "C3QSTdUzYn"
-# weight = 9_999
-
 [[main]]
 name = "Mitglied werden"
 pageRef = "mitglied-werden"

@@ -1,0 +1,71 @@
+.membership-form fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.membership-form legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.membership-form label {
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 12rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.membership-form input[type="text"],
+.membership-form input[type="email"],
+.membership-form input[type="date"],
+.membership-form input[type="tel"],
+.membership-form input[type="number"],
+.membership-form textarea {
+    width: calc(100% - 16rem);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.membership-form .radio-group {
+    /*border: 1px solid #f00;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.membership-form .radio-group div {
+    margin-bottom: 10px;
+}
+
+.membership-form .radio-group label {
+    /*border: 1px solid #00f;*/
+    font-size: 0.9rem;
+    color: #555;
+    width: calc(100% - 30px);
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.membership-form .radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.checkbox-group label[for="datenschutz"],
+.checkbox-group label[for="satzung"] {
+    display: inline;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+.membership-form.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: left;
+}

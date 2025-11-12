@@ -57,10 +57,10 @@ weight = 33
 
 [[main]]
 name = "Become a Member"
-pre = "wand-magic-sparkles"
 pageRef = "become-a-member"
 identifier = "ULBwdVXPAs"
 weight = 4
+params.class = "!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
 
 [[footer]]
 none = "none"

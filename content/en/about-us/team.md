@@ -5,6 +5,7 @@ draft: true
 description: "Overview of the team of Commons & Code"
 translationKey: "team"
 showAuthor: false
+showDate: false
 ---
 
 # Board

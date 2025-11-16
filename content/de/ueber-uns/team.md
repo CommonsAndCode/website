@@ -5,6 +5,7 @@ draft: true
 description: "Übersicht über das Team von Commons & Code"
 translationKey: "team"
 showAuthor: false
+showDate: false
 ---
 
 # Vorstand

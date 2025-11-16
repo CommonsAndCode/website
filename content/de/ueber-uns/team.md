@@ -33,6 +33,9 @@ In seiner Freizeit ist er mit Hund und Familie im Wald oder am Strand anzutreffe
 
 ### Lisa Gerlach
 
-Lisa Gerlach ist Kommunalpolitikerin im Landschaftsverband Rheinland (LVR) und Richterin am Landesschiedsgericht von Volt NRW. Als Diplom-Kauffrau und Wirtschaftsberaterin mit sozialem Schwerpunkt engagiert sie sich für Gerechtigkeit, Kultur und Teilhabe. Sie ist alleinerziehende Mutter von zwei Katzen, einem Hund und drei erwachsenen Söhnen. Privat teilt sie sich einen Schrebergarten, in dem das Gemüse ausgesprochen eigensinnig wächst.
+Lisa Gerlach ist Kommunalpolitikerin im Landschaftsverband Rheinland (LVR) und Richterin am Landesschiedsgericht von Volt NRW.
+Als Diplom-Kauffrau und Wirtschaftsberaterin mit sozialem Schwerpunkt engagiert sie sich für Gerechtigkeit, Kultur und Teilhabe.
+Sie ist alleinerziehende Mutter von zwei Katzen, einem Hund und drei erwachsenen Söhnen.
+Privat teilt sie sich einen Schrebergarten, in dem das Gemüse ausgesprochen eigensinnig wächst.
 
 ### Sascha Mann

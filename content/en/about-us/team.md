@@ -33,6 +33,9 @@ In his free time, he can be found in the forest or on the beach with his dog and
 
 ### Lisa Gerlach
 
-Lisa Gerlach is a local politician in the Landschaftsverband Rheinland (LVR) and a judge at the regional arbitration court of Volt NRW. As a business graduate and consultant with a social focus, she is committed to justice, culture and participation. She is a single mum to two cats, a dog and three grown-up sons. In her private life, she shares an allotment garden where the vegetables grow in a decidedly wayward manner.
+Lisa Gerlach is a local politician in the Landschaftsverband Rheinland (LVR) and a judge at the regional arbitration court of Volt NRW.
+As a business graduate and consultant with a social focus, she is committed to justice, culture and participation.
+She is a single mum to two cats, a dog and three grown-up sons.
+In her private life, she shares an allotment garden where the vegetables grow in a decidedly wayward manner.
 
 ### Sascha Mann

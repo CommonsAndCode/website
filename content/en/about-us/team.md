@@ -22,6 +22,11 @@ showDate: false
 
 ### Lutz Plümpe (Chairperson)
 
+Lutz Plümpe is an expert citizen in the council of the federal city of Bonn, co-founder of the IT consultancy dgtl.company GmbH and an expert in cyber security.
+Whether in the committees of the city council, in the Cyber Security Cluster Bonn e.&nbsp;V., with his customers or as part of the Hacker School gGmbH, he is committed to dialogue across borders.
+Pragmatic solutions that help people and make life easier are his main focus.
+In his free time, he can be found in the forest or on the beach with his dog and family.
+
 ### Jan Peter König (Treasurer)
 
 ## Non-executive Board

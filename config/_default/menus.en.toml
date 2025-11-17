@@ -46,7 +46,9 @@ name = "Become a Member"
 pageRef = "become-a-member"
 identifier = "ULBwdVXPAs"
 weight = 4
-params.class = "!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+
+  [main.params]
+  class = "!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
 
 [[footer]]
 none = "none"
@@ -62,3 +64,9 @@ name = "Privacy Policy"
 pageRef = "privacy-policy"
 identifier = "h4xxUgWSKP"
 weight = 2
+
+[[footer]]
+name = "CC BY-SA 4.0"
+pageRef = "imprint"
+identifier = "sFPGmJ1uOb"
+weight = 3

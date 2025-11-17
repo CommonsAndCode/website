@@ -62,3 +62,9 @@ name = "Datenschutz"
 pageRef = "datenschutzerklärung"
 identifier = "h4xxUgWSKP"
 weight = 2
+
+[[footer]]
+name = "CC BY-SA 4.0"
+pageRef = "impressum"
+identifier = "sFPGmJ1uOb"
+weight = 3

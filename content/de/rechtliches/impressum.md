@@ -14,12 +14,18 @@ Cäcilienstraße 6<br>
 Vereinsregister: VR 8369<br>
 Registergericht: Amtsgericht Leipzig
 
-# Vertreten durch
+## Vertreten durch
 1. Jeweils zwei Vorstandsmitglieder vertreten den Verein gemeinsam.
 1. Vorsitzende Lutz Plümpe, Lea von Dömming, Schatzmeister Jan Peter König
 
-# Kontakt
+## Kontakt
 E-Mail: contact@commons-and-code.eu
 
-# Quelle
+## Lizenzhinweis
+
+Sofern nicht anderes angegeben, sind die Inhalte der Website unter der [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de)-Lizenz veröffentlicht.
+Fotos und persönliche Angaben sind von dieser Regelung ausgenommen.
+Als Urheber\*in sind Commons & Code e.&nbsp;V. sowie die Autor*innen der jeweiligen Texte anzugeben.
+
+## Quelle
 [eRecht24](https://www.e-recht24.de/)

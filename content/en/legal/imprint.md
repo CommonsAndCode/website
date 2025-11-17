@@ -14,12 +14,18 @@ Cäcilienstraße 6<br>
 Register of Associations: VR 8369<br>
 Register Court: Amtsgericht Leipzig
 
-# Represented by
+## Represented by
 1. Two members of the Board of Directors from each of the presidents and the Treasurer are entitled to be represented jointly.
 1. Chairpersons Lutz Plümpe, Lea von Dömming, Treasurer Jan Peter König
 
-# Contact
+## Contact
 E-Mail: contact@commons-and-code.eu
 
-# Source
+## License info
+
+Unless otherwise stated, the content of the website is published under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en) licence.
+Photos and personal details are excluded from this rule.
+Commons & Code e.&nbsp;V. and the authors of the respective texts must be named as the author.
+
+## Source
 [eRecht24](https://www.e-recht24.de/)

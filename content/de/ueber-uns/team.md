@@ -7,6 +7,7 @@ translationKey: "team"
 showAuthor: false
 showDate: false
 showPagination: false
+showReadingTime: false
 ---
 
 # Vorstand
@@ -27,6 +28,8 @@ Lutz Plümpe ist Sachkundiger Bürger in der Bundestadt Bonn, Co-Gründer der IT
 Ob in den Ausschüssen des Stadtrates, im Cyber Security Cluster Bonn e.&nbsp;V., bei seinen Kunden oder im Rahmen der Hacker School gGmbH engagiert er sich für den Austausch über Grenzen hinweg.
 Pragmatische Lösungen, die den Menschen helfen und das Leben erleichtern, stehen bei ihm im Vordergrund.
 In seiner Freizeit ist er mit Hund und Familie im Wald oder am Strand anzutreffen.
+
+[{{<icon "linkedin" >}}](https://www.linkedin.com/in/lutzpluempe/)
 
 ### Jan Peter König (Schatzmeister)
 

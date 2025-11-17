@@ -1,4 +1,9 @@
 {
     "name": "Lutz Plümpe",
-    "bio": "Chairperson"
+    "bio": "Chairperson",
+    "links": [
+        {
+            "linkedin": "https://www.linkedin.com/in/lutzpluempe/"
+        }
+    ]
 }

@@ -7,6 +7,7 @@ tags: ["example", "tag"]
 translationKey: "founding-declaration"
 summary: "The digital and physical worlds are inextricably intertwined. Policy for this new reality must be more than the mere digitalisation of outdated processes. It must actively shape the reality of people's lives—democratically, sustainably and in the European spirit."
 showAuthor: false
+showPagination: false
 ---
 
 {{< lead >}}European Think-and-Do-Tank for Digitalisation for the Common Good.{{< /lead >}}

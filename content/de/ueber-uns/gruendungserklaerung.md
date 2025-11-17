@@ -7,6 +7,7 @@ tags: ["example", "tag"]
 translationKey: "founding-declaration"
 summary: "Die digitale und die physische Welt sind untrennbar miteinander verwoben. Politik für diese neue Realität muss mehr sein als die bloße Digitalisierung veralteter Prozesse. Sie muss die Lebenswirklichkeit der Menschen aktiv gestalten – demokratisch, nachhaltig und im europäischen Geist."
 showAuthorBottom: true
+showPagination: false
 ---
 
 {{< lead >}}Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung.{{< /lead >}}

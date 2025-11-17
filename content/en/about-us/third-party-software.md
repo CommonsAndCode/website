@@ -7,6 +7,7 @@ translationKey: "third-party-software"
 showAuthor: false
 showDate: false
 showReadingTime: false
+showPagination: false
 ---
 
 ## Used Tools

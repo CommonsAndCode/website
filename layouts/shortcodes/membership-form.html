@@ -218,5 +218,6 @@
     </div>
 </form>
 
-<script src="/js/membership-form.js" defer></script>
+{{- $js := resources.Get "js/membership-form.js" | resources.Minify | resources.Fingerprint -}}
+<script src="{{ $js.RelPermalink }}" defer></script>
 {{- /* Trim EOF */ -}}

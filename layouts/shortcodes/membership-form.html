@@ -102,23 +102,36 @@
                 <label for="beitrag_10">{{ i18n "membership.fee_10" }}</label>
             </div>
 
-            <div>
-                <input type="radio" id="beitrag_hoeher" name="beitragshoehe" value="hoeher" required>
-                <label for="beitrag_hoeher">{{ i18n "membership.fee_higher" }}</label>
-                <input type="number" id="beitrag_hoeher_betrag" name="beitrag_hoeher_betrag" min="10.01" step="0.01"
-                    placeholder="{{ i18n "membership.fee_higher_placeholder" }}"> €
+            <div class="fee-option-with-input">
+                <div class="fee-option-main">
+                    <input type="radio" id="beitrag_hoeher" name="beitragshoehe" value="hoeher" required>
+                    <label for="beitrag_hoeher">{{ i18n "membership.fee_higher" }}</label>
+                </div>
+                <div class="fee-option-details">
+                    <input type="number" id="beitrag_hoeher_betrag" name="beitrag_hoeher_betrag" min="10.01" step="0.01"
+                        placeholder="{{ i18n "membership.fee_higher_placeholder" }}">
+                    <span class="currency">€</span>
+                </div>
             </div>
 
-            <div>
-                <input type="radio" id="beitrag_reduziert" name="beitragshoehe" value="reduziert" required>
-                <label for="beitrag_reduziert">{{ i18n "membership.fee_reduced" }}</label>
-
-                <label for="beitrag_reduziert_betrag" style="font-weight: normal; margin-top: 5px;">{{ i18n "membership.fee_reduced_amount" }}</label>
-                <input type="number" id="beitrag_reduziert_betrag" name="beitrag_reduziert_betrag" min="2.50"
-                    step="0.01" placeholder="{{ i18n "membership.fee_reduced_min" }}"> € {{ i18n "membership.fee_reduced_min_month" }}
-
-                <label for="beitrag_reduziert_grund" style="font-weight: normal; margin-top: 5px;">{{ i18n "membership.fee_reduced_reason" }}</label>
-                <textarea id="beitrag_reduziert_grund" name="beitrag_reduziert_grund"></textarea>
+            <div class="fee-option-with-input">
+                <div class="fee-option-main">
+                    <input type="radio" id="beitrag_reduziert" name="beitragshoehe" value="reduziert" required>
+                    <label for="beitrag_reduziert">{{ i18n "membership.fee_reduced" }}</label>
+                </div>
+                <div class="fee-option-details">
+                    <div class="fee-subfield">
+                        <label for="beitrag_reduziert_betrag">{{ i18n "membership.fee_reduced_amount" }}</label>
+                        <input type="number" id="beitrag_reduziert_betrag" name="beitrag_reduziert_betrag" min="2.50"
+                            step="0.01" placeholder="{{ i18n "membership.fee_reduced_min" }}">
+                        <span class="currency">€</span>
+                        <span class="fee-note">{{ i18n "membership.fee_reduced_min_month" }}</span>
+                    </div>
+                    <div class="fee-subfield">
+                        <label for="beitrag_reduziert_grund">{{ i18n "membership.fee_reduced_reason" }}</label>
+                        <textarea id="beitrag_reduziert_grund" name="beitrag_reduziert_grund"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
     </fieldset>

@@ -10,13 +10,13 @@ showPagination: false
 showReadingTime: false
 ---
 
-# Board
-
 {{< figure
     src="/img/2025-10-13-board.jpeg"
     alt="A picture of our board members after the founding assembly in Oct 2025."
     caption="Our board members after the founding assembly in Oct 2025. F.l.t.r.: Lea von Dömming, Sascha Mann, Jan Peter König, Lutz Plümpe, Lisa Gerlach."
 >}}
+
+# Board
 
 ## Executive Board
 
@@ -43,3 +43,17 @@ She is a single mum to two cats, a dog and three grown-up sons.
 In her private life, she shares an allotment garden where the vegetables grow in a decidedly wayward manner.
 
 ### Sascha Mann
+
+## Representative for Motivation of Members
+
+### Toni
+
+{{< figure
+    src="/img/2025-10-13-toni-sticker.png"
+    alt="A picture of Lisa's dog Toni wearing 3D-printed purple cat ears at the founding assembly in Oct 2025. Below there's a banner with the association's website commons-and-code.eu."
+    caption="Lisa's dog Toni at the founding assembly in Oct 2025."
+>}}
+
+Toni is the dog who is also half cat, or at least lives with them.
+He was born by the sea under palm trees and loves coconuts.
+At club meetings, he wants to be pet a lot and spreads good humour, just like at the founding meeting.

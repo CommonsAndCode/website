@@ -46,6 +46,14 @@
             <label for="telefon">Phone Number (optional)</label>
             <input type="tel" id="telefon" name="telefon">
         </div>
+
+        <div>
+            <label for="kommunikationssprache">Preferred Communication Language</label>
+            <select id="kommunikationssprache" name="kommunikationssprache" required>
+                <option value="de"{{- if eq .Page.Language.Lang "de" }} selected{{- end }}>German / Deutsch</option>
+                <option value="en"{{- if eq .Page.Language.Lang "en" }} selected{{- end }}>English</option>
+            </select>
+        </div>
     </fieldset>
 
     <fieldset>

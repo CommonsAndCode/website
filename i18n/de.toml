@@ -68,7 +68,7 @@ membership.sepa_place_date = "Ort & Datum"
 membership.sepa_signature = "Unterschrift Kontoinhaber*in"
 
 membership.submit_button = "Mitgliedsantrag absenden"
-membership.success_message = "Vielen Dank für Ihren Antrag! Ihre Mitgliedschaft wurde angenommen und wird so schnell wie möglich bearbeitet. Da der Verein noch sehr jung ist, bitten wir um Ihre Geduld. Der Vorstand wird sich in Kürze bei Ihnen melden."
+membership.success_message = "Vielen Dank für Ihren Antrag! Ihr Antrag auf Mitgliedschaft ist angekommen und wird so schnell wie möglich bearbeitet. Da der Verein noch sehr jung ist, bitten wir um Ihre Geduld. Der Vorstand wird sich in Kürze bei Ihnen melden."
 
 # Validierungsfehler
 membership.error_required = "ist ein Pflichtfeld."

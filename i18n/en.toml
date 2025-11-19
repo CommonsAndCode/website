@@ -68,7 +68,7 @@ membership.sepa_place_date = "Place & Date"
 membership.sepa_signature = "Account Holder's Signature"
 
 membership.submit_button = "Submit Membership Application"
-membership.success_message = "Thank you for your application! Your membership has been accepted and will be processed as soon as possible. As the association is still very young, we ask for your patience. The board will contact you soon."
+membership.success_message = "Thank you for your application! Your membership application has been received and will be processed as soon as possible. As the association is still very young, we ask for your patience. The board will contact you soon."
 
 # Validation errors
 membership.error_required = "is a required field."

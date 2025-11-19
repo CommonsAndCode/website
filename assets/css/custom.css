@@ -1,3 +1,15 @@
+.membership-form {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+@media (min-width: 1024px) {
+    .membership-form {
+        width: calc(100% + 20rem) !important;
+        max-width: calc(100% + 20rem) !important;
+    }
+}
+
 .membership-form fieldset {
     border: 1px solid #ccc;
     padding: 15px;
@@ -12,7 +24,7 @@
 .membership-form label {
     margin-bottom: 5px;
     display: inline-block;
-    width: 12rem;
+    width: 20rem;
     text-align: left;
     font-weight: bold;
 }
@@ -24,7 +36,7 @@
 .membership-form input[type="number"],
 .membership-form select,
 .membership-form textarea {
-    width: calc(100% - 16rem);
+    width: calc(100% - 24rem);
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;

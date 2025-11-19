@@ -28,4 +28,4 @@ Fotos und persönliche Angaben sind von dieser Regelung ausgenommen.
 Als Urheber\*in sind Commons & Code e.&nbsp;V. sowie die Autor*innen der jeweiligen Texte anzugeben.
 
 ## Quelle
-[eRecht24](https://www.e-recht24.de/)
+Basierend auf [eRecht24](https://www.e-recht24.de/), mit Erweiterungen durch Commons & Code e.&nbsp;V.

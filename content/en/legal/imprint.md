@@ -28,4 +28,4 @@ Photos and personal details are excluded from this rule.
 Commons & Code e.&nbsp;V. and the authors of the respective texts must be named as the author.
 
 ## Source
-[eRecht24](https://www.e-recht24.de/)
+Based on [eRecht24](https://www.e-recht24.de/) with expansions by Commons & Code e.&nbsp;V.

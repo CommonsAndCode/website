@@ -137,7 +137,9 @@ Key fields for pages:
 - Custom shortcodes added to project take precedence over theme defaults
 
 ## Critical Notes
+
 - ⚠️ Always maintain German/English content parity
 - ⚠️ Menu identifiers must match across language files for proper translation switching
 - ⚠️ Assets in `assets/` are processed; static files go in `static/`
 - ⚠️ The `public/` directory is generated; never edit directly
+- ⚠️ **German gender-neutral language**: Use `*` (Genderstern) for gender-inclusive forms (e.g., `Mitarbeiter*in`, `Antragsteller*in`), not `:`

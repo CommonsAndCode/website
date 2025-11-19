@@ -58,26 +58,40 @@
 }
 
 .membership-form .radio-group {
-    /*border: 1px solid #f00;*/
     display: flex;
     flex-direction: column;
 }
 
-.membership-form .radio-group div {
+.membership-form .radio-group > div {
     margin-bottom: 10px;
-}
-
-.membership-form .radio-group label {
-    /*border: 1px solid #00f;*/
-    font-size: 0.9rem;
-    color: #555;
-    width: calc(100% - 30px);
-    vertical-align: middle;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .membership-form .radio-group input[type="radio"] {
     margin-right: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.membership-form .radio-group label {
+    font-size: 0.9rem;
+    color: #555;
+    width: auto;
+    max-width: calc(100% - 30px);
+    vertical-align: middle;
+    margin-bottom: 0;
+    display: inline;
+    font-weight: normal;
+}
+
+.membership-form .radio-group input[type="number"] {
+    display: inline-block;
+    width: 150px;
+    min-width: 100px;
+    margin-left: 10px;
+    margin-right: 5px;
 }
 
 .checkbox-group label[for="datenschutz"],

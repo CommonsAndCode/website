@@ -30,6 +30,33 @@
     border-radius: 4px;
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .membership-form label {
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .membership-form input[type="text"],
+    .membership-form input[type="email"],
+    .membership-form input[type="date"],
+    .membership-form input[type="tel"],
+    .membership-form input[type="number"],
+    .membership-form textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .membership-form .radio-group label {
+        width: 100%;
+    }
+
+    .membership-form fieldset {
+        padding: 10px;
+    }
+}
+
 .membership-form .radio-group {
     /*border: 1px solid #f00;*/
     display: flex;

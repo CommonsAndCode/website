@@ -1,7 +1,7 @@
 ---
 title: "Our Team"
 date: 2025-11-12
-draft: true
+draft: false
 description: "Overview of the team of Commons & Code"
 translationKey: "team"
 showAuthor: false

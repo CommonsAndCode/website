@@ -1,239 +1,220 @@
 <form class="membership-form" action="/submit-membership" method="post" novalidate>
     <fieldset>
-        <legend>Personal Data</legend>
+        <legend>{{ i18n "membership.personal_data" }}</legend>
 
         <div>
-            <label for="titel">Title</label>
+            <label for="titel">{{ i18n "membership.title" }}</label>
             <input type="text" id="titel" name="titel">
         </div>
 
         <div>
-            <label for="familienname">Last Name</label>
+            <label for="familienname">{{ i18n "membership.last_name" }}</label>
             <input type="text" id="familienname" name="familienname" required>
         </div>
 
         <div>
-            <label for="vorname">First Name(s)</label>
+            <label for="vorname">{{ i18n "membership.first_name" }}</label>
             <input type="text" id="vorname" name="vorname" required>
         </div>
 
         <div>
-            <label for="strasse">Street & House Number</label>
+            <label for="strasse">{{ i18n "membership.street_house" }}</label>
             <input type="text" id="strasse" name="strasse_hausnummer" required>
         </div>
 
         <div>
-            <label for="plz_ort">Postal Code & City</label>
+            <label for="plz_ort">{{ i18n "membership.postal_city" }}</label>
             <input type="text" id="plz_ort" name="plz_ort" required>
         </div>
 
         <div>
-            <label for="geburtsdatum">Date of Birth</label>
+            <label for="geburtsdatum">{{ i18n "membership.date_of_birth" }}</label>
             <input type="date" id="geburtsdatum" name="geburtsdatum" required>
         </div>
 
         <div>
-            <label for="land">Country</label>
+            <label for="land">{{ i18n "membership.country" }}</label>
             <input type="text" id="land" name="land">
         </div>
 
         <div>
-            <label for="email">E-Mail Address</label>
+            <label for="email">{{ i18n "membership.email" }}</label>
             <input type="email" id="email" name="email" required>
         </div>
 
         <div>
-            <label for="telefon">Phone Number (optional)</label>
+            <label for="telefon">{{ i18n "membership.phone" }}</label>
             <input type="tel" id="telefon" name="telefon">
         </div>
 
         <div>
-            <label for="kommunikationssprache">Preferred Communication Language</label>
+            <label for="kommunikationssprache">{{ i18n "membership.communication_language" }}</label>
             <select id="kommunikationssprache" name="kommunikationssprache" required>
-                <option value="de"{{- if eq .Page.Language.Lang "de" }} selected{{- end }}>German / Deutsch</option>
-                <option value="en"{{- if eq .Page.Language.Lang "en" }} selected{{- end }}>English</option>
+                <option value="de"{{- if eq .Page.Language.Lang "de" }} selected{{- end }}>{{ i18n "membership.language_german" }}</option>
+                <option value="en"{{- if eq .Page.Language.Lang "en" }} selected{{- end }}>{{ i18n "membership.language_english" }}</option>
             </select>
         </div>
     </fieldset>
 
     <fieldset>
-        <legend>Membership Fee</legend>
-        <p class="info-text">The first membership fee is due pro-rata for the current year. The current month will be
-            charged in full.</p>
+        <legend>{{ i18n "membership.membership_fee" }}</legend>
+        <p class="info-text">{{ i18n "membership.fee_info" }}</p>
 
         <div class="radio-group">
             <div>
                 <input type="radio" id="zahlung_lastschrift" name="zahlungsart" value="lastschrift" required>
-                <label for="zahlung_lastschrift">I grant the association a direct debit mandate (see below) and
-                    authorize the board to collect the membership fee regularly, in accordance with the statutes, rules
-                    of procedure, and resolutions of the general meeting.</label>
+                <label for="zahlung_lastschrift">{{ i18n "membership.direct_debit" }}</label>
             </div>
             <div>
                 <input type="radio" id="zahlung_ueberweisung" name="zahlungsart" value="ueberweisung" required>
-                <label for="zahlung_ueberweisung">I would like to transfer my membership fee myself or use another
-                    payment method. The board will contact me about this.</label>
+                <label for="zahlung_ueberweisung">{{ i18n "membership.bank_transfer" }}</label>
             </div>
         </div>
     </fieldset>
 
     <fieldset>
-        <legend>Amount of Membership Fee</legend>
+        <legend>{{ i18n "membership.fee_amount" }}</legend>
         <div class="radio-group">
             <div>
                 <input type="radio" id="beitrag_10" name="beitragshoehe" value="10" required>
-                <label for="beitrag_10">10€ / month (120 € annual fee)</label>
+                <label for="beitrag_10">{{ i18n "membership.fee_10" }}</label>
             </div>
 
             <div>
                 <input type="radio" id="beitrag_hoeher" name="beitragshoehe" value="hoeher" required>
-                <label for="beitrag_hoeher">higher monthly fee:</label>
+                <label for="beitrag_hoeher">{{ i18n "membership.fee_higher" }}</label>
                 <input type="number" id="beitrag_hoeher_betrag" name="beitrag_hoeher_betrag" min="10.01" step="0.01"
-                    placeholder="e.g. 15.00"> €
+                    placeholder="{{ i18n "membership.fee_higher_placeholder" }}"> €
             </div>
 
             <div>
                 <input type="radio" id="beitrag_reduziert" name="beitragshoehe" value="reduziert" required>
-                <label for="beitrag_reduziert">I apply for a reduced membership fee according to § 1 para. 2 of the
-                    financial regulations</label>
+                <label for="beitrag_reduziert">{{ i18n "membership.fee_reduced" }}</label>
 
-                <label for="beitrag_reduziert_betrag" style="font-weight: normal; margin-top: 5px;">in the amount
-                    of:</label>
+                <label for="beitrag_reduziert_betrag" style="font-weight: normal; margin-top: 5px;">{{ i18n "membership.fee_reduced_amount" }}</label>
                 <input type="number" id="beitrag_reduziert_betrag" name="beitrag_reduziert_betrag" min="2.50"
-                    step="0.01" placeholder="min. 2.50"> € (min. 2.50 € / month)
+                    step="0.01" placeholder="{{ i18n "membership.fee_reduced_min" }}"> € {{ i18n "membership.fee_reduced_min_month" }}
 
-                <label for="beitrag_reduziert_grund" style="font-weight: normal; margin-top: 5px;">for the following
-                    reason:</label>
+                <label for="beitrag_reduziert_grund" style="font-weight: normal; margin-top: 5px;">{{ i18n "membership.fee_reduced_reason" }}</label>
                 <textarea id="beitrag_reduziert_grund" name="beitrag_reduziert_grund"></textarea>
             </div>
         </div>
     </fieldset>
 
     <fieldset>
-        <legend>Payment Method of Membership Fee</legend>
+        <legend>{{ i18n "membership.payment_method" }}</legend>
         <div class="radio-group">
             <div>
                 <input type="radio" id="zahlweise_jaehrlich" name="zahlweise" value="jaehrlich" required>
-                <label for="zahlweise_jaehrlich">annually on 1.1.</label>
+                <label for="zahlweise_jaehrlich">{{ i18n "membership.payment_annual" }}</label>
             </div>
             <div>
                 <input type="radio" id="zahlweise_quartal" name="zahlweise" value="quartalsweise" required>
-                <label for="zahlweise_quartal">quarterly on 1.1., 1.4., 1.7. and 1.10.</label>
+                <label for="zahlweise_quartal">{{ i18n "membership.payment_quarterly" }}</label>
             </div>
         </div>
     </fieldset>
 
     <fieldset>
-        <legend>For minor members</legend>
-        <p class="info-text">We hereby approve, in accordance with § 108 para. 1 BGB, our child's joining the
-            association Commons & Code e. V.</p>
+        <legend>{{ i18n "membership.minor_members" }}</legend>
+        <p class="info-text">{{ i18n "membership.minor_info" }}</p>
 
         <div>
-            <label for="vertreter1_name">Legal Guardian 1 (First & Last Name)</label>
+            <label for="vertreter1_name">{{ i18n "membership.guardian1_name" }}</label>
             <input type="text" id="vertreter1_name" name="vertreter1_name">
         </div>
         <div>
-            <label for="vertreter1_unterschrift">Legal Guardian 1 (Signature)</label>
+            <label for="vertreter1_unterschrift">{{ i18n "membership.guardian1_signature" }}</label>
             <input type="text" id="vertreter1_unterschrift" name="vertreter1_unterschrift"
-                placeholder="Please enter full name for confirmation">
+                placeholder="{{ i18n "membership.signature_placeholder" }}">
         </div>
 
         <div style="margin-top: 20px;">
-            <label for="vertreter2_name">Legal Guardian 2 (First & Last Name)</label>
+            <label for="vertreter2_name">{{ i18n "membership.guardian2_name" }}</label>
             <input type="text" id="vertreter2_name" name="vertreter2_name">
         </div>
         <div>
-            <label for="vertreter2_unterschrift">Legal Guardian 2 (Signature)</label>
+            <label for="vertreter2_unterschrift">{{ i18n "membership.guardian2_signature" }}</label>
             <input type="text" id="vertreter2_unterschrift" name="vertreter2_unterschrift"
-                placeholder="Please enter full name for confirmation">
+                placeholder="{{ i18n "membership.signature_placeholder" }}">
         </div>
     </fieldset>
 
     <fieldset>
-        <legend>Data Protection & Confirmation</legend>
+        <legend>{{ i18n "membership.data_protection" }}</legend>
 
         <div class="checkbox-group">
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Data Protection</label>
-            <p class="info-text">We would like to point out that for the purpose of member administration and support,
-                the data from this application will be stored, processed, and used in automated files.</p>
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">{{ i18n "membership.data_protection_title" }}</label>
+            <p class="info-text">{{ i18n "membership.data_protection_info" }}</p>
             <div>
                 <input type="checkbox" id="datenschutz" name="datenschutz_zusage" value="zugestimmt" required>
-                <label for="datenschutz">I have taken note of the data protection notice and agree to the processing of
-                    my data.</label>
+                <label for="datenschutz">{{ i18n "membership.data_protection_agree" }}</label>
             </div>
         </div>
 
         <div class="checkbox-group" style="margin-top: 25px;">
-            <label style="font-weight: bold; display: block; margin-bottom: 5px;">Statutes & Regulations</label>
-            <p class="info-text">
-                I hereby confirm that I have taken note of the statutes, the financial regulations, and the rules of
-                assembly of the association "Commons & Code e. V.". I fully accept them by submitting my application. I
-                am aware that the current versions of the documents can be viewed on the association's website or will
-                be made available upon request.
-            </p>
+            <label style="font-weight: bold; display: block; margin-bottom: 5px;">{{ i18n "membership.statutes_title" }}</label>
+            <p class="info-text">{{ i18n "membership.statutes_info" }}</p>
             <div>
                 <input type="checkbox" id="satzung" name="satzung_zusage" value="zugestimmt" required>
-                <label for="satzung">I have read the statutes and regulations and agree to them.</label>
+                <label for="satzung">{{ i18n "membership.statutes_agree" }}</label>
             </div>
         </div>
         <div style="margin-top: 25px;">
-            <label for="ort_datum">Place & Date</label>
+            <label for="ort_datum">{{ i18n "membership.place_date" }}</label>
             <input type="text" id="ort_datum" name="ort_datum" required>
         </div>
 
         <div>
-            <label for="unterschrift_antrag">Applicant's Signature</label>
+            <label for="unterschrift_antrag">{{ i18n "membership.applicant_signature" }}</label>
             <input type="text" id="unterschrift_antrag" name="unterschrift_antrag"
-                placeholder="Please enter full name for confirmation" required>
+                placeholder="{{ i18n "membership.signature_placeholder" }}" required>
         </div>
     </fieldset>
 
-    <fieldset>
-        <legend>SEPA Direct Debit Mandate</legend>
+        <fieldset>
+        <legend>{{ i18n "membership.sepa_mandate" }}</legend>
 
         <div class="sepa-info">
-            <p><strong>Payee's Name:</strong> Commons & Code e. V.</p>
-            <p><strong>Payee's Address:</strong> Cäcilienstraße 6, 04317 Leipzig</p>
-            <p><strong>Creditor Identifier:</strong> <code>DE35ZZZ00002851042</code></p>
-            <p><strong>Mandate Reference:</strong> [To be filled in by the association]</p>
+            <p><strong>{{ i18n "membership.sepa_payee_name" }}</strong> Commons & Code e. V.</p>
+            <p><strong>{{ i18n "membership.sepa_payee_address" }}</strong> Cäcilienstrae 6, 04317 Leipzig</p>
+            <p><strong>{{ i18n "membership.sepa_creditor_id" }}</strong> <code>DE35ZZZ00002851042</code></p>
+            <p><strong>{{ i18n "membership.sepa_mandate_ref" }}</strong> {{ i18n "membership.sepa_mandate_ref_value" }}</p>
         </div>
 
         <div>
-            <label for="sepa_name">Account Holder's Name</label>
+            <label for="sepa_name">{{ i18n "membership.sepa_account_holder" }}</label>
             <input type="text" id="sepa_name" name="sepa_kontoinhaber">
         </div>
 
         <div>
-            <label for="sepa_iban">IBAN</label>
+            <label for="sepa_iban">{{ i18n "membership.sepa_iban" }}</label>
             <input type="text" id="sepa_iban" name="sepa_iban">
         </div>
 
         <div>
-            <label for="sepa_bic">SWIFT / BIC (if abroad)</label>
+            <label for="sepa_bic">{{ i18n "membership.sepa_bic" }}</label>
             <input type="text" id="sepa_bic" name="sepa_bic">
         </div>
 
-        <p class="info-text" style="margin-top: 15px;">I authorize the association Commons & Code e. V. to collect
-            payments from my account by direct debit. At the same time, I instruct my bank to honor the direct debits
-            drawn by the association Commons & Code e. V. on my account.</p>
-        <p class="info-text"><strong>Note:</strong> I can demand a refund of the debited amount within eight weeks,
-            beginning with the debit date. The terms and conditions agreed with my bank apply.</p>
+        <p class="info-text" style="margin-top: 15px;">{{ i18n "membership.sepa_authorization" }}</p>
+        <p class="info-text"><strong>{{ i18n "membership.sepa_note" }}</strong> {{ i18n "membership.sepa_refund" }}</p>
 
         <div>
-            <label for="sepa_ort_datum">Place & Date</label>
+            <label for="sepa_ort_datum">{{ i18n "membership.sepa_place_date" }}</label>
             <input type="text" id="sepa_ort_datum" name="sepa_ort_datum">
         </div>
 
         <div>
-            <label for="sepa_unterschrift">Account Holder's Signature</label>
+            <label for="sepa_unterschrift">{{ i18n "membership.sepa_signature" }}</label>
             <input type="text" id="sepa_unterschrift" name="sepa_unterschrift"
-                placeholder="Please enter full name for confirmation">
+                placeholder="{{ i18n "membership.signature_placeholder" }}">
         </div>
     </fieldset>
 
-    <button id="submit" type="submit" class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700">Submit Membership Application</button>
+    <button id="submit" type="submit" class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700">{{ i18n "membership.submit_button" }}</button>
     <div id="success-message-container" class="success-message" style="display: none;">
-        Thank you for your application! Your membership has been accepted and will be processed as soon as possible. As
-        the association is still very young, we ask for your patience. The board will contact you soon.
+        {{ i18n "membership.success_message" }}
     </div>
 </form>
 

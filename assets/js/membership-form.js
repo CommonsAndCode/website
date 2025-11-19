@@ -199,6 +199,7 @@ form.addEventListener('submit', (event) => {
     document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
 
     if (errors.length > 0) {
+        let firstErrorField = null;
         errors.forEach(error => {
             const field = document.getElementById(error.field);
             if (field) {
@@ -207,8 +208,20 @@ form.addEventListener('submit', (event) => {
                 errorMessage.classList.add('error-message');
                 errorMessage.textContent = error.message;
                 field.parentNode.insertBefore(errorMessage, field.nextSibling);
+                
+                // Track the first error field
+                if (!firstErrorField) {
+                    firstErrorField = field;
+                }
             }
         });
+        
+        // Scroll to the first error field
+        if (firstErrorField) {
+            firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            firstErrorField.focus();
+        }
+        
         return;
     }
 

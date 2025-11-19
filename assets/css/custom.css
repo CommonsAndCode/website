@@ -195,6 +195,26 @@
     }
 }
 
+/* Disable submenu transitions for instant appearance */
+.nested-menu:hover + .menuhide {
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+}
+
+.menuhide:hover {
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+}
+
+.menuhide {
+    visibility: hidden;
+    opacity: 0;
+    transition: none;
+    z-index: 1000;
+}
+
 .checkbox-group label[for="datenschutz"],
 .checkbox-group label[for="satzung"] {
     display: inline;

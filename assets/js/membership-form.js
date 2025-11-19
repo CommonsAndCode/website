@@ -86,70 +86,94 @@ form.addEventListener('change', updateFormState);
 
 const validateForm = (data) => {
     const errors = [];
+    const errorMessages = {
+        familienname: form.dataset.errorLastName,
+        vorname: form.dataset.errorFirstName,
+        strasse_hausnummer: form.dataset.errorStreet,
+        plz_ort: form.dataset.errorPostal,
+        geburtsdatum: form.dataset.errorBirthDate,
+        email: form.dataset.errorEmail,
+        kommunikationssprache: form.dataset.errorCommunicationLanguage,
+        zahlungsart: form.dataset.errorPaymentType,
+        sepa_name: form.dataset.errorSepaName,
+        sepa_iban: form.dataset.errorSepaIban,
+        sepa_unterschrift: form.dataset.errorSepaSignature,
+        beitragshoehe: form.dataset.errorFeeAmount,
+        beitrag_hoeher_betrag: form.dataset.errorFeeHigher,
+        beitrag_reduziert_betrag: form.dataset.errorFeeReducedAmount,
+        beitrag_reduziert_grund: form.dataset.errorFeeReducedReason,
+        zahlweise: form.dataset.errorPaymentMethod,
+        vertreter1_name: form.dataset.errorGuardian1Name,
+        vertreter1_unterschrift: form.dataset.errorGuardian1Signature,
+        datenschutz: form.dataset.errorDataProtection,
+        satzung: form.dataset.errorStatutes,
+        ort_datum: form.dataset.errorPlaceDate,
+        unterschrift_antrag: form.dataset.errorSignature
+    };
 
     if (!data.get('familienname')) {
-        errors.push({ field: 'familienname', message: 'Familienname ist ein Pflichtfeld.' });
+        errors.push({ field: 'familienname', message: errorMessages.familienname });
     }
 
     if (!data.get('vorname')) {
-        errors.push({ field: 'vorname', message: 'Vorname ist ein Pflichtfeld.' });
+        errors.push({ field: 'vorname', message: errorMessages.vorname });
     }
 
     if (!data.get('strasse_hausnummer')) {
-        errors.push({ field: 'strasse_hausnummer', message: 'Straße & Hausnummer ist ein Pflichtfeld.' });
+        errors.push({ field: 'strasse', message: errorMessages.strasse_hausnummer });
     }
 
     if (!data.get('plz_ort')) {
-        errors.push({ field: 'plz_ort', message: 'PLZ & Ort ist ein Pflichtfeld.' });
+        errors.push({ field: 'plz_ort', message: errorMessages.plz_ort });
     }
 
     if (!data.get('geburtsdatum')) {
-        errors.push({ field: 'geburtsdatum', message: 'Geburtsdatum ist ein Pflichtfeld.' });
+        errors.push({ field: 'geburtsdatum', message: errorMessages.geburtsdatum });
     }
 
     if (!data.get('email')) {
-        errors.push({ field: 'email', message: 'E-Mail-Adresse ist ein Pflichtfeld.' });
+        errors.push({ field: 'email', message: errorMessages.email });
     }
 
     if (!data.get('kommunikationssprache')) {
-        errors.push({ field: 'kommunikationssprache', message: 'Kommunikationssprache ist ein Pflichtfeld.' });
+        errors.push({ field: 'kommunikationssprache', message: errorMessages.kommunikationssprache });
     }
 
     if (!data.get('zahlungsart')) {
-        errors.push({ field: 'zahlungsart', message: 'Zahlungsart ist ein Pflichtfeld.' });
+        errors.push({ field: 'zahlungsart', message: errorMessages.zahlungsart });
     }
 
     if (data.get('zahlungsart') === 'lastschrift') {
         if (!data.get('sepa_kontoinhaber')) {
-            errors.push({ field: 'sepa_name', message: 'Name des Kontoinhabers ist ein Pflichtfeld.' });
+            errors.push({ field: 'sepa_name', message: errorMessages.sepa_name });
         }
         if (!data.get('sepa_iban')) {
-            errors.push({ field: 'sepa_iban', message: 'IBAN ist ein Pflichtfeld.' });
+            errors.push({ field: 'sepa_iban', message: errorMessages.sepa_iban });
         }
         if (!data.get('sepa_unterschrift')) {
-            errors.push({ field: 'sepa_unterschrift', message: 'Unterschrift des Kontoinhabers ist ein Pflichtfeld.' });
+            errors.push({ field: 'sepa_unterschrift', message: errorMessages.sepa_unterschrift });
         }
     }
 
     if (!data.get('beitragshoehe')) {
-        errors.push({ field: 'beitragshoehe', message: 'Beitragshöhe ist ein Pflichtfeld.' });
+        errors.push({ field: 'beitragshoehe', message: errorMessages.beitragshoehe });
     }
 
     if (data.get('beitragshoehe') === 'hoeher' && !data.get('beitrag_hoeher_betrag')) {
-        errors.push({ field: 'beitrag_hoeher_betrag', message: 'Betrag ist ein Pflichtfeld.' });
+        errors.push({ field: 'beitrag_hoeher_betrag', message: errorMessages.beitrag_hoeher_betrag });
     }
 
     if (data.get('beitragshoehe') === 'reduziert') {
         if (!data.get('beitrag_reduziert_betrag')) {
-            errors.push({ field: 'beitrag_reduziert_betrag', message: 'Betrag ist ein Pflichtfeld.' });
+            errors.push({ field: 'beitrag_reduziert_betrag', message: errorMessages.beitrag_reduziert_betrag });
         }
         if (!data.get('beitrag_reduziert_grund')) {
-            errors.push({ field: 'beitrag_reduziert_grund', message: 'Grund ist ein Pflichtfeld.' });
+            errors.push({ field: 'beitrag_reduziert_grund', message: errorMessages.beitrag_reduziert_grund });
         }
     }
 
     if (!data.get('zahlweise')) {
-        errors.push({ field: 'zahlweise', message: 'Zahlweise ist ein Pflichtfeld.' });
+        errors.push({ field: 'zahlweise', message: errorMessages.zahlweise });
     }
 
     if (document.getElementById('geburtsdatum').value) {
@@ -162,28 +186,28 @@ const validateForm = (data) => {
         }
         if (age < 18) {
             if (!data.get('vertreter1_name')) {
-                errors.push({ field: 'vertreter1_name', message: 'Name des 1. gesetzlichen Vertreters ist ein Pflichtfeld.' });
+                errors.push({ field: 'vertreter1_name', message: errorMessages.vertreter1_name });
             }
             if (!data.get('vertreter1_unterschrift')) {
-                errors.push({ field: 'vertreter1_unterschrift', message: 'Unterschrift des 1. gesetzlichen Vertreters ist ein Pflichtfeld.' });
+                errors.push({ field: 'vertreter1_unterschrift', message: errorMessages.vertreter1_unterschrift });
             }
         }
     }
 
     if (!data.get('datenschutz_zusage')) {
-        errors.push({ field: 'datenschutz', message: 'Datenschutzzusage ist ein Pflichtfeld.' });
+        errors.push({ field: 'datenschutz', message: errorMessages.datenschutz });
     }
 
     if (!data.get('satzung_zusage')) {
-        errors.push({ field: 'satzung', message: 'Satzungszusage ist ein Pflichtfeld.' });
+        errors.push({ field: 'satzung', message: errorMessages.satzung });
     }
 
     if (!data.get('ort_datum')) {
-        errors.push({ field: 'ort_datum', message: 'Ort & Datum ist ein Pflichtfeld.' });
+        errors.push({ field: 'ort_datum', message: errorMessages.ort_datum });
     }
 
     if (!data.get('unterschrift_antrag')) {
-        errors.push({ field: 'unterschrift_antrag', message: 'Unterschrift ist ein Pflichtfeld.' });
+        errors.push({ field: 'unterschrift_antrag', message: errorMessages.unterschrift_antrag });
     }
 
     return errors;

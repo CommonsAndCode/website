@@ -108,6 +108,93 @@
     margin-right: 5px;
 }
 
+/* Fee amount section styling */
+.membership-form .fee-option-with-input {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.membership-form .fee-option-main {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.membership-form .fee-option-details {
+    margin-left: 30px;
+}
+
+.membership-form .fee-option-details input[type="number"] {
+    width: 150px;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.membership-form .fee-option-details textarea {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    min-height: 80px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.membership-form .fee-subfield {
+    margin-bottom: 10px;
+}
+
+.membership-form .fee-subfield label {
+    display: inline-block;
+    width: auto;
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+}
+
+.membership-form .fee-subfield .currency {
+    display: inline;
+    font-weight: bold;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.membership-form .fee-subfield .fee-note {
+    display: inline;
+    color: #666;
+    font-size: 0.9rem;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .membership-form .fee-option-details {
+        margin-left: 10px;
+    }
+    
+    .membership-form .fee-option-details textarea {
+        max-width: 100%;
+    }
+    
+    .membership-form .fee-subfield label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .membership-form .fee-subfield .fee-note {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
 .checkbox-group label[for="datenschutz"],
 .checkbox-group label[for="satzung"] {
     display: inline;

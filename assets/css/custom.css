@@ -115,6 +115,38 @@
     font-weight: bold;
 }
 
+/* Error styling */
+.membership-form .error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+    padding: 8px 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.membership-form input.error:not([type="checkbox"]):not([type="radio"]),
+.membership-form select.error,
+.membership-form textarea.error {
+    border: 2px solid #dc3545 !important;
+    background-color: #fff5f5;
+}
+
+.membership-form input[type="checkbox"].error,
+.membership-form input[type="radio"].error {
+    outline: 2px solid #dc3545;
+    outline-offset: 2px;
+}
+
+.membership-form label:has(+ input.error),
+.membership-form label:has(+ select.error),
+.membership-form label:has(+ textarea.error) {
+    color: #dc3545;
+}
+
 .membership-form.success-message {
     background-color: #d4edda;
     color: #155724;

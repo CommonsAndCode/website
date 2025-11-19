@@ -23,7 +23,7 @@ E-Mail: contact@commons-and-code.eu
 
 ## Lizenzhinweis
 
-Sofern nicht anderes angegeben, sind die Inhalte der Website unter der [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de)-Lizenz veröffentlicht.
+Sofern nicht anderes angegeben, sind die Inhalte der Website unter der [CC&nbsp;BY-SA&nbsp;4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de)-Lizenz veröffentlicht.
 Fotos und persönliche Angaben sind von dieser Regelung ausgenommen.
 Als Urheber\*in sind Commons & Code e.&nbsp;V. sowie die Autor*innen der jeweiligen Texte anzugeben.
 

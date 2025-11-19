@@ -23,7 +23,7 @@ E-Mail: contact@commons-and-code.eu
 
 ## License info
 
-Unless otherwise stated, the content of the website is published under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en) licence.
+Unless otherwise stated, the content of the website is published under the [CC&nbsp;BY-SA&nbsp;4.0](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en) licence.
 Photos and personal details are excluded from this rule.
 Commons & Code e.&nbsp;V. and the authors of the respective texts must be named as the author.
 

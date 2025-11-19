@@ -111,6 +111,10 @@ const validateForm = (data) => {
         errors.push({ field: 'email', message: 'E-Mail-Adresse ist ein Pflichtfeld.' });
     }
 
+    if (!data.get('kommunikationssprache')) {
+        errors.push({ field: 'kommunikationssprache', message: 'Kommunikationssprache ist ein Pflichtfeld.' });
+    }
+
     if (!data.get('zahlungsart')) {
         errors.push({ field: 'zahlungsart', message: 'Zahlungsart ist ein Pflichtfeld.' });
     }

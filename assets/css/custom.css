@@ -22,6 +22,7 @@
 .membership-form input[type="date"],
 .membership-form input[type="tel"],
 .membership-form input[type="number"],
+.membership-form select,
 .membership-form textarea {
     width: calc(100% - 16rem);
     padding: 8px;
@@ -43,6 +44,7 @@
     .membership-form input[type="date"],
     .membership-form input[type="tel"],
     .membership-form input[type="number"],
+    .membership-form select,
     .membership-form textarea {
         width: 100%;
         box-sizing: border-box;

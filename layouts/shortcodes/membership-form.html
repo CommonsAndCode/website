@@ -1,4 +1,26 @@
-<form class="membership-form" action="/submit-membership" method="post" novalidate>
+<form class="membership-form" action="/submit-membership" method="post" novalidate
+    data-error-last-name="{{ i18n "membership.error_last_name" }}"
+    data-error-first-name="{{ i18n "membership.error_first_name" }}"
+    data-error-street="{{ i18n "membership.error_street" }}"
+    data-error-postal="{{ i18n "membership.error_postal" }}"
+    data-error-birth-date="{{ i18n "membership.error_birth_date" }}"
+    data-error-email="{{ i18n "membership.error_email" }}"
+    data-error-communication-language="{{ i18n "membership.error_communication_language" }}"
+    data-error-payment-type="{{ i18n "membership.error_payment_type" }}"
+    data-error-sepa-name="{{ i18n "membership.error_sepa_name" }}"
+    data-error-sepa-iban="{{ i18n "membership.error_sepa_iban" }}"
+    data-error-sepa-signature="{{ i18n "membership.error_sepa_signature" }}"
+    data-error-fee-amount="{{ i18n "membership.error_fee_amount" }}"
+    data-error-fee-higher="{{ i18n "membership.error_fee_higher" }}"
+    data-error-fee-reduced-amount="{{ i18n "membership.error_fee_reduced_amount" }}"
+    data-error-fee-reduced-reason="{{ i18n "membership.error_fee_reduced_reason" }}"
+    data-error-payment-method="{{ i18n "membership.error_payment_method" }}"
+    data-error-guardian1-name="{{ i18n "membership.error_guardian1_name" }}"
+    data-error-guardian1-signature="{{ i18n "membership.error_guardian1_signature" }}"
+    data-error-data-protection="{{ i18n "membership.error_data_protection" }}"
+    data-error-statutes="{{ i18n "membership.error_statutes" }}"
+    data-error-place-date="{{ i18n "membership.error_place_date" }}"
+    data-error-signature="{{ i18n "membership.error_signature" }}">
     <fieldset>
         <legend>{{ i18n "membership.personal_data" }}</legend>
 

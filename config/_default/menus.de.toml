@@ -35,11 +35,18 @@ identifier = "SkaG3Qatwr"
 weight = 32
 
 [[main]]
+name = "Transparenz"
+pageRef = "ueber-uns/transparenz"
+parent = "eaPwNHMpa5"
+identifier = "51zorqp5oC"
+weight = 33
+
+[[main]]
 name = "Statuten"
 pageRef = "ueber-uns/statuten"
 parent = "eaPwNHMpa5"
 identifier = "Iu3gwMIPQO"
-weight = 33
+weight = 34
 
 [[main]]
 name = "Mitglied werden"

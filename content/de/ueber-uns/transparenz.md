@@ -66,5 +66,5 @@ Keine.
 
 ## Namen von juristischen Personen, deren jährliche Zahlungen mehr als 10 % des Gesamtjahresbudgets ausmachen
 
-Folgt.
+Keine.
 

@@ -67,4 +67,4 @@ None.
 
 ## Names of legal entities whose annual payments account for more than 10% of the total annual budget
 
-To follow.
+Keine.

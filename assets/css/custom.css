@@ -1,3 +1,26 @@
+/* Load local fonts */
+@font-face {
+    font-family: 'Share Tech';
+    src: url('/fonts/ShareTech-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Share Tech Mono';
+    src: url('/fonts/ShareTechMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Set default fonts */
+:root {
+    --default-font-family: 'Share Tech', ui-sans-serif, system-ui, sans-serif;
+    --default-mono-font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+
 .membership-form {
     width: 100% !important;
     max-width: 100% !important;

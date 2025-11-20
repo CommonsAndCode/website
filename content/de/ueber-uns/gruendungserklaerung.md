@@ -18,7 +18,7 @@ Die digitale und die physische Welt sind untrennbar miteinander verwoben. Politi
 
 Als Netzwerk aus Technologie-Expert:innen, Kommunalpraktiker:innen, Politikgestalter:innen und engagierten Bürger:innen übersetzen wir zwischen den Welten der Technologie und Politik. 
 
-Wir entwickeln nicht nur Konzepte, sondern setzen sie um – daher "Think-and-Do". Wir verstehen uns als progressive Brückenbauer: Wir übersetzen zwischen Technologie und Politik, um aus europäischen Visionen konkrete, lokale Lösungen zu entwickeln, die **demokratische Teilhabe stärken und nachhaltige Transformation ermöglichen.**
+Wir entwickeln nicht nur Konzepte, sondern setzen sie um – daher "Think-and-Do". Wir verstehen uns als progressive Brückenbauer:innen: Wir übersetzen zwischen Technologie und Politik, um aus europäischen Visionen konkrete, lokale Lösungen zu entwickeln, die **demokratische Teilhabe stärken und nachhaltige Transformation ermöglichen.**
 
 **Wir denken europäisch, handeln lokal – und stehen für eine digitale Zukunft, die Plattformkapitalismus überwindet und digitale Souveränität für alle verwirklicht.**
 
@@ -44,11 +44,11 @@ Wir gestalten eine digitale Gesellschaft, die offen, frei, gerecht, nachhaltig u
 
 Die digitale Transformation stellt insbesondere Kommunen vor immense Herausforderungen – **während gleichzeitig antidemokratische Kräfte und Plattformkapitalismus unsere Demokratie bedrohen.** Wir beobachten kritische Systemfehler:
 
-**Politik ohne technische Realität**: Strategien werden entworfen, die weder technische Machbarkeit noch demokratische Partizipation berücksichtigen.
+**Politik ohne Rücksicht auf Realität**: Strategien werden entworfen, die weder technische Machbarkeit noch demokratische Partizipation berücksichtigen.
 
 **Technologie ohne politisches Verständnis**: Es werden technische Schein-Lösungen entwickelt, die gesellschaftliche und demokratische Bedarfe ignorieren.
 
-**Abhängige Verwaltungen**: Bund, Länder und KommunenStädte und Gemeinden werden in die Abhängigkeit von multinationalen Konzernen getrieben, während europäische Open-Source-Alternativen ungenutzt bleiben. 
+**Abhängige Verwaltungen**: Bund, Länder und Kommunen werden in die Abhängigkeit von multinationalen Konzernen getrieben, während europäische Open-Source-Alternativen ungenutzt bleiben. 
 
 **Isolierte Kommunen:** Städte und Gemeinden erfinden das Rad immer wieder neu, weil der Austausch über funktionierende Lösungen fehlt.
 
@@ -60,11 +60,11 @@ Commons & Code schließt diese Lücken durch fundierte Übersetzungs- und Umsetz
 
 1. **Netzwerken**: Wir organisieren den Dialog und Austausch zwischen kommunalen Akteuren, Zivilgesellschaft und Technologieexpert:innen.
 
-2. **Analysieren (European Practice Transfer)**: Wir identifizieren und analysieren systematisch, was in Europa funktioniert. Welche digitalen Werkzeuge stärken die lokale Demokratie? Wie gelingt eine bürgerfreundliche digitale Verwaltung?
+2. **Analysieren**: Wir identifizieren und bewerten systematisch, was in Europa funktioniert. Welche digitalen Werkzeuge stärken die lokale Demokratie? Wie gelingt eine bürger:innenfreundliche digitale Verwaltung?
 
-3. **Anpassen**: Wir übersetzen diese europäischen Best Practices in den deutschen Kontext. Wir entwickeln daraus ganzheitliche, anpassbare Strategierahmen, die speziell auf die Bedürfnisse von Kommunen zugeschnitten sind. Darüber hinaus unterstützen wir Kommunen dabei, die komplexen Anforderungen und Chancen der europäischen Digitalpolitikstrategisch für sich zu nutzen und zu gestalten.
+3. **Anpassen**: Wir übersetzen diese europäischen Best Practices in den deutschen Kontext. Wir entwickeln daraus ganzheitliche, anpassbare Strategierahmen, die speziell auf die Bedürfnisse von Kommunen zugeschnitten sind. Darüber hinaus unterstützen wir Kommunen dabei, die komplexen Anforderungen und Chancen der europäischen Digitalpolitik strategisch für sich zu nutzen und zu gestalten.
 
-4. **Umsetzen**: Wir begleiten die praktische Implementierung nach der Strategieentwicklung. Wir entwickeln konkrete Roadmaps, unterstützen bei der Auswahl von Open-Source-Lösungen und identifizieren gemeinsam mit den Kommunen potenzielle Förderprogramme (national und europäisch), um die finanzielle Umsetzung zu erleichtern. Zudem befähigen wir Akteure vor Ort, die digitale Transformation selbst in die Hand zu nehmen.
+4. **Umsetzen**: Wir begleiten die praktische Implementierung nach der Strategieentwicklung. Wir entwickeln konkrete Roadmaps, unterstützen bei der Auswahl von Open-Source-Lösungen und identifizieren gemeinsam mit den Kommunen potenzielle Förderprogramme (national und europäisch), um die finanzielle Umsetzung zu erleichtern. Zudem befähigen wir Akteur:innen vor Ort, die digitale Transformation selbst in die Hand zu nehmen.
 
 # Unsere Prinzipien: Commons & Code
 
@@ -88,27 +88,15 @@ Unser Name ist unser Programm:
 
 **Anti-Surveillance & Grundrechte**: Aktiver Widerstand gegen Überwachungskapitalismus und Aufbau von privacy-by-design Alternativen.
 
-# Wie wir arbeiten
-
-**Open Source & Open Data First: Radikale Transparenz** und freie Nutzbarkeit aller Ergebnisse – als Gegenmodell zu proprietären Lösungen.
-
-**Partizipative Co-Creation:** Wir entwickeln Strategien **mit den Betroffenen, nicht über sie hinweg.**
-
-**Europäisch vernetzt & progressiv**: Wir **kämpfen gemeinsam mit progressiven Kräften in ganz Europa** für digitale Grundrechte und machen deutsche Kommunen fit für eine **souveräne europäische Digitalunion.**
-
-**Kommunal verankert, global denkend**: Digitale Transformation gelingt dort, wo sie gelebt wird – **aber immer im Bewusstsein globaler Gerechtigkeit und Klimaverantwortung**.
-
-**Evidenzbasiert & werteorientiert**: Jede Empfehlung basiert auf **nachprüfbaren progressiven Erfahrungen und wird partizipativ entwickelt.**
-
 # Unsere Werte 
 
 **Digitale Gerechtigkeit**: Digitalisierung muss **Ungleichheit abbauen, nicht verstärken** – und allen Menschen gleiche Teilhabechancen eröffnen.
 
-**Klimagerechtigkeit**: Jede digitale Lösung muss klimaneutral gedacht werden und Technologien, die aktiv zur Energiewende, zum Umweltschutz und zur Ressourcenschonung beitragen gefördert werden.
+**Klimagerechtigkeit**: Jede digitale Lösung muss klimaneutral gedacht werden und Technologien, die aktiv zur Energiewende, zum Umweltschutz und zur Ressourcenschonung beitragen, gefördert werden.
 
-**Zielführende Transformation**: Wir legen den Fokus darauf, mittels digitaler Mittel die eigentlichen Ursachen zu adressieren echten, messbaren Wandel herbeizuführen, anstatt uns in oberflächlichem Tech-Solutionismus zu verlieren.
+**Zielführende Transformation**: Wir legen den Fokus darauf, mittels digitaler Mittel die eigentlichen Ursachen zu adressieren, um echten, messbaren Wandel herbeizuführen, anstatt uns in oberflächlichem Tech-Solutionismus zu verlieren.
 
-**Europäische Integration**: Wir denken und handeln **für ein föderales, soziales, ökologisches Europa**, weil **nur gemeinsam können wir Big Tech die Stirn bieten**.
+**Europäische Integration**: Wir unterstützen die Vertiefung der europäischen Zusammenarbeit als notwendige Grundlage, um gemeinsame demokratische, ökologische und soziale Werte im digitalen Raum zu verteidigen und effektive Antworten auf globale Herausforderungen zu finden
 
 **Progressive Offenheit**: Unser Verein steht allen offen, die **demokratische, ökologische und soziale Werte teilen – wir sind überparteilich-progressiv, nicht wertneutral**.
 
@@ -118,13 +106,13 @@ Unser Name ist unser Programm:
 
 Commons & Code lebt vom Engagement seiner Mitglieder und Partner:innen. Wir suchen: 
 
-**Kommunalpolitiker:innen und Verwaltungsmitarbeitende**, die **echte** Digitalisierung statt Scheinmodernisierung wollen
+**Kommunalpolitiker:innen und Verwaltungsmitarbeitende**, die **echte** Digitalisierung statt Scheinmodernisierung wollen;
 
-**Technologieexpert:innen mit gesellschaftlicher Verantwortung**, die **ethischen Code für das Gemeinwohl** entwickeln wollen
+**Technologieexpert:innen mit gesellschaftlicher Verantwortung**, die **ethischen Code für das Gemeinwohl** entwickeln wollen;
 
-**Zivilgesellschaftliche Akteure**, die **digitale Grundrechte und Klimagerechtigkeit** vorantreiben
+**Zivilgesellschaftliche Akteur:innen**, die **digitale Grundrechte und Klimagerechtigkeit** vorantreiben;
 
-**Europäisch Denkende**, die **lokal handeln und global Verantwortung** übernehmen wollen
+**Europäisch Denkende**, die **lokal handeln und global Verantwortung** übernehmen wollen.
 
 Wir laden alle ein, die proeuropäische, demokratische und evidenzbasierte Digitalpolitik nicht nur diskutieren, sondern gestalten wollen – lokal, europäisch und zukunftsorientiert.  
 

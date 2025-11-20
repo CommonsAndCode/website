@@ -6,7 +6,7 @@ summaryLength = 0
 buildDrafts = false
 buildFuture = false
 enableEmoji = true
-baseURL = "https://beta.commons-and-code.eu"
+baseURL = "https://commons-and-code.eu"
 
 [pagination]
 pagerSize = 100

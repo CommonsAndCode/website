@@ -22,6 +22,10 @@ showReadingTime: false
 
 ### Lea von Dömming (Vorsitzende)
 
+Lea von Dömming kombiniert als studierte Philosophin und Informatikerin ethische Ansprüche mit der Realität aus Politik und IT.
+Sie ist überzeugt, dass die Welt ein besserer Ort ist, wenn Menschen miteinander reden.
+In ihrer Freizeit hört sie den Monologen einer Katze zu, die leidenschaftlich um ihr Recht auf frisch gebackenen Kuchen kämpft.
+
 ### Lutz Plümpe (Vorsitzender)
 
 Lutz Plümpe ist Sachkundiger Bürger in der Bundestadt Bonn, Co-Gründer der IT-Beratung dgtl.company GmbH und Experte für Cyber-Security.

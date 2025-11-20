@@ -22,6 +22,10 @@ showReadingTime: false
 
 ### Lea von Dömming (Chairperson)
 
+As a graduate in philosophy and computer science, Lea von Dömming combines ethical standards with the realities of politics and IT.
+She is convinced that the world is a better place when people talk to each other.
+In her spare time, she listens to the monologues of a cat who passionately fights for her right to freshly baked cake.
+
 ### Lutz Plümpe (Chairperson)
 
 Lutz Plümpe is an expert citizen in the council of the federal city of Bonn, co-founder of the IT consultancy dgtl.company GmbH and an expert in cyber security.

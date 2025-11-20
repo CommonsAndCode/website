@@ -21,6 +21,17 @@
     --default-mono-font-family: 'Share Tech Mono', ui-monospace, monospace;
 }
 
+/* Increase base font size */
+html {
+    font-size: 112.5%; /* 18px base instead of 16px */
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 106.25%; /* 17px on mobile */
+    }
+}
+
 .membership-form {
     width: 100% !important;
     max-width: 100% !important;

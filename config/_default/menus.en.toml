@@ -8,11 +8,11 @@ pageRef = "blog"
 identifier = "HGcjCq2NZY"
 weight = 1
 
-[[main]]
-name = "Topics"
-pageRef = "topics"
-identifier = "6E0c2e8NJS"
-weight = 2
+# [[main]]
+# name = "Topics"
+# pageRef = "topics"
+# identifier = "6E0c2e8NJS"
+# weight = 2
 
 [[main]]
 name = "About Us"

@@ -106,6 +106,7 @@ class = "!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:
 - Theme uses Tailwind utility classes with `!` prefix for important overrides
 - Custom styles in `assets/css/custom.css` use BEM-like namespacing (`.membership-form fieldset`)
 - Color scheme: Primary color `38c0c0` (teal/cyan) configured in `params.toml`
+- **Avoid `!important`**: Only use `!important` when absolutely necessary to override existing styles that cannot be overridden through specificity or cascade order. Prefer more specific selectors or proper cascade ordering instead.
 
 ### JavaScript Patterns
 

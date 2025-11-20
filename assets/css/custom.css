@@ -15,10 +15,29 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Manrope';
+    src: url('/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Set default fonts */
 :root {
-    --default-font-family: 'Share Tech', ui-sans-serif, system-ui, sans-serif;
+    --default-font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
     --default-mono-font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+
+/* Apply Share Tech to headings, navigation, and footer */
+h1, h2, h3, h4, h5, h6,
+nav,
+.header,
+[class*="header"],
+[class*="menu"],
+footer,
+a[role="button"] {
+    font-family: 'Share Tech', sans-serif;
 }
 
 /* Increase base font size */
@@ -33,14 +52,14 @@ html {
 }
 
 .membership-form {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
 }
 
 @media (min-width: 1024px) {
     .membership-form {
-        width: calc(100% + 20rem) !important;
-        max-width: calc(100% + 20rem) !important;
+        width: calc(100% + 20rem);
+        max-width: calc(100% + 20rem);
     }
 }
 
@@ -272,7 +291,7 @@ html {
 .membership-form input.error:not([type="checkbox"]):not([type="radio"]),
 .membership-form select.error,
 .membership-form textarea.error {
-    border: 2px solid #dc3545 !important;
+    border: 2px solid #dc3545;
     background-color: #fff5f5;
 }
 

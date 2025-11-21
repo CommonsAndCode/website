@@ -58,6 +58,8 @@ Sascha Mann ist Student und Klettertrainer.
 Im politischen Bereich hat er die Volt Europas Digitalcommunity mitaufgebaut und die digitalen Policies der Partei mitgestaltet.
 Außerhalb seines politischen Engagements verbringt er viel Zeit in Kletterhallen oder an Kletterfelsen in der Natur.
 
+[{{<icon "mastodon" >}}](https://chaos.social/@sascha) [{{<icon "bluesky" >}}](https://bsky.app/profile/saschamann.bsky.social)
+
 ## Beauftragter für Mitgliedermotivation
 
 ### Toni

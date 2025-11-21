@@ -37,6 +37,12 @@ In his free time, he can be found in the forest or on the beach with his dog and
 
 ### Jan Peter König (Treasurer)
 
+Jan Peter König is the association’s system architect.
+With over 15 years of international experience in cloud computing and networks, he sees strong parallels between software architecture and sociological processes.
+He has applied this analytical lens for six years in the political "engine room" to safeguard democratic processes: chairing meetings, facilitating elections, and advising on strategy, law, and governance.
+Influenced by Richard Stallman in 2013, he became a staunch advocate of copyleft.
+When he isn't building structures, he is on the move: A passionate motorcyclist and railway enthusiast, he prefers exploring the world on two wheels or on rails.
+
 ## Non-executive Board
 
 ### Lisa Gerlach

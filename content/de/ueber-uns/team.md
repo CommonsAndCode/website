@@ -37,6 +37,12 @@ In seiner Freizeit ist er mit Hund und Familie im Wald oder am Strand anzutreffe
 
 ### Jan Peter König (Schatzmeister)
 
+Jan Peter König ist der Systemarchitekt des Vereins.
+Mit über 15 Jahren internationaler Erfahrung in Cloud und Netzwerken sieht er die starken Parallelen zwischen Software-Architektur und soziologischen Prozessen.
+Diese analytische Brille nutzt er seit sechs Jahren, um im politischen Maschinenraum demokratische Abläufe zu sichern: Er leitet Versammlungen, ermöglicht Wahlen und berät bei strategischen sowie rechts- und unternehmenspolitischen Fragen.
+Inhaltlich prägte ihn der Einfluss von Richard Stallman im Jahr 2013, der ihn zum überzeugten Verfechter von Copyleft machte.
+Wenn er nicht gerade Strukturen schafft, ist er in Bewegung: Er ist passionierter Motorradfahrer und erkundet als Reise- und Eisenbahnenthusiast die Welt am liebsten auf zwei Rädern oder Schienen.
+
 ## Beisitzende
 
 ### Lisa Gerlach

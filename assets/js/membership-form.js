@@ -17,7 +17,8 @@ const updateRequiredStars = () => {
 };
 
 // const url = "http://localhost:3000/api/v1/form-input";
-const url = "https://cc.janpeterkoenig.com/api/v1/form-input";
+// const url = "https://cc.janpeterkoenig.com/api/v1/form-input";
+const url = "https://members.commons-and-code.eu/api/external/v1/form-input";
 
 const form = document.querySelector('form');
 

@@ -56,7 +56,9 @@ In her private life, she shares an allotment garden where the vegetables grow in
 
 Sascha Mann is a student and climbing instructor.
 In the political field, he cofounded Volt Europe's digital community and shaped the party's digital policies.
-Outside of his political engagement he spends a lot of time in climbing gyms or out in nature at climbing crags.
+Outside of his political engagement and studies he spends a lot of time in climbing gyms or out in nature at climbing crags.
+
+[{{<icon "mastodon" >}}](https://chaos.social/@sascha) [{{<icon "bluesky" >}}](https://bsky.app/profile/saschamann.bsky.social)
 
 ## Representative for Motivation of Members
 

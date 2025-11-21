@@ -54,6 +54,10 @@ Privat teilt sie sich einen Schrebergarten, in dem das Gemüse ausgesprochen eig
 
 ### Sascha Mann
 
+Sascha Mann ist Student und Klettertrainer.
+Im politischen Bereich hat er die Volt Europas Digitalcommunity mitaufgebaut und die digitalen Policies der Partei mitgestaltet.
+Außerhalb seines politischen Engagements verbringt er viel Zeit in Kletterhallen oder an Kletterfelsen in der Natur.
+
 ## Beauftragter für Mitgliedermotivation
 
 ### Toni

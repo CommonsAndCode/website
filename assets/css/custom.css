@@ -16,16 +16,16 @@
 }
 
 @font-face {
-    font-family: 'Manrope';
-    src: url('/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
+    font-family: 'Raleway';
+    src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 /* Set default fonts */
 :root {
-    --default-font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --default-font-family: 'Raleway', ui-sans-serif, system-ui, sans-serif;
     --default-mono-font-family: 'Share Tech Mono', ui-monospace, monospace;
 }
 

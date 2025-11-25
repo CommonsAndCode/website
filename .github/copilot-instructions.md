@@ -5,6 +5,15 @@
 Hugo-based multilingual (German/English) website for Commons & Code e.V., a European think-and-do-tank for digitalization for the common good.
 Built with the Blowfish theme.
 
+## Language Conventions
+
+- **English content**: Use British English spelling and conventions (e.g., "organisation" not "organization", "realise" not "realize", "colour" not "color")
+- **German content**: Use German gender-neutral language with `*` (Genderstern) for inclusive forms (e.g., `Mitarbeiter*in`, `Antragsteller*in`), not `:`
+
+## Markdown Conventions
+
+- **Numbered lists**: Use `1.` for all items rather than incrementing numbers (e.g., `1., 1., 1.` not `1., 2., 3.`). This makes reordering and editing lists easier while Markdown automatically renders them with sequential numbers.
+
 ## Architecture & Structure
 
 ### Multi-language Setup
@@ -143,4 +152,3 @@ Key fields for pages:
 - ⚠️ Menu identifiers must match across language files for proper translation switching
 - ⚠️ Assets in `assets/` are processed; static files go in `static/`
 - ⚠️ The `public/` directory is generated; never edit directly
-- ⚠️ **German gender-neutral language**: Use `*` (Genderstern) for gender-inclusive forms (e.g., `Mitarbeiter*in`, `Antragsteller*in`), not `:`

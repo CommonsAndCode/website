@@ -12,7 +12,7 @@ showReadingTime: false
 
 {{< lead >}}As we were founded only a few weeks ago, this information is still incomplete. It will be continuously updated.{{< /lead >}}
 
-Transparency is part of our organization's DNA.
+Transparency is part of our organisation's DNA.
 Therefore, we plan to join the Initiative for Transparent Civil Society as soon as possible.
 We commit to making the following ten pieces of information available to the public and keeping them up to date.
 
@@ -29,7 +29,7 @@ Seat: Leipzig
 
 Year of Foundation: 2025
 
-## Complete statutes and information about the goals of our organization
+## Complete statutes and information about the goals of our organisation
 
 {{< button href="/en/about-us/statutes/" target="_self" >}}
 Statutes and Resolutions

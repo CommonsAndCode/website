@@ -55,6 +55,7 @@ Privat teilt sie sich einen Schrebergarten, in dem das Gemüse ausgesprochen eig
 ### Sascha Mann
 
 Sascha Mann ist Student und Klettertrainer.
+In der Vergangenheit hat er mehrere Julia-basierte Open-Source-Projekte aufgebaut und maintained.
 Im politischen Bereich hat er die Volt Europas Digitalcommunity mitaufgebaut und die digitalen Policies der Partei mitgestaltet.
 Außerhalb seines politischen Engagements und Studiums verbringt er viel Zeit in Kletterhallen oder an Kletterfelsen in der Natur.
 

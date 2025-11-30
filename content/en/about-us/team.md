@@ -55,6 +55,7 @@ In her private life, she shares an allotment garden where the vegetables grow in
 ### Sascha Mann
 
 Sascha Mann is a student and climbing instructor.
+In the past, he has created and maintained several Julia-based open source projects.
 In the political field, he cofounded Volt Europe's digital community and shaped the party's digital policies.
 Outside of his political engagement and studies he spends a lot of time in climbing gyms or out in nature at climbing crags.
 

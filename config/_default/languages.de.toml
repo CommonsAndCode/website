@@ -17,5 +17,6 @@ name = "Commons & Code"
 headline = "Europäischer Think-and-Do-Tank für gemeinwohlorientierte Digitalisierung"
 links = [
     { mastodon = "https://eupolicy.social/@CommonsAndCode" },
+    { bluesky = "https://bsky.app/profile/commons-and-code.eu" },
     { envelope = "mailto:contact@commons-and-code.eu" },
 ]

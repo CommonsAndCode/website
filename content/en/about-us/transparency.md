@@ -37,7 +37,14 @@ Statutes and Resolutions
 
 ## Information on tax exemption
 
-To follow.
+Commons & Code e.&nbsp;V. is tax-privileged due to the promotion of science and research as well as the promotion of education, popular and vocational training in accordance with the assessment notice of the Leipzig Tax Office&nbsp;II dated 30 December 2025.
+
+Please note that if you are based outside of Germany, your donations and membership dues may not be tax deductible due to the lack of crossborder recognition of charitable organisations in the EU.
+In case of questions, please [contact us](mailto:contact@commons-and-code.eu).
+
+{{< download href="/downloads/2025-12-30-Feststellungsbescheid.pdf">}}
+Download assessment notice
+{{< /download >}}
 
 ## Names and functions of key decision-makers
 

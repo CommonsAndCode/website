@@ -36,7 +36,14 @@ Statuten und Beschlüsse
 
 ## Angaben zur Steuerbegünstigung
 
-Folgt.
+Commons & Code e.&nbsp;V. ist aufgrund der Förderung von Wissenschaft und Forschung sowie der Förderung der Erziehung, Volks- und Berufsbildung steuerbegünstigt gemäß des Feststellungsbescheids des Finanzamts Leipzig&nbsp;II vom 30.12.2025.
+
+Spenden und Mitgliedsbeiträge sind möglicherweise nicht steuerlich absetzbar, wenn sofern du außerhalb Deutschlands ansässig bist, da gemeinnützige Organisationen in der EU nicht grenzüberschreitend anerkannt sind.
+Bei Fragen diesbezüglich, [schreib uns gerne an](mailto:contact@commons-and-code.eu).
+
+{{< download href="/downloads/2025-12-30-Feststellungsbescheid.pdf">}}
+Feststellungsbescheid runterladen
+{{< /download >}}
 
 ## Name und Funktion wesentlicher Entscheidungsträger
 

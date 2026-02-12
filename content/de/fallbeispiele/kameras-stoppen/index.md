@@ -3,6 +3,7 @@ title: "Kameras Stoppen"
 date: 2026-02-12
 draft: false
 description: "Wie eine Kölner Bürger*inneninitiative die polizeiliche Videoüberwachung vor Gericht erfolgreich herausfordert."
+showTableOfContents: false
 tags: ["freiheitsrechte"]
 translationKey: "kameras-stoppen"
 locations: [{lat: 50.937053892265546, lon: 6.9615089881495855}]

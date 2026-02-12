@@ -6,6 +6,8 @@ cascade:
   showReadingTime: true
   showAuthor: true
   showAuthorsBadges : true
+  showAuthorBottom: true
   showWordCount: false
   showDate: true
+  showHero: true
 ---

@@ -31,3 +31,5 @@ Die Verhältnismäßigkeit anlassloser Massenüberwachung, der Schutz der Versam
 Die Kölner Entscheidungen können demnach andernorts als Argumentationsgrundlage dienen.
 
 {{< icon "link" >}}&ensp;[kameras-stoppen.org](https://kameras-stoppen.org)
+
+*Bild von [Comuzi](https://www.comuzi.xyz) / [Surveillance View A.](https://betterimagesofai.org/images?artist=Comuzi&title=SurveillanceViewA.) / © BBC / [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)*

@@ -35,9 +35,9 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: hugo --minify
 
-      # PR preview build with adjusted baseURL
+      # PR preview build with adjusted baseURL (only when labelled)
       - name: Build Hugo site (preview)
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'preview')
         run: hugo --minify --baseURL "https://pr-${{ github.event.pull_request.number }}.preview.commons-and-code.eu"
 
       - name: Log in to Container Registry
@@ -63,9 +63,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # Push :pr-N on pull requests
+      # Push :pr-N on pull requests (only when labelled)
       - name: Build and push (preview)
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'preview')
         uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6.19.2
         with:
           context: .

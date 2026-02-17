@@ -13,10 +13,7 @@ translationKey: "privacy-policy"
 <h2>2. Hosting</h2>
 <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
 <h3>Externes Hosting</h3> <p>Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters / der Hoster gespeichert. Hierbei kann es sich v.&nbsp;a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die &uuml;ber eine Website generiert werden, handeln.</p> <p>Das externe Hosting erfolgt zum Zwecke der Vertragserf&uuml;llung gegen&uuml;ber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p> <p>Unser(e) Hoster wird bzw. werden Ihre Daten nur insoweit verarbeiten, wie dies zur Erf&uuml;llung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.</p> <p>Wir setzen folgende(n) Hoster ein:</p>
-<p>GitHub B.V. Prins Bernhardplein 200, Amsterdam 1097JB The Netherlands<br />
-GitHub, Inc. 88 Colin P. Kelly Jr. St. San Francisco, CA 94107 United States<br />
-Fastly, Inc. Attention: General Counsel, 475 Brannan St., Suite 300 San Francisco, CA 94107, USA<br />
-OVH GmbH, Oskar-J&auml;ger-Str. 173/K6, 50825 K&ouml;ln, Deutschland<br />
+<p>OVH GmbH, Oskar-J&auml;ger-Str. 173/K6, 50825 K&ouml;ln, Deutschland<br />
 Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany
 </p>
 <h2>3. Allgemeine Hinweise und Pflicht&shy;informationen</h2>

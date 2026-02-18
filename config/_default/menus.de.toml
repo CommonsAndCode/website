@@ -15,6 +15,12 @@ weight = 1
 # weight = 2
 
 [[main]]
+name = "Fallbeispiele"
+pageRef = "fallbeispiele"
+identifier = "SqgQatn4m2"
+weight = 2
+
+[[main]]
 name = "Über Uns"
 pageRef = "ueber-uns"
 identifier = "eaPwNHMpa5"

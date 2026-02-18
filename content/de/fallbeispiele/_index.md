@@ -11,3 +11,5 @@ cascade:
   showDate: true
   showHero: true
 ---
+
+{{< case-map width="100%" height="650" >}}

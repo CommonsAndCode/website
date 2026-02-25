@@ -13,7 +13,7 @@
             "title" .Title
             "short" .Description
             "categories" .Params.Tags
-            "score" 50
+            "rating" (default "unrated" .Params.Rating)
             "url" .Permalink
             "locations" .Params.Locations
             "updated" .Date

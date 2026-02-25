@@ -6,6 +6,7 @@ description: "Zentrale Plattform für kommunale Services."
 showTableOfContents: false
 tags: ["digitalisierung", "buergerdienste"]
 translationKey: "helsinki-digital-service"
+rating: "best-practice"
 locations: [
       {
         "lat": 60.1699,

@@ -6,6 +6,7 @@ description: "Wie eine Kölner Bürger*inneninitiative die polizeiliche Videoüb
 showTableOfContents: false
 tags: ["freiheitsrechte"]
 translationKey: "kameras-stoppen"
+rating: "best-practice"
 locations: [{lat: 50.937053892265546, lon: 6.9615089881495855, label: "Köln"}]
 ---
 

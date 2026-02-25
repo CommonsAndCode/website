@@ -1,0 +1,27 @@
+{{- $cases := slice -}}
+
+{{- range site.Sites -}}
+
+    {{- /* Store language code */ -}}
+    {{- $lang := .Language.Lang -}}
+
+    {{- range where .RegularPages "Section" "fallbeispiele" -}}
+
+        {{- $case := dict
+            "id" .TranslationKey
+            "lang" $lang
+            "title" .Title
+            "short" .Description
+            "categories" .Params.Tags
+            "score" 50
+            "url" .Permalink
+            "locations" .Params.Locations
+            "updated" .Date
+        -}}
+
+        {{- $cases = $cases | append $case -}}
+        
+    {{- end -}}
+{{- end -}}
+
+{{- $cases | jsonify -}}

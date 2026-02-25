@@ -6,7 +6,7 @@ description: "Wie eine Kölner Bürger*inneninitiative die polizeiliche Videoüb
 showTableOfContents: false
 tags: ["freiheitsrechte"]
 translationKey: "kameras-stoppen"
-locations: [{lat: 50.937053892265546, lon: 6.9615089881495855}]
+locations: [{lat: 50.937053892265546, lon: 6.9615089881495855, label: "Köln"}]
 ---
 
 Die Kölner Initiative [Kameras Stoppen](https://kameras-stoppen.org) setzt sich gegen polizeiliche Videoüberwachung im öffentlichen Raum in Köln ein.

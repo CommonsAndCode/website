@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] OpenStreetMap-basierte Radwegeplanung Berlin"
 date: 2026-01-20
-draft: true
+draft: false
 description: "Die Verkehrsverwaltung nutzt offene Geodaten für die Planung neuer Fahrradinfrastruktur."
 showTableOfContents: false
 tags: ["open-data", "verkehr", "open-source"]

@@ -1,27 +1,30 @@
 {{- $cases := slice -}}
 
-{{- range site.Sites -}}
+{{- $lang := site.Language.Lang -}}
 
-    {{- /* Store language code */ -}}
-    {{- $lang := .Language.Lang -}}
+{{- $targetSection := "" -}}
+{{- if eq $lang "en" -}}
+    {{- $targetSection = "case-studies" -}}
+{{- else if eq $lang "de" -}}
+    {{- $targetSection = "fallbeispiele" -}}
+{{- end -}}
 
-    {{- range where .RegularPages "Section" "fallbeispiele" -}}
+{{- range where site.RegularPages "Section" $targetSection -}}
 
-        {{- $case := dict
-            "id" .TranslationKey
-            "lang" $lang
-            "title" .Title
-            "short" .Description
-            "categories" .Params.Tags
-            "rating" (default "unrated" .Params.Rating)
-            "url" .Permalink
-            "locations" .Params.Locations
-            "updated" .Date
-        -}}
+    {{- $case := dict
+        "id" .TranslationKey
+        "lang" $lang
+        "title" .Title
+        "short" .Description
+        "categories" .Params.Tags
+        "rating" (default "unrated" .Params.Rating)
+        "url" .Permalink
+        "locations" .Params.Locations
+        "updated" .Date
+    -}}
 
-        {{- $cases = $cases | append $case -}}
-        
-    {{- end -}}
+    {{- $cases = $cases | append $case -}}
+    
 {{- end -}}
 
 {{- $cases | jsonify -}}

@@ -1,7 +1,7 @@
 ---
 title: "[TEST DATA] Tallinn e-Government Platform"
 date: 2025-08-30
-draft: true
+draft: false
 description: "Comprehensive digital services for residents, from voting to healthcare, built on open-source infrastructure."
 showTableOfContents: false
 tags: ["digitalisierung", "open-source", "buergerdienste"]

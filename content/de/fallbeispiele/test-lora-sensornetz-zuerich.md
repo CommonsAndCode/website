@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] LoRa-Sensornetzwerk Zürich"
 date: 2025-09-12
-draft: true
+draft: false
 description: "Offenes IoT-Netzwerk für Umweltdaten mit Echtzeit-Zugang für die Öffentlichkeit."
 showTableOfContents: false
 tags: ["smart-city", "open-data", "digitale-infrastruktur"]

@@ -1,7 +1,7 @@
 ---
 title: "[TEST DATA] Facial Recognition Moratorium Amsterdam"
 date: 2025-07-12
-draft: true
+draft: false
 description: "City council votes to suspend all facial recognition technology in public spaces pending regulation."
 showTableOfContents: false
 tags: ["freiheitsrechte", "ueberwachung", "datenschutz"]

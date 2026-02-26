@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] Kommunale Gesundheitsapp mit Datenleck"
 date: 2025-12-10
-draft: true
+draft: false
 description: "Eine Gesundheitsapp der Stadtverwaltung speicherte Patient*innendaten unverschlüsselt in einer öffentlichen Cloud."
 showTableOfContents: false
 tags: ["datenschutz", "gesundheit", "digitalisierung"]

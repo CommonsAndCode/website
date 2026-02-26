@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] Predictive Policing Pilotprojekt"
 date: 2025-10-05
-draft: true
+draft: false
 description: "Einsatz algorithmischer Kriminalitätsprognosen ohne ausreichende Transparenz oder Evaluierung."
 showTableOfContents: false
 tags: ["ueberwachung", "ki", "freiheitsrechte"]

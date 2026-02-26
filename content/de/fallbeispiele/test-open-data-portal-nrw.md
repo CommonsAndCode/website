@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] Open-Data-Portal NRW"
 date: 2026-01-15
-draft: true
+draft: false
 description: "Landesweites Portal für offene Verwaltungsdaten mit einheitlicher API und Qualitätsstandards."
 showTableOfContents: false
 tags: ["open-data", "transparenz", "digitalisierung"]

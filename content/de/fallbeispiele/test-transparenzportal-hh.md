@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] Transparenzportal Hamburg"
 date: 2025-12-01
-draft: true
+draft: false
 description: "Alle Verträge, Gutachten und Senatsbeschlüsse der Stadt frei zugänglich online."
 showTableOfContents: false
 tags: ["transparenz", "open-data"]

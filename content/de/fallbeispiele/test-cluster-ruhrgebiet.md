@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] Digitalisierungsoffensive Ruhrgebiet"
 date: 2025-06-01
-draft: true
+draft: false
 description: "Gemeinsame Digitalisierungsstrategie der Ruhrgebietskommunen mit geteilter Infrastruktur."
 showTableOfContents: false
 tags: ["digitalisierung", "smart-city"]

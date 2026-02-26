@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] Freifunk Community-Netz"
 date: 2025-11-03
-draft: true
+draft: false
 description: "Bürger*inneninitiative baut freies WLAN-Mesh-Netzwerk in mehreren Städten auf."
 showTableOfContents: false
 tags: ["digitale-infrastruktur", "buergerbeteiligung"]

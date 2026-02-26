@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] Schuldigitalisierung Baden-Württemberg"
 date: 2025-09-20
-draft: true
+draft: false
 description: "Landesweites Programm zur digitalen Ausstattung von Schulen mit Moodle und BigBlueButton."
 showTableOfContents: false
 tags: ["bildung", "open-source", "digitalisierung"]

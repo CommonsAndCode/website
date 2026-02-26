@@ -1,7 +1,7 @@
 ---
 title: "[TESTDATEN] KI-gestützte Antragsbearbeitung Hamburg"
 date: 2026-02-14
-draft: true
+draft: false
 description: "Automatisierte Vorprüfung von Bauanträgen mittels maschinellem Lernen."
 showTableOfContents: false
 tags: ["ki", "digitalisierung", "buergerdienste"]

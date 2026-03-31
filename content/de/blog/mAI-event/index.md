@@ -1,10 +1,12 @@
 ---
-title: "Event: KI in der kommunalen Politik und Verwaltung – Zwischen Vision und Praxis"
-date: 2026-03-30
+title: "Event: KI in der Kommune – Zwischen Vision und Praxis"
+date: 2026-05-10
+publishDate: 2026-03-31
 draft: false
 description: "Veranstaltungsinformationen und Ticketbuchung für die Commons & Code-Veranstaltung zum Thema KI in der Kommunalpolitik und -verwaltung."
+summary: "Der Hype um KI läuft so schnell wie die technischen Entwicklungen. Commons & Code lädt ein zu einem intensiven Austausch mit Expert*innen für Technik, Ethik und Kommunalpolitik."
 translationKey: "mAI-event"
-showDate: false
+showDate: true
 showAuthor: false
 showReadingTime: false
 showTableOfContents: false

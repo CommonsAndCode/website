@@ -1,8 +1,10 @@
 ---
 title: "Event: AI in Municipal Politics and Administration - Between Vision and Practice"
-date: 2026-03-30
+date: 2026-05-10
+publishDate: 2026-03-31
 draft: false
 description: "Event information and ticket booking for the Commons & Code session on AI in municipal politics and administration."
+summary: "The hype surrounding AI is growing just as fast as the technology itself. Commons & Code invites you to an in-depth discussion with experts in technology, ethics and municipality politics."
 translationKey: "mAI-event"
 showDate: false
 showAuthor: false

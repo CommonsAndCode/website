@@ -10,12 +10,6 @@ showPagination: false
 showReadingTime: false
 ---
 
-{{< figure
-    src="/img/2025-10-13-board.jpeg"
-    alt="A picture of our board members after the founding assembly in Oct 2025."
-    caption="Our board members after the founding assembly in Oct 2025. F.l.t.r.: Lea von Dömming, Sascha Mann, Jan Peter König, Lutz Plümpe, Lisa Gerlach."
->}}
-
 # Board
 
 ## Executive Board
@@ -45,13 +39,6 @@ When he isn't building structures, he is on the move: A passionate motorcyclist 
 
 ## Non-executive Board
 
-### Lisa Gerlach
-
-Lisa Gerlach is a local politician in the Landschaftsverband Rheinland (LVR) and a judge at the regional arbitration court of Volt NRW.
-As a business graduate and consultant with a social focus, she is committed to justice, culture and participation.
-She is a single mum to two cats, a dog and three grown-up sons.
-In her private life, she shares an allotment garden where the vegetables grow in a decidedly wayward manner.
-
 ### Sascha Mann
 
 Sascha Mann is a student and climbing instructor.
@@ -60,17 +47,3 @@ In the political field, he cofounded Volt Europe's digital community and shaped 
 Outside of his political engagement and studies he spends a lot of time in climbing gyms or out in nature at climbing crags.
 
 [{{<icon "mastodon" >}}](https://chaos.social/@sascha) [{{<icon "bluesky" >}}](https://bsky.app/profile/saschamann.bsky.social)
-
-## Representative for Motivation of Members
-
-### Toni
-
-{{< figure
-    src="/img/2025-10-13-toni-sticker.png"
-    alt="A picture of Lisa's dog Toni wearing 3D-printed purple cat ears at the founding assembly in Oct 2025. Below there's a banner with the association's website commons-and-code.eu."
-    caption="Lisa's dog Toni at the founding assembly in Oct 2025."
->}}
-
-Toni is the dog who is also half cat, or at least lives with them.
-He was born by the sea under palm trees and loves coconuts.
-At club meetings, he wants to be pet a lot and spreads good humour, just like at the founding meeting.

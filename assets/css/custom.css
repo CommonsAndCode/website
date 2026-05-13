@@ -45,9 +45,18 @@ html {
     font-size: 112.5%; /* 18px base instead of 16px */
 }
 
+.main-menu .logo svg {
+    width: 12rem;
+    height: auto;
+}
+
 @media (max-width: 768px) {
     html {
         font-size: 106.25%; /* 17px on mobile */
+    }
+
+    .main-menu .logo svg {
+        width: 9rem;
     }
 }
 

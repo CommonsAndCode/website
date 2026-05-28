@@ -5,9 +5,8 @@ description: "Articles of Association of Commons & Code e.&nbsp;V."
 translationKey: "satzung"
 authors:
   - "foundingassembly"
+courtesyTranslation: "de"
 ---
-
-{{< lead >}}Please note this is an automated translation of the German original document via the EU’s eTranslation service.{{< /lead >}}
 
 # § 1 Name, registered office and financial year 
 1. The association is called Commons & Code. It shall be entered in the association register. After registration, it carries the legal form ‘e.V.’ in the name.

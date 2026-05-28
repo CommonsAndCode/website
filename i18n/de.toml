@@ -95,3 +95,7 @@ membership.error_data_protection = "Datenschutzzusage ist ein Pflichtfeld."
 membership.error_statutes = "Satzungszusage ist ein Pflichtfeld."
 membership.error_place_date = "Ort & Datum ist ein Pflichtfeld."
 membership.error_signature = "Unterschrift ist ein Pflichtfeld."
+
+# Article
+article.courtesy_translation_auto = "Dies ist eine halb-automatisierte Übersetzung des Originaldokuments."
+article.courtesy_translation_linked = "Dies ist eine halb-automatisierte Übersetzung des <a href=\"%s\">Originaldokuments</a>."

@@ -5,9 +5,8 @@ description: "Financial Regulation of Commons & Code e.&nbsp;V."
 translationKey: "finanzordnung"
 authors:
   - "foundingassembly"
+courtesyTranslation: "de"
 ---
-
-{{< lead >}}Please note this is an automated translation of the German original document via the EU’s eTranslation service.{{< /lead >}}
 
 In accordance with Paragraph 3(5) of the Statutes, the general meeting
 of members shall adopt the following financial regulations:

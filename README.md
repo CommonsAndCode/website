@@ -149,6 +149,7 @@ Button Text
 - **Filenames**: Use German filenames for German articles, English for English (they become URLs)
 - **translationKey**: Always use English and keep it identical in both language versions
 - The `translationKey` links the two versions so readers can switch languages
+- **courtesyTranslation**: If an article is a semi-automated translation, add the original language code (e.g. `courtesyTranslation: "de"` or `courtesyTranslation: "en"`) to the frontmatter. This will automatically display a notice linking to the original document.
 - **Featured Images**: Use `featured.png` or `featured.jpg` in the article folder (see optional section above)
 - **Shortcodes**:
   - `{{< lead >}}...{{< /lead >}}` creates emphasized intro text

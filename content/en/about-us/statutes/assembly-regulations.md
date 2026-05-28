@@ -5,10 +5,9 @@ description: "Assembly Regulations of Commons & Code e.&nbsp;V."
 translationKey: "versammlungsordnung"
 authors:
   - "foundingassembly"
+courtesyTranslation: "de"
 ---
 
-
-{{< lead >}}Please note this is an automated translation of the German original document via the EU’s eTranslation service.{{< /lead >}}
 
 In accordance with Paragraph 7(8) of the Statutes, the Assembly of Members shall adopt the following Rules of Assembly:
 

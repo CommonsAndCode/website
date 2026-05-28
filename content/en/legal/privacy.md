@@ -5,9 +5,8 @@ draft: false
 description: "Privacy Policy"
 tags: ["example", "tag"]
 translationKey: "privacy-policy"
+courtesyTranslation: "de"
 ---
-
-{{< lead >}}Please note that this is an automated translation of our German Privacy Policy. We're working on a proper translation.{{< /lead >}}
 
 <h2>1. Privacy at a Glance</h2>
 <h3>General Information</h3> <p>The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you. For detailed information on data protection, please refer to our privacy policy listed below this text.</p>

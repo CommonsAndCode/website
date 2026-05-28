@@ -1,0 +1,40 @@
+{{ $courtesy := .Params.courtesyTranslation }}
+{{ if $courtesy }}
+  <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+    {{ $link := "" }}
+    
+    {{ if eq (printf "%T" $courtesy) "string" }}
+      {{ range .Translations }}
+        {{ if eq .Lang $courtesy }}
+          {{ $link = .RelPermalink }}
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{ if eq (len .Translations) 1 }}
+        {{ range .Translations }}
+          {{ $link = .RelPermalink }}
+        {{ end }}
+      {{ else }}
+        {{ range .Translations }}
+          {{ if eq .Lang "de" }}
+            {{ $link = .RelPermalink }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{ if $link }}
+      {{ printf (i18n "article.courtesy_translation_linked") $link | safeHTML }}
+    {{ else }}
+      {{ i18n "article.courtesy_translation_auto" | safeHTML }}
+    {{ end }}
+  </div>
+{{ end }}
+
+{{ if .Params.series }}
+  <details
+    class="mt-2 mb-5 overflow-hidden rounded-lg ms-0 ps-5"
+    {{ if .Params.seriesOpened | default (.Site.Params.article.seriesOpened | default false) }}open{{ end }}>
+    {{ partial "series/series_base.html" . }}
+  </details>
+{{ end }}

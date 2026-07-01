@@ -5,6 +5,7 @@ authors:
 date: 2026-06-20
 draft: false
 description: "Save the Date: Am 26. und 27. September 2026 finden die Mitgliederversammlung und weitere Vereinsaktivitäten statt."
+summary: "Die Mitgliederversammlung und weitere Vereinsaktivitäten werden am Wochenende 26. & 27. September 2026 stattfinden. Weitere Infos folgen."
 translationKey: "mv-2026"
 showDate: true
 showAuthor: true

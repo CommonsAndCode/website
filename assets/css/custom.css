@@ -40,6 +40,10 @@ a[role="button"] {
     font-family: 'Share Tech', sans-serif;
 }
 
+#site-footer * {
+    color: rgb(var(--color-neutral-400));
+}
+
 /* Increase base font size */
 html {
     font-size: 112.5%; /* 18px base instead of 16px */

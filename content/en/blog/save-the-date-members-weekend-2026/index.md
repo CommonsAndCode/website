@@ -5,6 +5,7 @@ authors:
 date: 2026-06-20
 draft: false
 description: "Save the Date: On September 26 & 27 we will host the annual members assembly as well as other activities."
+summary: "The Member Assembly as well as other activities will take place on the weekend of September 26 & 27, 2026 in Germany. More information will follow."
 translationKey: "mv-2026"
 showDate: true
 showAuthor: true

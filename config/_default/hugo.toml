@@ -25,8 +25,15 @@ changefreq = "daily"
 filename = "sitemap.xml"
 priority = 0.5
 
+# Output for the case map
+[outputFormats]
+  [outputFormats.CaseMap]
+    mediaType = "application/json"
+    basename = "cases"
+    isPlainText = true
+
 [outputs]
-home = [ "HTML", "RSS", "JSON" ]
+home = [ "HTML", "RSS", "JSON", "CaseMap" ]
 
 [related]
 threshold = 0

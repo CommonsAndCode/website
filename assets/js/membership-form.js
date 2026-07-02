@@ -259,9 +259,11 @@ form.addEventListener('submit', (event) => {
         },
         body: JSON.stringify(data)
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            return response.json();
+        })
         .then(data => {
-            console.log('Success:', data);
             const successMessageContainer = document.getElementById('success-message-container');
             successMessageContainer.style.display = 'block';
             form.reset();

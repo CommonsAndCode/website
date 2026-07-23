@@ -23,6 +23,20 @@
     font-display: swap;
 }
 
+/* Case map: allow the iframe to expand beyond the max-w-prose container */
+.max-w-prose:has(.case-map-container) {
+    max-width: 100%;
+    width: 100%;
+    flex: 1;
+}
+
+.case-map-container iframe {
+    width: 100%;
+    height: var(--map-height, 650px);
+    border: none;
+    display: block;
+}
+
 /* Set default fonts */
 :root {
     --default-font-family: 'Raleway', ui-sans-serif, system-ui, sans-serif;

@@ -1,6 +1,6 @@
 <span>
   {{- range $index, $authorId := .Params.authors -}}
-    {{- $author := index site.Data.authors $authorId -}}
+    {{- $author := index hugo.Data.authors $authorId -}}
     {{- $author.name | markdownify -}}
     {{- if ne $index (sub (len $.Params.authors) 1) }}, {{ end -}}
   {{- end -}}

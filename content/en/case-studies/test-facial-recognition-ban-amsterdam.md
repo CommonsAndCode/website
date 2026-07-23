@@ -4,7 +4,7 @@ date: 2025-07-12
 draft: false
 description: "City council votes to suspend all facial recognition technology in public spaces pending regulation."
 showTableOfContents: false
-tags: ["freiheitsrechte", "ueberwachung", "datenschutz"]
+tags: ["civil-rights", "surveillance", "data-protection"]
 translationKey: "test-facial-recognition-ban-amsterdam"
 rating: "best-practice"
 locations:

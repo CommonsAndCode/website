@@ -4,7 +4,7 @@ date: 2025-09-12
 draft: false
 description: "Offenes IoT-Netzwerk für Umweltdaten mit Echtzeit-Zugang für die Öffentlichkeit."
 showTableOfContents: false
-tags: ["smart-city", "open-data", "digitale-infrastruktur"]
+tags: ["smart-city", "open-data", "digital-infrastructure"]
 translationKey: "test-lora-sensornetz-zuerich"
 rating: "promising"
 locations:

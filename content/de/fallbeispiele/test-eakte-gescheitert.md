@@ -4,7 +4,7 @@ date: 2025-05-18
 draft: false
 description: "Millionenprojekt zur digitalen Aktenführung wurde nach Fehlplanung und Widerstand der Verwaltung eingestellt."
 showTableOfContents: false
-tags: ["digitalisierung"]
+tags: ["digitalization"]
 translationKey: "test-eakte-gescheitert"
 rating: "cautionary"
 locations:

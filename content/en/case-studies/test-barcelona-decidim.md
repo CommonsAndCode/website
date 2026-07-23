@@ -4,7 +4,7 @@ date: 2025-11-15
 draft: false
 description: "Open-source civic participation platform enabling residents to shape urban policy."
 showTableOfContents: false
-tags: ["buergerbeteiligung", "open-source", "transparenz"]
+tags: ["civic-participation", "open-source", "transparency"]
 translationKey: "test-barcelona-decidim"
 rating: "best-practice"
 locations:

@@ -4,7 +4,7 @@ date: 2026-01-20
 draft: false
 description: "Die Verkehrsverwaltung nutzt offene Geodaten für die Planung neuer Fahrradinfrastruktur."
 showTableOfContents: false
-tags: ["open-data", "verkehr", "open-source"]
+tags: ["open-data", "transport", "open-source"]
 translationKey: "test-osm-radwege-berlin"
 rating: "best-practice"
 locations:

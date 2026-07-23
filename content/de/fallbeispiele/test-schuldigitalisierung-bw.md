@@ -4,7 +4,7 @@ date: 2025-09-20
 draft: false
 description: "Landesweites Programm zur digitalen Ausstattung von Schulen mit Moodle und BigBlueButton."
 showTableOfContents: false
-tags: ["bildung", "open-source", "digitalisierung"]
+tags: ["education", "open-source", "digitalization"]
 translationKey: "test-schuldigitalisierung-bw"
 rating: "flawed-execution"
 locations:

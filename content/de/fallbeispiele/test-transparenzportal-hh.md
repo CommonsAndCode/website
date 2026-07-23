@@ -4,7 +4,7 @@ date: 2025-12-01
 draft: false
 description: "Alle Verträge, Gutachten und Senatsbeschlüsse der Stadt frei zugänglich online."
 showTableOfContents: false
-tags: ["transparenz", "open-data"]
+tags: ["transparency", "open-data"]
 translationKey: "test-transparenzportal-hh"
 rating: "best-practice"
 locations:

@@ -4,7 +4,7 @@ date: 2025-08-30
 draft: false
 description: "Comprehensive digital services for residents, from voting to healthcare, built on open-source infrastructure."
 showTableOfContents: false
-tags: ["digitalisierung", "open-source", "buergerdienste"]
+tags: ["digitalization", "open-source", "citizen-services"]
 translationKey: "test-e-government-tallinn"
 rating: "best-practice"
 locations:

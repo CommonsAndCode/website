@@ -4,7 +4,7 @@ date: 2025-12-10
 draft: false
 description: "Eine Gesundheitsapp der Stadtverwaltung speicherte Patient*innendaten unverschlüsselt in einer öffentlichen Cloud."
 showTableOfContents: false
-tags: ["datenschutz", "gesundheit", "digitalisierung"]
+tags: ["data-protection", "health", "digitalization"]
 translationKey: "test-gesundheitsapp-datenleck"
 rating: "cautionary"
 locations:

@@ -4,7 +4,7 @@ date: 2025-10-05
 draft: false
 description: "Einsatz algorithmischer Kriminalitätsprognosen ohne ausreichende Transparenz oder Evaluierung."
 showTableOfContents: false
-tags: ["ueberwachung", "ki", "freiheitsrechte"]
+tags: ["surveillance", "ai", "civil-rights"]
 translationKey: "test-ueberwachung-algorithmus-koeln"
 rating: "cautionary"
 locations:

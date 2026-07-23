@@ -4,7 +4,7 @@ date: 2026-02-01
 draft: false
 description: "Echtzeitdaten zu Verkehr, Luft und Energie auf einem öffentlichen Dashboard."
 showTableOfContents: false
-tags: ["smart-city", "open-data", "transparenz"]
+tags: ["smart-city", "open-data", "transparency"]
 translationKey: "test-smart-city-dashboard-wien"
 rating: "best-practice"
 locations:

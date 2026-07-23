@@ -4,7 +4,7 @@ date: 2025-11-03
 draft: false
 description: "Bürger*inneninitiative baut freies WLAN-Mesh-Netzwerk in mehreren Städten auf."
 showTableOfContents: false
-tags: ["digitale-infrastruktur", "buergerbeteiligung"]
+tags: ["digital-infrastructure", "civic-participation"]
 translationKey: "test-freifunk-community-mesh"
 rating: "promising"
 locations:

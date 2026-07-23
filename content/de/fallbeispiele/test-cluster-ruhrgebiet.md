@@ -4,7 +4,7 @@ date: 2025-06-01
 draft: false
 description: "Gemeinsame Digitalisierungsstrategie der Ruhrgebietskommunen mit geteilter Infrastruktur."
 showTableOfContents: false
-tags: ["digitalisierung", "smart-city"]
+tags: ["digitalization", "smart-city"]
 translationKey: "test-cluster-ruhrgebiet"
 rating: "promising"
 locations:

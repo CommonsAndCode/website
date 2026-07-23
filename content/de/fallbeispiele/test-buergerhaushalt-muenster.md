@@ -4,7 +4,7 @@ date: 2026-01-28
 draft: false
 description: "Online-Plattform zur Beteiligung der Bevölkerung an der kommunalen Haushaltsplanung."
 showTableOfContents: false
-tags: ["buergerbeteiligung", "transparenz"]
+tags: ["civic-participation", "transparency"]
 translationKey: "test-buergerhaushalt-muenster"
 rating: "promising"
 locations:

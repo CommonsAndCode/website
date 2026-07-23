@@ -4,7 +4,7 @@ date: 2026-01-15
 draft: false
 description: "Landesweites Portal für offene Verwaltungsdaten mit einheitlicher API und Qualitätsstandards."
 showTableOfContents: false
-tags: ["open-data", "transparenz", "digitalisierung"]
+tags: ["open-data", "transparency", "digitalization"]
 translationKey: "test-open-data-portal-nrw"
 rating: "best-practice"
 locations:

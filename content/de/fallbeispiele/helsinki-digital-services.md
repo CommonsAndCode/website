@@ -4,7 +4,7 @@ date: 2026-02-25
 draft: false
 description: "Zentrale Plattform für kommunale Services."
 showTableOfContents: false
-tags: ["digitalisierung", "buergerdienste"]
+tags: ["digitalization", "citizen-services"]
 translationKey: "helsinki-digital-service"
 rating: "best-practice"
 locations: [

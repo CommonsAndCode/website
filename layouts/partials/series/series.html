@@ -1,33 +1,43 @@
 {{ $courtesy := .Params.courtesyTranslation }}
 {{ if $courtesy }}
-  <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
-    {{ $link := "" }}
-    
-    {{ if eq (printf "%T" $courtesy) "string" }}
-      {{ range .Translations }}
-        {{ if eq .Lang $courtesy }}
-          {{ $link = .RelPermalink }}
-        {{ end }}
-      {{ end }}
-    {{ else }}
-      {{ if eq (len .Translations) 1 }}
+  <div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="info">
+    <div class="flex items-center gap-2 font-semibold text-inherit">
+      <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg">
+        {{- partial "icon.html" "language" -}}
+      </div>
+      <div class="grow">
+        {{ i18n "article.courtesy_translation_title" }}
+      </div>
+    </div>
+    <div class="admonition-content mt-3 text-base leading-relaxed text-inherit">
+      {{ $link := "" }}
+
+      {{ if eq (printf "%T" $courtesy) "string" }}
         {{ range .Translations }}
-          {{ $link = .RelPermalink }}
-        {{ end }}
-      {{ else }}
-        {{ range .Translations }}
-          {{ if eq .Lang "de" }}
+          {{ if eq .Lang $courtesy }}
             {{ $link = .RelPermalink }}
           {{ end }}
         {{ end }}
+      {{ else }}
+        {{ if eq (len .Translations) 1 }}
+          {{ range .Translations }}
+            {{ $link = .RelPermalink }}
+          {{ end }}
+        {{ else }}
+          {{ range .Translations }}
+            {{ if eq .Lang "de" }}
+              {{ $link = .RelPermalink }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
       {{ end }}
-    {{ end }}
 
-    {{ if $link }}
-      {{ printf (i18n "article.courtesy_translation_linked") $link | safeHTML }}
-    {{ else }}
-      {{ i18n "article.courtesy_translation_auto" | safeHTML }}
-    {{ end }}
+      {{ if $link }}
+        {{ printf (i18n "article.courtesy_translation_linked") $link | safeHTML }}
+      {{ else }}
+        {{ i18n "article.courtesy_translation_auto" | safeHTML }}
+      {{ end }}
+    </div>
   </div>
 {{ end }}
 

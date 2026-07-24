@@ -96,5 +96,6 @@ membership.error_place_date = "Place & date is a required field."
 membership.error_signature = "Signature is a required field."
 
 # Article
-article.courtesy_translation_auto = "Please note this is a semi-automated courtesy translation of the original document."
-article.courtesy_translation_linked = "Please note this is a semi-automated courtesy translation of the <a href=\"%s\">original document</a>."
+article.courtesy_translation_title = "Courtesy translation"
+article.courtesy_translation_auto = "Please note this is an automated courtesy translation of the original document."
+article.courtesy_translation_linked = "Please note this is an automated courtesy translation of the <a href=\"%s\">original document</a>."

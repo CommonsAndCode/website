@@ -22,3 +22,5 @@ Citizens can declare their support for a party using a digital ID.
 The website transparently shows the current count of supporters and all additional data relevant to party registration to any user of the platform.
 
 This makes it easy for new parties to register, for citizens to declare their support, and for the authorities compared to paper-based signatures collection and verification.
+
+{{< icon "link" >}}&ensp;[puoluerekisteri.fi](https://puoluerekisteri.fi/)

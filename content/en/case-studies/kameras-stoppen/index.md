@@ -10,10 +10,6 @@ rating: "best-practice"
 locations: [{lat: 50.937053892265546, lon: 6.9615089881495855, label: "Köln"}]
 ---
 
-Die Kölner Initiative [Kameras Stoppen](https://kameras-stoppen.org) setzt sich gegen polizeiliche Videoüberwachung im öffentlichen Raum in Köln ein.
-Seit 2016 baut die Polizei Köln die stationäre Videobeobachtung an zentralen Plätzen und Straßen drastisch aus.
-Kameras stoppen will diese Überwachung einstellen, geplante Ausweitungen verhindern und verbindet dafür juristische Arbeit mit Öffentlichkeitsarbeit, etwa durch Stadtspaziergänge durch die überwachten Bereiche.
-
 The Cologne-based initiative [‘Kameras Stoppen’](https://kameras-stoppen.org) campaigns against police video surveillance in public spaces in Cologne.
 Since 2016, the Cologne police have been drastically expanding their fixed-camera surveillance system in central squares and streets.
 ‘Kameras Stoppen’ aims to put a stop to this surveillance and prevent planned expansions, combining legal action with public awareness campaigns, such as guided walks through the areas under surveillance.

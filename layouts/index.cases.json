@@ -2,14 +2,7 @@
 
 {{- $lang := site.Language.Lang -}}
 
-{{- $targetSection := "" -}}
-{{- if eq $lang "en" -}}
-    {{- $targetSection = "case-studies" -}}
-{{- else if eq $lang "de" -}}
-    {{- $targetSection = "fallbeispiele" -}}
-{{- end -}}
-
-{{- range where site.RegularPages "Section" $targetSection -}}
+{{- range where site.RegularPages "Section" "case-map" -}}
 
     {{- $case := dict
         "id" .TranslationKey

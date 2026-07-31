@@ -15,6 +15,12 @@ weight = 1
 # weight = 2
 
 [[main]]
+name = "Case Map"
+pageRef = "case-map"
+identifier = "SqgQatn4m2"
+weight = 2
+
+[[main]]
 name = "Über Uns"
 pageRef = "ueber-uns"
 identifier = "eaPwNHMpa5"

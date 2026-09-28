@@ -329,3 +329,34 @@ html {
     border-radius: 5px;
     text-align: left;
 }
+
+/* Smart City Fragebogen styling */
+.sc-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.sc-item summary {
+    list-style: none;
+}
+
+.sc-item summary:focus-visible {
+    outline: 2px solid rgb(var(--color-primary-500));
+    outline-offset: 2px;
+}
+
+@media print {
+    #sc-search-input,
+    #sc-search-status,
+    .sc-copy-btn {
+        display: none !important;
+    }
+    .sc-item {
+        break-inside: avoid;
+        border-bottom: 1px solid #ccc !important;
+    }
+    .sc-item[open] {
+        display: block !important;
+    }
+}
+
+

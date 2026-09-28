@@ -1,0 +1,699 @@
+{{ $data := hugo.Data.smart_city_fragebogen }}
+{{ $action := .Get "action" | default "/api/v1/smart-city-survey" }}
+
+{{ if not $data }}
+  <p class="text-red-600">Fehler: Fragebogendaten nicht gefunden.</p>
+{{ else }}
+<div class="sc-form-container not-prose" id="sc-wom-app">
+
+  <form action="{{ $action }}" method="POST" id="sc-survey-form">
+
+    <!-- Top Stepper Header & Progress Bar -->
+    <div class="sc-wom-header pb-4 mb-6 border-b border-neutral-200 dark:border-neutral-800">
+      <div class="flex flex-wrap items-center justify-between gap-3 text-xs mb-2">
+        <div class="flex items-center gap-1.5 font-medium">
+          <span class="font-bold text-neutral-900 dark:text-neutral-100" id="sc-wom-category-name">
+            Angaben zur Kommune
+          </span>
+          <span class="text-neutral-500 dark:text-neutral-400" id="sc-wom-category-step">
+            · Start
+          </span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="font-mono text-neutral-500 dark:text-neutral-400" id="sc-wom-progress-counter">
+            0 / {{ $data.total_questions }} beantwortet
+          </span>
+          <button
+            type="button"
+            id="sc-wom-btn-overview"
+            class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
+          >
+            ☰ Fragenübersicht
+          </button>
+          <button
+            type="button"
+            id="sc-wom-btn-reset"
+            class="text-xs text-neutral-400 hover:text-red-600 dark:hover:text-red-400 transition-colors cursor-pointer"
+            title="Alle Eingaben zurücksetzen"
+          >
+            Neu starten
+          </button>
+        </div>
+      </div>
+
+      <!-- Slim 3px Progress Bar -->
+      <div class="w-full h-1 bg-neutral-200 dark:bg-neutral-800 rounded-xs overflow-hidden" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ $data.total_questions }}" id="sc-wom-progressbar">
+        <div class="h-full bg-primary-600 transition-all duration-300" id="sc-wom-progressbar-fill" style="width: 0%"></div>
+      </div>
+      <div class="flex items-center justify-between text-[11px] text-neutral-500 dark:text-neutral-400 mt-1.5">
+        <span id="sc-wom-save-status">Wird automatisch im Browser gesichert</span>
+        <span id="sc-wom-overall-counter" class="font-mono">Kategorie 1 von {{ len $data.categories }}</span>
+      </div>
+    </div>
+
+    <!-- In-Page Fragenübersicht (Sauber integriert, kein ausbrechendes Modal) -->
+    <div id="sc-wom-overview-panel" class="sc-overview-panel hidden">
+      <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-neutral-200 dark:border-neutral-700">
+        <div>
+          <div class="font-bold text-sm text-neutral-900 dark:text-neutral-100">
+            Fragenübersicht
+          </div>
+          <div class="text-xs text-neutral-500 dark:text-neutral-400">
+            {{ $data.total_questions }} Fragen in {{ len $data.categories }} Fachbereichen · Klicke auf eine Frage, um dorthin zu springen.
+          </div>
+        </div>
+        <button
+          type="button"
+          id="sc-wom-btn-close-overview"
+          class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
+        >
+          ✕ Schließen
+        </button>
+      </div>
+
+      <div class="pt-3">
+        <input
+          type="search"
+          id="sc-overview-filter"
+          placeholder="Fragen nach Stichwort filtern (z. B. Open Data, WLAN, IT)..."
+          class="w-full p-2 text-xs border border-neutral-300 dark:border-neutral-700 rounded-sm bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100"
+        >
+      </div>
+
+      <div class="sc-overview-list-container" id="sc-overview-list">
+        {{ range $cIdx, $cat := $data.categories }}
+          <div class="sc-overview-category" data-cat-name="{{ $cat.name }}">
+            <div class="sc-overview-category-title">
+              <span>{{ $cat.name }}</span>
+              <span class="font-mono font-normal text-[11px] text-neutral-400">{{ len $cat.questions }} Fragen</span>
+            </div>
+            <div>
+              {{ range $qIdx, $q := $cat.questions }}
+                <button
+                  type="button"
+                  class="sc-overview-row"
+                  data-target-slide="{{ $q.number }}"
+                  data-question-text="{{ $q.question }}"
+                >
+                  <div class="flex items-start gap-2.5">
+                    <span class="font-mono text-neutral-400 shrink-0">{{ $q.number }}.</span>
+                    <span class="font-medium leading-relaxed">{{ $q.question }}</span>
+                  </div>
+                  <span class="sc-overview-status" data-q-pill="{{ $q.number }}">
+                    Offen
+                  </span>
+                </button>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- SLIDE 0: Start / Metadaten der Kommune (Flat Layout) -->
+    <div class="sc-wom-slide sc-current space-y-6" data-slide="0">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-primary-600 dark:text-primary-400 mb-1 block">
+          Start
+        </span>
+        <h2 class="sc-question-title text-2xl !mt-0 !mb-2">
+          Smart City Fragebogen starten
+        </h2>
+        <p class="text-sm text-neutral-600 dark:text-neutral-300">
+          Beantworte die Fragen Schritt für Schritt im Wahl-O-Mat-Format. Bitte gib zuerst an, für welche Stadt, Gemeinde oder Landkreis du die Daten erfassen möchtest:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 pt-2">
+        <div class="md:col-span-2 sc-form-field">
+          <label for="wom_kommune">
+            Name der Kommune (Stadt / Gemeinde / Kreis) <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="wom_kommune"
+            name="kommune"
+            required
+            placeholder="z. B. Bonn, Leipzig, Kreis Steinfurt"
+          >
+        </div>
+
+        <div class="sc-form-field">
+          <label for="wom_bundesland">
+            Bundesland <span class="text-red-500">*</span>
+          </label>
+          <select id="wom_bundesland" name="bundesland" required>
+            <option value="">Bundesland auswählen...</option>
+            <option value="BW">Baden-Württemberg</option>
+            <option value="BY">Bayern</option>
+            <option value="BE">Berlin</option>
+            <option value="BB">Brandenburg</option>
+            <option value="HB">Bremen</option>
+            <option value="HH">Hamburg</option>
+            <option value="HE">Hessen</option>
+            <option value="MV">Mecklenburg-Vorpommern</option>
+            <option value="NI">Niedersachsen</option>
+            <option value="NW">Nordrhein-Westfalen</option>
+            <option value="RP">Rheinland-Pfalz</option>
+            <option value="SL">Saarland</option>
+            <option value="SN">Sachsen</option>
+            <option value="ST">Sachsen-Anhalt</option>
+            <option value="SH">Schleswig-Holstein</option>
+            <option value="TH">Thüringen</option>
+          </select>
+        </div>
+
+        <div class="sc-form-field">
+          <label for="wom_einwohnerzahl">
+            Einwohnerzahl (ca., optional)
+          </label>
+          <input
+            type="number"
+            id="wom_einwohnerzahl"
+            name="einwohnerzahl"
+            placeholder="z. B. 45000"
+          >
+        </div>
+
+        <div class="sc-form-field">
+          <label for="wom_rolle">
+            Deine Funktion / Rolle (optional)
+          </label>
+          <select id="wom_rolle" name="rolle">
+            <option value="">Bitte auswählen...</option>
+            <option value="Mandatstragende*r (Gemeinderat, Stadtrat, Kreistag)">Mandatstragende*r (Gemeinde-, Stadt- oder Kreisrat)</option>
+            <option value="Verwaltungsmitarbeitende*r (Kommunalverwaltung)">Verwaltungsmitarbeitende*r (Kommunalverwaltung)</option>
+            <option value="Bürger*in / Zivilgesellschaft">Bürger*in / Zivilgesellschaft</option>
+            <option value="Fraktionsmitarbeiter*in / Kommunalpolitik">Fraktionsmitarbeiter*in / Partei</option>
+            <option value="Wissenschaft / Forschung">Wissenschaft / Forschung / Medien</option>
+            <option value="Sonstige">Sonstige</option>
+          </select>
+        </div>
+
+        <div class="sc-form-field">
+          <label for="wom_email">
+            E-Mail-Adresse für Rückfragen / Ergebnisse (optional)
+          </label>
+          <input
+            type="email"
+            id="wom_email"
+            name="kontakt_email"
+            placeholder="name@kommune.de"
+          >
+        </div>
+      </div>
+
+      <div class="pt-4 flex items-center justify-between border-t border-neutral-200 dark:border-neutral-800">
+        <span class="text-xs text-neutral-500">
+          {{ $data.total_questions }} Fragen in {{ len $data.categories }} Fachbereichen
+        </span>
+        <button
+          type="button"
+          id="sc-wom-btn-start"
+          class="sc-btn-primary cursor-pointer"
+        >
+          Fragen starten →
+        </button>
+      </div>
+    </div>
+
+    <!-- SLIDES 1 to N: Individual Question Cards (Flat Design) -->
+    {{ range $cIdx, $cat := $data.categories }}
+      {{ $catTotal := len $cat.questions }}
+      {{ $cNum := add $cIdx 1 }}
+      {{ range $qIdx, $q := $cat.questions }}
+        {{ $qInCat := add $qIdx 1 }}
+        <div
+          class="sc-wom-slide hidden space-y-5"
+          data-slide="{{ $q.number }}"
+          data-category="{{ $cat.name }}"
+          data-cat-num="{{ $cNum }}"
+          data-q-in-cat="{{ $qInCat }}"
+          data-cat-total="{{ $catTotal }}"
+        >
+          
+          <!-- Category & Progress Header -->
+          <div class="flex items-center justify-between gap-3 text-xs">
+            <span class="font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
+              {{ $cat.name }}
+            </span>
+            <div class="flex items-center gap-2 font-mono text-neutral-500 dark:text-neutral-400">
+              <span>Frage {{ $qInCat }} von {{ $catTotal }}</span>
+              <span class="text-[11px] text-neutral-400 dark:text-neutral-500 hidden sm:inline">(Nr. {{ $q.number }} im Gesamtkatalog)</span>
+            </div>
+          </div>
+
+          <!-- Question Headline -->
+          <h2 class="sc-question-title !my-2">
+            {{ $q.question }}
+          </h2>
+
+          <!-- Options Container -->
+          <div class="pt-1">
+            {{ if eq $q.type "multi_choice" }}
+              <div class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+                Mehrfachauswahl möglich:
+              </div>
+              <div class="sc-options-list">
+                {{ range $opt := $q.options }}
+                  <label class="sc-option-row">
+                    <input
+                      type="checkbox"
+                      name="q_{{ $q.number }}[]"
+                      value="{{ $opt }}"
+                    >
+                    <span class="sc-option-text font-medium">{{ $opt }}</span>
+                  </label>
+                {{ end }}
+              </div>
+            {{ else }}
+              <div class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+                Reifegrad auswählen:
+              </div>
+              <div class="sc-options-list">
+                {{ range $lvl := $q.scale_levels }}
+                  <label class="sc-option-row">
+                    <input
+                      type="radio"
+                      name="q_{{ $q.number }}"
+                      value="{{ $lvl.level }}"
+                    >
+                    <span class="sc-option-num">{{ $lvl.level }} ·</span>
+                    <span class="sc-option-text">{{ $lvl.description }}</span>
+                  </label>
+                {{ end }}
+                <label class="sc-option-row sc-option-unknown">
+                  <input
+                    type="radio"
+                    name="q_{{ $q.number }}"
+                    value=""
+                  >
+                  <span class="sc-option-text">Keine Angabe / Nicht bekannt</span>
+                </label>
+              </div>
+            {{ end }}
+          </div>
+
+          <!-- Optional Comment Field -->
+          <div class="pt-1">
+            <details class="text-xs text-neutral-500">
+              <summary class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400 select-none font-medium">
+                + Optionale Notiz oder Bemerkung hinzufügen
+              </summary>
+              <div class="mt-2">
+                <input
+                  type="text"
+                  name="comment_{{ $q.number }}"
+                  placeholder="Notiz oder Erläuterung zu dieser Frage..."
+                  class="w-full p-2 text-xs border border-neutral-300 dark:border-neutral-700 rounded-sm bg-transparent text-neutral-900 dark:text-neutral-100"
+                >
+              </div>
+            </details>
+          </div>
+
+          <!-- Navigation Footer (Clean Zurück / Weiter Buttons) -->
+          <div class="pt-6 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between gap-3">
+            <button
+              type="button"
+              class="sc-wom-btn-prev sc-btn-secondary cursor-pointer"
+            >
+              ← Zurück
+            </button>
+            <button
+              type="button"
+              class="sc-wom-btn-next sc-btn-primary cursor-pointer"
+            >
+              {{ if eq $q.number $data.total_questions }}
+                Zur Zusammenfassung →
+              {{ else }}
+                Weiter →
+              {{ end }}
+            </button>
+          </div>
+
+        </div>
+      {{ end }}
+    {{ end }}
+
+    <!-- SLIDE 89: Abschluss & Zusammenfassung -->
+    <div class="sc-wom-slide hidden space-y-6" data-slide="{{ add $data.total_questions 1 }}">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1 block">
+          Abschluss
+        </span>
+        <h2 class="sc-question-title text-2xl !mt-0 !mb-2">
+          Fragebogen bereit zur Übermittlung
+        </h2>
+        <p class="text-sm text-neutral-600 dark:text-neutral-300">
+          Vielen Dank für deinen Beitrag! Überprüfe kurz deine Angaben, bevor du den Fragebogen an Commons & Code übermittelst:
+        </p>
+      </div>
+
+      <div class="p-4 rounded-sm border border-neutral-200 dark:border-neutral-700 space-y-2 text-xs">
+        <div class="flex justify-between py-1 border-b border-neutral-200 dark:border-neutral-700">
+          <span class="text-neutral-500">Erfasste Kommune:</span>
+          <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-kommune">–</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-neutral-200 dark:border-neutral-700">
+          <span class="text-neutral-500">Bundesland:</span>
+          <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-bundesland">–</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-neutral-200 dark:border-neutral-700">
+          <span class="text-neutral-500">Rolle / Funktion:</span>
+          <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-rolle">–</span>
+        </div>
+        <div class="flex justify-between py-1">
+          <span class="text-neutral-500">Beantwortete Fragen:</span>
+          <span class="font-bold text-primary-600 dark:text-primary-400" id="sc-wom-summary-count">0 von {{ $data.total_questions }}</span>
+        </div>
+      </div>
+
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        Hinweis: Du musst nicht alle Fragen beantwortet haben. Auch Teilantworten zu einzelnen Fachbereichen fließen direkt in unsere bundesweite Auswertung ein.
+      </p>
+
+      <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between gap-4">
+        <button
+          type="button"
+          class="sc-wom-btn-prev sc-btn-secondary cursor-pointer"
+        >
+          ← Zurück zu den Fragen
+        </button>
+        <button
+          type="submit"
+          class="sc-btn-primary cursor-pointer !bg-emerald-600 hover:!bg-emerald-500"
+        >
+          Fragebogen jetzt absenden
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+<!-- Wahl-O-Mat Stepper & Autosave Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('sc-survey-form');
+  const slides = document.querySelectorAll('.sc-wom-slide');
+  const totalSlides = slides.length;
+  const totalQuestions = {{ $data.total_questions }};
+  const totalCategories = {{ len $data.categories }};
+  const categoryNameLabel = document.getElementById('sc-wom-category-name');
+  const categoryStepLabel = document.getElementById('sc-wom-category-step');
+  const overallCounter = document.getElementById('sc-wom-overall-counter');
+  const progressCounter = document.getElementById('sc-wom-progress-counter');
+  const progressbarFill = document.getElementById('sc-wom-progressbar-fill');
+  const saveStatus = document.getElementById('sc-wom-save-status');
+  const overviewPanel = document.getElementById('sc-wom-overview-panel');
+  const overviewFilter = document.getElementById('sc-overview-filter');
+  const btnOverview = document.getElementById('sc-wom-btn-overview');
+  const btnCloseOverview = document.getElementById('sc-wom-btn-close-overview');
+  const btnReset = document.getElementById('sc-wom-btn-reset');
+  const btnStart = document.getElementById('sc-wom-btn-start');
+  const summaryKommune = document.getElementById('sc-wom-summary-kommune');
+  const summaryBundesland = document.getElementById('sc-wom-summary-bundesland');
+  const summaryRolle = document.getElementById('sc-wom-summary-rolle');
+  const summaryCount = document.getElementById('sc-wom-summary-count');
+  const storageKey = 'sc_survey_draft_v2';
+
+  let currentSlide = 0;
+
+  if (!form) return;
+
+  // 1. Navigation Function
+  function goToSlide(index) {
+    if (index < 0 || index >= totalSlides) return;
+
+    // Validate Pflichtfelder on Slide 0
+    if (currentSlide === 0 && index > 0) {
+      const kommune = document.getElementById('wom_kommune');
+      const bundesland = document.getElementById('wom_bundesland');
+      if (kommune && !kommune.value.trim()) {
+        alert('Bitte gib den Namen deiner Kommune ein.');
+        kommune.focus();
+        return;
+      }
+      if (bundesland && !bundesland.value) {
+        alert('Bitte wähle dein Bundesland aus.');
+        bundesland.focus();
+        return;
+      }
+    }
+
+    currentSlide = index;
+
+    slides.forEach((slide, idx) => {
+      if (idx === currentSlide) {
+        slide.classList.remove('hidden');
+        slide.classList.add('sc-current');
+      } else {
+        slide.classList.add('hidden');
+        slide.classList.remove('sc-current');
+      }
+    });
+
+    // Update Header labels
+    if (currentSlide === 0) {
+      if (categoryNameLabel) categoryNameLabel.textContent = 'Angaben zur Kommune';
+      if (categoryStepLabel) categoryStepLabel.textContent = '· Start';
+      if (overallCounter) overallCounter.textContent = `Kategorie 1 von ${totalCategories}`;
+    } else if (currentSlide === totalSlides - 1) {
+      if (categoryNameLabel) categoryNameLabel.textContent = 'Zusammenfassung';
+      if (categoryStepLabel) categoryStepLabel.textContent = '· Abschluss';
+      if (overallCounter) overallCounter.textContent = 'Bereit zum Absenden';
+      updateSummary();
+    } else {
+      const activeSlide = slides[currentSlide];
+      const cat = activeSlide.getAttribute('data-category') || 'Fragebogen';
+      const catNum = activeSlide.getAttribute('data-cat-num') || '1';
+      const qInCat = activeSlide.getAttribute('data-q-in-cat') || '1';
+      const catTotal = activeSlide.getAttribute('data-cat-total') || '1';
+      
+      if (categoryNameLabel) categoryNameLabel.textContent = cat;
+      if (categoryStepLabel) categoryStepLabel.textContent = `· Frage ${qInCat} von ${catTotal}`;
+      if (overallCounter) overallCounter.textContent = `Kategorie ${catNum} von ${totalCategories} · Nr. ${currentSlide} gesamt`;
+    }
+
+    // Scroll smoothly to top of form
+    const appEl = document.getElementById('sc-wom-app');
+    if (appEl && window.scrollY > appEl.offsetTop) {
+      window.scrollTo({ top: appEl.offsetTop - 70, behavior: 'smooth' });
+    }
+
+    saveState();
+  }
+
+  function updateSummary() {
+    const k = document.getElementById('wom_kommune')?.value || '–';
+    const b = document.getElementById('wom_bundesland');
+    const bText = b && b.selectedIndex > 0 ? b.options[b.selectedIndex].text : '–';
+    const r = document.getElementById('wom_rolle');
+    const rText = r && r.value ? r.value : 'Keine Angabe';
+
+    if (summaryKommune) summaryKommune.textContent = k;
+    if (summaryBundesland) summaryBundesland.textContent = bText;
+    if (summaryRolle) summaryRolle.textContent = rText;
+
+    const answered = getAnsweredCount();
+    if (summaryCount) summaryCount.textContent = `${answered} von ${totalQuestions} (${Math.round((answered/totalQuestions)*100)}%)`;
+  }
+
+  function getAnsweredCount() {
+    const set = new Set();
+    form.querySelectorAll('input[type="radio"]:checked').forEach(r => {
+      if (r.value !== '') set.add(r.name);
+    });
+    form.querySelectorAll('input[type="checkbox"]:checked').forEach(c => {
+      set.add(c.name.replace('[]', ''));
+    });
+    return set.size;
+  }
+
+  // 2. Update Progress & Overview Status Pills
+  function updateProgress() {
+    const answered = getAnsweredCount();
+    const percent = Math.round((answered / totalQuestions) * 100);
+
+    if (progressbarFill) progressbarFill.style.width = percent + '%';
+    if (progressCounter) progressCounter.textContent = `${answered} / ${totalQuestions} beantwortet`;
+
+    // Update status in overview list
+    for (let i = 1; i <= totalQuestions; i++) {
+      const pill = document.querySelector(`[data-q-pill="${i}"]`);
+      if (!pill) continue;
+
+      const radio = form.querySelector(`input[name="q_${i}"]:checked`);
+      const checkboxes = form.querySelectorAll(`input[name="q_${i}[]"]:checked`);
+
+      if (radio && radio.value !== '') {
+        pill.textContent = `Stufe ${radio.value}`;
+        pill.classList.add('answered');
+      } else if (checkboxes.length > 0) {
+        pill.textContent = `${checkboxes.length} gewählt`;
+        pill.classList.add('answered');
+      } else {
+        pill.textContent = 'Offen';
+        pill.classList.remove('answered');
+      }
+    }
+  }
+
+  // 3. Overview Panel Filter & Jump
+  if (overviewFilter) {
+    overviewFilter.addEventListener('input', function(e) {
+      const term = e.target.value.toLowerCase().trim();
+      const rows = document.querySelectorAll('.sc-overview-row');
+      const cats = document.querySelectorAll('.sc-overview-category');
+
+      rows.forEach(row => {
+        const text = (row.getAttribute('data-question-text') || '').toLowerCase();
+        const num = row.getAttribute('data-target-slide') || '';
+        const match = !term || text.includes(term) || num === term;
+        row.style.display = match ? '' : 'none';
+      });
+
+      cats.forEach(cat => {
+        const visibleRows = cat.querySelectorAll('.sc-overview-row:not([style*="display: none"])');
+        cat.style.display = visibleRows.length > 0 ? '' : 'none';
+      });
+    });
+  }
+
+  document.querySelectorAll('.sc-overview-row').forEach(row => {
+    row.addEventListener('click', function() {
+      const target = parseInt(this.getAttribute('data-target-slide'), 10);
+      if (!isNaN(target)) {
+        goToSlide(target);
+        if (overviewPanel) overviewPanel.classList.add('hidden');
+      }
+    });
+  });
+
+  // 4. LocalStorage Autosave
+  function saveState() {
+    try {
+      const data = {
+        slide: currentSlide,
+        inputs: {},
+        radios: {},
+        checkboxes: []
+      };
+
+      form.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], select').forEach(el => {
+        if (el.name && el.value) data.inputs[el.name] = el.value;
+      });
+
+      form.querySelectorAll('input[type="radio"]:checked').forEach(r => {
+        if (r.name) data.radios[r.name] = r.value;
+      });
+
+      form.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+        if (cb.name) data.checkboxes.push({ name: cb.name, value: cb.value });
+      });
+
+      localStorage.setItem(storageKey, JSON.stringify(data));
+      if (saveStatus) saveStatus.textContent = 'Automatisch im Browser gesichert';
+    } catch (e) {}
+
+    updateProgress();
+  }
+
+  function restoreState() {
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (!saved) return;
+      const data = JSON.parse(saved);
+
+      Object.keys(data.inputs || {}).forEach(name => {
+        const el = form.elements[name];
+        if (el) el.value = data.inputs[name];
+      });
+
+      Object.keys(data.radios || {}).forEach(name => {
+        const radio = form.querySelector(`input[type="radio"][name="${name}"][value="${data.radios[name]}"]`);
+        if (radio) radio.checked = true;
+      });
+
+      (data.checkboxes || []).forEach(cbData => {
+        const cb = form.querySelector(`input[type="checkbox"][name="${cbData.name}"][value="${cbData.value}"]`);
+        if (cb) cb.checked = true;
+      });
+
+      if (data.slide && data.slide > 0 && data.slide < totalSlides) {
+        goToSlide(data.slide);
+      }
+    } catch (e) {}
+
+    updateProgress();
+  }
+
+  // 5. Event Listeners
+  if (btnStart) {
+    btnStart.addEventListener('click', () => goToSlide(1));
+  }
+
+  document.querySelectorAll('.sc-wom-btn-next').forEach(btn => {
+    btn.addEventListener('click', () => goToSlide(currentSlide + 1));
+  });
+
+  document.querySelectorAll('.sc-wom-btn-prev').forEach(btn => {
+    btn.addEventListener('click', () => goToSlide(currentSlide - 1));
+  });
+
+  if (btnOverview) {
+    btnOverview.addEventListener('click', () => {
+      if (overviewPanel) {
+        const isHidden = overviewPanel.classList.contains('hidden');
+        if (isHidden) {
+          overviewPanel.classList.remove('hidden');
+          if (overviewFilter) overviewFilter.focus();
+        } else {
+          overviewPanel.classList.add('hidden');
+        }
+      }
+    });
+  }
+
+  if (btnCloseOverview) {
+    btnCloseOverview.addEventListener('click', () => {
+      if (overviewPanel) overviewPanel.classList.add('hidden');
+    });
+  }
+
+  if (btnReset) {
+    btnReset.addEventListener('click', () => {
+      if (confirm('Möchtest du alle Eingaben zurücksetzen und von vorne beginnen?')) {
+        try { localStorage.removeItem(storageKey); } catch (e) {}
+        form.reset();
+        goToSlide(0);
+        updateProgress();
+      }
+    });
+  }
+
+  form.addEventListener('input', saveState);
+  form.addEventListener('change', saveState);
+
+  form.addEventListener('submit', function() {
+    try { localStorage.removeItem(storageKey); } catch (e) {}
+  });
+
+  // Auto-advance on radio selection with smooth subtle delay
+  form.querySelectorAll('input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      saveState();
+      // Auto-advance after 260ms if on a question slide
+      if (currentSlide > 0 && currentSlide < totalQuestions) {
+        setTimeout(() => {
+          goToSlide(currentSlide + 1);
+        }, 260);
+      }
+    });
+  });
+
+  restoreState();
+});
+</script>
+{{ end }}

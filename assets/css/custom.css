@@ -344,10 +344,264 @@ html {
     outline-offset: 2px;
 }
 
+/* Reset any inherited text-decoration inside form container */
+.sc-form-container,
+.sc-wom-slide,
+.sc-wom-slide *,
+.sc-question-title,
+.sc-form-field label,
+.sc-option-row {
+    text-decoration: none !important;
+}
+
+/* Question Title font override: use body font (Raleway) instead of tech font (Share Tech) */
+.sc-question-title {
+    font-family: var(--default-font-family) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em;
+}
+
+/* Form fields on start slide (matches site design: 4px border-radius, clean inputs) */
+.sc-form-field {
+    margin-bottom: 1.25rem;
+}
+
+.sc-form-field label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.35rem;
+}
+
+.sc-form-field input[type="text"],
+.sc-form-field input[type="email"],
+.sc-form-field input[type="number"],
+.sc-form-field select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+.dark .sc-form-field input[type="text"],
+.dark .sc-form-field input[type="email"],
+.dark .sc-form-field input[type="number"],
+.dark .sc-form-field select {
+    border-color: #444;
+    background-color: #1a1a1a;
+    color: #eee;
+}
+
+.sc-form-field input:focus,
+.sc-form-field select:focus {
+    outline: none;
+    border-color: rgb(var(--color-primary-500));
+    box-shadow: 0 0 0 1px rgb(var(--color-primary-500));
+}
+
+/* Option rows for answers */
+.sc-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 1.25rem 0;
+}
+
+.sc-option-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.15s, background-color 0.15s;
+    user-select: none;
+}
+
+.dark .sc-option-row {
+    border-color: #333;
+}
+
+.sc-option-row:hover {
+    border-color: rgb(var(--color-primary-400));
+    background-color: rgba(var(--color-primary-500), 0.04);
+}
+
+.sc-option-row:has(input:checked) {
+    border-color: rgb(var(--color-primary-500)) !important;
+    background-color: rgba(var(--color-primary-500), 0.08) !important;
+}
+
+.sc-option-row input[type="radio"],
+.sc-option-row input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: rgb(var(--color-primary-600));
+    flex-shrink: 0;
+}
+
+.sc-option-num {
+    font-family: var(--default-mono-font-family);
+    font-weight: 700;
+    color: rgb(var(--color-primary-600));
+    min-width: 1.4rem;
+    flex-shrink: 0;
+}
+
+.sc-option-text {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.sc-option-row.sc-option-unknown {
+    color: #666;
+    font-size: 0.85rem;
+}
+.dark .sc-option-row.sc-option-unknown {
+    border-color: #2a2a2a;
+    color: #888;
+}
+
+/* Action buttons */
+.sc-btn-primary {
+    background-color: rgb(var(--color-primary-600));
+    color: #fff !important;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.15s;
+}
+
+.sc-btn-primary:hover {
+    background-color: rgb(var(--color-primary-500));
+}
+
+.sc-btn-secondary {
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.dark .sc-btn-secondary {
+    border-color: #555;
+}
+
+.sc-btn-secondary:hover {
+    border-color: #999;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* In-page Fragenübersicht Panel */
+.sc-overview-panel {
+    margin: 1.25rem 0 1.75rem 0;
+    padding: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fafafa;
+}
+
+.dark .sc-overview-panel {
+    border-color: #333;
+    background: #181818;
+}
+
+.sc-overview-list-container {
+    max-height: 480px;
+    overflow-y: auto;
+    margin-top: 1rem;
+    padding-right: 0.5rem;
+}
+
+.sc-overview-category-title {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgb(var(--color-primary-600));
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 1.25rem 0 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+.dark .sc-overview-category-title {
+    border-color: #333;
+}
+
+.sc-overview-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    color: inherit;
+    transition: background-color 0.1s;
+}
+
+.sc-overview-row:hover {
+    background-color: rgba(var(--color-primary-500), 0.08);
+}
+
+.sc-overview-status {
+    font-family: var(--default-mono-font-family);
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    color: #888;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.dark .sc-overview-status {
+    border-color: #444;
+    color: #aaa;
+}
+
+.sc-overview-status.answered {
+    border-color: rgb(var(--color-primary-500));
+    background-color: rgba(var(--color-primary-500), 0.1);
+    color: rgb(var(--color-primary-600));
+    font-weight: 700;
+}
+
 @media print {
     #sc-search-input,
     #sc-search-status,
-    .sc-copy-btn {
+    .sc-copy-btn,
+    .sc-wom-header,
+    .sc-wom-btn-prev,
+    .sc-wom-btn-next,
+    .sc-overview-panel {
         display: none !important;
     }
     .sc-item {
@@ -358,5 +612,8 @@ html {
         display: block !important;
     }
 }
+
+
+
 
 

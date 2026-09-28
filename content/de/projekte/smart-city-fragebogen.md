@@ -18,10 +18,14 @@ Wie digital ist deine Kommune wirklich? Dieser Fragebogen bietet Mandatstragende
 Als Ratsmitglied oder Ausschussmitglied fehlt oft die Zeit, den aktuellen Stand kommunaler IT-Infrastruktur, Online-Dienste und Datenstrategien von Grund auf zu durchleuchten.
 Der vorliegende Fragebogen bündelt **88 Fragen aus sieben Schlüsselbereichen**.
 Zu fast jeder Frage sind konkrete Reifegradstufen hinterlegt, mit denen du den Ist-Zustand erfassen und gezielte Anfragen an die Verwaltung stellen kannst.
-
 >[!NOTE] Hinweis
 > Nicht jede Kommune muss sofort die Maximalstufe aller Dienste anbieten.
 > Du solltest die Bedürfnisse deiner Gemeinde bei der Nutzung des Fragebogens berücksichtigen.
+
+**Möchtest du den Digitalisierungsstand deiner Kommune direkt online erfassen?**  
+Nutze unser interaktives Formular, um den [Fragebogen online auszufüllen und an uns zu übermitteln](/de/projekte/smart-city-fragebogen/ausfuellen/).
+
+
 
 {{< smart-city-questionnaire >}}
 

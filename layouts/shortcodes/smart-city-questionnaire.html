@@ -1,0 +1,110 @@
+{{ $data := hugo.Data.smart_city_fragebogen }}
+{{ if $data }}
+{{ $catSlug := .Get "category" | default (.Get 0) }}
+
+{{ if not $catSlug }}
+  {{/* Render Search Bar and JS */}}
+  <div class="not-prose my-6" id="sc-search-container">
+    <label for="sc-search-input" class="sr-only">Fragen durchsuchen</label>
+    <div class="relative">
+      <input type="search" id="sc-search-input" placeholder="Fragen durchsuchen (z. B. Open Data, WLAN, IT-Sicherheit, Mobilität)..." class="w-full px-4 py-2.5 text-sm rounded-md border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors" autocomplete="off">
+    </div>
+    <div id="sc-search-status" class="mt-2 text-xs text-neutral-500 dark:text-neutral-400" aria-live="polite"></div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const input = document.getElementById('sc-search-input');
+    const status = document.getElementById('sc-search-status');
+    const items = document.querySelectorAll('.sc-item');
+    const groups = document.querySelectorAll('.sc-category-group');
+    if (!input) return;
+
+    input.addEventListener('input', function(e) {
+      const term = e.target.value.toLowerCase().trim();
+      let count = 0;
+
+      items.forEach(function(item) {
+        const text = (item.querySelector('.sc-question-title')?.textContent || '').toLowerCase();
+        const match = !term || text.includes(term);
+        item.style.display = match ? '' : 'none';
+        if (match) count++;
+      });
+
+      groups.forEach(function(group) {
+        const visible = group.querySelectorAll('.sc-item:not([style*="display: none"])');
+        const heading = group.previousElementSibling;
+        if (heading && heading.tagName === 'H2') {
+          heading.style.display = visible.length > 0 ? '' : 'none';
+        }
+        group.style.display = visible.length > 0 ? '' : 'none';
+      });
+
+      if (status) {
+        status.textContent = term ? (count + ' Frage' + (count === 1 ? '' : 'n') + ' gefunden') : '';
+      }
+    });
+
+    document.querySelectorAll('.sc-copy-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const q = this.getAttribute('data-question');
+        const label = this.querySelector('.sc-copy-label');
+        if (navigator.clipboard && q) {
+          navigator.clipboard.writeText(q).then(function() {
+            if (label) label.textContent = 'Kopiert!';
+            setTimeout(function() { if (label) label.textContent = 'Frage kopieren'; }, 2000);
+          });
+        }
+      });
+    });
+  });
+  </script>
+
+{{ else }}
+  {{/* Render Questions for specific Category */}}
+  {{ range $cat := $data.categories }}
+    {{ if eq $cat.slug $catSlug }}
+      <div class="sc-category-group" data-cat-slug="{{ $cat.slug }}">
+        {{ range $q := $cat.questions }}
+        <details class="sc-item group py-3 border-b border-neutral-200/80 dark:border-neutral-800">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4 text-neutral-800 dark:text-neutral-200 hover:text-primary-600 dark:hover:text-primary-400 font-medium">
+            <span class="sc-question-title leading-snug"><span class="text-neutral-400 dark:text-neutral-500 font-mono text-sm mr-2">{{ $q.number }}.</span>{{ $q.question }}</span>
+            <span class="text-xs text-neutral-400 group-open:rotate-180 transition-transform ml-2 mt-1 flex-shrink-0" aria-hidden="true">▾</span>
+          </summary>
+          <div class="mt-2.5 pl-6 text-sm text-neutral-600 dark:text-neutral-300">
+            {{ if eq $q.type "multi_choice" }}
+              <div class="text-xs font-semibold text-neutral-500 dark:text-neutral-400 mb-1.5">Auswahloptionen:</div>
+              <ul class="list-disc list-inside space-y-1 text-xs text-neutral-700 dark:text-neutral-300 !my-0">
+                {{ range $q.options }}
+                <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            {{ else }}
+              <div class="text-xs font-semibold text-neutral-500 dark:text-neutral-400 mb-1.5">Reifegrade (0 bis 4):</div>
+              <ul class="space-y-1 text-xs text-neutral-700 dark:text-neutral-300 !my-0 list-none !pl-0">
+                {{ range $q.scale_levels }}
+                <li class="flex items-baseline gap-2.5"><span class="w-3 font-mono font-bold text-primary-600 dark:text-primary-400 flex-shrink-0">{{ .level }}</span><span>{{ .description }}</span></li>
+                {{ end }}
+              </ul>
+            {{ end }}
+
+            {{ with $q.comment }}
+              <div class="text-xs italic text-neutral-500 mt-2">Hinweis: {{ . }}</div>
+            {{ end }}
+
+            <div class="mt-3">
+              <button type="button" class="sc-copy-btn inline-flex items-center gap-1.5 text-xs text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium transition-colors" data-question="{{ $q.question }}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                <span class="sc-copy-label">Frage kopieren</span>
+              </button>
+            </div>
+          </div>
+        </details>
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ end }}

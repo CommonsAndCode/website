@@ -1,0 +1,2757 @@
+{
+  "title": "Smart City Fragebogen",
+  "total_questions": 88,
+  "categories_count": 7,
+  "categories": [
+    {
+      "name": "Verwaltung",
+      "slug": "verwaltung",
+      "questions": [
+        {
+          "id": "q-1",
+          "number": 1,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Gibt es ein zentrales Serviceportal mit Online-Diensten?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nicht vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Geplant"
+            },
+            {
+              "level": "2",
+              "description": "Pilotphase (einzelne Services)"
+            },
+            {
+              "level": "3",
+              "description": "Flächendeckend, aber mit Mängeln"
+            },
+            {
+              "level": "4",
+              "description": "Vollständig umgesetzt mit Nutzerfeedback und kontinuierlicher Optimierung"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-2",
+          "number": 2,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Bei wie vielen der verfügbaren Online-Dienste werden digitale Identitäten z. B. eID unterstützt (Anteil in Prozent)?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "0% der Services"
+            },
+            {
+              "level": "1",
+              "description": "1-25% der Services"
+            },
+            {
+              "level": "2",
+              "description": "26-50% der Services"
+            },
+            {
+              "level": "3",
+              "description": "51-75% der Services"
+            },
+            {
+              "level": "4",
+              "description": "76-100% der Services"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-3",
+          "number": 3,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden kommunale Daten über eine Open-Data-Plattform mit nutzbaren Datensätzen veröffentlicht?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Open-Data-Plattform vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Plattform geplant/in Aufbau"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegende Plattform mit wenigen Datensätzen"
+            },
+            {
+              "level": "3",
+              "description": "Umfangreiche Plattform mit regelmäßigen Updates"
+            },
+            {
+              "level": "4",
+              "description": "Vollständige, nutzerfreundliche Plattform mit hoher Datenqualität"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-4",
+          "number": 4,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Wie umfassend ist die Digitalisierungsstrategie dokumentiert?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Strategie"
+            },
+            {
+              "level": "1",
+              "description": "Grundsätzliche Ziele definiert"
+            },
+            {
+              "level": "2",
+              "description": "Detaillierte Roadmap mit Meilensteinen"
+            },
+            {
+              "level": "3",
+              "description": "Inkl. Budget und Verantwortlichkeiten"
+            },
+            {
+              "level": "4",
+              "description": "Regelmäßiges Monitoring und Anpassung"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-5",
+          "number": 5,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Gibt es eine Datenstrategie in Verwaltungsabläufen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Datenstrategie vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Grundlegende Überlegungen zu Datennutzung"
+            },
+            {
+              "level": "2",
+              "description": "Dokumentierte Datenstrategie für Teilbereiche"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende Datenstrategie mit klaren Regeln"
+            },
+            {
+              "level": "4",
+              "description": "Vollständig implementierte, regelmäßig aktualisierte Datenstrategie"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-6",
+          "number": 6,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Gilt Open Data first?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Open Data wird nicht verfolgt"
+            },
+            {
+              "level": "1",
+              "description": "Open Data ist erwähnt, aber nicht priorisiert"
+            },
+            {
+              "level": "2",
+              "description": "Open Data first ist Ziel, aber nicht systematisch umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Open Data first wird weitgehend befolgt"
+            },
+            {
+              "level": "4",
+              "description": "Open Data first ist Standard bei allen Datenveröffentlichungen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-7",
+          "number": 7,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Welcher Anteil der für Ihre Kommune relevanten OZG-Leistungen (z. B. Ummeldung, Elterngeld) wird bereits vollständig digital angeboten (in Prozent)",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "0-20% der OZG-Leistungen"
+            },
+            {
+              "level": "1",
+              "description": "21-40% der OZG-Leistungen"
+            },
+            {
+              "level": "2",
+              "description": "41-60% der OZG-Leistungen"
+            },
+            {
+              "level": "3",
+              "description": "61-80% der OZG-Leistungen"
+            },
+            {
+              "level": "4",
+              "description": "81-100% der OZG-Leistungen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-8",
+          "number": 8,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Ist eine Online-Terminvergabe in Ämtern möglich?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Online-Terminvergabe verfügbar"
+            },
+            {
+              "level": "1",
+              "description": "Für einzelne Bereiche/Dienstleistungen"
+            },
+            {
+              "level": "2",
+              "description": "Für die meisten Bereiche verfügbar"
+            },
+            {
+              "level": "3",
+              "description": "Flächendeckend mit automatischer Bestätigung"
+            },
+            {
+              "level": "4",
+              "description": "Vollautomatisiert mit Kalendersynchronisation und Erinnerungen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-9",
+          "number": 9,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Gibt es E-Payment-Optionen, z.B. epaybl für Verwaltungsleistungen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine E-Payment-Optionen"
+            },
+            {
+              "level": "1",
+              "description": "Einzelne Services mit E-Payment"
+            },
+            {
+              "level": "2",
+              "description": "E-Payment für die meisten kostenpflichtigen Services"
+            },
+            {
+              "level": "3",
+              "description": "Umfassendes E-Payment mit mehreren Zahlungsarten"
+            },
+            {
+              "level": "4",
+              "description": "Vollintegriertes E-Payment mit automatischer Abwicklung"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-10",
+          "number": 10,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden Chatbots eingesetzt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Chatbots im Einsatz"
+            },
+            {
+              "level": "1",
+              "description": "Einfacher FAQ-Chatbot geplant/im Test"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegender Chatbot für häufige Anfragen"
+            },
+            {
+              "level": "3",
+              "description": "Intelligenter Chatbot mit Weiterleitung an Fachbereiche"
+            },
+            {
+              "level": "4",
+              "description": "KI-gestützter Chatbot mit Lernfähigkeit und hoher Problemlösungsrate"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-11",
+          "number": 11,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Gibt es eine zentrale App für die Kommune?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine kommunale App vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "App geplant/in Entwicklung"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegende App mit wenigen Services"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende App mit den wichtigsten Diensten"
+            },
+            {
+              "level": "4",
+              "description": "Vollständig integrierte App mit allen relevanten Services"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-12",
+          "number": 12,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Wie umfassend ist der Mängelmelder integriert?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nicht vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Einfaches System, geringe Nutzung"
+            },
+            {
+              "level": "2",
+              "description": "Etabliert, regelmäßige Nutzung"
+            },
+            {
+              "level": "3",
+              "description": "Integriert in Prozesse, automatisierte Weiterleitung"
+            },
+            {
+              "level": "4",
+              "description": "KI-gestützte Kategorisierung, Predictive Maintenance"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-13",
+          "number": 13,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Hat die Kommune ein Register ihrer Prozesse als Basis für die Digitalisierungsstrategie?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Kein Prozessregister vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Einzelne Prozesse dokumentiert"
+            },
+            {
+              "level": "2",
+              "description": "Kernprozesse erfasst und beschrieben"
+            },
+            {
+              "level": "3",
+              "description": "Umfassendes Prozessregister mit regelmäßiger Pflege"
+            },
+            {
+              "level": "4",
+              "description": "Vollständiges, digitales Prozessregister mit Verknüpfung zur Digitalisierungsstrategie"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-14",
+          "number": 14,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Wie ist die Digitalisierung organisatorisch verankert?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "keine formale Zuordnung"
+            },
+            {
+              "level": "1",
+              "description": "Querschnittsaufgabe ohne explizite Verantwortlichkeit"
+            },
+            {
+              "level": "2",
+              "description": "Einzelne Digitalisierungsbeauftragte in Fachbereichen"
+            },
+            {
+              "level": "3",
+              "description": "Zentrale Abteilung oder Referat für Digitalisierung"
+            },
+            {
+              "level": "4",
+              "description": "Dedizierte Stabsstelle auf Leitungsebene mit strategischem Mandat"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-15",
+          "number": 15,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Gibt es ein zentrales Gremium (z. B. Digitalisierungsrat), das die digitale Transformation steuert?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein"
+            },
+            {
+              "level": "1",
+              "description": "Geplant"
+            },
+            {
+              "level": "2",
+              "description": "Informell etabliert"
+            },
+            {
+              "level": "3",
+              "description": "Formal etabliert, aber ohne klare Verantwortlichkeiten"
+            },
+            {
+              "level": "4",
+              "description": "Formal etabliert mit klaren Rollen, Budgets und Entscheidungsbefugnissen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-16",
+          "number": 16,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden Fortschritte der digitalen Transformation regelmäßig gemessen und berichtet?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein"
+            },
+            {
+              "level": "1",
+              "description": "Ad-hoc-Berichte"
+            },
+            {
+              "level": "2",
+              "description": "Regelmäßige Berichte, aber ohne KPIs"
+            },
+            {
+              "level": "3",
+              "description": "KPI-basierte Berichte"
+            },
+            {
+              "level": "4",
+              "description": "Automatisierte Dashboards mit Echtzeit-Daten und strategischer Auswertung"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-17",
+          "number": 17,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Haben Dezernate oder Abteilungen dedizierte Ansprechpartner für Digitalisierung in der Verwaltung?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine dedizierten Ansprechpartner"
+            },
+            {
+              "level": "1",
+              "description": "Einzelne informelle Ansprechpartner"
+            },
+            {
+              "level": "2",
+              "description": "Teilweise formell benannte Ansprechpartner"
+            },
+            {
+              "level": "3",
+              "description": "Flächendeckend benannte Digitalisierungs-Ansprechpartner"
+            },
+            {
+              "level": "4",
+              "description": "Professionelle Digitalisierungs-Koordinatoren mit entsprechender Qualifikation"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-18",
+          "number": 18,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Wie wird die digitale Transformation intern und extern kommuniziert?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Kommunikation"
+            },
+            {
+              "level": "1",
+              "description": "Unregelmäßig/informell"
+            },
+            {
+              "level": "2",
+              "description": "Regelmäßige Updates an Führungsebene"
+            },
+            {
+              "level": "3",
+              "description": "Transparente Kommunikation an alle Mitarbeiter"
+            },
+            {
+              "level": "4",
+              "description": "Aktive Einbindung aller Stakeholder (Mitarbeiter, Bürger, Partner)"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-19",
+          "number": 19,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Ist der Betrieb der IT in der Kommune ausgelagert und wenn ja, wird diese hinreichend gut gesteuert?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "IT intern betrieben, aber unzureichend"
+            },
+            {
+              "level": "1",
+              "description": "Teilweise ausgelagert, unzureichende Steuerung"
+            },
+            {
+              "level": "2",
+              "description": "IT ausgelagert mit grundlegender Steuerung"
+            },
+            {
+              "level": "3",
+              "description": "IT ausgelagert mit systematischem Controlling"
+            },
+            {
+              "level": "4",
+              "description": "IT strategisch ausgelagert mit professionellem Service Management"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-20",
+          "number": 20,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Verfolgt die Kommune das explizite Ziel, das BSI IT-Grundschutz-Profil für die Basis-Absicherung von Kommunalverwaltungen zu erfüllen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, das Ziel wird nicht verfolgt"
+            },
+            {
+              "level": "1",
+              "description": "Ja, das Ziel ist definiert, aber noch nicht umgesetzt"
+            },
+            {
+              "level": "2",
+              "description": "Das Ziel ist teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Das Ziel ist weitgehend umgesetzt"
+            },
+            {
+              "level": "4",
+              "description": "Das Ziel ist vollständig umgesetzt"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-21",
+          "number": 21,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Gibt es einen Notfallplan für den Ausfall kritischer digitaler Infrastruktur?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, kein Notfallplan vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Ja, ein grundlegender Notfallplan ist vorhanden"
+            },
+            {
+              "level": "2",
+              "description": "Der Notfallplan ist teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Der Notfallplan ist umfassend und regelmäßig aktualisiert"
+            },
+            {
+              "level": "4",
+              "description": "Der Notfallplan ist vollständig implementiert und wird regelmäßig getestet"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-22",
+          "number": 22,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "In welchen Intervallen werden Cybersecurity-Maßnahmen systematisch überprüft?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "nie"
+            },
+            {
+              "level": "1",
+              "description": "unregelmäßig"
+            },
+            {
+              "level": "2",
+              "description": "jährlich"
+            },
+            {
+              "level": "3",
+              "description": "quartalsweise"
+            },
+            {
+              "level": "4",
+              "description": "kontinuierlich"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-23",
+          "number": 23,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden in diese Tests Dienstleistern einbezogen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Einbindung von Dienstleistern"
+            },
+            {
+              "level": "1",
+              "description": "Dienstleister werden sporadisch einbezogen"
+            },
+            {
+              "level": "2",
+              "description": "Dienstleister sind in Teilbereichen einbezogen"
+            },
+            {
+              "level": "3",
+              "description": "Dienstleister sind umfassend einbezogen"
+            },
+            {
+              "level": "4",
+              "description": "Dienstleister sind vollständig integriert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-24",
+          "number": 24,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden die Dienstleister der Kommune auf die Einhaltung üblicher IT-Sicherheitsstandards und Notfallsysteme geprüft?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Prüfungen erfolgen"
+            },
+            {
+              "level": "1",
+              "description": "Prüfungen erfolgen sporadisch oder unregelmäßig"
+            },
+            {
+              "level": "2",
+              "description": "Prüfungen sind in Teilbereichen etabliert"
+            },
+            {
+              "level": "3",
+              "description": "Prüfungen sind umfassend und regelmäßig"
+            },
+            {
+              "level": "4",
+              "description": "Prüfungen sind vollständig implementiert und automatisiert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-25",
+          "number": 25,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Gibt es ein digitales Ratsinformationssystem?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, kein digitales Ratsinformationssystem vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Ja, ein grundlegendes System ist im Aufbau"
+            },
+            {
+              "level": "2",
+              "description": "Das System ist teilweise implementiert"
+            },
+            {
+              "level": "3",
+              "description": "Das System ist umfassend verfügbar"
+            },
+            {
+              "level": "4",
+              "description": "Das System ist vollständig integriert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-26",
+          "number": 26,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Hat das digitale Ratsinformationssystem öffentliche Schnittstellen, z.B. OParl?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Schnittstellen vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Schnittstellen sind in Planung"
+            },
+            {
+              "level": "2",
+              "description": "Schnittstellen sind teilweise implementiert"
+            },
+            {
+              "level": "3",
+              "description": "Schnittstellen sind umfassend verfügbar"
+            },
+            {
+              "level": "4",
+              "description": "Schnittstellen sind vollständig integriert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-27",
+          "number": 27,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden bereits Verwaltungsprozesse automatisiert (z. B. RPA)?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Automatisierung"
+            },
+            {
+              "level": "1",
+              "description": "Automatisierung ist in Pilotphase"
+            },
+            {
+              "level": "2",
+              "description": "Automatisierung ist in Teilbereichen umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Automatisierung ist umfassend implementiert"
+            },
+            {
+              "level": "4",
+              "description": "Automatisierung ist vollständig umgesetzt"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-28",
+          "number": 28,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden Sitzungen live übertragen und öffentlich zugänglich archiviert?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Übertragung oder Archivierung"
+            },
+            {
+              "level": "1",
+              "description": "Übertragung und Archivierung sind in Planung"
+            },
+            {
+              "level": "2",
+              "description": "Übertragung und Archivierung sind teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Übertragung und Archivierung sind umfassend verfügbar"
+            },
+            {
+              "level": "4",
+              "description": "Übertragung und Archivierung sind vollständig implementiert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-29",
+          "number": 29,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Wird eine hybride Teilnahme an Sitzungen ermöglicht?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine hybride Teilnahme möglich"
+            },
+            {
+              "level": "1",
+              "description": "Hybride Teilnahme ist in Planung"
+            },
+            {
+              "level": "2",
+              "description": "Hybride Teilnahme ist teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Hybride Teilnahme ist umfassend verfügbar"
+            },
+            {
+              "level": "4",
+              "description": "Hybride Teilnahme ist vollständig implementiert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-30",
+          "number": 30,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Wird der Haushalt der Kommune öffentlich zur Verfügung gestellt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, Haushalt nicht öffentlich zugänglich"
+            },
+            {
+              "level": "1",
+              "description": "Haushalt ist teilweise öffentlich zugänglich"
+            },
+            {
+              "level": "2",
+              "description": "Haushalt ist umfassend zugänglich"
+            },
+            {
+              "level": "3",
+              "description": "Haushalt ist vollständig öffentlich zugänglich"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-31",
+          "number": 31,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden Open Government-Prinzipien umgesetzt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Umsetzung"
+            },
+            {
+              "level": "1",
+              "description": "Prinzipien definiert, aber nicht umgesetzt"
+            },
+            {
+              "level": "2",
+              "description": "Teilweise umgesetzt (z. B. Haushalt öffentlich)"
+            },
+            {
+              "level": "3",
+              "description": "Umfassend umgesetzt (mehrere Datensätze, regelmäßige Updates)"
+            },
+            {
+              "level": "4",
+              "description": "Vollständig integriert (automatisierte Veröffentlichung, Bürgerbeteiligung)"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-32",
+          "number": 32,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Beteiligt sich die Kommune an Kommunen-übergreifenden Austausch zur Digitalisierung?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Beteiligung"
+            },
+            {
+              "level": "1",
+              "description": "Beteiligung ist geplant"
+            },
+            {
+              "level": "2",
+              "description": "Beteiligung ist in Teilbereichen erfolgt"
+            },
+            {
+              "level": "3",
+              "description": "Beteiligung ist umfassend"
+            },
+            {
+              "level": "4",
+              "description": "Beteiligung ist vollständig"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-33",
+          "number": 33,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden Datenanalysen zur Verbesserung von Bürgerservices eingesetzt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Datenanalysen"
+            },
+            {
+              "level": "1",
+              "description": "Datenanalysen sind in Planung"
+            },
+            {
+              "level": "2",
+              "description": "Datenanalysen sind teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Datenanalysen sind umfassend implementiert"
+            },
+            {
+              "level": "4",
+              "description": "Datenanalysen sind vollständig umgesetzt"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-34",
+          "number": 34,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Gibt es in Ihrer Kommune ein Konzept zur Förderung der Nachhaltigkeit in der öffentlichen ITK Beschaffung?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, kein Konzept vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Konzept ist in Planung"
+            },
+            {
+              "level": "2",
+              "description": "Konzept ist teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Konzept ist umfassend implementiert"
+            },
+            {
+              "level": "4",
+              "description": "Konzept ist vollständig umgesetzt"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-35",
+          "number": 35,
+          "category": "Verwaltung",
+          "category_slug": "verwaltung",
+          "question": "Werden Mitarbeiter aktiv in die Gestaltung der digitalen Transformation einbezogen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein"
+            },
+            {
+              "level": "1",
+              "description": "Einzelne Pilotprojekte"
+            },
+            {
+              "level": "2",
+              "description": "Regelmäßige Workshops"
+            },
+            {
+              "level": "3",
+              "description": "Systematische Einbindung (z. B. digitale Ideation-Plattformen)"
+            },
+            {
+              "level": "4",
+              "description": "Kultur der Co-Creation mit messbaren Ergebnissen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        }
+      ],
+      "count": 35
+    },
+    {
+      "name": "IT & Kommunikation",
+      "slug": "it-kommunikation",
+      "questions": [
+        {
+          "id": "q-36",
+          "number": 36,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "Wie gut sind die digitalen Systeme der Kommune miteinander vernetzt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Insellösungen ohne Verknüpfung"
+            },
+            {
+              "level": "1",
+              "description": "Grundlegende Datenübertragung"
+            },
+            {
+              "level": "2",
+              "description": "Standardisierte Schnittstellen"
+            },
+            {
+              "level": "3",
+              "description": "Automatisierte Prozessverknüpfung"
+            },
+            {
+              "level": "4",
+              "description": "Vollintegrierte Systemlandschaft"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-37",
+          "number": 37,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "Werden Cybersecurity-Maßnahmen regelmäßig überprüft?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine systematischen Überprüfungen"
+            },
+            {
+              "level": "1",
+              "description": "Unregelmäßige, anlassbezogene Prüfungen"
+            },
+            {
+              "level": "2",
+              "description": "Jährliche Überprüfungen"
+            },
+            {
+              "level": "3",
+              "description": "Quartalsweise systematische Prüfungen"
+            },
+            {
+              "level": "4",
+              "description": "Kontinuierliches Monitoring mit automatisierten Tests"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-38",
+          "number": 38,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "Gibt es ein digitales Katastrophenwarnsystem?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Kein digitales Warnsystem vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Grundlegendes System geplant/im Aufbau"
+            },
+            {
+              "level": "2",
+              "description": "Warnsystem für einzelne Kanäle (z.B. nur Website)"
+            },
+            {
+              "level": "3",
+              "description": "Multi-Kanal-Warnsystem (Website, App, Social Media)"
+            },
+            {
+              "level": "4",
+              "description": "Vollintegriertes System mit automatischer Alarmierung über alle verfügbaren Kanäle"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-39",
+          "number": 39,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "Enthält das Geoinformationssystem der Kommune einen aktuellen digitalen Zwilling der Stadt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Kein digitaler Zwilling vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Grundlegende 2D-Kartierung"
+            },
+            {
+              "level": "2",
+              "description": "Einfaches 3D-Modell für Teilbereiche"
+            },
+            {
+              "level": "3",
+              "description": "Detaillierter digitaler Zwilling für wichtige Stadtbereiche"
+            },
+            {
+              "level": "4",
+              "description": "Vollständiger, aktueller digitaler Zwilling mit Echtzeitdaten"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-40",
+          "number": 40,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "In welchen Bereichen werden digitale Zwillinge eingesetzt?",
+          "type": "multi_choice",
+          "scale_levels": [],
+          "options": [
+            "Gebäudemanagement",
+            "Stadtplanung",
+            "Verkehrsmanagement",
+            "Infrastrukturplanung",
+            "Umweltmonitoring",
+            "Energiemanagement",
+            "nicht eingesetzt"
+          ],
+          "comment": null
+        },
+        {
+          "id": "q-41",
+          "number": 41,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "Welche Arten von Sensoren werden für kommunale Aufgaben eingesetzt?",
+          "type": "multi_choice",
+          "scale_levels": [],
+          "options": [
+            "Verkehrsmessung",
+            "Luftqualität",
+            "Lärm",
+            "Parkplatzüberwachung",
+            "Pegelstände",
+            "Temperatur/Feuchtigkeit",
+            "keine"
+          ],
+          "comment": null
+        },
+        {
+          "id": "q-42",
+          "number": 42,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "Gibt es ein digitales Gebäudemanagementsystem?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Kein digitales Gebäudemanagement"
+            },
+            {
+              "level": "1",
+              "description": "Einfache digitale Erfassung von Gebäudedaten"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegendes System für Wartung und Verwaltung"
+            },
+            {
+              "level": "3",
+              "description": "Umfassendes System mit Automatisierung"
+            },
+            {
+              "level": "4",
+              "description": "Intelligentes System mit vorausschauender Wartung und Energieoptimierung"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-43",
+          "number": 43,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "Werden KI-Anwendungen in der Verwaltung getestet?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine KI-Anwendungen im Test"
+            },
+            {
+              "level": "1",
+              "description": "KI-Anwendungen sind in Pilotphase"
+            },
+            {
+              "level": "2",
+              "description": "KI-Anwendungen sind teilweise getestet"
+            },
+            {
+              "level": "3",
+              "description": "KI-Anwendungen sind umfassend getestet"
+            },
+            {
+              "level": "4",
+              "description": "KI-Anwendungen sind vollständig implementiert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-44",
+          "number": 44,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "Existiert ein zentrales IT-Controlling?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, kein IT-Controlling vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "IT-Controlling ist in Planung"
+            },
+            {
+              "level": "2",
+              "description": "IT-Controlling ist teilweise implementiert"
+            },
+            {
+              "level": "3",
+              "description": "IT-Controlling ist umfassend verfügbar"
+            },
+            {
+              "level": "4",
+              "description": "IT-Controlling ist vollständig integriert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-45",
+          "number": 45,
+          "category": "IT & Kommunikation",
+          "category_slug": "it-kommunikation",
+          "question": "Wird die Meldung von IT-Sicherheitslücken an die Kommune gefördert und unterstützt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Förderung oder Unterstützung"
+            },
+            {
+              "level": "1",
+              "description": "Förderung ist geplant"
+            },
+            {
+              "level": "2",
+              "description": "Förderung ist teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Förderung ist umfassend implementiert"
+            },
+            {
+              "level": "4",
+              "description": "Förderung ist vollständig etabliert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        }
+      ],
+      "count": 10
+    },
+    {
+      "name": "Energie & Umwelt",
+      "slug": "energie-umwelt",
+      "questions": [
+        {
+          "id": "q-46",
+          "number": 46,
+          "category": "Energie & Umwelt",
+          "category_slug": "energie-umwelt",
+          "question": "Wie viel Prozent der öffentlichen Gebäude sind mit Solaranlagen versehen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "0-10% der Gebäude"
+            },
+            {
+              "level": "1",
+              "description": "11-25% der Gebäude"
+            },
+            {
+              "level": "2",
+              "description": "26-50% der Gebäude"
+            },
+            {
+              "level": "3",
+              "description": "51-75% der Gebäude"
+            },
+            {
+              "level": "4",
+              "description": "76-100% der Gebäude"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-47",
+          "number": 47,
+          "category": "Energie & Umwelt",
+          "category_slug": "energie-umwelt",
+          "question": "Gibt es ein Energiemanagementsystem für städtische Gebäude?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, kein System vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "System ist in Planung"
+            },
+            {
+              "level": "2",
+              "description": "System ist teilweise implementiert"
+            },
+            {
+              "level": "3",
+              "description": "System ist umfassend verfügbar"
+            },
+            {
+              "level": "4",
+              "description": "System ist vollständig integriert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-48",
+          "number": 48,
+          "category": "Energie & Umwelt",
+          "category_slug": "energie-umwelt",
+          "question": "Gibt es ein digitales Baumkataster?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, kein digitales Baumkataster vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Kataster ist in Aufbau"
+            },
+            {
+              "level": "2",
+              "description": "Kataster ist teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Kataster ist umfassend verfügbar"
+            },
+            {
+              "level": "4",
+              "description": "Kataster ist vollständig implementiert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-49",
+          "number": 49,
+          "category": "Energie & Umwelt",
+          "category_slug": "energie-umwelt",
+          "question": "Werden Umweltdaten (z.B. CO2-Emissionen, Luftqualität, Lärm) digital erfasst und veröffentlicht?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Datenerfassung"
+            },
+            {
+              "level": "1",
+              "description": "Datenerfassung ist in Planung"
+            },
+            {
+              "level": "2",
+              "description": "Datenerfassung ist teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Datenerfassung ist umfassend implementiert"
+            },
+            {
+              "level": "4",
+              "description": "Datenerfassung ist vollständig umgesetzt"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-50",
+          "number": 50,
+          "category": "Energie & Umwelt",
+          "category_slug": "energie-umwelt",
+          "question": "Bestehen Hochwassermelde-/Frühwarnsysteme?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, kein System vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "System ist in Planung"
+            },
+            {
+              "level": "2",
+              "description": "System ist teilweise implementiert"
+            },
+            {
+              "level": "3",
+              "description": "System ist umfassend verfügbar"
+            },
+            {
+              "level": "4",
+              "description": "System ist vollständig integriert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-51",
+          "number": 51,
+          "category": "Energie & Umwelt",
+          "category_slug": "energie-umwelt",
+          "question": "Sind Gewässerstandsdaten digital verfügbar?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Daten verfügbar"
+            },
+            {
+              "level": "1",
+              "description": "Daten sind teilweise verfügbar"
+            },
+            {
+              "level": "2",
+              "description": "Daten sind umfassend verfügbar"
+            },
+            {
+              "level": "3",
+              "description": "Daten sind vollständig digitalisiert"
+            },
+            {
+              "level": "4",
+              "description": "Daten sind in Echtzeit verfügbar"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-52",
+          "number": 52,
+          "category": "Energie & Umwelt",
+          "category_slug": "energie-umwelt",
+          "question": "Gibt es in Ihrer Kommune ein Konzept zur Förderung der Kreislaufwirtschaft?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, kein Konzept vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Konzept ist in Planung"
+            },
+            {
+              "level": "2",
+              "description": "Konzept ist teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Konzept ist umfassend implementiert"
+            },
+            {
+              "level": "4",
+              "description": "Konzept ist vollständig umgesetzt"
+            }
+          ],
+          "options": [],
+          "comment": null
+        }
+      ],
+      "count": 7
+    },
+    {
+      "name": "Mobilität",
+      "slug": "mobilitaet",
+      "questions": [
+        {
+          "id": "q-53",
+          "number": 53,
+          "category": "Mobilität",
+          "category_slug": "mobilitaet",
+          "question": "Welche digitalen Parklösungen werden angeboten?",
+          "type": "multi_choice",
+          "scale_levels": [],
+          "options": [
+            "App-basiertes Bezahlen",
+            "Sensorbasierte Parkraumerfassung",
+            "Echtzeit-Parkplatzanzeige",
+            "digitale Anwohnerparkausweise",
+            "dynamische Preisgestaltung",
+            "keine digitalen Lösungen"
+          ],
+          "comment": null
+        },
+        {
+          "id": "q-54",
+          "number": 54,
+          "category": "Mobilität",
+          "category_slug": "mobilitaet",
+          "question": "Werden Echtzeitdaten im ÖPNV bereitgestellt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Echtzeitdaten verfügbar"
+            },
+            {
+              "level": "1",
+              "description": "Echtzeitdaten für einzelne Linien/Haltestellen"
+            },
+            {
+              "level": "2",
+              "description": "Flächendeckende Echtzeitdaten über grundlegende Kanäle"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende Echtzeitinformationen über multiple Kanäle"
+            },
+            {
+              "level": "4",
+              "description": "Vollintegrierte Echtzeitdaten mit prädiktiven Analysen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-55",
+          "number": 55,
+          "category": "Mobilität",
+          "category_slug": "mobilitaet",
+          "question": "Gibt es multimodale Mobilitäts-Apps?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine multimodale App verfügbar"
+            },
+            {
+              "level": "1",
+              "description": "App geplant oder in Entwicklung"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegende App mit wenigen Verkehrsmitteln"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende App mit den meisten Verkehrsträgern"
+            },
+            {
+              "level": "4",
+              "description": "Vollintegrierte App mit Buchung, Bezahlung und Routenoptimierung"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-56",
+          "number": 56,
+          "category": "Mobilität",
+          "category_slug": "mobilitaet",
+          "question": "Werden die Daten von Sharing-Angeboten (Bike, E-Scooter, Car) durch die Kommune ausgewertet?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Auswertung"
+            },
+            {
+              "level": "1",
+              "description": "Auswertung ist geplant"
+            },
+            {
+              "level": "2",
+              "description": "Auswertung ist teilweise erfolgt"
+            },
+            {
+              "level": "3",
+              "description": "Auswertung ist umfassend implementiert"
+            },
+            {
+              "level": "4",
+              "description": "Auswertung ist vollständig umgesetzt"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-57",
+          "number": 57,
+          "category": "Mobilität",
+          "category_slug": "mobilitaet",
+          "question": "Werden Verkehrsflüsse digital erfasst und gesteuert?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Erfassung oder Steuerung"
+            },
+            {
+              "level": "1",
+              "description": "Erfassung und Steuerung sind in Planung"
+            },
+            {
+              "level": "2",
+              "description": "Erfassung und Steuerung sind teilweise umgesetzt"
+            },
+            {
+              "level": "3",
+              "description": "Erfassung und Steuerung sind umfassend implementiert"
+            },
+            {
+              "level": "4",
+              "description": "Erfassung und Steuerung sind vollständig integriert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-58",
+          "number": 58,
+          "category": "Mobilität",
+          "category_slug": "mobilitaet",
+          "question": "Welche Kooperationsformen bestehen mit Verkehrsbetrieben zur Digitalisierung?",
+          "type": "multi_choice",
+          "scale_levels": [],
+          "options": [
+            "Datenaustausch",
+            "gemeinsame Projekte",
+            "regelmäßige Abstimmung",
+            "keine formale Kooperation"
+          ],
+          "comment": null
+        },
+        {
+          "id": "q-59",
+          "number": 59,
+          "category": "Mobilität",
+          "category_slug": "mobilitaet",
+          "question": "Werden Simulationen  zur Planung neuer Verkehrskonzepte genutzt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, keine Simulationen"
+            },
+            {
+              "level": "1",
+              "description": "Simulationen sind geplant"
+            },
+            {
+              "level": "2",
+              "description": "Simulationen sind teilweise genutzt"
+            },
+            {
+              "level": "3",
+              "description": "Simulationen sind umfassend eingesetzt"
+            },
+            {
+              "level": "4",
+              "description": "Simulationen sind vollständig implementiert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-60",
+          "number": 60,
+          "category": "Mobilität",
+          "category_slug": "mobilitaet",
+          "question": "Gibt es ein intelligentes Baustellenmanagement?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nein, kein intelligentes Management vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Management ist in Planung"
+            },
+            {
+              "level": "2",
+              "description": "Management ist teilweise implementiert"
+            },
+            {
+              "level": "3",
+              "description": "Management ist umfassend verfügbar"
+            },
+            {
+              "level": "4",
+              "description": "Management ist vollständig integriert"
+            }
+          ],
+          "options": [],
+          "comment": null
+        }
+      ],
+      "count": 8
+    },
+    {
+      "name": "Gesellschaft & Bildung",
+      "slug": "gesellschaft-bildung",
+      "questions": [
+        {
+          "id": "q-61",
+          "number": 61,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Wie viel Prozent der Schulen haben WLAN in den Klassenräumen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "0-20% der Schulen"
+            },
+            {
+              "level": "1",
+              "description": "21-40% der Schulen"
+            },
+            {
+              "level": "2",
+              "description": "41-60% der Schulen"
+            },
+            {
+              "level": "3",
+              "description": "61-80% der Schulen"
+            },
+            {
+              "level": "4",
+              "description": "81-100% der Schulen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-62",
+          "number": 62,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Wie viel Prozent der Schulen verfügen über Breitbandanschlüsse ≥ 1 Gbit/s?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "0-20% der Schulen"
+            },
+            {
+              "level": "1",
+              "description": "21-40% der Schulen"
+            },
+            {
+              "level": "2",
+              "description": "41-60% der Schulen"
+            },
+            {
+              "level": "3",
+              "description": "61-80% der Schulen"
+            },
+            {
+              "level": "4",
+              "description": "81-100% der Schulen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-63",
+          "number": 63,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "In wie viel Prozent der Schulen werden digitale Endgeräte an Schulen bereitgestellt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "0-20% der Schulen"
+            },
+            {
+              "level": "1",
+              "description": "21-40% der Schulen"
+            },
+            {
+              "level": "2",
+              "description": "41-60% der Schulen"
+            },
+            {
+              "level": "3",
+              "description": "61-80% der Schulen"
+            },
+            {
+              "level": "4",
+              "description": "81-100% der Schulen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-64",
+          "number": 64,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Für welche Zielgruppen bestehen digitale Teilhabeprogramme?",
+          "type": "multi_choice",
+          "scale_levels": [],
+          "options": [
+            "Senioren",
+            "Kinder und Jugendliche",
+            "Menschen mit Behinderung",
+            "Migranten",
+            "Langzeitarbeitslose",
+            "keine Programme"
+          ],
+          "comment": null
+        },
+        {
+          "id": "q-65",
+          "number": 65,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Existieren lokale Startup-Hubs oder FabLabs?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nicht vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "In Planung / Einzelinitiativen"
+            },
+            {
+              "level": "2",
+              "description": "Einzelne etablierte Angebote"
+            },
+            {
+              "level": "3",
+              "description": "Mehrere etablierte Angebote (z.B. Hub UND FabLab)"
+            },
+            {
+              "level": "4",
+              "description": "Umfassendes Netzwerk mit vielfältigen und vernetzten Angeboten"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-66",
+          "number": 66,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Gibt es digitale Beteiligungsplattformen für Bürger (z.B. zur Ideenfindung, Abstimmung über Projekte)?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Plattformen vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Plattformen in Planung/Pilotphase"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegende Plattform(en) für wenige Projekte"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende Plattform(en) für breite Bürgerbeteiligung"
+            },
+            {
+              "level": "4",
+              "description": "Vollständig integrierte Plattformen mit aktiver Nutzung und Co-Creation-Ansätzen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-67",
+          "number": 67,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Werden Verwaltungsmitarbeitende in digitalen Kompetenzen weitergebildet?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine systematischen Weiterbildungsmaßnahmen"
+            },
+            {
+              "level": "1",
+              "description": "Einzelne, anlassbezogene Schulungen"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegendes Schulungsangebot für Kernbereiche"
+            },
+            {
+              "level": "3",
+              "description": "Umfassendes Weiterbildungsprogramm mit regelmäßigen Angeboten"
+            },
+            {
+              "level": "4",
+              "description": "Kontinuierliche Qualifizierung und Befähigung für alle relevanten Bereiche, inkl. digitaler Kompetenzzentren"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-68",
+          "number": 68,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Existieren LoRaWAN-Gateways (Funkinfrastruktur für Sensornetzwerke) für IoT-Anwendungen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nicht vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "In Planung / Pilotprojekte"
+            },
+            {
+              "level": "2",
+              "description": "Einzelne Gateways zur Testnutzung"
+            },
+            {
+              "level": "3",
+              "description": "Grundlegende Abdeckung für ausgewählte Anwendungsfälle"
+            },
+            {
+              "level": "4",
+              "description": "Flächendeckendes Netz für vielfältige IoT-Anwendungen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-69",
+          "number": 69,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Gibt es digitale Kulturangebote?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine digitalen Kulturangebote"
+            },
+            {
+              "level": "1",
+              "description": "Einzelne digitale Initiativen/Projekte"
+            },
+            {
+              "level": "2",
+              "description": "Online-Angebote von Kultureinrichtungen (z.B. Mediatheken, virtuelle Ausstellungen)"
+            },
+            {
+              "level": "3",
+              "description": "Umfassendes und vernetztes digitales Kulturangebot"
+            },
+            {
+              "level": "4",
+              "description": "Interaktive und partizipative digitale Kulturplattformen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-70",
+          "number": 70,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Gibt es Initiativen zur Förderung digitaler Kompetenzen bei Bürgern und Unternehmen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Initiativen"
+            },
+            {
+              "level": "1",
+              "description": "Geplante Initiativen / Einzelveranstaltungen"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegende Angebote für ausgewählte Zielgruppen (z.B. Bürgerkurse)"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende und regelmäßige Angebote für Bürger und Unternehmen"
+            },
+            {
+              "level": "4",
+              "description": "Integriertes Ökosystem zur Förderung digitaler Kompetenzen mit dauerhaften Anlaufstellen"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-71",
+          "number": 71,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Gibt es ein digitales Stadtarchiv?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Kein digitales Stadtarchiv vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "In Planung / erste Digitalisierungsarbeiten"
+            },
+            {
+              "level": "2",
+              "description": "Teilbestände digitalisiert und online zugänglich"
+            },
+            {
+              "level": "3",
+              "description": "Großteil der Bestände digitalisiert, umfassend nutzbar"
+            },
+            {
+              "level": "4",
+              "description": "Vollständig digitalisiertes, nutzerfreundliches und erschlossenes Archiv mit Recherchemöglichkeiten"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-72",
+          "number": 72,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Werden digitale Tools in der Jugendarbeit eingesetzt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine digitalen Tools im Einsatz"
+            },
+            {
+              "level": "1",
+              "description": "Einzelne Projekte oder Testphasen"
+            },
+            {
+              "level": "2",
+              "description": "Digitale Tools in ausgewählten Bereichen der Jugendarbeit etabliert"
+            },
+            {
+              "level": "3",
+              "description": "Digitale Tools umfassend in der Jugendarbeit integriert"
+            },
+            {
+              "level": "4",
+              "description": "Strategischer Einsatz digitaler Tools zur Förderung von Medienkompetenz und Partizipation"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-73",
+          "number": 73,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Gibt es digitale Integrationsangebote für Migranten?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine digitalen Integrationsangebote"
+            },
+            {
+              "level": "1",
+              "description": "Angebote in Planung / erste Pilotprojekte"
+            },
+            {
+              "level": "2",
+              "description": "Einzelne digitale Sprachkurse oder Informationsangebote"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende digitale Angebote (Sprache, Information, Community)"
+            },
+            {
+              "level": "4",
+              "description": "Integrierte digitale Plattformen zur Unterstützung der gesamten Integration"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-74",
+          "number": 74,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Werden digitale Barrierefreiheitsstandards umgesetzt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine systematische Umsetzung"
+            },
+            {
+              "level": "1",
+              "description": "Bewusstsein vorhanden, erste Schritte eingeleitet"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegende Standards für neue Angebote werden berücksichtigt"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende Umsetzung für alle relevanten digitalen Angebote"
+            },
+            {
+              "level": "4",
+              "description": "Barrierefreiheit ist integraler Bestandteil aller digitalen Entwicklungsprozesse und wird regelmäßig überprüft"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-75",
+          "number": 75,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Stellt die Kommune selbst oder über Partner, z.B. Freifunk, WLAN-Hotspots zur Verfügung?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine öffentlichen WLAN-Hotspots"
+            },
+            {
+              "level": "1",
+              "description": "Einzelne Hotspots in Planung oder Pilotphase"
+            },
+            {
+              "level": "2",
+              "description": "Hotspots an wichtigen öffentlichen Orten (z.B. Rathaus, Bibliothek)"
+            },
+            {
+              "level": "3",
+              "description": "Breite Verfügbarkeit an vielen öffentlichen Plätzen und Einrichtungen"
+            },
+            {
+              "level": "4",
+              "description": "Flächendeckendes, gut zugängliches und kostenloses WLAN im gesamten Stadtgebiet"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-76",
+          "number": 76,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Gibt es digitale Informationspunkte oder digitale Tools für Touristen bezüglich Stadthistorie, Sehenswürdigkeiten oder Mobilitätsangeboten?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine digitalen Angebote für Touristen"
+            },
+            {
+              "level": "1",
+              "description": "Einzelne Websites oder Apps mit grundlegenden Infos"
+            },
+            {
+              "level": "2",
+              "description": "Digitale Informationspunkte (z.B. Terminals) oder Apps mit erweiterten Funktionen"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende digitale Angebote (App, Web, interaktive Stelen) mit Echtzeitdaten"
+            },
+            {
+              "level": "4",
+              "description": "Integriertes Smart-Tourism-System mit personalisierten Angeboten und Navigation"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-77",
+          "number": 77,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Gibt es digitale Plattformen zur Förderung des ehrenamtlichen Engagements?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine digitalen Plattformen"
+            },
+            {
+              "level": "1",
+              "description": "Plattform in Planung/Konzeptphase"
+            },
+            {
+              "level": "2",
+              "description": "Grundlegende Plattform zur Vermittlung von Ehrenamtlichen"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende Plattform mit Matching-Funktionen und Vernetzung"
+            },
+            {
+              "level": "4",
+              "description": "Vollständig integrierte Plattform zur Verwaltung, Vernetzung und Unterstützung des Ehrenamts"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-78",
+          "number": 78,
+          "category": "Gesellschaft & Bildung",
+          "category_slug": "gesellschaft-bildung",
+          "question": "Wie oft finden Hackathons oder Smart City-Wettbewerbe statt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Nie oder sehr selten (weniger als alle 4 Jahre)"
+            },
+            {
+              "level": "1",
+              "description": "Alle 3-4 Jahre"
+            },
+            {
+              "level": "2",
+              "description": "Alle 1-2 Jahre"
+            },
+            {
+              "level": "3",
+              "description": "Jährlich"
+            },
+            {
+              "level": "4",
+              "description": "Kontinuierliche Programme"
+            }
+          ],
+          "options": [],
+          "comment": null
+        }
+      ],
+      "count": 18
+    },
+    {
+      "name": "Bürgernutzung",
+      "slug": "buergernutzung",
+      "questions": [
+        {
+          "id": "q-79",
+          "number": 79,
+          "category": "Bürgernutzung",
+          "category_slug": "buergernutzung",
+          "question": "Wie hoch ist der Anteil der Bürger, die digitale Verwaltungsservices der Kommune aktiv nutzen (basierend auf Einwohnerzahl und verfügbaren Services)?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Unter 5% der Bürger nutzen digitale Services"
+            },
+            {
+              "level": "1",
+              "description": "5-15% Nutzungsgrad"
+            },
+            {
+              "level": "2",
+              "description": "16-30% Nutzungsgrad"
+            },
+            {
+              "level": "3",
+              "description": "31-50% Nutzungsgrad"
+            },
+            {
+              "level": "4",
+              "description": "Über 50% Nutzungsgrad"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-80",
+          "number": 80,
+          "category": "Bürgernutzung",
+          "category_slug": "buergernutzung",
+          "question": "Welcher Anteil der Bürger kennt die verfügbaren digitalen Services der Kommune (gemessen durch Umfragen oder Nutzungsstatistiken)?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Unter 20% Bekanntheit der Services"
+            },
+            {
+              "level": "1",
+              "description": "20-35% Bekanntheit"
+            },
+            {
+              "level": "2",
+              "description": "36-50% Bekanntheit"
+            },
+            {
+              "level": "3",
+              "description": "51-70% Bekanntheit"
+            },
+            {
+              "level": "4",
+              "description": "Über 70% Bekanntheit"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-81",
+          "number": 81,
+          "category": "Bürgernutzung",
+          "category_slug": "buergernutzung",
+          "question": "Wie bewerten Bürger die Qualität und Nutzerfreundlichkeit der digitalen Verwaltungsservices (Durchschnittsnote aus Bürgerbefragungen oder App-Store-Bewertungen)?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Durchschnittsnote schlechter als 3,0 oder keine Bewertungen"
+            },
+            {
+              "level": "1",
+              "description": "Durchschnittsnote 3,0-3,4"
+            },
+            {
+              "level": "2",
+              "description": "Durchschnittsnote 3,5-3,9"
+            },
+            {
+              "level": "3",
+              "description": "Durchschnittsnote 4,0-4,4"
+            },
+            {
+              "level": "4",
+              "description": "Durchschnittsnote 4,5 oder besser"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-82",
+          "number": 82,
+          "category": "Bürgernutzung",
+          "category_slug": "buergernutzung",
+          "question": "Wie gut gelingt es der Kommune, verschiedene Bevölkerungsgruppen (Senioren, Menschen mit Behinderung, bildungsferne Schichten) an digitalen Services zu beteiligen?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine spezifischen Maßnahmen oder unter 10% Teilnahme benachteiligter Gruppen"
+            },
+            {
+              "level": "1",
+              "description": "Grundlegende Unterstützungsangebote, 10-20% Teilnahme"
+            },
+            {
+              "level": "2",
+              "description": "Gezielte Programme und Schulungen, 21-35% Teilnahme"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende Inklusionsmaßnahmen, 36-50% Teilnahme"
+            },
+            {
+              "level": "4",
+              "description": "Vorbildliche Integration aller Gruppen, über 50% Teilnahme"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-83",
+          "number": 83,
+          "category": "Bürgernutzung",
+          "category_slug": "buergernutzung",
+          "question": "Wie systematisch sammelt und berücksichtigt die Kommune Bürgerfeedback zur Weiterentwicklung ihrer digitalen Services?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Kein strukturiertes Feedback-System"
+            },
+            {
+              "level": "1",
+              "description": "Gelegentliche Umfragen oder informelle Rückmeldungen"
+            },
+            {
+              "level": "2",
+              "description": "Regelmäßige Befragungen mit grundlegender Auswertung"
+            },
+            {
+              "level": "3",
+              "description": "Systematisches Feedback-Management mit dokumentierten Verbesserungen"
+            },
+            {
+              "level": "4",
+              "description": "Kontinuierlicher Dialog mit Bürgern, Co-Creation-Ansätze und messbare Optimierungen basierend auf Nutzerfeedback"
+            }
+          ],
+          "options": [],
+          "comment": null
+        }
+      ],
+      "count": 5
+    },
+    {
+      "name": "Wirtschaft und Innovation",
+      "slug": "wirtschaft-und-innovation",
+      "questions": [
+        {
+          "id": "q-84",
+          "number": 84,
+          "category": "Wirtschaft und Innovation",
+          "category_slug": "wirtschaft-und-innovation",
+          "question": "Welche Unterstützungsangebote für Start-ups und innovative Unternehmen bestehen?",
+          "type": "multi_choice",
+          "scale_levels": [],
+          "options": [
+            "Co-Working Spaces",
+            "Inkubatoren",
+            "Förderprogramme",
+            "Beratungsangebote",
+            "Networking-Events",
+            "keine"
+          ],
+          "comment": null
+        },
+        {
+          "id": "q-85",
+          "number": 85,
+          "category": "Wirtschaft und Innovation",
+          "category_slug": "wirtschaft-und-innovation",
+          "question": "Werden digitale Tools zur Standortanalyse und Wirtschaftsförderung eingesetzt?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine digitalen Tools im Einsatz"
+            },
+            {
+              "level": "1",
+              "description": "Grundlegende digitale Datenerfassung"
+            },
+            {
+              "level": "2",
+              "description": "Einfache Analyse-Tools für einzelne Bereiche"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende digitale Standortanalyse"
+            },
+            {
+              "level": "4",
+              "description": "KI-gestützte, integrierte Plattform für Wirtschaftsförderung"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-86",
+          "number": 86,
+          "category": "Wirtschaft und Innovation",
+          "category_slug": "wirtschaft-und-innovation",
+          "question": "Gibt es eine Strategie zur Förderung von Forschung und Entwicklung im Bereich Smart City?",
+          "type": "scale",
+          "scale_levels": [
+            {
+              "level": "0",
+              "description": "Keine Strategie vorhanden"
+            },
+            {
+              "level": "1",
+              "description": "Grundsätzliche Ziele oder erste Überlegungen"
+            },
+            {
+              "level": "2",
+              "description": "Dokumentierte Strategie für Teilbereiche"
+            },
+            {
+              "level": "3",
+              "description": "Umfassende und veröffentlichte Strategie mit Maßnahmenplan"
+            },
+            {
+              "level": "4",
+              "description": "Strategie ist vollständig implementiert, wird regelmäßig überprüft und angepasst, inkl. Budget"
+            }
+          ],
+          "options": [],
+          "comment": null
+        },
+        {
+          "id": "q-87",
+          "number": 87,
+          "category": "Wirtschaft und Innovation",
+          "category_slug": "wirtschaft-und-innovation",
+          "question": "Welche Formen der Zusammenarbeit bestehen mit Hochschulen und Forschungseinrichtungen?",
+          "type": "multi_choice",
+          "scale_levels": [],
+          "options": [
+            "Gemeinsame Projekte",
+            "Praktikantenprogramme",
+            "Beratungsverträge",
+            "Gastwissenschaftler",
+            "keine formale Zusammenarbeit"
+          ],
+          "comment": null
+        },
+        {
+          "id": "q-88",
+          "number": 88,
+          "category": "Wirtschaft und Innovation",
+          "category_slug": "wirtschaft-und-innovation",
+          "question": "An welchen digitalen Netzwerken und Initiativen beteiligt sich die Kommune?",
+          "type": "multi_choice",
+          "scale_levels": [],
+          "options": [
+            "Smart City Charta",
+            "Nationale Smart Cities Initiative",
+            "Regionale Digitalisierungsnetzwerke",
+            "EU Digital Cities Challenge",
+            "Kommunale Digitalisierungsallianzen",
+            "Forschungsverbünde",
+            "Herstellerneutrale Standards-Initiativen",
+            "keine Beteiligung"
+          ],
+          "comment": null
+        }
+      ],
+      "count": 5
+    }
+  ]
+}

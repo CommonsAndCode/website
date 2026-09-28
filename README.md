@@ -184,3 +184,19 @@ After you create a pull request:
 1. The website will automatically update with your changes!
 
 You can track the status of your pull request by going to the "Pull requests" tab in the repository.
+
+## Updating the Smart City Questionnaire
+
+The Smart City Questionnaire at `/de/projekte/smart-city-fragebogen/` is generated automatically from the source Excel spreadsheet.
+
+When a new version of the Excel file is available:
+1. Run the generation script from the `website/` directory:
+   ```bash
+   python3 scripts/generate_smart_city_questionnaire.py "path/to/new_file.xlsx"
+   ```
+1. The script automatically updates:
+   - `data/smart_city_fragebogen.json` (structured data rendered by Hugo)
+   - `static/downloads/smart-city-fragebogen.xlsx` (raw file download)
+1. Build and preview the site locally with `hugo server -D`.
+
+

@@ -2,9 +2,27 @@
 {{ $action := .Get "action" | default "/api/v1/smart-city-survey" }}
 
 {{ if not $data }}
-  <p class="text-red-600">Fehler: Fragebogendaten nicht gefunden.</p>
+  <p class="text-red-600">{{ i18n "smart_city.error_not_found" }}</p>
 {{ else }}
-<div class="sc-form-container not-prose" id="sc-wom-app">
+<div
+  class="sc-form-container not-prose"
+  id="sc-wom-app"
+  data-text-category-start="{{ i18n "smart_city.header_category_start" }}"
+  data-text-step-start="{{ i18n "smart_city.header_step_start" }}"
+  data-text-summary-title="{{ i18n "smart_city.header_summary_title" }}"
+  data-text-summary-step="{{ i18n "smart_city.header_summary_step" }}"
+  data-text-ready-submit="{{ i18n "smart_city.header_ready_to_submit" }}"
+  data-text-category-of="{{ i18n "smart_city.category_of" }}"
+  data-text-category-of-overall="{{ i18n "smart_city.category_of_overall" }}"
+  data-text-question-in-cat="{{ i18n "smart_city.question_in_category" }}"
+  data-text-status-open="{{ i18n "smart_city.status_open" }}"
+  data-text-status-level="{{ i18n "smart_city.status_level" }}"
+  data-text-status-selected="{{ i18n "smart_city.status_selected_count" }}"
+  data-text-reset-confirm="{{ i18n "smart_city.reset_confirm" }}"
+  data-text-answered-counter="{{ i18n "smart_city.answered_counter" }}"
+  data-text-summary-answered="{{ i18n "smart_city.summary_answered_format" }}"
+  data-text-autosave="{{ i18n "smart_city.autosave_status" }}"
+>
 
   <form action="{{ $action }}" method="POST" id="sc-survey-form">
 
@@ -13,137 +31,135 @@
       <div class="flex flex-wrap items-center justify-between gap-3 text-xs mb-2">
         <div class="flex items-center gap-1.5 font-medium">
           <span class="font-bold text-neutral-900 dark:text-neutral-100" id="sc-wom-category-name">
-            Angaben zur Kommune
+            {{ i18n "smart_city.header_category_start" }}
           </span>
           <span class="text-neutral-500 dark:text-neutral-400" id="sc-wom-category-step">
-            · Start
+            · {{ i18n "smart_city.header_step_start" }}
           </span>
         </div>
         <div class="flex items-center gap-3">
           <span class="font-mono text-neutral-500 dark:text-neutral-400" id="sc-wom-progress-counter">
-            0 / {{ $data.total_questions }} beantwortet
+            {{ printf (i18n "smart_city.answered_counter") 0 $data.total_questions }}
           </span>
-          <button
-            type="button"
-            id="sc-wom-btn-overview"
-            class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
-          >
-            ☰ Fragenübersicht
-          </button>
           <button
             type="button"
             id="sc-wom-btn-reset"
             class="text-xs text-neutral-400 hover:text-red-600 dark:hover:text-red-400 transition-colors cursor-pointer"
-            title="Alle Eingaben zurücksetzen"
+            title="{{ i18n "smart_city.reset_title" }}"
           >
-            Neu starten
+            {{ i18n "smart_city.reset_button" }}
           </button>
         </div>
       </div>
 
-      <!-- Slim 3px Progress Bar -->
+      <!-- Slim Progress Bar -->
       <div class="w-full h-1 bg-neutral-200 dark:bg-neutral-800 rounded-xs overflow-hidden" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ $data.total_questions }}" id="sc-wom-progressbar">
         <div class="h-full bg-primary-600 transition-all duration-300" id="sc-wom-progressbar-fill" style="width: 0%"></div>
       </div>
       <div class="flex items-center justify-between text-[11px] text-neutral-500 dark:text-neutral-400 mt-1.5">
-        <span id="sc-wom-save-status">Wird automatisch im Browser gesichert</span>
-        <span id="sc-wom-overall-counter" class="font-mono">Kategorie 1 von {{ len $data.categories }}</span>
+        <span id="sc-wom-save-status">{{ i18n "smart_city.autosave_status" }}</span>
+        <span id="sc-wom-overall-counter" class="font-mono">{{ printf (i18n "smart_city.category_of") 1 (len $data.categories) }}</span>
       </div>
-    </div>
 
-    <!-- In-Page Fragenübersicht (Sauber integriert, kein ausbrechendes Modal) -->
-    <div id="sc-wom-overview-panel" class="sc-overview-panel hidden">
-      <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-neutral-200 dark:border-neutral-700">
-        <div>
-          <div class="font-bold text-sm text-neutral-900 dark:text-neutral-100">
-            Fragenübersicht
+      <!-- Native HTML <details> for Fragenübersicht -->
+      <details id="sc-wom-overview-details" class="sc-overview-details mt-3">
+        <summary class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer inline-flex items-center gap-1.5 list-none select-none">
+          ☰ {{ i18n "smart_city.overview_button" }}
+        </summary>
+        <div class="sc-overview-panel">
+          <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-neutral-200 dark:border-neutral-700">
+            <div>
+              <div class="font-bold text-sm text-neutral-900 dark:text-neutral-100">
+                {{ i18n "smart_city.overview_heading" }}
+              </div>
+              <div class="text-xs text-neutral-500 dark:text-neutral-400">
+                {{ printf (i18n "smart_city.overview_desc") $data.total_questions (len $data.categories) }}
+              </div>
+            </div>
+            <button
+              type="button"
+              id="sc-wom-btn-close-overview"
+              class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
+            >
+              ✕ {{ i18n "smart_city.overview_close" }}
+            </button>
           </div>
-          <div class="text-xs text-neutral-500 dark:text-neutral-400">
-            {{ $data.total_questions }} Fragen in {{ len $data.categories }} Fachbereichen · Klicke auf eine Frage, um dorthin zu springen.
+
+          <div class="pt-3">
+            <input
+              type="search"
+              id="sc-overview-filter"
+              placeholder="{{ i18n "smart_city.overview_filter_placeholder" }}"
+              class="w-full p-2 text-xs border border-neutral-300 dark:border-neutral-700 rounded-sm bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100"
+            >
+          </div>
+
+          <div class="sc-overview-list-container" id="sc-overview-list">
+            {{ range $cIdx, $cat := $data.categories }}
+              <div class="sc-overview-category" data-cat-name="{{ $cat.name }}">
+                <div class="sc-overview-category-title">
+                  <span>{{ $cat.name }}</span>
+                  <span class="font-mono font-normal text-[11px] text-neutral-400">{{ printf (i18n "smart_city.category_questions_count") (len $cat.questions) }}</span>
+                </div>
+                <div>
+                  {{ range $qIdx, $q := $cat.questions }}
+                    <button
+                      type="button"
+                      class="sc-overview-row"
+                      data-target-slide="{{ $q.number }}"
+                      data-question-text="{{ $q.question }}"
+                    >
+                      <div class="flex items-start gap-2.5">
+                        <span class="font-mono text-neutral-400 shrink-0">{{ $q.number }}.</span>
+                        <span class="font-medium leading-relaxed">{{ $q.question }}</span>
+                      </div>
+                      <span class="sc-overview-status" data-q-pill="{{ $q.number }}">
+                        {{ i18n "smart_city.status_open" }}
+                      </span>
+                    </button>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
           </div>
         </div>
-        <button
-          type="button"
-          id="sc-wom-btn-close-overview"
-          class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
-        >
-          ✕ Schließen
-        </button>
-      </div>
-
-      <div class="pt-3">
-        <input
-          type="search"
-          id="sc-overview-filter"
-          placeholder="Fragen nach Stichwort filtern (z. B. Open Data, WLAN, IT)..."
-          class="w-full p-2 text-xs border border-neutral-300 dark:border-neutral-700 rounded-sm bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100"
-        >
-      </div>
-
-      <div class="sc-overview-list-container" id="sc-overview-list">
-        {{ range $cIdx, $cat := $data.categories }}
-          <div class="sc-overview-category" data-cat-name="{{ $cat.name }}">
-            <div class="sc-overview-category-title">
-              <span>{{ $cat.name }}</span>
-              <span class="font-mono font-normal text-[11px] text-neutral-400">{{ len $cat.questions }} Fragen</span>
-            </div>
-            <div>
-              {{ range $qIdx, $q := $cat.questions }}
-                <button
-                  type="button"
-                  class="sc-overview-row"
-                  data-target-slide="{{ $q.number }}"
-                  data-question-text="{{ $q.question }}"
-                >
-                  <div class="flex items-start gap-2.5">
-                    <span class="font-mono text-neutral-400 shrink-0">{{ $q.number }}.</span>
-                    <span class="font-medium leading-relaxed">{{ $q.question }}</span>
-                  </div>
-                  <span class="sc-overview-status" data-q-pill="{{ $q.number }}">
-                    Offen
-                  </span>
-                </button>
-              {{ end }}
-            </div>
-          </div>
-        {{ end }}
-      </div>
+      </details>
     </div>
 
     <!-- SLIDE 0: Start / Metadaten der Kommune (Flat Layout) -->
     <div class="sc-wom-slide sc-current space-y-6" data-slide="0">
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-primary-600 dark:text-primary-400 mb-1 block">
-          Start
+          {{ i18n "smart_city.step_start_badge" }}
         </span>
         <h2 class="sc-question-title text-2xl !mt-0 !mb-2">
-          Smart City Fragebogen starten
+          {{ i18n "smart_city.start_title" }}
         </h2>
         <p class="text-sm text-neutral-600 dark:text-neutral-300">
-          Beantworte die Fragen Schritt für Schritt im Wahl-O-Mat-Format. Bitte gib zuerst an, für welche Stadt, Gemeinde oder Landkreis du die Daten erfassen möchtest:
+          {{ i18n "smart_city.start_desc" }}
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1 pt-2">
         <div class="md:col-span-2 sc-form-field">
           <label for="wom_kommune">
-            Name der Kommune (Stadt / Gemeinde / Kreis) <span class="text-red-500">*</span>
+            {{ i18n "smart_city.label_municipality" }} <span class="text-red-500">*</span>
           </label>
           <input
             type="text"
             id="wom_kommune"
             name="kommune"
             required
-            placeholder="z. B. Bonn, Leipzig, Kreis Steinfurt"
+            placeholder="{{ i18n "smart_city.placeholder_municipality" }}"
           >
         </div>
 
         <div class="sc-form-field">
           <label for="wom_bundesland">
-            Bundesland <span class="text-red-500">*</span>
+            {{ i18n "smart_city.label_state" }} <span class="text-red-500">*</span>
           </label>
           <select id="wom_bundesland" name="bundesland" required>
-            <option value="">Bundesland auswählen...</option>
+            <option value="">{{ i18n "smart_city.select_state" }}</option>
             <option value="BW">Baden-Württemberg</option>
             <option value="BY">Bayern</option>
             <option value="BE">Berlin</option>
@@ -165,58 +181,58 @@
 
         <div class="sc-form-field">
           <label for="wom_einwohnerzahl">
-            Einwohnerzahl (ca., optional)
+            {{ i18n "smart_city.label_population" }}
           </label>
           <input
             type="number"
             id="wom_einwohnerzahl"
             name="einwohnerzahl"
-            placeholder="z. B. 45000"
+            placeholder="{{ i18n "smart_city.placeholder_population" }}"
           >
         </div>
 
         <div class="sc-form-field">
           <label for="wom_rolle">
-            Deine Funktion / Rolle (optional)
+            {{ i18n "smart_city.label_role" }}
           </label>
           <select id="wom_rolle" name="rolle">
-            <option value="">Bitte auswählen...</option>
-            <option value="Mandatstragende*r (Gemeinderat, Stadtrat, Kreistag)">Mandatstragende*r (Gemeinde-, Stadt- oder Kreisrat)</option>
-            <option value="Verwaltungsmitarbeitende*r">Verwaltungsmitarbeitende*r</option>
-            <option value="Bürger*in">Bürger*in</option>
-            <option value="Fraktionsmitarbeiter*in">Fraktionsmitarbeiter*in</option>
-            <option value="Sonstige">Sonstige</option>
+            <option value="">{{ i18n "smart_city.select_role" }}</option>
+            <option value="Mandatstragende*r">{{ i18n "smart_city.role_mandate" }}</option>
+            <option value="Verwaltungsmitarbeitende*r">{{ i18n "smart_city.role_administration" }}</option>
+            <option value="Bürger*in">{{ i18n "smart_city.role_citizen" }}</option>
+            <option value="Fraktionsmitarbeiter*in">{{ i18n "smart_city.role_faction" }}</option>
+            <option value="Sonstige">{{ i18n "smart_city.role_other" }}</option>
           </select>
         </div>
 
         <div class="sc-form-field">
           <label for="wom_email">
-            E-Mail-Adresse für Rückfragen / Ergebnisse (optional)
+            {{ i18n "smart_city.label_email" }}
           </label>
           <input
             type="email"
             id="wom_email"
             name="kontakt_email"
-            placeholder="kontakt@example.org"
+            placeholder="{{ i18n "smart_city.placeholder_email" }}"
           >
         </div>
       </div>
 
       <div class="pt-4 flex items-center justify-between border-t border-neutral-200 dark:border-neutral-800">
         <span class="text-xs text-neutral-500">
-          {{ $data.total_questions }} Fragen in {{ len $data.categories }} Fachbereichen
+          {{ printf (i18n "smart_city.total_questions_in_categories") $data.total_questions (len $data.categories) }}
         </span>
         <button
           type="button"
           id="sc-wom-btn-start"
           class="sc-btn-primary cursor-pointer"
         >
-          Fragen starten →
+          {{ i18n "smart_city.start_button" }}
         </button>
       </div>
     </div>
 
-    <!-- SLIDES 1 to N: Individual Question Cards (Flat Design) -->
+    <!-- SLIDES 1 to N: Individual Question Cards (Flat Design, No Per-Question Note Clutter) -->
     {{ range $cIdx, $cat := $data.categories }}
       {{ $catTotal := len $cat.questions }}
       {{ $cNum := add $cIdx 1 }}
@@ -237,8 +253,8 @@
               {{ $cat.name }}
             </span>
             <div class="flex items-center gap-2 font-mono text-neutral-500 dark:text-neutral-400">
-              <span>Frage {{ $qInCat }} von {{ $catTotal }}</span>
-              <span class="text-[11px] text-neutral-400 dark:text-neutral-500 hidden sm:inline">(Nr. {{ $q.number }} im Gesamtkatalog)</span>
+              <span>{{ printf (i18n "smart_city.question_in_category") $qInCat $catTotal }}</span>
+              <span class="text-[11px] text-neutral-400 dark:text-neutral-500 hidden sm:inline">({{ printf (i18n "smart_city.question_overall") $q.number }})</span>
             </div>
           </div>
 
@@ -251,7 +267,7 @@
           <div class="pt-1">
             {{ if eq $q.type "multi_choice" }}
               <div class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
-                Mehrfachauswahl möglich:
+                {{ i18n "smart_city.multi_choice_hint" }}
               </div>
               <div class="sc-options-list">
                 {{ range $opt := $q.options }}
@@ -267,7 +283,7 @@
               </div>
             {{ else }}
               <div class="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
-                Reifegrad auswählen:
+                {{ i18n "smart_city.scale_hint" }}
               </div>
               <div class="sc-options-list">
                 {{ range $lvl := $q.scale_levels }}
@@ -287,27 +303,10 @@
                     name="q_{{ $q.number }}"
                     value=""
                   >
-                  <span class="sc-option-text">Keine Angabe / Nicht bekannt</span>
+                  <span class="sc-option-text">{{ i18n "smart_city.not_specified" }}</span>
                 </label>
               </div>
             {{ end }}
-          </div>
-
-          <!-- Optional Comment Field -->
-          <div class="pt-1">
-            <details class="text-xs text-neutral-500">
-              <summary class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400 select-none font-medium">
-                + Optionale Notiz oder Bemerkung hinzufügen
-              </summary>
-              <div class="mt-2">
-                <input
-                  type="text"
-                  name="comment_{{ $q.number }}"
-                  placeholder="Notiz oder Erläuterung zu dieser Frage..."
-                  class="w-full p-2 text-xs border border-neutral-300 dark:border-neutral-700 rounded-sm bg-transparent text-neutral-900 dark:text-neutral-100"
-                >
-              </div>
-            </details>
           </div>
 
           <!-- Navigation Footer (Clean Zurück / Weiter Buttons) -->
@@ -316,16 +315,16 @@
               type="button"
               class="sc-wom-btn-prev sc-btn-secondary cursor-pointer"
             >
-              ← Zurück
+              {{ i18n "smart_city.btn_prev" }}
             </button>
             <button
               type="button"
               class="sc-wom-btn-next sc-btn-primary cursor-pointer"
             >
               {{ if eq $q.number $data.total_questions }}
-                Zur Zusammenfassung →
+                {{ i18n "smart_city.btn_to_summary" }}
               {{ else }}
-                Weiter →
+                {{ i18n "smart_city.btn_next" }}
               {{ end }}
             </button>
           </div>
@@ -334,41 +333,54 @@
       {{ end }}
     {{ end }}
 
-    <!-- SLIDE 89: Abschluss & Zusammenfassung -->
+    <!-- SLIDE 89: Abschluss & Zusammenfassung mit prominentem Hinweisfeld -->
     <div class="sc-wom-slide hidden space-y-6" data-slide="{{ add $data.total_questions 1 }}">
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1 block">
-          Abschluss
+          {{ i18n "smart_city.summary_badge" }}
         </span>
         <h2 class="sc-question-title text-2xl !mt-0 !mb-2">
-          Fragebogen bereit zur Übermittlung
+          {{ i18n "smart_city.summary_title" }}
         </h2>
         <p class="text-sm text-neutral-600 dark:text-neutral-300">
-          Vielen Dank für deinen Beitrag! Überprüfe kurz deine Angaben, bevor du den Fragebogen an Commons & Code übermittelst:
+          {{ i18n "smart_city.summary_desc" }}
         </p>
       </div>
 
       <div class="p-4 rounded-sm border border-neutral-200 dark:border-neutral-700 space-y-2 text-xs">
         <div class="flex justify-between py-1 border-b border-neutral-200 dark:border-neutral-700">
-          <span class="text-neutral-500">Erfasste Kommune:</span>
+          <span class="text-neutral-500">{{ i18n "smart_city.summary_municipality" }}</span>
           <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-kommune">–</span>
         </div>
         <div class="flex justify-between py-1 border-b border-neutral-200 dark:border-neutral-700">
-          <span class="text-neutral-500">Bundesland:</span>
+          <span class="text-neutral-500">{{ i18n "smart_city.summary_state" }}</span>
           <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-bundesland">–</span>
         </div>
         <div class="flex justify-between py-1 border-b border-neutral-200 dark:border-neutral-700">
-          <span class="text-neutral-500">Rolle / Funktion:</span>
+          <span class="text-neutral-500">{{ i18n "smart_city.summary_role" }}</span>
           <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-rolle">–</span>
         </div>
         <div class="flex justify-between py-1">
-          <span class="text-neutral-500">Beantwortete Fragen:</span>
-          <span class="font-bold text-primary-600 dark:text-primary-400" id="sc-wom-summary-count">0 von {{ $data.total_questions }}</span>
+          <span class="text-neutral-500">{{ i18n "smart_city.summary_answered" }}</span>
+          <span class="font-bold text-primary-600 dark:text-primary-400" id="sc-wom-summary-count">0</span>
         </div>
       </div>
 
+      <!-- Prominentes allgemeines Notiz- und Anmerkungsfeld auf der Abschlussseite -->
+      <div class="sc-form-field">
+        <label for="wom_anmerkungen">
+          {{ i18n "smart_city.summary_notes_label" }}
+        </label>
+        <textarea
+          id="wom_anmerkungen"
+          name="anmerkungen"
+          rows="3"
+          placeholder="{{ i18n "smart_city.summary_notes_placeholder" }}"
+        ></textarea>
+      </div>
+
       <p class="text-xs text-neutral-500 dark:text-neutral-400">
-        Hinweis: Du musst nicht alle Fragen beantwortet haben. Auch Teilantworten zu einzelnen Fachbereichen fließen direkt in unsere bundesweite Auswertung ein.
+        {{ i18n "smart_city.summary_partial_note" }}
       </p>
 
       <div class="pt-4 border-t border-neutral-200 dark:border-neutral-800 flex items-center justify-between gap-4">
@@ -376,13 +388,13 @@
           type="button"
           class="sc-wom-btn-prev sc-btn-secondary cursor-pointer"
         >
-          ← Zurück zu den Fragen
+          {{ i18n "smart_city.btn_back_to_questions" }}
         </button>
         <button
           type="submit"
           class="sc-btn-primary cursor-pointer !bg-emerald-600 hover:!bg-emerald-500"
         >
-          Fragebogen jetzt absenden
+          {{ i18n "smart_city.btn_submit" }}
         </button>
       </div>
     </div>
@@ -391,9 +403,10 @@
 
 </div>
 
-<!-- Wahl-O-Mat Stepper & Autosave Script -->
+<!-- Wahl-O-Mat Stepper & Autosave Script (Progressive Enhancement) -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  const app = document.getElementById('sc-wom-app');
   const form = document.getElementById('sc-survey-form');
   const slides = document.querySelectorAll('.sc-wom-slide');
   const totalSlides = slides.length;
@@ -405,9 +418,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const progressCounter = document.getElementById('sc-wom-progress-counter');
   const progressbarFill = document.getElementById('sc-wom-progressbar-fill');
   const saveStatus = document.getElementById('sc-wom-save-status');
-  const overviewPanel = document.getElementById('sc-wom-overview-panel');
+  const overviewDetails = document.getElementById('sc-wom-overview-details');
   const overviewFilter = document.getElementById('sc-overview-filter');
-  const btnOverview = document.getElementById('sc-wom-btn-overview');
   const btnCloseOverview = document.getElementById('sc-wom-btn-close-overview');
   const btnReset = document.getElementById('sc-wom-btn-reset');
   const btnStart = document.getElementById('sc-wom-btn-start');
@@ -417,26 +429,35 @@ document.addEventListener('DOMContentLoaded', function() {
   const summaryCount = document.getElementById('sc-wom-summary-count');
   const storageKey = 'sc_survey_draft_v2';
 
+  // Read i18n strings from DOM dataset
+  const i18nText = app ? app.dataset : {};
+
   let currentSlide = 0;
 
   if (!form) return;
+
+  function formatString(template, ...args) {
+    if (!template) return '';
+    return template.replace(/%[ds]/g, (match) => {
+      const val = args.shift();
+      return val !== undefined ? val : match;
+    });
+  }
 
   // 1. Navigation Function
   function goToSlide(index) {
     if (index < 0 || index >= totalSlides) return;
 
-    // Validate Pflichtfelder on Slide 0
+    // Native HTML5 Validation on Slide 0
     if (currentSlide === 0 && index > 0) {
       const kommune = document.getElementById('wom_kommune');
       const bundesland = document.getElementById('wom_bundesland');
-      if (kommune && !kommune.value.trim()) {
-        alert('Bitte gib den Namen deiner Kommune ein.');
-        kommune.focus();
+      if (kommune && !kommune.checkValidity()) {
+        kommune.reportValidity();
         return;
       }
-      if (bundesland && !bundesland.value) {
-        alert('Bitte wähle dein Bundesland aus.');
-        bundesland.focus();
+      if (bundesland && !bundesland.checkValidity()) {
+        bundesland.reportValidity();
         return;
       }
     }
@@ -453,26 +474,26 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    // Update Header labels
+    // Update Header labels using i18n
     if (currentSlide === 0) {
-      if (categoryNameLabel) categoryNameLabel.textContent = 'Angaben zur Kommune';
-      if (categoryStepLabel) categoryStepLabel.textContent = '· Start';
-      if (overallCounter) overallCounter.textContent = `Kategorie 1 von ${totalCategories}`;
+      if (categoryNameLabel) categoryNameLabel.textContent = i18nText.textCategoryStart || 'Angaben zur Kommune';
+      if (categoryStepLabel) categoryStepLabel.textContent = '· ' + (i18nText.textStepStart || 'Start');
+      if (overallCounter) overallCounter.textContent = formatString(i18nText.textCategoryOf, 1, totalCategories);
     } else if (currentSlide === totalSlides - 1) {
-      if (categoryNameLabel) categoryNameLabel.textContent = 'Zusammenfassung';
-      if (categoryStepLabel) categoryStepLabel.textContent = '· Abschluss';
-      if (overallCounter) overallCounter.textContent = 'Bereit zum Absenden';
+      if (categoryNameLabel) categoryNameLabel.textContent = i18nText.textSummaryTitle || 'Zusammenfassung';
+      if (categoryStepLabel) categoryStepLabel.textContent = '· ' + (i18nText.textSummaryStep || 'Abschluss');
+      if (overallCounter) overallCounter.textContent = i18nText.textReadySubmit || 'Bereit zum Absenden';
       updateSummary();
     } else {
       const activeSlide = slides[currentSlide];
-      const cat = activeSlide.getAttribute('data-category') || 'Fragebogen';
+      const cat = activeSlide.getAttribute('data-category') || '';
       const catNum = activeSlide.getAttribute('data-cat-num') || '1';
       const qInCat = activeSlide.getAttribute('data-q-in-cat') || '1';
       const catTotal = activeSlide.getAttribute('data-cat-total') || '1';
       
       if (categoryNameLabel) categoryNameLabel.textContent = cat;
-      if (categoryStepLabel) categoryStepLabel.textContent = `· Frage ${qInCat} von ${catTotal}`;
-      if (overallCounter) overallCounter.textContent = `Kategorie ${catNum} von ${totalCategories} · Nr. ${currentSlide} gesamt`;
+      if (categoryStepLabel) categoryStepLabel.textContent = '· ' + formatString(i18nText.textQuestionInCat, qInCat, catTotal);
+      if (overallCounter) overallCounter.textContent = formatString(i18nText.textCategoryOfOverall, catNum, totalCategories, currentSlide);
     }
 
     // Scroll smoothly to top of form
@@ -489,14 +510,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const b = document.getElementById('wom_bundesland');
     const bText = b && b.selectedIndex > 0 ? b.options[b.selectedIndex].text : '–';
     const r = document.getElementById('wom_rolle');
-    const rText = r && r.value ? r.value : 'Keine Angabe';
+    const rText = r && r.selectedIndex > 0 ? r.options[r.selectedIndex].text : '–';
 
     if (summaryKommune) summaryKommune.textContent = k;
     if (summaryBundesland) summaryBundesland.textContent = bText;
     if (summaryRolle) summaryRolle.textContent = rText;
 
     const answered = getAnsweredCount();
-    if (summaryCount) summaryCount.textContent = `${answered} von ${totalQuestions} (${Math.round((answered/totalQuestions)*100)}%)`;
+    const percent = Math.round((answered / totalQuestions) * 100);
+    if (summaryCount) {
+      summaryCount.textContent = formatString(i18nText.textSummaryAnswered, answered, totalQuestions, percent);
+    }
   }
 
   function getAnsweredCount() {
@@ -510,15 +534,17 @@ document.addEventListener('DOMContentLoaded', function() {
     return set.size;
   }
 
-  // 2. Update Progress & Overview Status Pills
+  // 2. Update Progress & Overview Status
   function updateProgress() {
     const answered = getAnsweredCount();
     const percent = Math.round((answered / totalQuestions) * 100);
 
     if (progressbarFill) progressbarFill.style.width = percent + '%';
-    if (progressCounter) progressCounter.textContent = `${answered} / ${totalQuestions} beantwortet`;
+    if (progressCounter) {
+      progressCounter.textContent = formatString(i18nText.textAnsweredCounter, answered, totalQuestions);
+    }
 
-    // Update status in overview list
+    // Update status pills in overview
     for (let i = 1; i <= totalQuestions; i++) {
       const pill = document.querySelector(`[data-q-pill="${i}"]`);
       if (!pill) continue;
@@ -527,19 +553,19 @@ document.addEventListener('DOMContentLoaded', function() {
       const checkboxes = form.querySelectorAll(`input[name="q_${i}[]"]:checked`);
 
       if (radio && radio.value !== '') {
-        pill.textContent = `Stufe ${radio.value}`;
+        pill.textContent = formatString(i18nText.textStatusLevel, radio.value);
         pill.classList.add('answered');
       } else if (checkboxes.length > 0) {
-        pill.textContent = `${checkboxes.length} gewählt`;
+        pill.textContent = formatString(i18nText.textStatusSelected, checkboxes.length);
         pill.classList.add('answered');
       } else {
-        pill.textContent = 'Offen';
+        pill.textContent = i18nText.textStatusOpen || 'Offen';
         pill.classList.remove('answered');
       }
     }
   }
 
-  // 3. Overview Panel Filter & Jump
+  // 3. Overview Filter & Jump
   if (overviewFilter) {
     overviewFilter.addEventListener('input', function(e) {
       const term = e.target.value.toLowerCase().trim();
@@ -565,10 +591,16 @@ document.addEventListener('DOMContentLoaded', function() {
       const target = parseInt(this.getAttribute('data-target-slide'), 10);
       if (!isNaN(target)) {
         goToSlide(target);
-        if (overviewPanel) overviewPanel.classList.add('hidden');
+        if (overviewDetails) overviewDetails.open = false;
       }
     });
   });
+
+  if (btnCloseOverview) {
+    btnCloseOverview.addEventListener('click', () => {
+      if (overviewDetails) overviewDetails.open = false;
+    });
+  }
 
   // 4. LocalStorage Autosave
   function saveState() {
@@ -580,7 +612,7 @@ document.addEventListener('DOMContentLoaded', function() {
         checkboxes: []
       };
 
-      form.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], select').forEach(el => {
+      form.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], select, textarea').forEach(el => {
         if (el.name && el.value) data.inputs[el.name] = el.value;
       });
 
@@ -593,7 +625,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       localStorage.setItem(storageKey, JSON.stringify(data));
-      if (saveStatus) saveStatus.textContent = 'Automatisch im Browser gesichert';
+      if (saveStatus) saveStatus.textContent = i18nText.textAutosave || 'Wird automatisch im Browser gesichert';
     } catch (e) {}
 
     updateProgress();
@@ -641,29 +673,10 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener('click', () => goToSlide(currentSlide - 1));
   });
 
-  if (btnOverview) {
-    btnOverview.addEventListener('click', () => {
-      if (overviewPanel) {
-        const isHidden = overviewPanel.classList.contains('hidden');
-        if (isHidden) {
-          overviewPanel.classList.remove('hidden');
-          if (overviewFilter) overviewFilter.focus();
-        } else {
-          overviewPanel.classList.add('hidden');
-        }
-      }
-    });
-  }
-
-  if (btnCloseOverview) {
-    btnCloseOverview.addEventListener('click', () => {
-      if (overviewPanel) overviewPanel.classList.add('hidden');
-    });
-  }
-
   if (btnReset) {
     btnReset.addEventListener('click', () => {
-      if (confirm('Möchtest du alle Eingaben zurücksetzen und von vorne beginnen?')) {
+      const confirmMsg = i18nText.textResetConfirm || 'Möchtest du alle Eingaben zurücksetzen und von vorne beginnen?';
+      if (confirm(confirmMsg)) {
         try { localStorage.removeItem(storageKey); } catch (e) {}
         form.reset();
         goToSlide(0);

@@ -376,7 +376,8 @@ html {
 .sc-form-field input[type="text"],
 .sc-form-field input[type="email"],
 .sc-form-field input[type="number"],
-.sc-form-field select {
+.sc-form-field select,
+.sc-form-field textarea {
     width: 100%;
     padding: 8px 12px;
     border: 1px solid #ccc;
@@ -391,14 +392,16 @@ html {
 .dark .sc-form-field input[type="text"],
 .dark .sc-form-field input[type="email"],
 .dark .sc-form-field input[type="number"],
-.dark .sc-form-field select {
+.dark .sc-form-field select,
+.dark .sc-form-field textarea {
     border-color: #444;
     background-color: #1a1a1a;
     color: #eee;
 }
 
 .sc-form-field input:focus,
-.sc-form-field select:focus {
+.sc-form-field select:focus,
+.sc-form-field textarea:focus {
     outline: none;
     border-color: rgb(var(--color-primary-500));
     box-shadow: 0 0 0 1px rgb(var(--color-primary-500));
@@ -514,6 +517,14 @@ html {
 }
 
 /* In-page Fragenübersicht Panel */
+.sc-overview-details > summary {
+    list-style: none;
+}
+
+.sc-overview-details > summary::-webkit-details-marker {
+    display: none;
+}
+
 .sc-overview-panel {
     margin: 1.25rem 0 1.75rem 0;
     padding: 1.25rem;

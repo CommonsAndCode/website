@@ -516,6 +516,38 @@ html {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* Stepper Bar Icons (Reload & Autosave Indicator) */
+.sc-stepper-icon-btn,
+.sc-autosave-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.sc-autosave-indicator {
+    color: rgb(var(--color-primary-600));
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+:is(.dark) .sc-autosave-indicator {
+    color: rgb(var(--color-primary-400));
+}
+
+.sc-autosave-indicator.is-saving {
+    opacity: 0.4;
+    transform: scale(0.9);
+}
+
+.sc-stepper-icon-btn svg,
+.sc-autosave-indicator svg {
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px;
+    min-height: 15px;
+    display: block;
+}
+
 /* In-page Fragenübersicht Panel */
 .sc-overview-details > summary {
     list-style: none;

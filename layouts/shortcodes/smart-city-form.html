@@ -1026,26 +1026,27 @@ document.addEventListener('DOMContentLoaded', function() {
     Object.keys(catGroups).forEach(catName => {
       const qList = catGroups[catName];
       const answeredInCat = qList.filter(q => q.status === 'Beantwortet').length;
+      const catStatusText = formatString(i18nText.textCategoryStatusAnswered || '%d von %d beantwortet', answeredInCat, qList.length);
 
       html += `
         <div class="sc-print-category">
           <div class="sc-print-cat-title">
             <span>${escapeHTML(catName)}</span>
-            <span class="sc-print-cat-status">${answeredInCat} von ${qList.length} beantwortet</span>
+            <span class="sc-print-cat-status">${escapeHTML(catStatusText)}</span>
           </div>
           <table class="sc-print-table">
             <thead>
               <tr>
-                <th style="width: 5%;">Nr</th>
-                <th style="width: 44%;">Frage</th>
-                <th style="width: 18%;">Reifegrad</th>
-                <th style="width: 33%;">Bewertung / Erläuterung</th>
+                <th style="width: 5%;">${escapeHTML(i18nText.textColNum || 'Nr')}</th>
+                <th style="width: 44%;">${escapeHTML(i18nText.textColQ || 'Frage')}</th>
+                <th style="width: 18%;">${escapeHTML(i18nText.textColLevel || 'Reifegrad')}</th>
+                <th style="width: 33%;">${escapeHTML(i18nText.textColDesc || 'Bewertung / Erläuterung')}</th>
               </tr>
             </thead>
             <tbody>
               ${qList.map(q => `
                 <tr class="${q.status === 'Beantwortet' ? 'sc-row-answered' : 'sc-row-open'}">
-                  <td style="text-align: center; font-family: monospace;">${q.num}</td>
+                  <td style="text-align: center; font-family: monospace;">${escapeHTML(q.num)}</td>
                   <td><strong>${escapeHTML(q.qTitle)}</strong></td>
                   <td>${escapeHTML(q.level)}</td>
                   <td>${escapeHTML(q.desc)}</td>
@@ -1058,6 +1059,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     printReport.innerHTML = html;
+    document.body.classList.add('sc-printing-report');
   }
 
   function triggerPrint() {
@@ -1068,6 +1070,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (btnExportPDF) {
     btnExportPDF.addEventListener('click', triggerPrint);
   }
+
+  window.addEventListener('beforeprint', preparePrintReport);
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('sc-printing-report');
+  });
 
   restoreState();
 });

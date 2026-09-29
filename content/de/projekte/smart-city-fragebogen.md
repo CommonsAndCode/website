@@ -2,92 +2,31 @@
 title: "Smart City Fragebogen"
 date: 2026-03-28
 draft: false
-description: "88 praxisnahe Fragen zur kommunalen Digitalisierung – Orientierung und Inspiration für Mandatstragende im Stadtrat zur Ausarbeitung von Ratsanfragen."
+description: "Wie digital ist deine Kommune wirklich? Erfasse und bewerte den Stand digitaler Dienste in deiner Stadt oder Gemeinde im interaktiven Selbsttest."
 translationKey: "smart-city-questionnaire"
 showAuthor: false
 showDate: false
 showPagination: false
 showReadingTime: false
-showTableOfContents: true
+showTableOfContents: false
 ---
 
 {{< lead >}}
-Wie digital ist deine Kommune wirklich? Dieser Fragebogen bietet Mandatstragenden in Stadt- und Gemeinderäten Orientierung, Inspiration und konkrete Formulierungshilfen für parlamentarische Anfragen zur kommunalen Digitalisierung.
+Wie digital ist deine Kommune wirklich? Dieser Fragebogen bietet Mandatstragenden, Verwaltungsmitarbeitenden und engagierten Bürger*innen einen systematischen Selbsttest zur kommunalen Digitalisierung – praxisnah, orientiert an Reifegraden von 0 bis 4 und direkt online ausfüllbar.
 {{< /lead >}}
 
-Als Ratsmitglied oder Ausschussmitglied fehlt oft die Zeit, den aktuellen Stand kommunaler IT-Infrastruktur, Online-Dienste und Datenstrategien von Grund auf zu durchleuchten.
-Der vorliegende Fragebogen bündelt **88 Fragen aus sieben Schlüsselbereichen**.
-Zu fast jeder Frage sind konkrete Reifegradstufen hinterlegt, mit denen du den Ist-Zustand erfassen und gezielte Anfragen an die Verwaltung stellen kannst.
+Das interaktive Self-Assessment hilft dir, den aktuellen Digitalisierungsstand deiner Stadt, Gemeinde oder deines Landkreises in sieben Schlüsselbereichen strukturiert zu erfassen.
+
+- **Automatischer Entwurf**: Deine Eingaben werden fortlaufend lokal in deinem Browser gespeichert. Du kannst jederzeit pausieren und später weitermachen.
+- **Teilbewertungen willkommen**: Du musst nicht alle Fragen auf einmal beantworten – auch Bewertungen zu einzelnen Fachbereichen fließen direkt in unsere gemeinwohlorientierte Auswertung ein.
+- **Dauer**: Die vollständige Erfassung dauert ca. 10 bis 15 Minuten.
+
 >[!NOTE] Hinweis
 > Nicht jede Kommune muss sofort die Maximalstufe aller Dienste anbieten.
-> Du solltest die Bedürfnisse deiner Gemeinde bei der Nutzung des Fragebogens berücksichtigen.
+> Du solltest die spezifischen Bedürfnisse und Prioritäten deiner Gemeinde berücksichtigen.
 
-**Möchtest du den Digitalisierungsstand deiner Kommune direkt online erfassen?**  
-Nutze unser interaktives Formular, um den [Fragebogen online auszufüllen und an uns zu übermitteln](/de/projekte/smart-city-fragebogen/ausfuellen/).
+Möchtest du alle Fragen auf einen Blick durchlesen oder die Rohdaten als Excel-Tabelle herunterladen? Hier geht es zum [Fragenkatalog & Download](/de/projekte/smart-city-fragebogen/fragenkatalog/).
 
+---
 
-
-{{< smart-city-questionnaire >}}
-
-## Verwaltung
-
-{{< smart-city-questionnaire category="verwaltung" >}}
-
-## IT & Kommunikation
-
-{{< smart-city-questionnaire category="it-kommunikation" >}}
-
-## Energie & Umwelt
-
-{{< smart-city-questionnaire category="energie-umwelt" >}}
-
-## Mobilität
-
-{{< smart-city-questionnaire category="mobilitaet" >}}
-
-## Gesellschaft & Bildung
-
-{{< smart-city-questionnaire category="gesellschaft-bildung" >}}
-
-## Bürgernutzung
-
-{{< smart-city-questionnaire category="buergernutzung" >}}
-
-## Wirtschaft und Innovation
-
-{{< smart-city-questionnaire category="wirtschaft-und-innovation" >}}
-
-## Tipps für Ratsanfragen
-
-Die Fragen aus diesem Katalog kannst du direkt als Grundlage für parlamentarische Anfragen (Kleine Anfragen, Ratsanfragen) oder Ausschussanträge nutzen.
-
-Ein bewährtes Muster für eine solche Anfrage:
-
-```text
-Sehr geehrte*r [Bürgermeister*in / Oberbürgermeister*in],
-
-zur Vorbereitung künftiger Beschlüsse zur Digitalisierung bitten wir um die schriftliche Beantwortung folgender Fragen:
-
-1. [Ausgewählte Frage aus dem Katalog]?
-2. Welche Reifegradstufe (0 bis 4) strebt die Verwaltung für das kommende Haushaltsjahr an?
-3. Welche personellen und finanziellen Ressourcen sind erforderlich, um die nächste Reifegradstufe zu erreichen?
-
-Mit freundlichen Grüßen,
-[Name / Fraktion]
-```
-
-## Erfahrungen & Feedback teilen
-
-Hast du eine Anfrage im Rat gestellt oder eine Antwort der Verwaltung erhalten?
-Wir freuen uns über Feedback, Erfahrungsberichte und beantwortete Anfragen, um den Fragebogen weiterzuentwickeln.
-
-Teile deine Erfahrungen gerne mit uns per E-Mail an [contact@commons-and-code.eu](mailto:contact@commons-and-code.eu?subject=Smart%20City%20Fragebogen).
-
-## Rohdaten & Download
-
-Du möchtest den Fragebogen offline bearbeiten, in deiner Fraktion abstimmen oder eigene Auswertungen vornehmen?
-Die Rohdaten stehen als Excel-Tabelle zum Download bereit:
-
-{{< download href="/downloads/smart-city-fragebogen.xlsx" >}}
-Smart City Fragebogen herunterladen (.xlsx)
-{{< /download >}}
+{{< smart-city-form >}}

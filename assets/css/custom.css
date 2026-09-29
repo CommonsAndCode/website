@@ -549,11 +549,13 @@ html {
 }
 
 /* In-page Fragenübersicht Panel */
-.sc-overview-details > summary {
+.sc-overview-details > summary,
+.sc-overview-category > summary {
     list-style: none;
 }
 
-.sc-overview-details > summary::-webkit-details-marker {
+.sc-overview-details > summary::-webkit-details-marker,
+.sc-overview-category > summary::-webkit-details-marker {
     display: none;
 }
 
@@ -587,20 +589,78 @@ html {
     padding-right: 0.5rem;
 }
 
+.sc-overview-category {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 0.25rem;
+    margin: 0.5rem 0;
+}
+
+.dark .sc-overview-category {
+    border-color: #2e2e2e;
+}
+
+.sc-overview-category:last-child {
+    border-bottom: none;
+}
+
 .sc-overview-category-title {
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: rgb(var(--color-primary-600));
-    padding-bottom: 0.25rem;
-    border-bottom: 1px solid #e5e5e5;
-    margin: 1.25rem 0 0.5rem 0;
+    padding: 0.5rem 0.35rem;
+    margin: 0;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 3px;
+    transition: background-color 0.15s;
 }
-.dark .sc-overview-category-title {
-    border-color: #333;
+
+.sc-overview-category-title:hover {
+    background-color: rgba(var(--color-primary-500), 0.06);
+}
+
+.sc-overview-category[open] .sc-cat-chevron {
+    transform: rotate(90deg);
+}
+
+.sc-overview-cat-status {
+    font-family: var(--default-mono-font-family) !important;
+    font-size: 0.72rem;
+    padding: 2px 7px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    color: #777;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.dark .sc-overview-cat-status {
+    border-color: #444;
+    color: #aaa;
+}
+
+.sc-overview-cat-status.answered {
+    border-color: rgb(var(--color-primary-500));
+    background-color: rgba(var(--color-primary-500), 0.08);
+    color: rgb(var(--color-primary-600));
+    font-weight: 600;
+}
+
+.sc-overview-cat-status.completed {
+    border-color: #10b981;
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    font-weight: 700;
+}
+
+.dark .sc-overview-cat-status.completed {
+    border-color: #059669;
+    color: #34d399;
 }
 
 .sc-overview-row {

@@ -28,21 +28,25 @@
 
   <form action="{{ $action }}" method="POST" id="sc-survey-form">
 
-    <!-- Top Stepper Header & Progress Bar -->
-    <div class="sc-wom-header pb-4 mb-6 border-b border-neutral-200 dark:border-neutral-800">
-      <div class="flex flex-wrap items-center justify-between gap-3 text-xs mb-2">
-        <div class="flex items-center gap-1.5 font-medium">
-          <span class="font-bold text-neutral-900 dark:text-neutral-100" id="sc-wom-category-name">
+    <!-- Top Stepper Bar -->
+    <div class="sc-stepper-bar pb-2.5 mb-4 border-b border-neutral-200 dark:border-neutral-800">
+      <div class="flex items-center justify-between gap-3 text-xs mb-2">
+        <div class="flex items-center gap-1.5 font-medium min-w-0">
+          <span class="font-bold text-neutral-900 dark:text-neutral-100 truncate" id="sc-wom-category-name">
             {{ i18n "smart_city.header_category_start" }}
           </span>
-          <span class="text-neutral-500 dark:text-neutral-400" id="sc-wom-category-step">
+          <span class="text-neutral-500 dark:text-neutral-400 shrink-0" id="sc-wom-category-step">
             · {{ i18n "smart_city.header_step_start" }}
           </span>
         </div>
-        <div class="flex items-center gap-3">
-          <span class="font-mono text-neutral-500 dark:text-neutral-400" id="sc-wom-progress-counter">
-            {{ printf (i18n "smart_city.answered_counter") 0 $totalQuestions }}
-          </span>
+        <div class="flex items-center gap-2.5 shrink-0">
+          <button
+            type="button"
+            id="sc-wom-btn-open-overview"
+            class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer inline-flex items-center gap-1.5 select-none"
+          >
+            ☰ {{ i18n "smart_city.overview_button" }}
+          </button>
           <button
             type="button"
             id="sc-wom-btn-reset"
@@ -58,75 +62,69 @@
       <div class="w-full h-1 bg-neutral-200 dark:bg-neutral-800 rounded-xs overflow-hidden" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ $totalQuestions }}" id="sc-wom-progressbar">
         <div class="h-full bg-primary-600 transition-all duration-300" id="sc-wom-progressbar-fill" style="width: 0%"></div>
       </div>
-      <div class="flex items-center justify-between text-[11px] text-neutral-500 dark:text-neutral-400 mt-1.5">
-        <span id="sc-wom-save-status">{{ i18n "smart_city.autosave_status" }}</span>
-        <span id="sc-wom-overall-counter" class="font-mono">{{ printf (i18n "smart_city.category_of") 1 $totalCategories }}</span>
-      </div>
+    </div>
 
-      <!-- Native HTML <details> for Fragenübersicht -->
-      <details id="sc-wom-overview-details" class="sc-overview-details mt-3">
-        <summary class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer inline-flex items-center gap-1.5 list-none select-none">
-          ☰ {{ i18n "smart_city.overview_button" }}
-        </summary>
-        <div class="sc-overview-panel">
-          <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-neutral-200 dark:border-neutral-700">
-            <div>
-              <div class="font-bold text-sm text-neutral-900 dark:text-neutral-100">
-                {{ i18n "smart_city.overview_heading" }}
+    <!-- Fragenübersicht Panel (<details>) -->
+    <details id="sc-wom-overview-details" class="sc-overview-details mb-4">
+      <summary class="hidden">{{ i18n "smart_city.overview_button" }}</summary>
+      <div class="sc-overview-panel">
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-neutral-200 dark:border-neutral-700">
+          <div>
+            <div class="font-bold text-sm text-neutral-900 dark:text-neutral-100">
+              {{ i18n "smart_city.overview_heading" }}
+            </div>
+            <div class="text-xs text-neutral-500 dark:text-neutral-400">
+              {{ printf (i18n "smart_city.overview_desc") $totalQuestions $totalCategories }}
+            </div>
+          </div>
+          <button
+            type="button"
+            id="sc-wom-btn-close-overview"
+            class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
+          >
+            ✕ {{ i18n "smart_city.overview_close" }}
+          </button>
+        </div>
+
+        <div class="pt-3">
+          <input
+            type="search"
+            id="sc-overview-filter"
+            placeholder="{{ i18n "smart_city.overview_filter_placeholder" }}"
+            class="w-full p-2 text-xs border border-neutral-300 dark:border-neutral-700 rounded-sm bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100"
+          >
+        </div>
+
+        <div class="sc-overview-list-container" id="sc-overview-list">
+          {{ range $cIdx, $cat := $data.categories }}
+            <div class="sc-overview-category" data-cat-name="{{ $cat.name }}">
+              <div class="sc-overview-category-title">
+                <span>{{ $cat.name }}</span>
+                <span class="font-mono font-normal text-[11px] text-neutral-400">{{ printf (i18n "smart_city.category_questions_count") (len $cat.questions) }}</span>
               </div>
-              <div class="text-xs text-neutral-500 dark:text-neutral-400">
-                {{ printf (i18n "smart_city.overview_desc") $totalQuestions $totalCategories }}
+              <div>
+                {{ range $qIdx, $q := $cat.questions }}
+                  <button
+                    type="button"
+                    class="sc-overview-row"
+                    data-target-slide="{{ $q.number }}"
+                    data-question-text="{{ $q.question }}"
+                  >
+                    <div class="flex items-start gap-2.5">
+                      <span class="font-mono text-neutral-400 shrink-0">{{ $q.number }}.</span>
+                      <span class="font-medium leading-relaxed">{{ $q.question }}</span>
+                    </div>
+                    <span class="sc-overview-status" data-q-pill="{{ $q.number }}">
+                      {{ i18n "smart_city.status_open" }}
+                    </span>
+                  </button>
+                {{ end }}
               </div>
             </div>
-            <button
-              type="button"
-              id="sc-wom-btn-close-overview"
-              class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
-            >
-              ✕ {{ i18n "smart_city.overview_close" }}
-            </button>
-          </div>
-
-          <div class="pt-3">
-            <input
-              type="search"
-              id="sc-overview-filter"
-              placeholder="{{ i18n "smart_city.overview_filter_placeholder" }}"
-              class="w-full p-2 text-xs border border-neutral-300 dark:border-neutral-700 rounded-sm bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100"
-            >
-          </div>
-
-          <div class="sc-overview-list-container" id="sc-overview-list">
-            {{ range $cIdx, $cat := $data.categories }}
-              <div class="sc-overview-category" data-cat-name="{{ $cat.name }}">
-                <div class="sc-overview-category-title">
-                  <span>{{ $cat.name }}</span>
-                  <span class="font-mono font-normal text-[11px] text-neutral-400">{{ printf (i18n "smart_city.category_questions_count") (len $cat.questions) }}</span>
-                </div>
-                <div>
-                  {{ range $qIdx, $q := $cat.questions }}
-                    <button
-                      type="button"
-                      class="sc-overview-row"
-                      data-target-slide="{{ $q.number }}"
-                      data-question-text="{{ $q.question }}"
-                    >
-                      <div class="flex items-start gap-2.5">
-                        <span class="font-mono text-neutral-400 shrink-0">{{ $q.number }}.</span>
-                        <span class="font-medium leading-relaxed">{{ $q.question }}</span>
-                      </div>
-                      <span class="sc-overview-status" data-q-pill="{{ $q.number }}">
-                        {{ i18n "smart_city.status_open" }}
-                      </span>
-                    </button>
-                  {{ end }}
-                </div>
-              </div>
-            {{ end }}
-          </div>
+          {{ end }}
         </div>
-      </details>
-    </div>
+      </div>
+    </details>
 
     <!-- SLIDE 0: Start / Metadaten der Kommune (Flat Layout) -->
     <div class="sc-wom-slide sc-current space-y-6" data-slide="0">
@@ -249,20 +247,8 @@
           data-q-in-cat="{{ $qInCat }}"
           data-cat-total="{{ $catTotal }}"
         >
-          
-          <!-- Category & Progress Header -->
-          <div class="flex items-center justify-between gap-3 text-xs">
-            <span class="font-semibold uppercase tracking-wider text-primary-600 dark:text-primary-400">
-              {{ $cat.name }}
-            </span>
-            <div class="flex items-center gap-2 font-mono text-neutral-500 dark:text-neutral-400">
-              <span>{{ printf (i18n "smart_city.question_in_category") $qInCat $catTotal }}</span>
-              <span class="text-[11px] text-neutral-400 dark:text-neutral-500 hidden sm:inline">({{ printf (i18n "smart_city.question_overall") $qNumber }})</span>
-            </div>
-          </div>
-
           <!-- Question Headline -->
-          <h2 class="sc-question-title !my-2">
+          <h2 class="sc-question-title !mt-0 !mb-2">
             {{ $q.question }}
           </h2>
 
@@ -353,15 +339,15 @@
       <div class="p-4 rounded-sm border border-neutral-200 dark:border-neutral-700 space-y-2 text-xs">
         <div class="flex justify-between py-1 border-b border-neutral-200 dark:border-neutral-700">
           <span class="text-neutral-500">{{ i18n "smart_city.summary_municipality" }}</span>
-          <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-kommune">–</span>
+          <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-kommune">-</span>
         </div>
         <div class="flex justify-between py-1 border-b border-neutral-200 dark:border-neutral-700">
           <span class="text-neutral-500">{{ i18n "smart_city.summary_state" }}</span>
-          <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-bundesland">–</span>
+          <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-bundesland">-</span>
         </div>
         <div class="flex justify-between py-1 border-b border-neutral-200 dark:border-neutral-700">
           <span class="text-neutral-500">{{ i18n "smart_city.summary_role" }}</span>
-          <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-rolle">–</span>
+          <span class="font-bold text-neutral-800 dark:text-neutral-200" id="sc-wom-summary-rolle">-</span>
         </div>
         <div class="flex justify-between py-1">
           <span class="text-neutral-500">{{ i18n "smart_city.summary_answered" }}</span>
@@ -417,10 +403,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const totalCategories = {{ $totalCategories }};
   const categoryNameLabel = document.getElementById('sc-wom-category-name');
   const categoryStepLabel = document.getElementById('sc-wom-category-step');
-  const overallCounter = document.getElementById('sc-wom-overall-counter');
-  const progressCounter = document.getElementById('sc-wom-progress-counter');
   const progressbarFill = document.getElementById('sc-wom-progressbar-fill');
-  const saveStatus = document.getElementById('sc-wom-save-status');
+  const progressbar = document.getElementById('sc-wom-progressbar');
+  const btnOpenOverview = document.getElementById('sc-wom-btn-open-overview');
   const overviewDetails = document.getElementById('sc-wom-overview-details');
   const overviewFilter = document.getElementById('sc-overview-filter');
   const btnCloseOverview = document.getElementById('sc-wom-btn-close-overview');
@@ -481,22 +466,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentSlide === 0) {
       if (categoryNameLabel) categoryNameLabel.textContent = i18nText.textCategoryStart || 'Angaben zur Kommune';
       if (categoryStepLabel) categoryStepLabel.textContent = '· ' + (i18nText.textStepStart || 'Start');
-      if (overallCounter) overallCounter.textContent = formatString(i18nText.textCategoryOf, 1, totalCategories);
     } else if (currentSlide === totalSlides - 1) {
       if (categoryNameLabel) categoryNameLabel.textContent = i18nText.textSummaryTitle || 'Zusammenfassung';
       if (categoryStepLabel) categoryStepLabel.textContent = '· ' + (i18nText.textSummaryStep || 'Abschluss');
-      if (overallCounter) overallCounter.textContent = i18nText.textReadySubmit || 'Bereit zum Absenden';
       updateSummary();
     } else {
       const activeSlide = slides[currentSlide];
       const cat = activeSlide.getAttribute('data-category') || '';
-      const catNum = activeSlide.getAttribute('data-cat-num') || '1';
       const qInCat = activeSlide.getAttribute('data-q-in-cat') || '1';
       const catTotal = activeSlide.getAttribute('data-cat-total') || '1';
       
       if (categoryNameLabel) categoryNameLabel.textContent = cat;
       if (categoryStepLabel) categoryStepLabel.textContent = '· ' + formatString(i18nText.textQuestionInCat, qInCat, catTotal);
-      if (overallCounter) overallCounter.textContent = formatString(i18nText.textCategoryOfOverall, catNum, totalCategories, currentSlide);
     }
 
     // Scroll smoothly to top of form
@@ -509,11 +490,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function updateSummary() {
-    const k = document.getElementById('wom_kommune')?.value || '–';
+    const k = document.getElementById('wom_kommune')?.value || '-';
     const b = document.getElementById('wom_bundesland');
-    const bText = b && b.selectedIndex > 0 ? b.options[b.selectedIndex].text : '–';
+    const bText = b && b.selectedIndex > 0 ? b.options[b.selectedIndex].text : '-';
     const r = document.getElementById('wom_rolle');
-    const rText = r && r.selectedIndex > 0 ? r.options[r.selectedIndex].text : '–';
+    const rText = r && r.selectedIndex > 0 ? r.options[r.selectedIndex].text : '-';
 
     if (summaryKommune) summaryKommune.textContent = k;
     if (summaryBundesland) summaryBundesland.textContent = bText;
@@ -543,8 +524,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const percent = Math.round((answered / totalQuestions) * 100);
 
     if (progressbarFill) progressbarFill.style.width = percent + '%';
-    if (progressCounter) {
-      progressCounter.textContent = formatString(i18nText.textAnsweredCounter, answered, totalQuestions);
+    if (progressbar) {
+      progressbar.setAttribute('aria-valuenow', answered);
+      progressbar.title = formatString(i18nText.textAnsweredCounter, answered, totalQuestions);
     }
 
     // Update status pills in overview
@@ -569,6 +551,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // 3. Overview Filter & Jump
+  if (btnOpenOverview && overviewDetails) {
+    btnOpenOverview.addEventListener('click', () => {
+      overviewDetails.open = !overviewDetails.open;
+      if (overviewDetails.open && overviewFilter) {
+        overviewFilter.focus();
+      }
+    });
+  }
+
   if (overviewFilter) {
     overviewFilter.addEventListener('input', function(e) {
       const term = e.target.value.toLowerCase().trim();
@@ -628,7 +619,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       localStorage.setItem(storageKey, JSON.stringify(data));
-      if (saveStatus) saveStatus.textContent = i18nText.textAutosave || 'Wird automatisch im Browser gesichert';
     } catch (e) {}
 
     updateProgress();

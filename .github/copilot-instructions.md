@@ -18,7 +18,7 @@ Built with the Blowfish theme.
 
 ### Multi-language Setup
 
-- **Languages**: German (default, `de/`) and English (`en/`)
+- **Languages**: English (default, `en/`) and German (`de/`) - see `config/_default/hugo.toml`
 - Content structure: `content/{de,en}/` with mirrored page hierarchies
 - Configuration: `config/_default/languages.{de,en}.toml` for language-specific settings
 - Menus: `config/_default/menus.{de,en}.toml` - menu items must be duplicated per language
@@ -31,7 +31,11 @@ content/{de,en}/
 ├── _index.md              # Homepage
 ├── blog/                  # Blog posts (currently empty, uses .keep)
 ├── {ueber-uns,about-us}/  # About pages (language-specific slugs)
-└── {mitglied-werden,become-a-member}.md  # Membership form pages
+├── {mitglied-werden,become-a-member}.md  # Membership form pages
+└── projekte/
+    └── smart-city-fragebogen/
+        ├── _index.md / smart-city-fragebogen.md  # Main Self-Assessment landing page
+        └── fragenkatalog.md                      # Static catalogue and downloads
 ```
 
 ### Configuration Layers
@@ -45,6 +49,8 @@ content/{de,en}/
 
 #### Shortcodes (`layouts/shortcodes/`)
 
+- `smart-city-form.html` - Interactive 88-question municipal digital maturity self-assessment with step navigation, collapsible category overview, skip-to-submit, and localStorage autosave.
+- `smart-city-questionnaire.html` - Full static catalogue displaying all 88 questions grouped by department with search and copy buttons.
 - `membership-form.html` - Complex interactive membership application form with:
   - Dynamic field validation via `assets/js/membership-form.js`
   - Conditional field requirements (SEPA, underage guardian fields)
@@ -53,7 +59,7 @@ content/{de,en}/
 - `author.html` - Delegates to theme's author partial
 - `download.html` - Styled download button using Blowfish color classes
 
-Usage in content: `{{< membership-form >}}`
+Usage in content: `{{< smart-city-form >}}`, `{{< smart-city-questionnaire >}}`, `{{< membership-form >}}`
 
 #### Partials (`layouts/partials/`)
 
@@ -138,6 +144,34 @@ Key fields for pages:
 - `translationKey` - Link translations (required for multi-language)
 - `authors` - Array of author keys from `data/authors/`
 - `showAuthor`, `showDate`, `showReadingTime`, `showTableOfContents` - Control page display
+
+## Smart City Self-Assessment & Questionnaire
+
+For comprehensive architectural documentation, see [`docs/smart-city-questionnaire.md`](../docs/smart-city-questionnaire.md).
+
+### Key Architecture & Files
+- **Data Source**: `data/smart-city-questions.json` (7 municipal departments, 88 questions).
+- **Interactive Stepper Shortcode**: `layouts/shortcodes/smart-city-form.html`
+  - Slide 0: Metadata (`wom_kommune`, `wom_bundesland`, etc.) with native HTML5 validation.
+  - Slides 1–88: Single-choice (levels 0–4 with auto-advance) and multi-choice questions.
+  - Slide 89: Review summary and prominent optional notes field (`#wom_anmerkungen`).
+  - Stepper Header: Department title, `.sc-stepper-dot` (symmetrically padded separator), question counter, `[ ☰ Fragenübersicht ]`, `[ ↺ ]` reload button, `[ 💾 ]` permanent autosave indicator with `.is-saving` pulse animation.
+  - Collapsible Overview Panel: `<details id="sc-wom-overview-details">` containing nested `<details class="sc-overview-category">` accordions with dynamic per-category status badges (`X von Y beantwortet`), auto-expansion on filter match and active question, and a compact corner `✕` close button.
+  - Skip Navigation: `.sc-wom-btn-skip-summary` allows skipping directly to the final submission slide.
+- **Static Catalogue Shortcode**: `layouts/shortcodes/smart-city-questionnaire.html`
+  - Read-only catalogue of all 88 questions with search, copy buttons, and Excel download.
+- **Pages**:
+  - Main landing page: `content/{de,en}/projekte/smart-city-fragebogen.md`
+  - Catalogue page: `content/{de,en}/projekte/smart-city-fragebogen/fragenkatalog.md`
+- **Submission Endpoint**: `https://cc.janpeterkoenig.com/api/v1/smart-city-input`
+- **LocalStorage State**: Key `sc_survey_draft_v2` automatically restores draft responses on reload.
+
+### Crucial Implementation Gotchas
+- ⚠️ **Blowfish Precompiled CSS**: Blowfish uses a precompiled Tailwind stylesheet (`themes/blowfish/assets/css/compiled/main.css`). Dynamic utility classes (e.g. `gap-1.5`, `w-3.5`, `h-3.5`, `opacity-50`) do **NOT** exist in the bundle. Any custom dimensions, SVG sizes, and flex spacing must be explicitly declared in `assets/css/custom.css`.
+- ⚠️ **Hugo JSON Numbers**: When loaded via `getJSON` or `$.Site.Data`, Hugo parses JSON numbers as `float64`. Always cast numbers with `(int ...)` in Go templates (e.g., `printf (i18n "...") (int $totalQuestions)`) to avoid `%!d(float64=...)` errors.
+- ⚠️ **String Formatting in JS**: Client-side `formatString` must safely unescape `%%` to `%` to prevent double percent signs like `(9%%)` in formatted summary statistics.
+- ⚠️ **Overview Panel Fonts**: The overview panel must enforce `font-family: var(--default-font-family) !important` (*Raleway*) to avoid inheriting the headline font (*Share Tech*) from global `[class*="header"]` rules.
+- ⚠️ **Vanilla HTML & Accessibility**: Prefer native HTML `<details>`/`<summary>` and `reportValidity()` over heavy JS or alert dialogs.
 
 ## Theme Integration
 

@@ -517,6 +517,18 @@ html {
 }
 
 /* Stepper Bar Icons (Reload & Autosave Indicator) */
+.sc-stepper-dot {
+    display: inline-block;
+    padding: 0 0.45rem;
+    color: #999;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.dark .sc-stepper-dot {
+    color: #666;
+}
+
 .sc-stepper-icon-btn,
 .sc-autosave-indicator {
     display: inline-flex;

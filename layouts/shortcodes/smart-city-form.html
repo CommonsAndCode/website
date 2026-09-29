@@ -32,12 +32,13 @@
     <!-- Top Stepper Bar -->
     <div class="sc-stepper-bar pb-2.5 mb-4 border-b border-neutral-200 dark:border-neutral-800">
       <div class="flex items-center justify-between gap-3 text-xs mb-2">
-        <div class="flex items-center gap-1.5 font-medium min-w-0">
+        <div class="flex items-center font-medium min-w-0">
           <span class="font-bold text-neutral-900 dark:text-neutral-100 truncate" id="sc-wom-category-name">
             {{ i18n "smart_city.header_category_start" }}
           </span>
+          <span class="sc-stepper-dot" aria-hidden="true">·</span>
           <span class="text-neutral-500 dark:text-neutral-400 shrink-0" id="sc-wom-category-step">
-            · {{ i18n "smart_city.header_step_start" }}
+            {{ i18n "smart_city.header_step_start" }}
           </span>
         </div>
         <div class="flex items-center gap-2 shrink-0">
@@ -505,10 +506,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update Header labels using i18n
     if (currentSlide === 0) {
       if (categoryNameLabel) categoryNameLabel.textContent = i18nText.textCategoryStart || 'Angaben zur Kommune';
-      if (categoryStepLabel) categoryStepLabel.textContent = '· ' + (i18nText.textStepStart || 'Start');
+      if (categoryStepLabel) categoryStepLabel.textContent = i18nText.textStepStart || 'Start';
     } else if (currentSlide === totalSlides - 1) {
       if (categoryNameLabel) categoryNameLabel.textContent = i18nText.textSummaryTitle || 'Zusammenfassung';
-      if (categoryStepLabel) categoryStepLabel.textContent = '· ' + (i18nText.textSummaryStep || 'Abschluss');
+      if (categoryStepLabel) categoryStepLabel.textContent = i18nText.textSummaryStep || 'Abschluss';
       updateSummary();
     } else {
       const activeSlide = slides[currentSlide];
@@ -517,7 +518,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const catTotal = activeSlide.getAttribute('data-cat-total') || '1';
       
       if (categoryNameLabel) categoryNameLabel.textContent = cat;
-      if (categoryStepLabel) categoryStepLabel.textContent = '· ' + formatString(i18nText.textQuestionInCat, qInCat, catTotal);
+      if (categoryStepLabel) categoryStepLabel.textContent = formatString(i18nText.textQuestionInCat, qInCat, catTotal);
     }
 
     // Scroll smoothly to top of form

@@ -25,6 +25,19 @@
   data-text-summary-answered="{{ i18n "smart_city.summary_answered_format" }}"
   data-text-category-status-answered="{{ i18n "smart_city.category_status_answered" }}"
   data-text-autosave="{{ i18n "smart_city.autosave_status" }}"
+  data-text-col-cat="{{ i18n "smart_city.csv_col_category" }}"
+  data-text-col-num="{{ i18n "smart_city.csv_col_number" }}"
+  data-text-col-q="{{ i18n "smart_city.csv_col_question" }}"
+  data-text-col-status="{{ i18n "smart_city.csv_col_status" }}"
+  data-text-col-level="{{ i18n "smart_city.csv_col_level" }}"
+  data-text-col-desc="{{ i18n "smart_city.csv_col_description" }}"
+  data-text-level-prefix="{{ i18n "smart_city.status_level_prefix" }}"
+  data-text-filename="{{ i18n "smart_city.csv_filename" }}"
+  data-text-print-title="{{ i18n "smart_city.print_title" }}"
+  data-text-summary-municipality="{{ i18n "smart_city.summary_municipality" }}"
+  data-text-summary-state="{{ i18n "smart_city.summary_state" }}"
+  data-text-summary-role="{{ i18n "smart_city.summary_role" }}"
+  data-text-not-specified="{{ i18n "smart_city.not_specified" }}"
 >
 
   <form action="{{ $action }}" method="POST" id="sc-survey-form">
@@ -393,6 +406,44 @@
         </div>
       </div>
 
+      <!-- Export Sektion -->
+      <div class="p-4 rounded-sm border border-neutral-200 dark:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-800/30 space-y-3">
+        <div>
+          <div class="font-bold text-xs uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+            {{ i18n "smart_city.export_heading" }}
+          </div>
+          <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
+            {{ i18n "smart_city.export_desc" }}
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-2.5 pt-0.5">
+          <button
+            type="button"
+            id="sc-wom-btn-export-csv"
+            class="sc-btn-secondary !py-1.5 !px-3 !text-xs cursor-pointer inline-flex items-center gap-1.5"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>{{ i18n "smart_city.btn_export_csv" }}</span>
+          </button>
+          <button
+            type="button"
+            id="sc-wom-btn-export-pdf"
+            class="sc-btn-secondary !py-1.5 !px-3 !text-xs cursor-pointer inline-flex items-center gap-1.5"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>{{ i18n "smart_city.btn_export_pdf" }}</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Prominentes allgemeines Notiz- und Anmerkungsfeld auf der Abschlussseite -->
       <div class="sc-form-field">
         <label for="wom_anmerkungen">
@@ -454,6 +505,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const summaryBundesland = document.getElementById('sc-wom-summary-bundesland');
   const summaryRolle = document.getElementById('sc-wom-summary-rolle');
   const summaryCount = document.getElementById('sc-wom-summary-count');
+  const btnExportCSV = document.getElementById('sc-wom-btn-export-csv');
+  const btnExportPDF = document.getElementById('sc-wom-btn-export-pdf');
   const storageKey = 'sc_survey_draft_v2';
 
   // Read i18n strings from DOM dataset
@@ -803,6 +856,130 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // 5. Export Functions (CSV & Print/PDF)
+  function collectResponses() {
+    const k = document.getElementById('wom_kommune')?.value.trim() || '-';
+    const bEl = document.getElementById('wom_bundesland');
+    const bText = bEl && bEl.selectedIndex > 0 ? bEl.options[bEl.selectedIndex].text : '-';
+    const einwohner = document.getElementById('wom_einwohner')?.value.trim() || '-';
+    const rEl = document.getElementById('wom_rolle');
+    const rText = rEl && rEl.selectedIndex > 0 ? rEl.options[rEl.selectedIndex].text : '-';
+    const anmerkungen = document.getElementById('wom_anmerkungen')?.value.trim() || '';
+
+    const questionsData = [];
+    for (let i = 1; i <= totalQuestions; i++) {
+      const slide = document.querySelector(`.sc-wom-slide[data-slide="${i}"]`);
+      if (!slide) continue;
+      const cat = slide.getAttribute('data-category') || '';
+      const qTitle = slide.querySelector('.sc-question-title')?.textContent.trim() || '';
+
+      const radio = form.querySelector(`input[name="q_${i}"]:checked`);
+      const checkboxes = form.querySelectorAll(`input[name="q_${i}[]"]:checked`);
+
+      let status = i18nText.textStatusOpen || 'Offen';
+      let level = '-';
+      let desc = '-';
+
+      if (radio && radio.value !== '') {
+        status = 'Beantwortet';
+        level = formatString(i18nText.textLevelPrefix || 'Stufe %s', radio.value);
+        const optRow = radio.closest('.sc-option-row');
+        desc = optRow ? (optRow.querySelector('.sc-option-text')?.textContent.trim() || radio.value) : radio.value;
+      } else if (radio && radio.value === '') {
+        status = i18nText.textNotSpecified || 'Nicht bekannt';
+        level = '-';
+        desc = i18nText.textNotSpecified || 'Keine Angabe / Nicht bekannt';
+      } else if (checkboxes.length > 0) {
+        status = 'Beantwortet';
+        const selectedVals = Array.from(checkboxes).map(cb => {
+          const row = cb.closest('.sc-option-row');
+          return row ? row.querySelector('.sc-option-text')?.textContent.trim() : cb.value;
+        });
+        level = formatString(i18nText.textStatusSelected || '%d ausgewählt', checkboxes.length);
+        desc = selectedVals.join('; ');
+      }
+
+      questionsData.push({
+        num: i,
+        cat,
+        qTitle,
+        status,
+        level,
+        desc
+      });
+    }
+
+    return {
+      kommune: k,
+      bundesland: bText,
+      einwohner,
+      rolle: rText,
+      anmerkungen,
+      questions: questionsData
+    };
+  }
+
+  function exportCSV() {
+    const data = collectResponses();
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('de-DE');
+    const escapeCSV = (val) => '"' + String(val || '').replace(/"/g, '""') + '"';
+
+    let csv = '\uFEFF'; // UTF-8 BOM for Excel
+    csv += escapeCSV(i18nText.textPrintTitle || 'Smart City Selbsteinschätzung') + '\r\n';
+    csv += escapeCSV(i18nText.textSummaryMunicipality || 'Erfasste Kommune:') + ';' + escapeCSV(data.kommune) + '\r\n';
+    csv += escapeCSV(i18nText.textSummaryState || 'Bundesland:') + ';' + escapeCSV(data.bundesland) + '\r\n';
+    if (data.einwohner && data.einwohner !== '-') {
+      csv += escapeCSV('Einwohnerzahl:') + ';' + escapeCSV(data.einwohner) + '\r\n';
+    }
+    csv += escapeCSV(i18nText.textSummaryRole || 'Rolle / Funktion:') + ';' + escapeCSV(data.rolle) + '\r\n';
+    csv += escapeCSV('Datum:') + ';' + escapeCSV(dateStr) + '\r\n';
+    csv += escapeCSV(i18nText.textSummaryAnswered || 'Beantwortete Fragen:') + ';' + escapeCSV(summaryCount ? summaryCount.textContent : '') + '\r\n';
+    if (data.anmerkungen) {
+      csv += escapeCSV(i18nText.textSummaryNotesLabel || 'Anmerkungen:') + ';' + escapeCSV(data.anmerkungen) + '\r\n';
+    }
+    csv += '\r\n';
+
+    // Headers
+    const headers = [
+      i18nText.textColCat || 'Fachbereich',
+      i18nText.textColNum || 'Nr',
+      i18nText.textColQ || 'Frage',
+      i18nText.textColStatus || 'Status',
+      i18nText.textColLevel || 'Reifegrad',
+      i18nText.textColDesc || 'Bewertung / Erläuterung'
+    ];
+    csv += headers.map(escapeCSV).join(';') + '\r\n';
+
+    data.questions.forEach(q => {
+      const row = [
+        q.cat,
+        q.num,
+        q.qTitle,
+        q.status,
+        q.level,
+        q.desc
+      ];
+      csv += row.map(escapeCSV).join(';') + '\r\n';
+    });
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const cleanKommune = (data.kommune || 'kommune').toLowerCase().replace(/[^a-z0-9äöüß]+/gi, '-').replace(/^-|-$/g, '');
+    const cleanDate = now.toISOString().slice(0, 10);
+    a.href = url;
+    a.download = `${i18nText.textFilename || 'smart-city-selbsteinschaetzung'}-${cleanKommune || 'kommune'}-${cleanDate}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  if (btnExportCSV) {
+    btnExportCSV.addEventListener('click', exportCSV);
+  }
 
   restoreState();
 });

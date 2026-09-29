@@ -165,6 +165,7 @@ For comprehensive architectural documentation, see [`docs/smart-city-questionnai
   - Catalogue page: `content/{de,en}/projekte/smart-city-fragebogen/fragenkatalog.md`
 - **Submission Endpoint**: `https://cc.janpeterkoenig.com/api/v1/smart-city-input`
 - **LocalStorage State**: Key `sc_survey_draft_v2` automatically restores draft responses on reload.
+- **Local Export (CSV & PDF/Print)**: Users can download their assessment as CSV (with UTF-8 BOM for Excel) or print/save as PDF (`window.print()`) directly from Slide 89.
 
 ### Crucial Implementation Gotchas
 - ⚠️ **Blowfish Precompiled CSS**: Blowfish uses a precompiled Tailwind stylesheet (`themes/blowfish/assets/css/compiled/main.css`). Dynamic utility classes (e.g. `gap-1.5`, `w-3.5`, `h-3.5`, `opacity-50`) do **NOT** exist in the bundle. Any custom dimensions, SVG sizes, and flex spacing must be explicitly declared in `assets/css/custom.css`.

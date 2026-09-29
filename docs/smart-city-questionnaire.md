@@ -98,6 +98,11 @@ When Hugo loads JSON via `$.Site.Data` or `getJSON`, integer numbers are deseria
 6. **Form Submission**:
    - Default POST action: `https://cc.janpeterkoenig.com/api/v1/smart-city-input` (overridable via shortcode parameter `action`).
 
+7. **Self-Service Export (CSV & PDF/Print)**:
+   - On Slide 89, users can save their assessment locally without or before submitting to the backend:
+     - **CSV (Excel) Export**: Generates a semicolon-separated file with UTF-8 BOM (`\uFEFF`) containing municipality metadata and all 88 questions grouped by department with selected levels and descriptions.
+     - **PDF / Print View**: Renders `#sc-wom-print-report` with printable tables per department and triggers `window.print()`. Interactive UI, navigation, and website chrome are hidden via `@media print`.
+
 ---
 
 ## 5. Styling & Blowfish CSS Precompilation Caveat

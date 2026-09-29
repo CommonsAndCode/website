@@ -8,11 +8,19 @@ pageRef = "blog"
 identifier = "HGcjCq2NZY"
 weight = 1
 
-# [[main]]
-# name = "Themen"
-# pageRef = "themen"
-# identifier = "6E0c2e8NJS"
-# weight = 2
+[[main]]
+name = "Projekte"
+pageRef = "projekte"
+identifier = "projekte"
+weight = 2
+
+[[main]]
+name = "Smart City Fragebogen"
+pageRef = "projekte/smart-city-fragebogen"
+parent = "projekte"
+identifier = "smart-city-fragebogen"
+weight = 21
+
 
 [[main]]
 name = "Über Uns"

@@ -727,12 +727,27 @@ html {
     }
 }
 
+@page {
+    margin: 12mm 12mm 14mm 12mm;
+    size: A4 portrait;
+}
+
 @media print {
-    /* Hide navigation, headers, footers, and interactive UI */
+    /* Hide site chrome, navigation, top bar, footers, and interactive UI */
     header,
     footer,
     nav,
     aside,
+    #the-top,
+    .main-menu,
+    #menu-blur,
+    body > div.fixed,
+    body > div.min-h-\[148px\],
+    #scroll-to-top,
+    #search-wrapper,
+    #search,
+    .toc,
+    #single_header,
     #sc-search-input,
     #sc-search-status,
     .sc-copy-btn,
@@ -748,8 +763,15 @@ html {
     }
 
     body,
+    html {
+        height: auto !important;
+        min-height: auto !important;
+    }
+
+    body,
     main,
     article,
+    .article-content,
     .sc-form-container {
         padding: 0 !important;
         margin: 0 !important;
@@ -758,6 +780,8 @@ html {
         font-family: var(--default-font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
         font-size: 9.5pt !important;
         line-height: 1.35 !important;
+        max-width: 100% !important;
+        width: 100% !important;
     }
 
     .sc-print-report {
@@ -795,8 +819,9 @@ html {
     }
 
     .sc-print-category {
-        margin-top: 12px;
-        page-break-inside: avoid;
+        margin-top: 14px;
+        break-inside: auto;
+        page-break-inside: auto;
     }
 
     .sc-print-cat-title {
@@ -809,6 +834,8 @@ html {
         border-bottom: 1.5px solid #444;
         padding-bottom: 2px;
         margin-bottom: 5px;
+        break-after: avoid;
+        page-break-after: avoid;
     }
 
     .sc-print-cat-status {
@@ -822,6 +849,15 @@ html {
         border-collapse: collapse;
         font-size: 8.5pt;
         margin-bottom: 8px;
+    }
+
+    .sc-print-table thead {
+        display: table-header-group;
+    }
+
+    .sc-print-table tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
     }
 
     .sc-print-table th,

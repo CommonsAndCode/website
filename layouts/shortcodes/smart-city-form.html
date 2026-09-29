@@ -22,7 +22,8 @@
   data-text-status-selected="{{ i18n "smart_city.status_selected_count" }}"
   data-text-reset-confirm="{{ i18n "smart_city.reset_confirm" }}"
   data-text-answered-counter="{{ i18n "smart_city.answered_counter" }}"
-  data-text-summary-answered="{{ i18n "smart_city.summary_answered_format" }}"
+  data-text-summary-answered-label="{{ i18n "smart_city.summary_answered" }}"
+  data-text-summary-answered-format="{{ i18n "smart_city.summary_answered_format" }}"
   data-text-category-status-answered="{{ i18n "smart_city.category_status_answered" }}"
   data-text-autosave="{{ i18n "smart_city.autosave_status" }}"
   data-text-col-cat="{{ i18n "smart_city.csv_col_category" }}"
@@ -37,6 +38,8 @@
   data-text-summary-municipality="{{ i18n "smart_city.summary_municipality" }}"
   data-text-summary-state="{{ i18n "smart_city.summary_state" }}"
   data-text-summary-role="{{ i18n "smart_city.summary_role" }}"
+  data-text-summary-inhabitants="{{ i18n "smart_city.summary_inhabitants" }}"
+  data-text-summary-date="{{ i18n "smart_city.summary_date" }}"
   data-text-not-specified="{{ i18n "smart_city.not_specified" }}"
 >
 
@@ -600,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const answered = getAnsweredCount();
     const percent = Math.round((answered / totalQuestions) * 100);
     if (summaryCount) {
-      summaryCount.textContent = formatString(i18nText.textSummaryAnswered, answered, totalQuestions, percent);
+      summaryCount.textContent = formatString(i18nText.textSummaryAnsweredFormat || '%d von %d (%d%)', answered, totalQuestions, percent);
     }
   }
 
@@ -934,11 +937,11 @@ document.addEventListener('DOMContentLoaded', function() {
     csv += escapeCSV(i18nText.textSummaryMunicipality || 'Erfasste Kommune:') + ';' + escapeCSV(data.kommune) + '\r\n';
     csv += escapeCSV(i18nText.textSummaryState || 'Bundesland:') + ';' + escapeCSV(data.bundesland) + '\r\n';
     if (data.einwohner && data.einwohner !== '-') {
-      csv += escapeCSV('Einwohnerzahl:') + ';' + escapeCSV(data.einwohner) + '\r\n';
+      csv += escapeCSV(i18nText.textSummaryInhabitants || 'Einwohner:') + ';' + escapeCSV(data.einwohner) + '\r\n';
     }
     csv += escapeCSV(i18nText.textSummaryRole || 'Rolle / Funktion:') + ';' + escapeCSV(data.rolle) + '\r\n';
-    csv += escapeCSV('Datum:') + ';' + escapeCSV(dateStr) + '\r\n';
-    csv += escapeCSV(i18nText.textSummaryAnswered || 'Beantwortete Fragen:') + ';' + escapeCSV(summaryCount ? summaryCount.textContent : '') + '\r\n';
+    csv += escapeCSV(i18nText.textSummaryDate || 'Datum:') + ';' + escapeCSV(dateStr) + '\r\n';
+    csv += escapeCSV(i18nText.textSummaryAnsweredLabel || 'Beantwortete Fragen:') + ';' + escapeCSV(summaryCount ? summaryCount.textContent : '') + '\r\n';
     if (data.anmerkungen) {
       csv += escapeCSV(i18nText.textSummaryNotesLabel || 'Anmerkungen:') + ';' + escapeCSV(data.anmerkungen) + '\r\n';
     }
@@ -1009,12 +1012,12 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="sc-print-header">
         <h1>${escapeHTML(i18nText.textPrintTitle || 'Smart City Selbsteinschätzung')}</h1>
         <div class="sc-print-meta-grid">
-          <div><strong>${escapeHTML(i18nText.textSummaryMunicipality || 'Kommune:')}</strong> ${escapeHTML(data.kommune)}</div>
+          <div><strong>${escapeHTML(i18nText.textSummaryMunicipality || 'Erfasste Kommune:')}</strong> ${escapeHTML(data.kommune)}</div>
           <div><strong>${escapeHTML(i18nText.textSummaryState || 'Bundesland:')}</strong> ${escapeHTML(data.bundesland)}</div>
-          <div><strong>Einwohner:</strong> ${escapeHTML(data.einwohner)}</div>
-          <div><strong>${escapeHTML(i18nText.textSummaryRole || 'Rolle:')}</strong> ${escapeHTML(data.rolle)}</div>
-          <div><strong>Datum:</strong> ${escapeHTML(dateStr)}</div>
-          <div><strong>${escapeHTML(i18nText.textSummaryAnswered || 'Fortschritt:')}</strong> ${escapeHTML(summaryCount ? summaryCount.textContent : '')}</div>
+          <div><strong>${escapeHTML(i18nText.textSummaryInhabitants || 'Einwohner:')}</strong> ${escapeHTML(data.einwohner)}</div>
+          <div><strong>${escapeHTML(i18nText.textSummaryRole || 'Rolle / Funktion:')}</strong> ${escapeHTML(data.rolle)}</div>
+          <div><strong>${escapeHTML(i18nText.textSummaryDate || 'Datum:')}</strong> ${escapeHTML(dateStr)}</div>
+          <div><strong>${escapeHTML(i18nText.textSummaryAnsweredLabel || 'Beantwortete Fragen:')}</strong> ${escapeHTML(summaryCount ? summaryCount.textContent : '')}</div>
         </div>
         ${data.anmerkungen ? `<div class="sc-print-notes"><strong>${escapeHTML(i18nText.textSummaryNotesLabel || 'Anmerkungen:')}</strong> ${escapeHTML(data.anmerkungen)}</div>` : ''}
       </div>

@@ -426,10 +426,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function formatString(template, ...args) {
     if (!template) return '';
-    return template.replace(/%[ds]/g, (match) => {
-      const val = args.shift();
-      return val !== undefined ? val : match;
-    });
+    return template
+      .replace(/%[ds]/g, (match) => {
+        const val = args.shift();
+        return val !== undefined ? val : match;
+      })
+      .replace(/%%/g, '%');
   }
 
   // 1. Navigation Function

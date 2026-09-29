@@ -4,6 +4,8 @@
 {{ if not $data }}
   <p class="text-red-600">{{ i18n "smart_city.error_not_found" }}</p>
 {{ else }}
+{{ $totalQuestions := int $data.total_questions }}
+{{ $totalCategories := len $data.categories }}
 <div
   class="sc-form-container not-prose"
   id="sc-wom-app"
@@ -39,7 +41,7 @@
         </div>
         <div class="flex items-center gap-3">
           <span class="font-mono text-neutral-500 dark:text-neutral-400" id="sc-wom-progress-counter">
-            {{ printf (i18n "smart_city.answered_counter") 0 $data.total_questions }}
+            {{ printf (i18n "smart_city.answered_counter") 0 $totalQuestions }}
           </span>
           <button
             type="button"
@@ -53,12 +55,12 @@
       </div>
 
       <!-- Slim Progress Bar -->
-      <div class="w-full h-1 bg-neutral-200 dark:bg-neutral-800 rounded-xs overflow-hidden" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ $data.total_questions }}" id="sc-wom-progressbar">
+      <div class="w-full h-1 bg-neutral-200 dark:bg-neutral-800 rounded-xs overflow-hidden" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ $totalQuestions }}" id="sc-wom-progressbar">
         <div class="h-full bg-primary-600 transition-all duration-300" id="sc-wom-progressbar-fill" style="width: 0%"></div>
       </div>
       <div class="flex items-center justify-between text-[11px] text-neutral-500 dark:text-neutral-400 mt-1.5">
         <span id="sc-wom-save-status">{{ i18n "smart_city.autosave_status" }}</span>
-        <span id="sc-wom-overall-counter" class="font-mono">{{ printf (i18n "smart_city.category_of") 1 (len $data.categories) }}</span>
+        <span id="sc-wom-overall-counter" class="font-mono">{{ printf (i18n "smart_city.category_of") 1 $totalCategories }}</span>
       </div>
 
       <!-- Native HTML <details> for Fragenübersicht -->
@@ -73,7 +75,7 @@
                 {{ i18n "smart_city.overview_heading" }}
               </div>
               <div class="text-xs text-neutral-500 dark:text-neutral-400">
-                {{ printf (i18n "smart_city.overview_desc") $data.total_questions (len $data.categories) }}
+                {{ printf (i18n "smart_city.overview_desc") $totalQuestions $totalCategories }}
               </div>
             </div>
             <button
@@ -220,7 +222,7 @@
 
       <div class="pt-4 flex items-center justify-between border-t border-neutral-200 dark:border-neutral-800">
         <span class="text-xs text-neutral-500">
-          {{ printf (i18n "smart_city.total_questions_in_categories") $data.total_questions (len $data.categories) }}
+          {{ printf (i18n "smart_city.total_questions_in_categories") $totalQuestions $totalCategories }}
         </span>
         <button
           type="button"
@@ -238,9 +240,10 @@
       {{ $cNum := add $cIdx 1 }}
       {{ range $qIdx, $q := $cat.questions }}
         {{ $qInCat := add $qIdx 1 }}
+        {{ $qNumber := int $q.number }}
         <div
           class="sc-wom-slide hidden space-y-5"
-          data-slide="{{ $q.number }}"
+          data-slide="{{ $qNumber }}"
           data-category="{{ $cat.name }}"
           data-cat-num="{{ $cNum }}"
           data-q-in-cat="{{ $qInCat }}"
@@ -254,7 +257,7 @@
             </span>
             <div class="flex items-center gap-2 font-mono text-neutral-500 dark:text-neutral-400">
               <span>{{ printf (i18n "smart_city.question_in_category") $qInCat $catTotal }}</span>
-              <span class="text-[11px] text-neutral-400 dark:text-neutral-500 hidden sm:inline">({{ printf (i18n "smart_city.question_overall") $q.number }})</span>
+              <span class="text-[11px] text-neutral-400 dark:text-neutral-500 hidden sm:inline">({{ printf (i18n "smart_city.question_overall") $qNumber }})</span>
             </div>
           </div>
 
@@ -321,7 +324,7 @@
               type="button"
               class="sc-wom-btn-next sc-btn-primary cursor-pointer"
             >
-              {{ if eq $q.number $data.total_questions }}
+              {{ if eq $qNumber $totalQuestions }}
                 {{ i18n "smart_city.btn_to_summary" }}
               {{ else }}
                 {{ i18n "smart_city.btn_next" }}
@@ -334,7 +337,7 @@
     {{ end }}
 
     <!-- SLIDE 89: Abschluss & Zusammenfassung mit prominentem Hinweisfeld -->
-    <div class="sc-wom-slide hidden space-y-6" data-slide="{{ add $data.total_questions 1 }}">
+    <div class="sc-wom-slide hidden space-y-6" data-slide="{{ add $totalQuestions 1 }}">
       <div>
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1 block">
           {{ i18n "smart_city.summary_badge" }}
@@ -410,8 +413,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('sc-survey-form');
   const slides = document.querySelectorAll('.sc-wom-slide');
   const totalSlides = slides.length;
-  const totalQuestions = {{ $data.total_questions }};
-  const totalCategories = {{ len $data.categories }};
+  const totalQuestions = {{ $totalQuestions }};
+  const totalCategories = {{ $totalCategories }};
   const categoryNameLabel = document.getElementById('sc-wom-category-name');
   const categoryStepLabel = document.getElementById('sc-wom-category-step');
   const overallCounter = document.getElementById('sc-wom-overall-counter');

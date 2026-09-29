@@ -6,6 +6,18 @@
 {{ else }}
 {{ $totalQuestions := int $data.total_questions }}
 {{ $totalCategories := len $data.categories }}
+{{ $imprintPage := "" }}
+{{ range site.RegularPages }}
+  {{ if eq .Params.translationKey "imprint" }}
+    {{ $imprintPage = . }}
+  {{ end }}
+{{ end }}
+{{ $imprintUrl := "" }}
+{{ if $imprintPage }}
+  {{ $imprintUrl = $imprintPage.Permalink }}
+{{ else }}
+  {{ $imprintUrl = "rechtliches/impressum/" | absLangURL }}
+{{ end }}
 <div
   class="sc-form-container not-prose"
   id="sc-wom-app"
@@ -41,6 +53,11 @@
   data-text-summary-inhabitants="{{ i18n "smart_city.summary_inhabitants" }}"
   data-text-summary-date="{{ i18n "smart_city.summary_date" }}"
   data-text-not-specified="{{ i18n "smart_city.not_specified" }}"
+  data-text-imprint-url="{{ $imprintUrl }}"
+  data-text-imprint-label="{{ i18n "smart_city.imprint_label" }}"
+  data-text-license-label="{{ i18n "smart_city.license_label" }}"
+  data-text-license-notice="{{ i18n "smart_city.license_notice" }}"
+  data-text-publisher-label="{{ i18n "smart_city.publisher_label" }}"
 >
 
   <form action="{{ $action }}" method="POST" id="sc-survey-form">
@@ -419,11 +436,11 @@
             {{ i18n "smart_city.export_desc" }}
           </p>
         </div>
-        <div class="flex flex-wrap items-center gap-2.5 pt-0.5">
+        <div class="sc-export-actions">
           <button
             type="button"
             id="sc-wom-btn-export-csv"
-            class="sc-btn-secondary !py-1.5 !px-3 !text-xs cursor-pointer inline-flex items-center gap-1.5"
+            class="sc-export-btn sc-btn-secondary"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -435,7 +452,7 @@
           <button
             type="button"
             id="sc-wom-btn-export-pdf"
-            class="sc-btn-secondary !py-1.5 !px-3 !text-xs cursor-pointer inline-flex items-center gap-1.5"
+            class="sc-export-btn sc-btn-secondary"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="6 9 6 2 18 2 18 9"></polyline>
@@ -945,6 +962,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (data.anmerkungen) {
       csv += escapeCSV(i18nText.textSummaryNotesLabel || 'Anmerkungen:') + ';' + escapeCSV(data.anmerkungen) + '\r\n';
     }
+    csv += escapeCSV(i18nText.textPublisherLabel || 'Herausgeber:') + ';' + escapeCSV('Commons & Code e. V.') + '\r\n';
+    csv += escapeCSV(i18nText.textLicenseLabel || 'Lizenz:') + ';' + escapeCSV('CC BY-SA 4.0') + '\r\n';
+    if (i18nText.textImprintUrl) {
+      csv += escapeCSV(i18nText.textImprintLabel || 'Impressum:') + ';' + escapeCSV(i18nText.textImprintUrl) + '\r\n';
+    }
     csv += '\r\n';
 
     // Headers
@@ -969,6 +991,9 @@ document.addEventListener('DOMContentLoaded', function() {
       ];
       csv += row.map(escapeCSV).join(';') + '\r\n';
     });
+
+    csv += '\r\n';
+    csv += escapeCSV('Commons & Code e. V. · CC BY-SA 4.0') + ';' + escapeCSV(i18nText.textImprintUrl || '') + '\r\n';
 
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
@@ -1018,6 +1043,8 @@ document.addEventListener('DOMContentLoaded', function() {
           <div><strong>${escapeHTML(i18nText.textSummaryRole || 'Rolle / Funktion:')}</strong> ${escapeHTML(data.rolle)}</div>
           <div><strong>${escapeHTML(i18nText.textSummaryDate || 'Datum:')}</strong> ${escapeHTML(dateStr)}</div>
           <div><strong>${escapeHTML(i18nText.textSummaryAnsweredLabel || 'Beantwortete Fragen:')}</strong> ${escapeHTML(summaryCount ? summaryCount.textContent : '')}</div>
+          <div><strong>${escapeHTML(i18nText.textLicenseLabel || 'Lizenz:')}</strong> CC BY-SA 4.0 (Commons & Code e. V.)</div>
+          <div><strong>${escapeHTML(i18nText.textImprintLabel || 'Impressum:')}</strong> <a href="${escapeHTML(i18nText.textImprintUrl)}">${escapeHTML(i18nText.textImprintUrl)}</a></div>
         </div>
         ${data.anmerkungen ? `<div class="sc-print-notes"><strong>${escapeHTML(i18nText.textSummaryNotesLabel || 'Anmerkungen:')}</strong> ${escapeHTML(data.anmerkungen)}</div>` : ''}
       </div>
@@ -1057,6 +1084,16 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       `;
     });
+
+    if (i18nText.textImprintUrl) {
+      html += `
+        <div class="sc-print-footer">
+          Commons & Code e. V. · 
+          ${escapeHTML(i18nText.textLicenseLabel || 'Lizenz:')} <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> · 
+          <a href="${escapeHTML(i18nText.textImprintUrl)}">${escapeHTML(i18nText.textImprintLabel || 'Impressum')}: ${escapeHTML(i18nText.textImprintUrl)}</a>
+        </div>
+      `;
+    }
 
     printReport.innerHTML = html;
     document.body.classList.add('sc-printing-report');

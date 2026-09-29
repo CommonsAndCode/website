@@ -181,4 +181,8 @@ smart_city.csv_col_description = "Assessment / Description"
 smart_city.status_level_prefix = "Level %s"
 smart_city.csv_filename = "smart-city-self-assessment"
 smart_city.print_title = "Smart City Self-Assessment"
+smart_city.license_notice = "Commons & Code e. V. · License: CC BY-SA 4.0"
+smart_city.license_label = "License:"
+smart_city.imprint_label = "Legal Notice / Imprint"
+smart_city.publisher_label = "Publisher:"
 

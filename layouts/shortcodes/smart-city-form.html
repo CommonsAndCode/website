@@ -39,7 +39,7 @@
             · {{ i18n "smart_city.header_step_start" }}
           </span>
         </div>
-        <div class="flex items-center gap-2.5 shrink-0">
+        <div class="flex items-center gap-2 shrink-0">
           <button
             type="button"
             id="sc-wom-btn-open-overview"
@@ -47,13 +47,29 @@
           >
             ☰ {{ i18n "smart_city.overview_button" }}
           </button>
+          <span
+            id="sc-wom-autosave-indicator"
+            class="sc-autosave-indicator p-1.5 flex items-center justify-center cursor-default"
+            title="{{ i18n "smart_city.autosave_status" }}"
+            aria-label="{{ i18n "smart_city.autosave_status" }}"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+              <polyline points="7 3 7 8 15 8"/>
+            </svg>
+          </span>
           <button
             type="button"
             id="sc-wom-btn-reset"
-            class="text-xs text-neutral-400 hover:text-red-600 dark:hover:text-red-400 transition-colors cursor-pointer"
+            class="sc-stepper-icon-btn p-1.5 rounded-sm text-neutral-400 hover:text-red-600 hover:bg-neutral-100 dark:hover:text-red-400 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
             title="{{ i18n "smart_city.reset_title" }}"
+            aria-label="{{ i18n "smart_city.reset_title" }}"
           >
-            {{ i18n "smart_city.reset_button" }}
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
           </button>
         </div>
       </div>
@@ -421,6 +437,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const categoryStepLabel = document.getElementById('sc-wom-category-step');
   const progressbarFill = document.getElementById('sc-wom-progressbar-fill');
   const progressbar = document.getElementById('sc-wom-progressbar');
+  const autosaveIndicator = document.getElementById('sc-wom-autosave-indicator');
   const btnOpenOverview = document.getElementById('sc-wom-btn-open-overview');
   const overviewDetails = document.getElementById('sc-wom-overview-details');
   const overviewFilter = document.getElementById('sc-overview-filter');
@@ -637,6 +654,12 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
       localStorage.setItem(storageKey, JSON.stringify(data));
+      if (autosaveIndicator) {
+        autosaveIndicator.classList.add('is-saving');
+        setTimeout(() => {
+          autosaveIndicator.classList.remove('is-saving');
+        }, 300);
+      }
     } catch (e) {}
 
     updateProgress();

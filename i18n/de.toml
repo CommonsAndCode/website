@@ -182,4 +182,8 @@ smart_city.csv_col_description = "Bewertung / Erläuterung"
 smart_city.status_level_prefix = "Stufe %s"
 smart_city.csv_filename = "smart-city-selbsteinschaetzung"
 smart_city.print_title = "Smart City Selbsteinschätzung"
+smart_city.license_notice = "Commons & Code e. V. · Lizenz: CC BY-SA 4.0"
+smart_city.license_label = "Lizenz:"
+smart_city.imprint_label = "Impressum"
+smart_city.publisher_label = "Herausgeber:"
 

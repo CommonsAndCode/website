@@ -516,6 +516,29 @@ html {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* Export Buttons & Actions */
+.sc-export-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding-top: 4px;
+}
+
+.sc-export-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 7px 14px !important;
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
+    cursor: pointer;
+}
+
+.sc-export-btn svg {
+    margin-right: 8px !important;
+    flex-shrink: 0;
+}
+
 /* Stepper Bar Icons (Reload & Autosave Indicator) */
 .sc-stepper-dot {
     display: inline-block;
@@ -891,6 +914,24 @@ html {
     }
     .sc-item[open] {
         display: block !important;
+    }
+
+    .sc-print-footer {
+        margin-top: 24px;
+        padding-top: 10px;
+        border-top: 1px solid #ccc;
+        font-size: 8pt;
+        color: #555;
+        text-align: center;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .sc-print-footer a,
+    .sc-print-meta-grid a {
+        color: #111;
+        text-decoration: underline;
+        word-break: break-all;
     }
 }
 

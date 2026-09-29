@@ -479,6 +479,9 @@
 
   </form>
 
+  <!-- Printable Report Container (Rendered during window.print) -->
+  <div id="sc-wom-print-report" class="sc-print-report" aria-hidden="true"></div>
+
 </div>
 
 <!-- Wahl-O-Mat Stepper & Autosave Script (Progressive Enhancement) -->
@@ -979,6 +982,88 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (btnExportCSV) {
     btnExportCSV.addEventListener('click', exportCSV);
+  }
+
+  function preparePrintReport() {
+    const printReport = document.getElementById('sc-wom-print-report');
+    if (!printReport) return;
+    const data = collectResponses();
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('de-DE');
+    const escapeHTML = (str) => String(str || '').replace(/[&<>"']/g, m => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[m]));
+
+    // Group questions by category
+    const catGroups = {};
+    data.questions.forEach(q => {
+      if (!catGroups[q.cat]) catGroups[q.cat] = [];
+      catGroups[q.cat].push(q);
+    });
+
+    let html = `
+      <div class="sc-print-header">
+        <h1>${escapeHTML(i18nText.textPrintTitle || 'Smart City Selbsteinschätzung')}</h1>
+        <div class="sc-print-meta-grid">
+          <div><strong>${escapeHTML(i18nText.textSummaryMunicipality || 'Kommune:')}</strong> ${escapeHTML(data.kommune)}</div>
+          <div><strong>${escapeHTML(i18nText.textSummaryState || 'Bundesland:')}</strong> ${escapeHTML(data.bundesland)}</div>
+          <div><strong>Einwohner:</strong> ${escapeHTML(data.einwohner)}</div>
+          <div><strong>${escapeHTML(i18nText.textSummaryRole || 'Rolle:')}</strong> ${escapeHTML(data.rolle)}</div>
+          <div><strong>Datum:</strong> ${escapeHTML(dateStr)}</div>
+          <div><strong>${escapeHTML(i18nText.textSummaryAnswered || 'Fortschritt:')}</strong> ${escapeHTML(summaryCount ? summaryCount.textContent : '')}</div>
+        </div>
+        ${data.anmerkungen ? `<div class="sc-print-notes"><strong>${escapeHTML(i18nText.textSummaryNotesLabel || 'Anmerkungen:')}</strong> ${escapeHTML(data.anmerkungen)}</div>` : ''}
+      </div>
+    `;
+
+    Object.keys(catGroups).forEach(catName => {
+      const qList = catGroups[catName];
+      const answeredInCat = qList.filter(q => q.status === 'Beantwortet').length;
+
+      html += `
+        <div class="sc-print-category">
+          <div class="sc-print-cat-title">
+            <span>${escapeHTML(catName)}</span>
+            <span class="sc-print-cat-status">${answeredInCat} von ${qList.length} beantwortet</span>
+          </div>
+          <table class="sc-print-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">Nr</th>
+                <th style="width: 44%;">Frage</th>
+                <th style="width: 18%;">Reifegrad</th>
+                <th style="width: 33%;">Bewertung / Erläuterung</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${qList.map(q => `
+                <tr class="${q.status === 'Beantwortet' ? 'sc-row-answered' : 'sc-row-open'}">
+                  <td style="text-align: center; font-family: monospace;">${q.num}</td>
+                  <td><strong>${escapeHTML(q.qTitle)}</strong></td>
+                  <td>${escapeHTML(q.level)}</td>
+                  <td>${escapeHTML(q.desc)}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    });
+
+    printReport.innerHTML = html;
+  }
+
+  function triggerPrint() {
+    preparePrintReport();
+    window.print();
+  }
+
+  if (btnExportPDF) {
+    btnExportPDF.addEventListener('click', triggerPrint);
   }
 
   restoreState();

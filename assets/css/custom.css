@@ -721,16 +721,134 @@ html {
     font-weight: 700;
 }
 
+@media screen {
+    .sc-print-report {
+        display: none !important;
+    }
+}
+
 @media print {
+    /* Hide navigation, headers, footers, and interactive UI */
+    header,
+    footer,
+    nav,
+    aside,
     #sc-search-input,
     #sc-search-status,
     .sc-copy-btn,
     .sc-stepper-bar,
+    .sc-wom-progressbar,
     .sc-wom-btn-prev,
     .sc-wom-btn-next,
-    .sc-overview-panel {
+    .sc-wom-btn-skip-summary,
+    .sc-overview-details,
+    .sc-overview-panel,
+    #sc-survey-form {
         display: none !important;
     }
+
+    body,
+    main,
+    article,
+    .sc-form-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: white !important;
+        color: black !important;
+        font-family: var(--default-font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+        font-size: 9.5pt !important;
+        line-height: 1.35 !important;
+    }
+
+    .sc-print-report {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .sc-print-header {
+        border-bottom: 2px solid #222;
+        padding-bottom: 8px;
+        margin-bottom: 14px;
+    }
+
+    .sc-print-header h1 {
+        font-size: 15pt !important;
+        margin: 0 0 6px 0 !important;
+        color: #111 !important;
+    }
+
+    .sc-print-meta-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px 16px;
+        font-size: 8.5pt;
+    }
+
+    .sc-print-notes {
+        margin-top: 8px;
+        padding: 5px 8px;
+        background: #f8f8f8 !important;
+        border: 1px solid #ddd;
+        font-size: 8.5pt;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .sc-print-category {
+        margin-top: 12px;
+        page-break-inside: avoid;
+    }
+
+    .sc-print-cat-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-weight: bold;
+        font-size: 10.5pt;
+        color: #111;
+        border-bottom: 1.5px solid #444;
+        padding-bottom: 2px;
+        margin-bottom: 5px;
+    }
+
+    .sc-print-cat-status {
+        font-size: 8pt;
+        color: #666;
+        font-weight: normal;
+    }
+
+    .sc-print-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 8.5pt;
+        margin-bottom: 8px;
+    }
+
+    .sc-print-table th,
+    .sc-print-table td {
+        border: 1px solid #ccc;
+        padding: 4px 6px;
+        vertical-align: top;
+        text-align: left;
+    }
+
+    .sc-print-table th {
+        background-color: #f2f2f2 !important;
+        font-weight: 600;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .sc-row-open {
+        color: #888;
+    }
+
+    .sc-row-answered td:nth-child(3) {
+        font-weight: 600;
+        color: #000;
+    }
+
+    /* Catalogue page styles during print */
     .sc-item {
         break-inside: avoid;
         border-bottom: 1px solid #ccc !important;

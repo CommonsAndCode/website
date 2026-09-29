@@ -77,13 +77,21 @@
               {{ printf (i18n "smart_city.overview_desc") $totalQuestions $totalCategories }}
             </div>
           </div>
-          <button
-            type="button"
-            id="sc-wom-btn-close-overview"
-            class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
-          >
-            ✕ {{ i18n "smart_city.overview_close" }}
-          </button>
+          <div class="flex items-center gap-2">
+            <button
+              type="button"
+              class="sc-wom-btn-skip-summary sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
+            >
+              {{ i18n "smart_city.btn_skip_to_submit" }} →
+            </button>
+            <button
+              type="button"
+              id="sc-wom-btn-close-overview"
+              class="sc-btn-secondary !py-1 !px-2.5 !text-xs cursor-pointer"
+            >
+              ✕ {{ i18n "smart_city.overview_close" }}
+            </button>
+          </div>
         </div>
 
         <div class="pt-3">
@@ -306,6 +314,14 @@
             >
               {{ i18n "smart_city.btn_prev" }}
             </button>
+            {{ if lt $qNumber $totalQuestions }}
+              <button
+                type="button"
+                class="sc-wom-btn-skip-summary text-xs text-neutral-400 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-300 transition-colors cursor-pointer select-none"
+              >
+                {{ i18n "smart_city.btn_skip_to_submit" }}
+              </button>
+            {{ end }}
             <button
               type="button"
               class="sc-wom-btn-next sc-btn-primary cursor-pointer"
@@ -666,6 +682,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.querySelectorAll('.sc-wom-btn-prev').forEach(btn => {
     btn.addEventListener('click', () => goToSlide(currentSlide - 1));
+  });
+
+  document.querySelectorAll('.sc-wom-btn-skip-summary').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (currentSlide === 0) {
+        const kommune = document.getElementById('wom_kommune');
+        const bundesland = document.getElementById('wom_bundesland');
+        if (kommune && !kommune.checkValidity()) {
+          kommune.reportValidity();
+          return;
+        }
+        if (bundesland && !bundesland.checkValidity()) {
+          bundesland.reportValidity();
+          return;
+        }
+      }
+      goToSlide(totalSlides - 1);
+      if (overviewDetails) overviewDetails.open = false;
+    });
   });
 
   if (btnReset) {

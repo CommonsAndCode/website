@@ -716,7 +716,7 @@
           "number": 23,
           "category": "Verwaltung",
           "category_slug": "verwaltung",
-          "question": "Werden in diese Tests Dienstleistern einbezogen?",
+          "question": "Werden in diese Tests Dienstleister einbezogen?",
           "type": "scale",
           "scale_levels": [
             {
@@ -1000,7 +1000,7 @@
           "number": 32,
           "category": "Verwaltung",
           "category_slug": "verwaltung",
-          "question": "Beteiligt sich die Kommune an Kommunen-übergreifenden Austausch zur Digitalisierung?",
+          "question": "Beteiligt sich die Kommune an Kommunen-übergreifendem Austausch zur Digitalisierung?",
           "type": "scale",
           "scale_levels": [
             {
@@ -1064,7 +1064,7 @@
           "number": 34,
           "category": "Verwaltung",
           "category_slug": "verwaltung",
-          "question": "Gibt es in Ihrer Kommune ein Konzept zur Förderung der Nachhaltigkeit in der öffentlichen ITK Beschaffung?",
+          "question": "Gibt es in Ihrer Kommune ein Konzept zur Förderung der Nachhaltigkeit in der öffentlichen ITK-Beschaffung?",
           "type": "scale",
           "scale_levels": [
             {

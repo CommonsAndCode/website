@@ -38,7 +38,7 @@ jobs:
       # PR preview build with adjusted baseURL (only when labelled)
       - name: Build Hugo site (preview)
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'preview')
-        run: hugo --minify --baseURL "https://pr-${{ github.event.pull_request.number }}.preview.commons-and-code.eu"
+        run: hugo --minify --environment preview --baseURL "https://pr-${{ github.event.pull_request.number }}.preview.commons-and-code.eu"
 
       - name: Log in to Container Registry
         uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0

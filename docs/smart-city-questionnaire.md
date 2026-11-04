@@ -9,7 +9,7 @@ This document provides a comprehensive technical overview and reference for the 
 The Smart City Questionnaire is a digital maturity assessment for German municipalities. It covers **88 questions across 7 municipal departments** (Fachbereiche).
 
 - **Primary Persona & Flow**: Conceived as an accessible **Self-Assessment** for municipal staff, elected officials (councillors), faction members, and engaged citizens.
-- **Main Landing Page**: `/projekte/smart-city-fragebogen/` (`content/{de,en}/projekte/smart-city-fragebogen.md`) hosts the interactive stepper form (`smart-city-form`).
+- **Main Landing Page**: `/projekte/smart-city-fragebogen/` (`content/de/projekte/smart-city-fragebogen.md` and `content/en/projects/smart-city-survey.md`) hosts the interactive stepper form (`smart-city-form`).
 - **Static Catalogue & Downloads**: `/projekte/smart-city-fragebogen/fragenkatalog/` (`content/{de,en}/projekte/smart-city-fragebogen/fragenkatalog.md`) displays the full static list of questions with copy buttons and an `.xlsx` download link.
 
 ---
@@ -18,7 +18,7 @@ The Smart City Questionnaire is a digital maturity assessment for German municip
 
 | File Path | Description |
 |---|---|
-| `data/smart-city-questions.json` | Master questionnaire data (7 categories, 88 questions). |
+| `data/smart_city_fragebogen.json` | Master questionnaire data (7 categories, 88 questions). |
 | `layouts/shortcodes/smart-city-form.html` | Interactive stepper form shortcode with in-page overview and autosave. |
 | `layouts/shortcodes/smart-city-questionnaire.html` | Static reference list shortcode with search and copy functions. |
 | `content/de/projekte/smart-city-fragebogen.md` | Primary German landing page embedding `{{< smart-city-form >}}`. |
@@ -28,7 +28,7 @@ The Smart City Questionnaire is a digital maturity assessment for German municip
 
 ---
 
-## 3. Data Schema (`data/smart-city-questions.json`)
+## 3. Data Schema (`data/smart_city_fragebogen.json`)
 
 The questionnaire is defined hierarchically:
 
@@ -73,32 +73,39 @@ When Hugo loads JSON via `$.Site.Data` or `getJSON`, integer numbers are deseria
    - **Slides 1–88**: Individual question cards. Auto-advances to the next question when a radio button (levels 0–4) is selected.
    - **Slide 89**: Final review and submit slide. Displays municipality details, answered count, and a prominent optional notes textarea (`wom_anmerkungen`).
 
-2. **Stepper Bar (`.sc-stepper-bar`)**:
+1. **Stepper Bar (`.sc-stepper-bar`)**:
    - Left: Department name + `.sc-stepper-dot` (symmetrically padded separator) + question counter (`Frage X von Y`).
    - Right: `[ ☰ Fragenübersicht ]`, `[ ↺ ]` (Reload button), `[ 💾 ]` (Autosave indicator).
    - Progress Bar: Thin progress bar below stepper (`#sc-wom-progressbar-fill`).
 
-3. **In-Page Overview Panel (`#sc-wom-overview-details`)**:
+1. **In-Page Overview Panel (`#sc-wom-overview-details`)**:
    - Native `<details>` accordion panel.
    - Corner close button (`#sc-wom-btn-close-overview`) with SVG `✕`.
    - Real-time search/filter input (`#sc-overview-filter`).
    - Categories rendered as nested `<details class="sc-overview-category">` elements. Each displays a status badge (`X von Y beantwortet`), which highlights on progress (`.answered`) and turns green on completion (`.completed`).
    - Automatically expands the active question's category when opened, and expands matching categories upon typing in the search box.
 
-4. **Skip to Submit**:
+1. **Skip to Submit**:
    - Subtle `.sc-wom-btn-skip-summary` buttons in the footer of question slides allow users to jump straight to the submission slide.
    - Validates required fields on Slide 0 using native `reportValidity()`.
 
-5. **LocalStorage & Autosave**:
+1. **LocalStorage & Autosave**:
    - Key: `sc_survey_draft_v2`.
    - Stores current slide, input values, radio choices, and checkbox states.
    - Automatically restores state on page load.
    - Autosave indicator pulses with `.is-saving` (CSS scale/opacity transition) upon each change.
 
-6. **Form Submission**:
-   - Default POST action: `https://cc.janpeterkoenig.com/api/v1/smart-city-input` (overridable via shortcode parameter `action`).
+1. **Form Submission**:
+   - Default POST action: `/api/v1/smart-city-survey` (overridable via shortcode parameter `action`).
+   - `assets/js/smart-city-submit.js` sends URL-encoded fields and shows translated success/error messages.
+   - The draft is cleared only after the server confirms persistence.
+   - A persisted submission UUID prevents duplicate rows when an unchanged request is retried, including after reloading the page.
+   - The questionnaire revision is the SHA-256 of the source JSON bytes; the server must contain that snapshot before the updated website is activated.
+   - Outdated drafts remain downloadable as JSON until the respondent explicitly resets the form.
+   - Submission is enabled only in production builds targeting `https://commons-and-code.eu/`.
+   - Preview builds use `--environment preview` and allow navigation and exports while disabling submission.
 
-7. **Self-Service Export (CSV & PDF/Print)**:
+1. **Self-Service Export (CSV & PDF/Print)**:
    - On Slide 89, users can save their assessment locally without or before submitting to the backend:
      - **CSV (Excel) Export**: Generates a semicolon-separated file with UTF-8 BOM (`\uFEFF`) containing municipality metadata and all 88 questions grouped by department with selected levels and descriptions.
      - **PDF / Print View**: Renders `#sc-wom-print-report` with printable tables per department and triggers `window.print()`. Interactive UI, navigation, and website chrome are hidden via `@media print`.
@@ -135,10 +142,10 @@ When modifying the questionnaire:
    ```bash
    hugo --minify
    ```
-2. **Check both languages**:
+1. **Check both languages**:
    - German: `http://localhost:1313/de/projekte/smart-city-fragebogen/`
-   - English: `http://localhost:1313/en/projekte/smart-city-fragebogen/` (when published/translated)
-3. **Commit conventions**:
+   - English: `http://localhost:1313/en/projects/smart-city-survey/`
+1. **Commit conventions**:
    - Use English, imperative mood, without scope prefixes:
      - ✅ `Fix duplicate percent sign in survey summary`
      - ✅ `Make overview categories collapsible with status tracking`

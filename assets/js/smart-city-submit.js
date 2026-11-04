@@ -6,7 +6,13 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
   const enabled = form.dataset.submissionEnabled === 'true';
   const revision = form.elements.survey_revision.value;
 
+  // A receipt pairs an attempt ID with the exact payload that may have reached
+  // the server. Persist it with the draft so a reload can retry the same attempt.
   let receipt = null;
+  // These flags have different lifetimes: busy ends with the request, complete
+  // prevents resending an acknowledged assessment, and outdated prevents using a
+  // saved draft with different question definitions. Only an explicit reset
+  // clears complete/outdated; the reset control is disabled while busy.
   let busy = false;
   let complete = false;
   let outdated = false;
@@ -19,6 +25,8 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
 
   function currentPayload() {
     const fields = new URLSearchParams(new FormData(form));
+    // Compare content independently of the ID assigned to it. Including the
+    // hidden ID would make assigning an ID itself look like a content change.
     fields.delete('submission_id');
     return fields.toString();
   }
@@ -26,6 +34,9 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
   function contentChanged() {
     if (!enabled || busy || complete || outdated) return;
 
+    // An ID identifies one immutable attempt. After an edit, the respondent is
+    // making a new attempt; reusing the old ID would conflict with an assessment
+    // the server may already have committed before a network failure.
     if (receipt && receipt.payload !== currentPayload()) {
       receipt = null;
     }
@@ -45,6 +56,9 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
 
     // Save before sending: the server may commit even if the response is lost.
     saveDraft();
+    // Capture fields before disabling controls: FormData omits disabled inputs.
+    // Freeze editing as well as the submit button so the acknowledgement always
+    // refers to the same visible answers that were sent.
     const body = new URLSearchParams(new FormData(form));
     const controls = Array.from(form.elements).filter(control => !control.disabled);
     busy = true;
@@ -57,11 +71,15 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
         body,
         credentials: 'same-origin',
         headers: { Accept: 'application/json' },
+        // A browser timeout is not proof that the server rolled back. The catch
+        // path retains both the draft and attempt ID for an unchanged retry.
         signal: AbortSignal.timeout(20000),
       });
       const result = await response.json();
       const saved = response.status === 200 || response.status === 201;
 
+      // A successful status alone could be a proxy or unrelated response.
+      // Require this attempt's receipt before deleting the only local draft.
       if (saved && result.id === receipt.id) {
         complete = true;
         clearDraft();
@@ -79,11 +97,15 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       announce('error');
     } finally {
       busy = false;
+      // Only re-enable controls that were enabled before this request; preserve
+      // any independent disabled state in the rest of the questionnaire.
       controls.forEach(control => { control.disabled = false; });
       submitButton.disabled = complete || outdated || !enabled;
     }
   }
 
+  // The shortcode attaches its autosave listeners after creating this
+  // controller. Invalidate an edited attempt before autosave reads state().
   form.addEventListener('input', contentChanged);
   form.addEventListener('change', contentChanged);
   form.addEventListener('submit', submit);
@@ -98,6 +120,8 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       return receipt;
     },
 
+    // Navigation also triggers autosave. Do not recreate an acknowledged
+    // draft or overwrite an outdated draft merely because the user navigates.
     canSave() {
       return !complete && !outdated;
     },
@@ -108,6 +132,9 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       }
     },
 
+    // Do not apply old answers to a changed catalogue: a reused question number
+    // or option label could now mean something else. Offer the untouched saved
+    // JSON for recovery instead, and leave localStorage intact until reset.
     markOutdated(savedDraft) {
       outdated = true;
       submitButton.disabled = true;
@@ -122,6 +149,8 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       status.append(' ', download);
     },
 
+    // Called after the respondent confirms the shortcode's reset prompt.
+    // Starting a new assessment is the only way to leave the completed state.
     reset() {
       receipt = null;
       complete = false;

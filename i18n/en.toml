@@ -198,3 +198,4 @@ smart_city.submit_conflict = "This submission ID already belongs to different co
 smart_city.submit_revision = "The questionnaire has changed. Your saved draft is preserved. Review or export your saved copy before resetting the form and starting the updated questionnaire."
 smart_city.submit_preview = "Submission is disabled in this preview. You can explore the questionnaire and export your answers."
 smart_city.submit_download_draft = "Download saved draft"
+smart_city.submit_too_large = "Your assessment is too large to send. Your draft is preserved. Shorten your notes or contact us for help before submitting again."

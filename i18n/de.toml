@@ -199,3 +199,4 @@ smart_city.submit_conflict = "Diese Übermittlungs-ID gehört bereits zu anderen
 smart_city.submit_revision = "Der Fragebogen wurde geändert. Dein gespeicherter Entwurf bleibt erhalten. Prüfe oder exportiere deine gespeicherte Kopie, bevor du das Formular zurücksetzt und den aktualisierten Fragebogen beginnst."
 smart_city.submit_preview = "Das Absenden ist in dieser Vorschau deaktiviert. Du kannst den Fragebogen ausprobieren und deine Antworten exportieren."
 smart_city.submit_download_draft = "Gespeicherten Entwurf herunterladen"
+smart_city.submit_too_large = "Deine Bewertung ist zu groß zum Absenden. Dein Entwurf bleibt erhalten. Bitte kürze deine Anmerkungen oder kontaktiere uns, bevor du erneut absendest."

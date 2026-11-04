@@ -75,6 +75,12 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
         // path retains both the draft and attempt ID for an unchanged retry.
         signal: AbortSignal.timeout(20000),
       });
+      // A proxy may enforce its own limit and return an HTML error page. Check
+      // the status before decoding JSON so this never becomes a retry prompt.
+      if (response.status === 413) {
+        announce('tooLarge');
+        return;
+      }
       const result = await response.json();
       const saved = response.status === 200 || response.status === 201;
 

@@ -186,3 +186,15 @@ smart_city.license_label = "License:"
 smart_city.imprint_label = "Legal Notice / Imprint"
 smart_city.publisher_label = "Publisher:"
 
+
+# Survey submission
+smart_city.submit_requires_js = "Enable JavaScript to submit this questionnaire."
+smart_city.submit_data_notice = "We store your assessment privately, including any email address and notes you choose to provide. Contact details and notes are not published automatically."
+smart_city.submit_sending = "Sending your assessment…"
+smart_city.submit_success = "Thank you. Your assessment has been saved. You can still export it, or reset the form to start another assessment."
+smart_city.submit_error = "Your assessment could not be confirmed. Your draft is preserved. Please try again; retries will not create duplicate assessments."
+smart_city.submit_invalid = "Please check the municipality, state, population, email and answers before trying again. Your draft is preserved."
+smart_city.submit_conflict = "This submission ID already belongs to different content. Your draft is preserved. Please contact us before resetting and submitting again."
+smart_city.submit_revision = "The questionnaire has changed. Your saved draft is preserved. Review or export your saved copy before resetting the form and starting the updated questionnaire."
+smart_city.submit_preview = "Submission is disabled in this preview. You can explore the questionnaire and export your answers."
+smart_city.submit_download_draft = "Download saved draft"

@@ -77,3 +77,9 @@ name = "CC BY-SA 4.0"
 pageRef = "imprint"
 identifier = "sFPGmJ1uOb"
 weight = 3
+
+[[main]]
+name = "Smart City survey"
+pageRef = "projects/smart-city-survey"
+weight = 2
+identifier = "smart-city-fragebogen"

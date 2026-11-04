@@ -1,5 +1,9 @@
 {{ $data := hugo.Data.smart_city_fragebogen }}
 {{ $action := .Get "action" | default "/api/v1/smart-city-survey" }}
+{{ $revision := crypto.SHA256 (readFile "data/smart_city_fragebogen.json") }}
+{{ $submissionEnabled := and (eq hugo.Environment "production") (eq site.BaseURL "https://commons-and-code.eu/") }}
+{{ $submitJS := resources.Get "js/smart-city-submit.js" | minify | fingerprint }}
+<script src="{{ $submitJS.RelPermalink }}" integrity="{{ $submitJS.Data.Integrity }}" defer></script>
 
 {{ if not $data }}
   <p class="text-red-600">{{ i18n "smart_city.error_not_found" }}</p>
@@ -60,7 +64,11 @@
   data-text-publisher-label="{{ i18n "smart_city.publisher_label" }}"
 >
 
-  <form action="{{ $action }}" method="POST" id="sc-survey-form">
+  <form action="{{ $action }}" method="POST" id="sc-survey-form" data-submission-enabled="{{ $submissionEnabled }}">
+    <input type="hidden" name="survey_revision" value="{{ $revision }}">
+    <input type="hidden" name="submission_id" value="">
+    <p id="sc-submit-status" role="status" aria-live="polite" tabindex="-1" hidden></p>
+    <noscript><p>{{ i18n "smart_city.submit_requires_js" }}</p></noscript>
 
     <!-- Top Stepper Bar -->
     <div class="sc-stepper-bar pb-2.5 mb-4 border-b border-neutral-200 dark:border-neutral-800">
@@ -212,6 +220,7 @@
             type="text"
             id="wom_kommune"
             name="kommune"
+            maxlength="200"
             required
             placeholder="{{ i18n "smart_city.placeholder_municipality" }}"
           >
@@ -250,6 +259,7 @@
             type="number"
             id="wom_einwohnerzahl"
             name="einwohnerzahl"
+            min="0" step="1"
             placeholder="{{ i18n "smart_city.placeholder_population" }}"
           >
         </div>
@@ -276,6 +286,7 @@
             type="email"
             id="wom_email"
             name="kontakt_email"
+            maxlength="254"
             placeholder="{{ i18n "smart_city.placeholder_email" }}"
           >
         </div>
@@ -472,11 +483,13 @@
         <textarea
           id="wom_anmerkungen"
           name="anmerkungen"
+          maxlength="10000"
           rows="3"
           placeholder="{{ i18n "smart_city.summary_notes_placeholder" }}"
         ></textarea>
       </div>
 
+      <p>{{ i18n "smart_city.submit_data_notice" }}</p>
       <p class="text-xs text-neutral-500 dark:text-neutral-400">
         {{ i18n "smart_city.summary_partial_note" }}
       </p>
@@ -490,6 +503,7 @@
         </button>
         <button
           type="submit"
+          {{ if not $submissionEnabled }}disabled{{ end }}
           class="sc-btn-primary cursor-pointer !bg-emerald-600 hover:!bg-emerald-500"
         >
           {{ i18n "smart_city.btn_submit" }}
@@ -548,6 +562,23 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .replace(/%%/g, '%');
   }
+
+  const submissionController = window.createSurveySubmission({
+    form,
+    saveDraft: saveState,
+    clearDraft: () => { try { localStorage.removeItem(storageKey); } catch (e) {} },
+    messages: {
+      sending: {{ i18n "smart_city.submit_sending" }},
+      success: {{ i18n "smart_city.submit_success" }},
+      error: {{ i18n "smart_city.submit_error" }},
+      invalid: {{ i18n "smart_city.submit_invalid" }},
+      conflict: {{ i18n "smart_city.submit_conflict" }},
+      revision: {{ i18n "smart_city.submit_revision" }},
+      preview: {{ i18n "smart_city.submit_preview" }},
+      downloadDraft: {{ i18n "smart_city.submit_download_draft" }},
+    },
+  });
+  form.addEventListener('invalid', () => goToSlide(0), true);
 
   // 1. Navigation Function
   function goToSlide(index) {
@@ -755,9 +786,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // 4. LocalStorage Autosave
   function saveState() {
+    if (!submissionController.canSave()) return;
     try {
       const data = {
         slide: currentSlide,
+        revision: form.elements.survey_revision.value,
+        submission: submissionController.state(),
         inputs: {},
         radios: {},
         checkboxes: []
@@ -792,6 +826,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const saved = localStorage.getItem(storageKey);
       if (!saved) return;
       const data = JSON.parse(saved);
+      if (data.revision && data.revision !== form.elements.survey_revision.value) {
+        submissionController.markOutdated(saved);
+        return;
+      }
+      submissionController.restore(data.submission);
 
       Object.keys(data.inputs || {}).forEach(name => {
         const el = form.elements[name];
@@ -854,6 +893,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (confirm(confirmMsg)) {
         try { localStorage.removeItem(storageKey); } catch (e) {}
         form.reset();
+        submissionController.reset();
         goToSlide(0);
         updateProgress();
       }
@@ -863,9 +903,6 @@ document.addEventListener('DOMContentLoaded', function() {
   form.addEventListener('input', saveState);
   form.addEventListener('change', saveState);
 
-  form.addEventListener('submit', function() {
-    try { localStorage.removeItem(storageKey); } catch (e) {}
-  });
 
   // Auto-advance on radio selection with smooth subtle delay
   form.querySelectorAll('input[type="radio"]').forEach(radio => {

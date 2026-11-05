@@ -40,7 +40,9 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
     if (receipt && receipt.payload !== currentPayload()) {
       receipt = null;
     }
-    status.hidden = true;
+    // Editing can also emit a delayed change event after a request finishes.
+    // Keep its result readable until another submission or an explicit reset;
+    // an input event is not an acknowledgement that the message was read.
   }
 
   async function submit(event) {
@@ -91,7 +93,7 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
         clearDraft();
         announce('success');
       } else if (result.code === 'unknown_revision') {
-        announce('revision');
+        announce('revisionUnavailable');
       } else if (response.status === 422) {
         announce('invalid');
       } else if (response.status === 409) {

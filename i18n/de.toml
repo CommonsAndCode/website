@@ -197,6 +197,7 @@ smart_city.submit_error = "Die Speicherung konnte nicht bestätigt werden. Dein 
 smart_city.submit_invalid = "Bitte prüfe Kommune, Bundesland, Einwohnerzahl, E-Mail-Adresse und Antworten. Dein Entwurf bleibt erhalten."
 smart_city.submit_conflict = "Diese Übermittlungs-ID gehört bereits zu anderen Angaben. Dein Entwurf bleibt erhalten. Bitte kontaktiere uns, bevor du das Formular zurücksetzt und erneut absendest."
 smart_city.submit_revision = "Der Fragebogen wurde geändert. Dein gespeicherter Entwurf bleibt erhalten. Prüfe oder exportiere deine gespeicherte Kopie, bevor du das Formular zurücksetzt und den aktualisierten Fragebogen beginnst."
+smart_city.submit_revision_unavailable = "Diese Fragebogenversion wird vom Server derzeit nicht akzeptiert. Dein Entwurf bleibt erhalten. Bitte exportiere eine Kopie und kontaktiere uns; ein Zurücksetzen des Formulars behebt dieses Problem nicht."
 smart_city.submit_preview = "Das Absenden ist in dieser Vorschau deaktiviert. Du kannst den Fragebogen ausprobieren und deine Antworten exportieren."
 smart_city.submit_download_draft = "Gespeicherten Entwurf herunterladen"
 smart_city.submit_too_large = "Deine Bewertung ist zu groß zum Absenden. Dein Entwurf bleibt erhalten. Bitte kürze deine Anmerkungen oder kontaktiere uns, bevor du erneut absendest."

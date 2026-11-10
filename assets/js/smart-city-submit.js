@@ -7,6 +7,7 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
   const statusActions = status.querySelector('.sc-submit-actions');
   const submitButton = form.querySelector('button[type="submit"]');
   const enabled = form.dataset.submissionEnabled === 'true';
+  const forcedEmail = form.dataset.submissionEmail;
   const revision = form.elements.survey_revision.value;
 
   // A receipt pairs an attempt ID with the exact payload that may have reached
@@ -23,7 +24,7 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
 
   function announce(message, focus = false) {
     const variant = {
-      sending: 'sending', success: 'success', preview: 'info', revision: 'warning',
+      sending: 'sending', success: 'success', preview: 'info', disabled: 'info', revision: 'warning',
     }[message] || 'error';
     status.dataset.variant = variant;
     statusTitle.textContent = titles[message];
@@ -35,8 +36,16 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
     if (focus || message === 'sending') status.scrollIntoView({ block: 'nearest' });
   }
 
-  function currentPayload() {
+  function submissionFields() {
     const fields = new URLSearchParams(new FormData(form));
+    // Enforce the preview address in both the receipt and transmitted data,
+    // even if a browser extension or script changes the read-only field.
+    if (forcedEmail) fields.set('kontakt_email', forcedEmail);
+    return fields;
+  }
+
+  function currentPayload() {
+    const fields = submissionFields();
     // Compare content independently of the ID assigned to it. Including the
     // hidden ID would make assigning an ID itself look like a content change.
     fields.delete('submission_id');
@@ -60,6 +69,7 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
   async function submit(event) {
     event.preventDefault();
     if (!enabled || busy || complete || outdated) return;
+    if (forcedEmail) form.elements.kontakt_email.value = forcedEmail;
     if (!form.reportValidity()) return;
 
     const payload = currentPayload();
@@ -73,7 +83,7 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
     // Capture fields before disabling controls: FormData omits disabled inputs.
     // Freeze editing as well as the submit button so the acknowledgement always
     // refers to the same visible answers that were sent.
-    const body = new URLSearchParams(new FormData(form));
+    const body = submissionFields();
     const controls = Array.from(form.elements).filter(control => !control.disabled);
     busy = true;
     controls.forEach(control => { control.disabled = true; });
@@ -132,6 +142,8 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
 
   if (!enabled) {
     submitButton.disabled = true;
+    announce('disabled');
+  } else if (forcedEmail) {
     announce('preview');
   }
 
@@ -187,7 +199,11 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       statusActions.replaceChildren();
       statusActions.hidden = true;
       status.hidden = true;
-      if (!enabled) announce('preview');
+      if (!enabled) announce('disabled');
+      else if (forcedEmail) {
+        form.elements.kontakt_email.value = forcedEmail;
+        announce('preview');
+      }
       form.elements.submission_id.value = '';
       form.elements.survey_revision.value = revision;
     },

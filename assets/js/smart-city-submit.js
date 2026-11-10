@@ -1,30 +1,48 @@
 // The shortcode owns the questionnaire UI and draft storage. This controller
 // handles submission, retry receipts and messages without external dependencies.
-window.createSurveySubmission = function ({ form, saveDraft, clearDraft, messages }) {
+window.createSurveySubmission = function ({ form, saveDraft, clearDraft, messages, titles }) {
   const status = document.getElementById('sc-submit-status');
+  const statusTitle = status.querySelector('.sc-submit-title');
+  const statusMessage = status.querySelector('.sc-submit-message');
+  const statusIcons = status.querySelectorAll('[data-submit-icon]');
   const submitButton = form.querySelector('button[type="submit"]');
   const enabled = form.dataset.submissionEnabled === 'true';
+  const forcedEmail = form.dataset.submissionEmail;
   const revision = form.elements.survey_revision.value;
 
   // A receipt pairs an attempt ID with the exact payload that may have reached
   // the server. Persist it with the draft so a reload can retry the same attempt.
   let receipt = null;
   // These flags have different lifetimes: busy ends with the request, complete
-  // prevents resending an acknowledged assessment, and outdated prevents using a
-  // saved draft with different question definitions. Only an explicit reset
-  // clears complete/outdated; the reset control is disabled while busy.
+  // prevents resending an acknowledged assessment, and outdated protects a saved
+  // draft with different question definitions. Explain a version mismatch when
+  // submission is attempted, without silently disabling the button on load.
   let busy = false;
   let complete = false;
   let outdated = false;
-  let draftDownloadURL = null;
 
   function announce(message) {
-    status.textContent = messages[message];
+    const type = {
+      success: 'success', disabled: 'info', revision: 'warning',
+    }[message] || 'danger';
+    status.dataset.type = type;
+    statusIcons.forEach(icon => { icon.hidden = icon.dataset.submitIcon !== type; });
+    statusTitle.textContent = titles[message];
+    statusMessage.textContent = messages[message];
     status.hidden = false;
+    status.scrollIntoView({ block: 'nearest' });
+  }
+
+  function submissionFields() {
+    const fields = new URLSearchParams(new FormData(form));
+    // Enforce the preview address in both the receipt and transmitted data,
+    // even if a browser extension or script changes the read-only field.
+    if (forcedEmail) fields.set('kontakt_email', forcedEmail);
+    return fields;
   }
 
   function currentPayload() {
-    const fields = new URLSearchParams(new FormData(form));
+    const fields = submissionFields();
     // Compare content independently of the ID assigned to it. Including the
     // hidden ID would make assigning an ID itself look like a content change.
     fields.delete('submission_id');
@@ -47,7 +65,16 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
 
   async function submit(event) {
     event.preventDefault();
-    if (!enabled || busy || complete || outdated) return;
+    if (busy || complete) return;
+    if (!enabled) {
+      announce('disabled');
+      return;
+    }
+    if (outdated) {
+      announce('revision');
+      return;
+    }
+    if (forcedEmail) form.elements.kontakt_email.value = forcedEmail;
     if (!form.reportValidity()) return;
 
     const payload = currentPayload();
@@ -61,11 +88,13 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
     // Capture fields before disabling controls: FormData omits disabled inputs.
     // Freeze editing as well as the submit button so the acknowledgement always
     // refers to the same visible answers that were sent.
-    const body = new URLSearchParams(new FormData(form));
+    const body = submissionFields();
     const controls = Array.from(form.elements).filter(control => !control.disabled);
+    const submitLabel = submitButton.textContent;
     busy = true;
     controls.forEach(control => { control.disabled = true; });
-    announce('sending');
+    submitButton.textContent = messages.sending;
+    status.hidden = true;
 
     try {
       const response = await fetch(form.action, {
@@ -108,7 +137,8 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       // Only re-enable controls that were enabled before this request; preserve
       // any independent disabled state in the rest of the questionnaire.
       controls.forEach(control => { control.disabled = false; });
-      submitButton.disabled = complete || outdated || !enabled;
+      submitButton.disabled = complete || !enabled;
+      submitButton.textContent = submitLabel;
     }
   }
 
@@ -118,10 +148,7 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
   form.addEventListener('change', contentChanged);
   form.addEventListener('submit', submit);
 
-  if (!enabled) {
-    submitButton.disabled = true;
-    announce('preview');
-  }
+  submitButton.disabled = !enabled;
 
   return {
     state() {
@@ -141,20 +168,10 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
     },
 
     // Do not apply old answers to a changed catalogue: a reused question number
-    // or option label could now mean something else. Offer the untouched saved
-    // JSON for recovery instead, and leave localStorage intact until reset.
-    markOutdated(savedDraft) {
+    // or option label could mean something else. Preserve localStorage until
+    // reset, and report the mismatch only if the respondent tries to submit.
+    markOutdated() {
       outdated = true;
-      submitButton.disabled = true;
-      announce('revision');
-
-      const file = new Blob([savedDraft], { type: 'application/json' });
-      draftDownloadURL = URL.createObjectURL(file);
-      const download = document.createElement('a');
-      download.href = draftDownloadURL;
-      download.download = 'smart-city-saved-draft.json';
-      download.textContent = messages.downloadDraft;
-      status.append(' ', download);
     },
 
     // Called after the respondent confirms the shortcode's reset prompt.
@@ -163,14 +180,13 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       receipt = null;
       complete = false;
       outdated = false;
-      if (draftDownloadURL) {
-        URL.revokeObjectURL(draftDownloadURL);
-        draftDownloadURL = null;
-      }
-
       submitButton.disabled = !enabled;
-      status.hidden = enabled;
-      if (!enabled) announce('preview');
+      statusTitle.textContent = '';
+      statusMessage.textContent = '';
+      status.hidden = true;
+      if (forcedEmail) {
+        form.elements.kontakt_email.value = forcedEmail;
+      }
       form.elements.submission_id.value = '';
       form.elements.survey_revision.value = revision;
     },

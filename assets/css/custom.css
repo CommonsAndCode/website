@@ -361,7 +361,12 @@ html {
     letter-spacing: -0.01em;
 }
 
-/* Form fields on start slide (matches site design: 4px border-radius, clean inputs) */
+/* Keep submission results visible when scrolled into view. */
+.sc-submit-status {
+    scroll-margin-block: 1.5rem;
+}
+
+/* Form fields on start slide */
 .sc-form-field {
     margin-bottom: 1.25rem;
 }
@@ -781,7 +786,8 @@ html {
     .sc-wom-btn-skip-summary,
     .sc-overview-details,
     .sc-overview-panel,
-    #sc-survey-form {
+    #sc-survey-form,
+    #sc-submit-status {
         display: none !important;
     }
 

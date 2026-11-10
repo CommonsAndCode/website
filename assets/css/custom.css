@@ -361,14 +361,9 @@ html {
     letter-spacing: -0.01em;
 }
 
-/* Keep submission results visible when focused; appearance comes from admonitions. */
+/* Keep submission results visible when scrolled into view. */
 .sc-submit-status {
     scroll-margin-block: 1.5rem;
-}
-
-.sc-submit-status:focus {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
 }
 
 /* Form fields on start slide */

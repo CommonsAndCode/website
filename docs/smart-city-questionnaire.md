@@ -98,13 +98,13 @@ When Hugo loads JSON via `$.Site.Data` or `getJSON`, integer numbers are deseria
 1. **Form Submission**:
    - Default POST action: `/api/v1/smart-city-survey` in production and `https://commons-and-code.eu/api/v1/smart-city-survey` in previews and the local Hugo server (overridable via shortcode parameter `action`).
    - `assets/js/smart-city-submit.js` sends URL-encoded fields and shows translated success/error messages.
-   - Feedback below the form uses the theme's existing admonition markup, classes, icon mapping and light/dark styles (`data-type="success"`, `"danger"`, `"warning"` or `"info"`). Submission results receive focus and scroll into view; initial preview and restored-draft notices do not move focus. The panel is hidden in printed exports.
+   - Feedback below the form uses the theme's existing admonition markup, classes, icon mapping and light/dark styles (`data-type="success"`, `"danger"`, `"warning"` or `"info"`). The panel stays hidden until a submission succeeds or fails. Results scroll into view and are announced through a live region without moving focus. Pending requests use the submit-button label. The panel is hidden in printed exports.
    - The draft is cleared only after the server confirms persistence.
    - A persisted submission UUID prevents duplicate rows when an unchanged request is retried, including after reloading the page.
    - The questionnaire revision is the SHA-256 of the source JSON bytes; the server must contain that snapshot before the updated website is activated.
-   - Outdated drafts remain downloadable as JSON until the respondent explicitly resets the form.
+   - Outdated drafts remain untouched in localStorage until the respondent explicitly resets the form. They are not applied to a changed catalogue. They leave the submit button enabled; attempting submission explains that reset is required, without an initial warning or extra download link.
    - Submission is enabled in production builds targeting `https://commons-and-code.eu/`, in explicit `--environment preview` builds, and when running `hugo server`. Other builds keep submission disabled.
-   - Preview builds and `hugo server` submit test assessments to the shared survey database. The email field is read-only and fixed to `debug@example.org`; restoring a draft cannot replace it, and the submission controller enforces it in both the outgoing payload and retry receipt. Resetting the form restores the test-mode notice and fixed email. Production email entry is unaffected.
+   - Preview builds and `hugo server` submit test assessments to the shared survey database. The email field is read-only and fixed to `debug@example.org`; restoring a draft cannot replace it, and the submission controller enforces it in both the outgoing payload and retry receipt. Resetting the form hides feedback and restores the fixed email. Production email entry is unaffected. Blowfish Tools' local-server command runs `hugo server` and uses the same behaviour.
    - The nginx Content Security Policy explicitly allows the canonical API origin for preview submissions; the API permits preview origins through CORS.
 
 1. **Self-Service Export (CSV & PDF/Print)**:

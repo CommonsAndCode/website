@@ -525,7 +525,7 @@
   </form>
 
   {{ $admonitionMaps := partialCached "impls/hooks/admonition-maps.html" . }}
-  <div id="sc-submit-status" class="sc-submit-status admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="info" role="status" aria-live="polite" aria-atomic="true" aria-labelledby="sc-submit-title" tabindex="-1" hidden>
+  <div id="sc-submit-status" class="sc-submit-status admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="info" role="status" aria-live="polite" aria-atomic="true" aria-labelledby="sc-submit-title" hidden>
     <div class="flex items-center gap-2 font-semibold text-inherit">
       <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg" aria-hidden="true">
         {{ range slice "success" "danger" "warning" "info" }}
@@ -538,7 +538,6 @@
     </div>
     <div class="admonition-content mt-3 text-base leading-relaxed text-inherit">
       <p class="sc-submit-message"></p>
-      <div class="sc-submit-actions mt-3" hidden></div>
     </div>
   </div>
 
@@ -608,7 +607,6 @@ document.addEventListener('DOMContentLoaded', function() {
       conflict: {{ i18n "smart_city.submit_title_conflict" }},
       revision: {{ i18n "smart_city.submit_title_revision" }},
       revisionUnavailable: {{ i18n "smart_city.submit_title_revision_unavailable" }},
-      preview: {{ i18n "smart_city.submit_title_preview" }},
       disabled: {{ i18n "smart_city.submit_title_disabled" }},
     },
     messages: {
@@ -620,9 +618,7 @@ document.addEventListener('DOMContentLoaded', function() {
       conflict: {{ i18n "smart_city.submit_conflict" }},
       revision: {{ i18n "smart_city.submit_revision" }},
       revisionUnavailable: {{ i18n "smart_city.submit_revision_unavailable" }},
-      preview: {{ i18n "smart_city.submit_preview" }},
       disabled: {{ i18n "smart_city.submit_disabled" }},
-      downloadDraft: {{ i18n "smart_city.submit_download_draft" }},
     },
   });
   // Native form validation can find an invalid metadata field while its slide
@@ -879,7 +875,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // created before revision tracking have no revision and retain the original
       // restoration behaviour; drafts with a recorded revision must match.
       if (data.revision && data.revision !== form.elements.survey_revision.value) {
-        submissionController.markOutdated(saved);
+        submissionController.markOutdated();
         return;
       }
       submissionController.restore(data.submission);

@@ -5,6 +5,7 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
   const statusTitle = status.querySelector('.sc-submit-title');
   const statusMessage = status.querySelector('.sc-submit-message');
   const statusActions = status.querySelector('.sc-submit-actions');
+  const statusIcons = status.querySelectorAll('[data-submit-icon]');
   const submitButton = form.querySelector('button[type="submit"]');
   const enabled = form.dataset.submissionEnabled === 'true';
   const forcedEmail = form.dataset.submissionEmail;
@@ -23,10 +24,11 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
   let draftDownloadURL = null;
 
   function announce(message, focus = false) {
-    const variant = {
-      sending: 'sending', success: 'success', preview: 'info', disabled: 'info', revision: 'warning',
-    }[message] || 'error';
-    status.dataset.variant = variant;
+    const type = {
+      sending: 'info', success: 'success', preview: 'info', disabled: 'info', revision: 'warning',
+    }[message] || 'danger';
+    status.dataset.type = type;
+    statusIcons.forEach(icon => { icon.hidden = icon.dataset.submitIcon !== type; });
     statusTitle.textContent = titles[message];
     statusMessage.textContent = messages[message];
     statusActions.replaceChildren();
@@ -178,6 +180,7 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       download.href = draftDownloadURL;
       download.download = 'smart-city-saved-draft.json';
       download.textContent = messages.downloadDraft;
+      download.className = 'underline';
       statusActions.append(download);
       statusActions.hidden = false;
     },

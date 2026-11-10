@@ -361,111 +361,14 @@ html {
     letter-spacing: -0.01em;
 }
 
-/* Submission feedback uses the site's teal primary palette. */
+/* Keep submission results visible when focused; appearance comes from admonitions. */
 .sc-submit-status {
-    --sc-feedback-accent: var(--color-primary-700);
-    --sc-feedback-tint: var(--color-primary-500);
-    display: flex;
-    align-items: flex-start;
-    gap: 0.875rem;
-    margin-top: 1.25rem;
-    padding: 1rem 1.125rem;
-    border: 1px solid rgba(var(--sc-feedback-accent), 0.35);
-    border-left: 4px solid rgb(var(--sc-feedback-accent));
-    border-radius: 4px;
-    background-color: rgba(var(--sc-feedback-tint), 0.08);
-    color: rgb(var(--color-neutral-900));
-    font-family: var(--default-font-family);
-    font-size: 0.875rem;
-    line-height: 1.6;
     scroll-margin-block: 1.5rem;
 }
 
-.sc-submit-status[hidden],
-.sc-submit-actions[hidden] {
-    display: none;
-}
-
-.sc-submit-status[data-variant="error"] {
-    --sc-feedback-accent: 185, 28, 28;
-    --sc-feedback-tint: 239, 68, 68;
-}
-
-.sc-submit-status[data-variant="warning"] {
-    --sc-feedback-accent: 146, 64, 14;
-    --sc-feedback-tint: 245, 158, 11;
-}
-
-.dark .sc-submit-status {
-    --sc-feedback-accent: var(--color-primary-300);
-    background-color: rgba(var(--sc-feedback-tint), 0.12);
-    color: rgb(var(--color-neutral));
-}
-
-.dark .sc-submit-status[data-variant="error"] {
-    --sc-feedback-accent: 252, 165, 165;
-}
-
-.dark .sc-submit-status[data-variant="warning"] {
-    --sc-feedback-accent: 252, 211, 77;
-}
-
 .sc-submit-status:focus {
-    outline: 2px solid rgb(var(--sc-feedback-accent));
-    outline-offset: 3px;
-}
-
-.sc-submit-icon {
-    flex: 0 0 1.5rem;
-    margin-top: 0.125rem;
-    color: rgb(var(--sc-feedback-accent));
-}
-
-.sc-submit-icon svg {
-    display: none;
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.sc-submit-status[data-variant="success"] [data-icon="success"],
-.sc-submit-status[data-variant="error"] [data-icon="error"],
-.sc-submit-status[data-variant="warning"] [data-icon="warning"],
-.sc-submit-status[data-variant="info"] [data-icon="info"],
-.sc-submit-status[data-variant="sending"] [data-icon="sending"] {
-    display: block;
-}
-
-.sc-submit-content {
-    min-width: 0;
-    overflow-wrap: anywhere;
-}
-
-.sc-submit-status .sc-submit-title {
-    margin: 0 0 0.25rem;
-    color: rgb(var(--sc-feedback-accent));
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.sc-submit-status .sc-submit-message {
-    margin: 0;
-}
-
-.sc-submit-actions {
-    margin-top: 0.75rem;
-}
-
-.sc-submit-actions a {
-    color: rgb(var(--sc-feedback-accent));
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.sc-submit-actions a:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 3px;
-    border-radius: 2px;
 }
 
 /* Form fields on start slide */

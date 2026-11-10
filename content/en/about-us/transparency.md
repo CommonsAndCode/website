@@ -10,8 +10,6 @@ showPagination: false
 showReadingTime: false
 ---
 
-{{< lead >}}As we were founded only a few weeks ago, this information is still incomplete. It will be continuously updated.{{< /lead >}}
-
 > [!INFO]
 > The PDFs linked on this page are currently available in German only.
 > English translations are in progress.

@@ -10,8 +10,6 @@ showPagination: false
 showReadingTime: false
 ---
 
-{{< lead >}}Da wir uns erst vor wenigen Wochen gegründet haben, sind diese Informationen noch unvollständig. Sie werden fortlaufend aktualisiert.{{< /lead >}}
-
 Transparenz ist Teil unserer Vereins-DNA.
 Daher planen wir, uns möglichst zeitnah der Initiative Transparente Zivilgesellschaft anzuschließen.
 Wir verpflichten uns, die folgenden zehn Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell zu halten.

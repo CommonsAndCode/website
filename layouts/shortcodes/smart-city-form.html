@@ -1,16 +1,16 @@
 {{ $data := hugo.Data.smart_city_fragebogen }}
-{{ $isPreview := eq hugo.Environment "preview" }}
+{{ $isTestSubmission := or (eq hugo.Environment "preview") hugo.IsServer }}
 {{ $defaultAction := "/api/v1/smart-city-survey" }}
-{{ if $isPreview }}
+{{ if $isTestSubmission }}
   {{ $defaultAction = "https://commons-and-code.eu/api/v1/smart-city-survey" }}
 {{ end }}
 {{ $action := .Get "action" | default $defaultAction }}
 {{/* Hash the source bytes just as the API does. Old drafts must keep their
      questionnaire identity rather than silently adopting changed questions. */}}
 {{ $revision := crypto.SHA256 (readFile "data/smart_city_fragebogen.json") }}
-{{/* Preview builds explicitly opt into test submissions with a fixed email.
+{{/* Preview builds and the local Hugo server use test submissions with a fixed email.
      Other builds still require the production environment and canonical URL. */}}
-{{ $submissionEnabled := or $isPreview (and (eq hugo.Environment "production") (eq site.BaseURL "https://commons-and-code.eu/")) }}
+{{ $submissionEnabled := or $isTestSubmission (and (eq hugo.Environment "production") (eq site.BaseURL "https://commons-and-code.eu/")) }}
 {{ $submitJS := resources.Get "js/smart-city-submit.js" | minify | fingerprint }}
 {{/* Deferred scripts run before DOMContentLoaded; the inline stepper below
      creates its submission controller in that event's handler. */}}
@@ -75,7 +75,7 @@
   data-text-publisher-label="{{ i18n "smart_city.publisher_label" }}"
 >
 
-  <form action="{{ $action }}" method="POST" id="sc-survey-form" data-submission-enabled="{{ $submissionEnabled }}" {{ if $isPreview }}data-submission-email="debug@example.org"{{ end }}>
+  <form action="{{ $action }}" method="POST" id="sc-survey-form" data-submission-enabled="{{ $submissionEnabled }}" {{ if $isTestSubmission }}data-submission-email="debug@example.org"{{ end }}>
     <input type="hidden" name="survey_revision" value="{{ $revision }}">
     <input type="hidden" name="submission_id" value="">
     <noscript><p>{{ i18n "smart_city.submit_requires_js" }}</p></noscript>
@@ -297,7 +297,7 @@
             id="wom_email"
             name="kontakt_email"
             maxlength="254"
-            {{ if $isPreview }}value="debug@example.org" readonly{{ end }}
+            {{ if $isTestSubmission }}value="debug@example.org" readonly{{ end }}
             placeholder="{{ i18n "smart_city.placeholder_email" }}"
           >
         </div>
@@ -883,7 +883,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Object.keys(data.inputs || {}).forEach(name => {
         const el = form.elements[name];
-        // Keep the fixed preview email when restoring an older draft.
+        // Keep the fixed test email when restoring an older draft.
         if (el && !el.readOnly) el.value = data.inputs[name];
       });
 

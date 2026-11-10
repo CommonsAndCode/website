@@ -96,15 +96,15 @@ When Hugo loads JSON via `$.Site.Data` or `getJSON`, integer numbers are deseria
    - Autosave indicator pulses with `.is-saving` (CSS scale/opacity transition) upon each change.
 
 1. **Form Submission**:
-   - Default POST action: `/api/v1/smart-city-survey` in production and `https://commons-and-code.eu/api/v1/smart-city-survey` in previews (overridable via shortcode parameter `action`).
+   - Default POST action: `/api/v1/smart-city-survey` in production and `https://commons-and-code.eu/api/v1/smart-city-survey` in previews and the local Hugo server (overridable via shortcode parameter `action`).
    - `assets/js/smart-city-submit.js` sends URL-encoded fields and shows translated success/error messages.
    - Feedback appears in a persistent bordered panel below the form, with a status icon, translated heading and tinted success, error, warning or information styling in light and dark modes. Submission results receive focus and scroll into view; initial preview and restored-draft notices do not move focus. The panel is hidden in printed exports.
    - The draft is cleared only after the server confirms persistence.
    - A persisted submission UUID prevents duplicate rows when an unchanged request is retried, including after reloading the page.
    - The questionnaire revision is the SHA-256 of the source JSON bytes; the server must contain that snapshot before the updated website is activated.
    - Outdated drafts remain downloadable as JSON until the respondent explicitly resets the form.
-   - Submission is enabled in production builds targeting `https://commons-and-code.eu/` and in explicit `--environment preview` builds. Other builds keep submission disabled.
-   - Preview builds submit test assessments to the shared survey database. The email field is read-only and fixed to `debug@example.org`; restoring a draft cannot replace it, and the submission controller enforces it in both the outgoing payload and retry receipt. Resetting the form restores the preview notice and fixed email. Production email entry is unaffected.
+   - Submission is enabled in production builds targeting `https://commons-and-code.eu/`, in explicit `--environment preview` builds, and when running `hugo server`. Other builds keep submission disabled.
+   - Preview builds and `hugo server` submit test assessments to the shared survey database. The email field is read-only and fixed to `debug@example.org`; restoring a draft cannot replace it, and the submission controller enforces it in both the outgoing payload and retry receipt. Resetting the form restores the test-mode notice and fixed email. Production email entry is unaffected.
    - The nginx Content Security Policy explicitly allows the canonical API origin for preview submissions; the API permits preview origins through CORS.
 
 1. **Self-Service Export (CSV & PDF/Print)**:
@@ -145,6 +145,7 @@ When modifying the questionnaire:
    hugo --minify
    ```
 1. **Check both languages**:
+   - `hugo server` enables test submissions with the fixed email address; no environment flag is required. Cross-origin requests to the shared API require that API to allow the local browser origin through CORS.
    - German: `http://localhost:1313/de/projekte/smart-city-fragebogen/`
    - English: `http://localhost:1313/en/projects/smart-city-survey/`
 1. **Commit conventions**:

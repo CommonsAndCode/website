@@ -70,15 +70,11 @@ As of November 2026, we have 25 members, around 10 of whom are active in the ass
 
 ## Sources of funding
 
-See the 2025 annual accounts.
-
 {{< download href="/downloads/2025-Jahresabschluss.pdf">}}
 Download 2025 annual accounts
 {{< /download >}}
 
 ## Use of funds
-
-See the 2025 annual accounts.
 
 {{< download href="/downloads/2025-Jahresabschluss.pdf">}}
 Download 2025 annual accounts

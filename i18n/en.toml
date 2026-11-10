@@ -188,6 +188,15 @@ smart_city.publisher_label = "Publisher:"
 
 
 # Survey submission
+smart_city.submit_title_sending = "Sending assessment"
+smart_city.submit_title_success = "Assessment saved"
+smart_city.submit_title_error = "Submission not confirmed"
+smart_city.submit_title_too_large = "Assessment too large"
+smart_city.submit_title_invalid = "Please check your details"
+smart_city.submit_title_conflict = "Submission needs attention"
+smart_city.submit_title_revision = "Questionnaire updated"
+smart_city.submit_title_revision_unavailable = "Questionnaire version unavailable"
+smart_city.submit_title_preview = "Preview mode"
 smart_city.submit_requires_js = "Enable JavaScript to submit this questionnaire."
 smart_city.submit_data_notice = "We store your assessment privately, including any email address and notes you choose to provide. Contact details and notes are not published automatically."
 smart_city.submit_sending = "Sending your assessment…"

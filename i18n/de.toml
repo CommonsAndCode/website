@@ -189,6 +189,15 @@ smart_city.publisher_label = "Herausgeber:"
 
 
 # Survey submission
+smart_city.submit_title_sending = "Bewertung wird gesendet"
+smart_city.submit_title_success = "Bewertung gespeichert"
+smart_city.submit_title_error = "Übermittlung nicht bestätigt"
+smart_city.submit_title_too_large = "Bewertung zu groß"
+smart_city.submit_title_invalid = "Bitte prüfe deine Angaben"
+smart_city.submit_title_conflict = "Übermittlung erfordert Klärung"
+smart_city.submit_title_revision = "Fragebogen aktualisiert"
+smart_city.submit_title_revision_unavailable = "Fragebogenversion nicht verfügbar"
+smart_city.submit_title_preview = "Vorschaumodus"
 smart_city.submit_requires_js = "Bitte aktiviere JavaScript, um den Fragebogen abzusenden."
 smart_city.submit_data_notice = "Wir speichern deine Bewertung vertraulich, einschließlich freiwillig angegebener E-Mail-Adresse und Anmerkungen. Kontaktdaten und Anmerkungen werden nicht automatisch veröffentlicht."
 smart_city.submit_sending = "Deine Bewertung wird gesendet…"

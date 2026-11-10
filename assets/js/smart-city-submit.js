@@ -1,7 +1,10 @@
 // The shortcode owns the questionnaire UI and draft storage. This controller
 // handles submission, retry receipts and messages without external dependencies.
-window.createSurveySubmission = function ({ form, saveDraft, clearDraft, messages }) {
+window.createSurveySubmission = function ({ form, saveDraft, clearDraft, messages, titles }) {
   const status = document.getElementById('sc-submit-status');
+  const statusTitle = status.querySelector('.sc-submit-title');
+  const statusMessage = status.querySelector('.sc-submit-message');
+  const statusActions = status.querySelector('.sc-submit-actions');
   const submitButton = form.querySelector('button[type="submit"]');
   const enabled = form.dataset.submissionEnabled === 'true';
   const revision = form.elements.survey_revision.value;
@@ -18,9 +21,18 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
   let outdated = false;
   let draftDownloadURL = null;
 
-  function announce(message) {
-    status.textContent = messages[message];
+  function announce(message, focus = false) {
+    const variant = {
+      sending: 'sending', success: 'success', preview: 'info', revision: 'warning',
+    }[message] || 'error';
+    status.dataset.variant = variant;
+    statusTitle.textContent = titles[message];
+    statusMessage.textContent = messages[message];
+    statusActions.replaceChildren();
+    statusActions.hidden = true;
     status.hidden = false;
+    if (focus) status.focus({ preventScroll: true });
+    if (focus || message === 'sending') status.scrollIntoView({ block: 'nearest' });
   }
 
   function currentPayload() {
@@ -80,7 +92,7 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       // A proxy may enforce its own limit and return an HTML error page. Check
       // the status before decoding JSON so this never becomes a retry prompt.
       if (response.status === 413) {
-        announce('tooLarge');
+        announce('tooLarge', true);
         return;
       }
       const result = await response.json();
@@ -91,18 +103,18 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       if (saved && result.id === receipt.id) {
         complete = true;
         clearDraft();
-        announce('success');
+        announce('success', true);
       } else if (result.code === 'unknown_revision') {
-        announce('revisionUnavailable');
+        announce('revisionUnavailable', true);
       } else if (response.status === 422) {
-        announce('invalid');
+        announce('invalid', true);
       } else if (response.status === 409) {
-        announce('conflict');
+        announce('conflict', true);
       } else {
-        announce('error');
+        announce('error', true);
       }
     } catch {
-      announce('error');
+      announce('error', true);
     } finally {
       busy = false;
       // Only re-enable controls that were enabled before this request; preserve
@@ -154,7 +166,8 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       download.href = draftDownloadURL;
       download.download = 'smart-city-saved-draft.json';
       download.textContent = messages.downloadDraft;
-      status.append(' ', download);
+      statusActions.append(download);
+      statusActions.hidden = false;
     },
 
     // Called after the respondent confirms the shortcode's reset prompt.
@@ -169,7 +182,11 @@ window.createSurveySubmission = function ({ form, saveDraft, clearDraft, message
       }
 
       submitButton.disabled = !enabled;
-      status.hidden = enabled;
+      statusTitle.textContent = '';
+      statusMessage.textContent = '';
+      statusActions.replaceChildren();
+      statusActions.hidden = true;
+      status.hidden = true;
       if (!enabled) announce('preview');
       form.elements.submission_id.value = '';
       form.elements.survey_revision.value = revision;

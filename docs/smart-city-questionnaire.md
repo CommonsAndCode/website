@@ -98,6 +98,7 @@ When Hugo loads JSON via `$.Site.Data` or `getJSON`, integer numbers are deseria
 1. **Form Submission**:
    - Default POST action: `/api/v1/smart-city-survey` (overridable via shortcode parameter `action`).
    - `assets/js/smart-city-submit.js` sends URL-encoded fields and shows translated success/error messages.
+   - Feedback appears in a persistent bordered panel below the form, with a status icon, translated heading and tinted success, error, warning or information styling in light and dark modes. Submission results receive focus and scroll into view; initial preview and restored-draft notices do not move focus. The panel is hidden in printed exports.
    - The draft is cleared only after the server confirms persistence.
    - A persisted submission UUID prevents duplicate rows when an unchanged request is retried, including after reloading the page.
    - The questionnaire revision is the SHA-256 of the source JSON bytes; the server must contain that snapshot before the updated website is activated.

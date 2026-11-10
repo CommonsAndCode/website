@@ -53,19 +53,31 @@ Vorstand
 
 ## Tätigkeitsbericht
 
-Folgt.
+{{< download href="/downloads/2025-Jahresbericht.pdf">}}
+Jahresbericht 2025 runterladen
+{{< /download >}}
 
 ## Personalstruktur
 
-Folgt.
+Wir beschäftigen keine hauptberuflichen Arbeitnehmer\*innen, Honorarkräfte, geringfügig Beschäftigte, Freiwilligendienstleistende o. Ä.
+
+Stand November 2026 haben wir 25 Mitglieder, davon sind ca. 10 ehrenamtlich im Verein aktiv.
 
 ## Mittelherkunft
 
-Folgt.
+Siehe Jahresabschluss 2025.
+
+{{< download href="/downloads/2025-Jahresabschluss.pdf">}}
+Jahresabschluss 2025 runterladen
+{{< /download >}}
 
 ## Mittelverwendung
 
-Folgt.
+Siehe Jahresabschluss 2025.
+
+{{< download href="/downloads/2025-Jahresabschluss.pdf">}}
+Jahresabschluss 2025 runterladen
+{{< /download >}}
 
 ## Gesellschaftsrechtliche Verbundenheit mit Dritten
 

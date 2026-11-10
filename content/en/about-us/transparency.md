@@ -12,6 +12,10 @@ showReadingTime: false
 
 {{< lead >}}As we were founded only a few weeks ago, this information is still incomplete. It will be continuously updated.{{< /lead >}}
 
+> [!INFO]
+> The PDFs linked on this page are currently available in German only.
+> English translations are in progress.
+
 Transparency is part of our organisation's DNA.
 Therefore, we plan to join the Initiative for Transparent Civil Society as soon as possible.
 We commit to making the following ten pieces of information available to the public and keeping them up to date.
@@ -54,19 +58,31 @@ Board
 
 ## Activity report
 
-To follow.
+{{< download href="/downloads/2025-Jahresbericht.pdf">}}
+Download 2025 annual report
+{{< /download >}}
 
 ## Personnel structure
 
-To follow.
+We do not employ any full-time employees, freelance contractors, marginally employed staff, volunteers on service programmes or similar.
+
+As of November 2026, we have 25 members, around 10 of whom are active in the association on a voluntary basis.
 
 ## Sources of funding
 
-To follow.
+See the 2025 annual accounts.
+
+{{< download href="/downloads/2025-Jahresabschluss.pdf">}}
+Download 2025 annual accounts
+{{< /download >}}
 
 ## Use of funds
 
-To follow.
+See the 2025 annual accounts.
+
+{{< download href="/downloads/2025-Jahresabschluss.pdf">}}
+Download 2025 annual accounts
+{{< /download >}}
 
 ## Corporate relationships with third parties
 

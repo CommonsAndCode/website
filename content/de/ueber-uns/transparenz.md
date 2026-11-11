@@ -10,8 +10,6 @@ showPagination: false
 showReadingTime: false
 ---
 
-{{< lead >}}Da wir uns erst vor wenigen Wochen gegründet haben, sind diese Informationen noch unvollständig. Sie werden fortlaufend aktualisiert.{{< /lead >}}
-
 Transparenz ist Teil unserer Vereins-DNA.
 Daher planen wir, uns möglichst zeitnah der Initiative Transparente Zivilgesellschaft anzuschließen.
 Wir verpflichten uns, die folgenden zehn Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell zu halten.
@@ -53,19 +51,27 @@ Vorstand
 
 ## Tätigkeitsbericht
 
-Folgt.
+{{< download href="/downloads/2025-Jahresbericht.pdf">}}
+Jahresbericht 2025 runterladen
+{{< /download >}}
 
 ## Personalstruktur
 
-Folgt.
+Wir beschäftigen keine hauptberuflichen Arbeitnehmer\*innen, Honorarkräfte, geringfügig Beschäftigte, Freiwilligendienstleistende o. Ä.
+
+Stand November 2026 haben wir 25 Mitglieder, davon sind ca. 10 ehrenamtlich im Verein aktiv.
 
 ## Mittelherkunft
 
-Folgt.
+{{< download href="/downloads/2025-Jahresabschluss.pdf">}}
+Jahresabschluss 2025 runterladen
+{{< /download >}}
 
 ## Mittelverwendung
 
-Folgt.
+{{< download href="/downloads/2025-Jahresabschluss.pdf">}}
+Jahresabschluss 2025 runterladen
+{{< /download >}}
 
 ## Gesellschaftsrechtliche Verbundenheit mit Dritten
 

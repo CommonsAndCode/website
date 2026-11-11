@@ -11,7 +11,6 @@ showReadingTime: false
 ---
 
 Transparenz ist Teil unserer Vereins-DNA.
-Daher planen wir, uns möglichst zeitnah der Initiative Transparente Zivilgesellschaft anzuschließen.
 Wir verpflichten uns, die folgenden zehn Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell zu halten.
 
 ## Name, Sitz, Anschrift und Gründungsjahr

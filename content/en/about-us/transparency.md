@@ -15,7 +15,6 @@ showReadingTime: false
 > English translations are in progress.
 
 Transparency is part of our organisation's DNA.
-Therefore, we plan to join the Initiative for Transparent Civil Society as soon as possible.
 We commit to making the following ten pieces of information available to the public and keeping them up to date.
 
 ## Name, registered office, address and year of foundation

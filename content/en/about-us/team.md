@@ -47,3 +47,7 @@ In the political field, he cofounded Volt Europe's digital community and shaped 
 Outside of his political engagement and studies he spends a lot of time in climbing gyms or out in nature at climbing crags.
 
 [{{<icon "mastodon" >}}](https://chaos.social/@sascha) [{{<icon "bluesky" >}}](https://bsky.app/profile/saschamann.bsky.social)
+
+### Vacant non-executive board position
+
+The second non-executive board position is currently vacant.

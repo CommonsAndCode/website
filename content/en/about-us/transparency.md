@@ -68,11 +68,15 @@ As of November 2026, we have 25 members, around 10 of whom are active in the ass
 
 ## Sources of funding
 
+See the 2025 annual accounts, page 3 (income) and page 6 (allocation to the charitable sphere).
+
 {{< download href="/downloads/2025-Jahresabschluss.pdf">}}
 Download 2025 annual accounts
 {{< /download >}}
 
 ## Use of funds
+
+See the 2025 annual accounts, page 2 (balance sheet), page 3 (expenses) and page 7 (statement of use of funds).
 
 {{< download href="/downloads/2025-Jahresabschluss.pdf">}}
 Download 2025 annual accounts
@@ -82,6 +86,11 @@ Download 2025 annual accounts
 
 None.
 
-## Names of legal entities whose annual payments account for more than 10% of the total annual budget
+## Names of persons whose annual contributions account for more than ten per cent of our total annual income
 
-None.
+In 2025, we received the following large donations from private individuals who were members of the association at the time of their donation:
+
+- One donation of €100.
+- One donation of €300.
+
+In 2025, no legal entities made annual contributions exceeding ten per cent of our total annual income.

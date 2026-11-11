@@ -47,3 +47,7 @@ Im politischen Bereich hat er die Volt Europas Digitalcommunity mitaufgebaut und
 Außerhalb seines politischen Engagements und Studiums verbringt er viel Zeit in Kletterhallen oder an Kletterfelsen in der Natur.
 
 [{{<icon "mastodon" >}}](https://chaos.social/@sascha) [{{<icon "bluesky" >}}](https://bsky.app/profile/saschamann.bsky.social)
+
+### Unbesetzter Beisitz
+
+Die zweite Beisitzposition ist derzeit unbesetzt.

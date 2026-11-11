@@ -63,11 +63,15 @@ Stand November 2026 haben wir 25 Mitglieder, davon sind ca. 10 ehrenamtlich im V
 
 ## Mittelherkunft
 
+Siehe Jahresabschluss 2025, Seite 3 (Erträge) und Seite 6 (Zuordnung zum ideellen Bereich).
+
 {{< download href="/downloads/2025-Jahresabschluss.pdf">}}
 Jahresabschluss 2025 runterladen
 {{< /download >}}
 
 ## Mittelverwendung
+
+Siehe Jahresabschluss 2025, Seite 2 (Bilanz), Seite 3 (Aufwendungen) und Seite 7 (Mittelverwendungsrechnung).
 
 {{< download href="/downloads/2025-Jahresabschluss.pdf">}}
 Jahresabschluss 2025 runterladen
@@ -77,7 +81,12 @@ Jahresabschluss 2025 runterladen
 
 Keine.
 
-## Namen von juristischen Personen, deren jährliche Zahlungen mehr als 10 % des Gesamtjahresbudgets ausmachen
+## Namen von Personen, deren jährliche Zuwendung mehr als zehn Prozent unserer gesamten Jahreseinnahmen ausmachen
 
-Keine.
+Im Jahr 2025 erhielten wir folgende Großspenden von Privatpersonen, die zum Zeitpunkt ihrer Spende Vereinsmitglieder waren:
+
+- Eine Spende in Höhe von 100 €.
+- Eine Spende in Höhe von 300 €.
+
+Es gab 2025 keine juristischen Personen, deren jährliche Zuwendung mehr als zehn Prozent unserer gesamten Jahreseinnahmen ausmachte.
 

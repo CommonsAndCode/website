@@ -62,15 +62,11 @@ Stand November 2026 haben wir 25 Mitglieder, davon sind ca. 10 ehrenamtlich im V
 
 ## Mittelherkunft
 
-Siehe Jahresabschluss 2025, Seite 3 (Erträge) und Seite 6 (Zuordnung zum ideellen Bereich).
-
 {{< download href="/downloads/2025-Jahresabschluss.pdf">}}
 Jahresabschluss 2025 runterladen
 {{< /download >}}
 
 ## Mittelverwendung
-
-Siehe Jahresabschluss 2025, Seite 2 (Bilanz), Seite 3 (Aufwendungen) und Seite 7 (Mittelverwendungsrechnung).
 
 {{< download href="/downloads/2025-Jahresabschluss.pdf">}}
 Jahresabschluss 2025 runterladen

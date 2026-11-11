@@ -15,7 +15,6 @@ showReadingTime: false
 > English translations are in progress.
 
 Transparency is part of our organisation's DNA.
-Therefore, we plan to join the Initiative for Transparent Civil Society as soon as possible.
 We commit to making the following ten pieces of information available to the public and keeping them up to date.
 
 ## Name, registered office, address and year of foundation
@@ -86,11 +85,6 @@ Download 2025 annual accounts
 
 None.
 
-## Names of persons whose annual contributions account for more than ten per cent of our total annual income
+## Names of legal entities whose annual payments account for more than 10% of the total annual budget
 
-In 2025, we received the following large donations from private individuals who were members of the association at the time of their donation:
-
-- One donation of €100.
-- One donation of €300.
-
-In 2025, no legal entities made annual contributions exceeding ten per cent of our total annual income.
+None.

@@ -11,7 +11,6 @@ showReadingTime: false
 ---
 
 Transparenz ist Teil unserer Vereins-DNA.
-Daher planen wir, uns möglichst zeitnah der Initiative Transparente Zivilgesellschaft anzuschließen.
 Wir verpflichten uns, die folgenden zehn Informationen der Öffentlichkeit zur Verfügung zu stellen und aktuell zu halten.
 
 ## Name, Sitz, Anschrift und Gründungsjahr
@@ -81,12 +80,7 @@ Jahresabschluss 2025 runterladen
 
 Keine.
 
-## Namen von Personen, deren jährliche Zuwendung mehr als zehn Prozent unserer gesamten Jahreseinnahmen ausmachen
+## Namen von juristischen Personen, deren jährliche Zahlungen mehr als 10 % des Gesamtjahresbudgets ausmachen
 
-Im Jahr 2025 erhielten wir folgende Großspenden von Privatpersonen, die zum Zeitpunkt ihrer Spende Vereinsmitglieder waren:
-
-- Eine Spende in Höhe von 100 €.
-- Eine Spende in Höhe von 300 €.
-
-Es gab 2025 keine juristischen Personen, deren jährliche Zuwendung mehr als zehn Prozent unserer gesamten Jahreseinnahmen ausmachte.
+Keine.
 

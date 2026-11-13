@@ -1,0 +1,23 @@
+{{- $cases := slice -}}
+
+{{- $lang := site.Language.Lang -}}
+
+{{- range where site.RegularPages "Section" "case-map" -}}
+
+    {{- $case := dict
+        "id" .TranslationKey
+        "lang" $lang
+        "title" .Title
+        "short" .Description
+        "categories" .Params.Tags
+        "rating" (default "unrated" .Params.Rating)
+        "url" .Permalink
+        "locations" .Params.Locations
+        "updated" .Date
+    -}}
+
+    {{- $cases = $cases | append $case -}}
+    
+{{- end -}}
+
+{{- $cases | jsonify -}}

@@ -13,6 +13,26 @@ Built with the Blowfish theme.
 ## Markdown Conventions
 
 - **Numbered lists**: Use `1.` for all items rather than incrementing numbers (e.g., `1., 1., 1.` not `1., 2., 3.`). This makes reordering and editing lists easier while Markdown automatically renders them with sequential numbers.
+- **One sentence per line**: Write markdown content with one sentence per line rather than wrapping paragraphs. This makes Git diffs more readable and simplifies editing, reordering, and versioning of individual sentences.
+
+## Writing Style
+
+- **Avoid AI-like patterns**: Write naturally and avoid typical AI writing characteristics
+- **Limit em-dashes**: Avoid excessive use of em-dashes (–) for parenthetical clauses. Use simple sentence structures, commas, or separate sentences instead.
+- **Be direct**: Prefer clear, straightforward language over complex nested constructions
+- **Vary sentence structure**: Mix short and long sentences naturally
+- **Neutral voice for the organisation**: Avoid referring to Commons & Code e.V. in the third person (e.g., "Aus Sicht des Commons & Code e.V."). Use neutral, objective-sounding formulations instead.
+
+### Case Studies (`content/{de,en}/fallbeispiele/`)
+
+Case studies are concise analyses of real-world examples, classified as Best Practice or Worst Practice. They follow a standard structure:
+
+1. **Length**: Around 500 words total
+1. **Structure**: Short description of the case, then an assessment of why it qualifies as a Best or Worst Practice
+1. **Sources**: Link claims to primary sources (court decisions, official documents, news articles, the initiative's own website)
+1. **Tone**: Objective and analytical. Do not write from the perspective of Commons & Code e.V. ("Aus unserer Sicht..."), but let the facts and reasoning speak for themselves
+1. **Tags**: Use relevant thematic tags (e.g., `freiheitsrechte`, `überwachung`, `datenschutz`)
+1. **Timelessness**: Write so the text remains valid over time. Avoid references to a current state of affairs (e.g., "die Verfahren liegen derzeit bei...") that will become outdated. If procedural status is relevant, frame it in a way that ages well (e.g., stating when a decision was made rather than that an appeal is "currently" pending).
 
 ## Architecture & Structure
 
